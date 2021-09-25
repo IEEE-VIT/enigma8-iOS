@@ -13,6 +13,7 @@
 		4EC3E48326E7DCCA0049AD99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC3E46E26E7DCC90049AD99 /* ContentView.swift */; };
 		4EC3E48426E7DCCA0049AD99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EC3E46F26E7DCCA0049AD99 /* Assets.xcassets */; };
 		4EC3E48526E7DCCA0049AD99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EC3E46F26E7DCCA0049AD99 /* Assets.xcassets */; };
+		8C58B4CF26FEFD6F00F26303 /* AppleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C58B4CE26FEFD6F00F26303 /* AppleCoordinator.swift */; };
 		8CD8CADF26FADE7A00267EAC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CADE26FADE7A00267EAC /* Kingfisher */; };
 		8CD8CAE426FADED300267EAC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CAE326FADED300267EAC /* Alamofire */; };
 		8CD8CAE926FADF1200267EAC /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CAE826FADF1200267EAC /* GoogleSignIn */; };
@@ -28,6 +29,7 @@
 		4EC3E47C26E7DCCA0049AD99 /* Enigma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Enigma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EC3E47E26E7DCCA0049AD99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EC3E47F26E7DCCA0049AD99 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		8C58B4CE26FEFD6F00F26303 /* AppleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 		4EC3E46C26E7DCC90049AD99 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				8C58B4CC26FEFD5C00F26303 /* API */,
 				4EC3E46D26E7DCC90049AD99 /* EnigmaApp.swift */,
 				4EC3E46E26E7DCC90049AD99 /* ContentView.swift */,
 				4EC3E46F26E7DCCA0049AD99 /* Assets.xcassets */,
@@ -96,6 +99,22 @@
 				4EC3E47F26E7DCCA0049AD99 /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		8C58B4CC26FEFD5C00F26303 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				8C58B4CD26FEFD6200F26303 /* Auth */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		8C58B4CD26FEFD6200F26303 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				8C58B4CE26FEFD6F00F26303 /* AppleCoordinator.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +228,7 @@
 			files = (
 				4EC3E48226E7DCCA0049AD99 /* ContentView.swift in Sources */,
 				4EC3E48026E7DCCA0049AD99 /* EnigmaApp.swift in Sources */,
+				8C58B4CF26FEFD6F00F26303 /* AppleCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
