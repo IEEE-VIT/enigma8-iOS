@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
 		312667512700BC3F009834E9 /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 312667502700BC3F009834E9 /* SwiftyBeaver */; };
+
+		3126674E2700B91E009834E9 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126674D2700B91E009834E9 /* AuthViewModel.swift */; };
+
 		4EC3E48026E7DCCA0049AD99 /* EnigmaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC3E46D26E7DCC90049AD99 /* EnigmaApp.swift */; };
 		4EC3E48126E7DCCA0049AD99 /* EnigmaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC3E46D26E7DCC90049AD99 /* EnigmaApp.swift */; };
 		4EC3E48226E7DCCA0049AD99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC3E46E26E7DCC90049AD99 /* ContentView.swift */; };
@@ -21,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3126674D2700B91E009834E9 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		4EC3E46D26E7DCC90049AD99 /* EnigmaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnigmaApp.swift; sourceTree = "<group>"; };
 		4EC3E46E26E7DCC90049AD99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4EC3E46F26E7DCCA0049AD99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -54,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3126674C2700B90D009834E9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3126674D2700B91E009834E9 /* AuthViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		4EC3E46726E7DCC80049AD99 = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +80,7 @@
 		4EC3E46C26E7DCC90049AD99 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				3126674C2700B90D009834E9 /* ViewModels */,
 				4EC3E46D26E7DCC90049AD99 /* EnigmaApp.swift */,
 				4EC3E46E26E7DCC90049AD99 /* ContentView.swift */,
 				4EC3E46F26E7DCCA0049AD99 /* Assets.xcassets */,
@@ -213,6 +227,7 @@
 			files = (
 				4EC3E48226E7DCCA0049AD99 /* ContentView.swift in Sources */,
 				4EC3E48026E7DCCA0049AD99 /* EnigmaApp.swift in Sources */,
+				3126674E2700B91E009834E9 /* AuthViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
