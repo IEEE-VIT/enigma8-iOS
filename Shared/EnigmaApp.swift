@@ -9,6 +9,11 @@ import SwiftUI
 
 @main
 struct EnigmaApp: App {
+    
+    init() {
+        PodHelper.configurePods()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
