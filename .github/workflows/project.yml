@@ -1,20 +1,24 @@
-name: Auto Assign to Project(s)
-
+name: CI
 on:
-  issues:
-    types: [opened, labeled]
   pull_request:
-    types: [opened, labeled]
-env:
-  GITHUB_TOKEN: ${{ secrets.TOKEN }}
-
+    branches:
+      - master
+  push:
+    branches:
+      - master
 jobs:
-  assign_one_project:
-    runs-on: ubuntu-latest
-    name: Assign to One Project
+  build:
+    name: Build
+    runs-on: macos-latest
     steps:
-    - name: Assign NEW issues and NEW pull requests to project 2
-      uses: srggrs/assign-one-project-github-action@1.2.1
-      if: github.event.action == 'opened'
-      with:
-        project: 'https://github.com/orgs/IEEE-VIT/projects/2'
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Switch to Xcode 12
+        run: sudo xcode-select -s /Applications/Xcode_12.app
+      - name: Build
+        env:
+          PROJECT: Enigma.xcodeproj
+          SCHEME: Enigma (iOS)
+          DESTINATION: platform=iOS Simulator,OS=15.0,name=iPhone 13
+        run: |
+          xcodebuild -project "$PROJECT" -scheme "$SCHEME" -destination "$DESTINATION" -configuration Release clean test CODE_SIGNING_ALLOWED=NO | xcpretty
