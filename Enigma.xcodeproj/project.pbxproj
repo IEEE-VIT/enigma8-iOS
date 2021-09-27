@@ -19,6 +19,7 @@
 		8CD8CAE926FADF1200267EAC /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CAE826FADF1200267EAC /* GoogleSignIn */; };
 		8CD8CAEE26FAECB700267EAC /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CAED26FAECB700267EAC /* FirebaseMessaging */; };
 		A01836C42700F6E500A4F896 /* GoogleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01836C32700F6E500A4F896 /* GoogleCoordinator.swift */; };
+		A01836C72701805000A4F896 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01836C62701805000A4F896 /* AppConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		4EC3E47E26E7DCCA0049AD99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EC3E47F26E7DCCA0049AD99 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		A01836C32700F6E500A4F896 /* GoogleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCoordinator.swift; sourceTree = "<group>"; };
+		A01836C62701805000A4F896 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				A01836C12700F6C700A4F896 /* API */,
 				3126674C2700B90D009834E9 /* ViewModels */,
+				A01836C52701803200A4F896 /* Model */,
 				4EC3E46D26E7DCC90049AD99 /* EnigmaApp.swift */,
 				4EC3E46E26E7DCC90049AD99 /* ContentView.swift */,
 				4EC3E46F26E7DCCA0049AD99 /* Assets.xcassets */,
@@ -126,6 +129,14 @@
 				A01836C32700F6E500A4F896 /* GoogleCoordinator.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		A01836C52701803200A4F896 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A01836C62701805000A4F896 /* AppConstants.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +252,7 @@
 				4EC3E48026E7DCCA0049AD99 /* EnigmaApp.swift in Sources */,
 				3126674E2700B91E009834E9 /* AuthViewModel.swift in Sources */,
 				A01836C42700F6E500A4F896 /* GoogleCoordinator.swift in Sources */,
+				A01836C72701805000A4F896 /* AppConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
