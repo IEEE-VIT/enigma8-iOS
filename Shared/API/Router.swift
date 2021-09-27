@@ -15,7 +15,7 @@ enum Router: URLRequestConvertible {
     case loginApple(SignUpModel.AppleRequest)
     
     
-    static let baseURL = URL(string: "https://enigma8.herokuapp.com/")!
+    static let baseURL = URL(string: "https://enigma8.herokuapp.com")!
     
     var method: HTTPMethod {
         switch self {
@@ -32,7 +32,7 @@ enum Router: URLRequestConvertible {
         case .getLeaderboard:
             return "game/leaderboard/"
         case .loginGoogle:
-            return "users/auth/google/"
+            return "auth/app/google/"
         case .loginApple:
             return "users/auth/apple/"
         }
