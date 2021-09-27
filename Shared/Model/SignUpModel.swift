@@ -11,11 +11,9 @@ final class SignUpModel {
     
     class Request : Codable {
         let code : String?
-        let callback_url : String?
-        
+       
         init(code: String,type : SignupType){
             self.code = code
-            self.callback_url = type.callback
         }
     }
     
@@ -38,24 +36,6 @@ final class SignUpModel {
 enum SignupType : String{
     case google
     case apple
-    
-    var url : String {
-        switch self {
-        case .google:
-            return NetworkConstants.Users.googleURL
-        case .apple:
-            return NetworkConstants.Users.appleURL
-        }
-    }
-    
-    var callback : String {
-        switch self {
-        case .google:
-            return "http://127.0.0.1:8000/"
-        case .apple:
-            return "TODO"
-        }
-    }
     
     var isGoogle : Bool {
         return self == .google
