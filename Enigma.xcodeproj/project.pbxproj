@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		3126674E2700B91E009834E9 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126674D2700B91E009834E9 /* AuthViewModel.swift */; };
+		312667512700BC3F009834E9 /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 312667502700BC3F009834E9 /* SwiftyBeaver */; };
+		4E7A5CD52700FB5C0058CAB9 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A5CD42700FB5C0058CAB9 /* Logger.swift */; };
+		4E7A5CD62700FB5C0058CAB9 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A5CD42700FB5C0058CAB9 /* Logger.swift */; };
+		4E7A5CD92700FBA10058CAB9 /* PodHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A5CD82700FBA10058CAB9 /* PodHelper.swift */; };
+		4E7A5CDA2700FBA10058CAB9 /* PodHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A5CD82700FBA10058CAB9 /* PodHelper.swift */; };
+		4E7A5CDC2700FBBF0058CAB9 /* KFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A5CDB2700FBBF0058CAB9 /* KFManager.swift */; };
+		4E7A5CDD2700FBBF0058CAB9 /* KFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A5CDB2700FBBF0058CAB9 /* KFManager.swift */; };
 		4EC3E48026E7DCCA0049AD99 /* EnigmaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC3E46D26E7DCC90049AD99 /* EnigmaApp.swift */; };
 		4EC3E48126E7DCCA0049AD99 /* EnigmaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC3E46D26E7DCC90049AD99 /* EnigmaApp.swift */; };
 		4EC3E48226E7DCCA0049AD99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC3E46E26E7DCC90049AD99 /* ContentView.swift */; };
@@ -24,6 +31,9 @@
 
 /* Begin PBXFileReference section */
 		3126674D2700B91E009834E9 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		4E7A5CD42700FB5C0058CAB9 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		4E7A5CD82700FBA10058CAB9 /* PodHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodHelper.swift; sourceTree = "<group>"; };
+		4E7A5CDB2700FBBF0058CAB9 /* KFManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KFManager.swift; sourceTree = "<group>"; };
 		4EC3E46D26E7DCC90049AD99 /* EnigmaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnigmaApp.swift; sourceTree = "<group>"; };
 		4EC3E46E26E7DCC90049AD99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4EC3E46F26E7DCCA0049AD99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -43,6 +53,7 @@
 			files = (
 				8CD8CAEE26FAECB700267EAC /* FirebaseMessaging in Frameworks */,
 				8CD8CADF26FADE7A00267EAC /* Kingfisher in Frameworks */,
+				312667512700BC3F009834E9 /* SwiftyBeaver in Frameworks */,
 				8CD8CAE426FADED300267EAC /* Alamofire in Frameworks */,
 				8CD8CAE926FADF1200267EAC /* GoogleSignIn in Frameworks */,
 			);
@@ -66,6 +77,23 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		4E7A5CD32700FB4F0058CAB9 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				4E7A5CD42700FB5C0058CAB9 /* Logger.swift */,
+				4E7A5CDB2700FBBF0058CAB9 /* KFManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		4E7A5CD72700FB970058CAB9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4E7A5CD82700FBA10058CAB9 /* PodHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		4EC3E46726E7DCC80049AD99 = {
 			isa = PBXGroup;
 			children = (
@@ -79,8 +107,11 @@
 		4EC3E46C26E7DCC90049AD99 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+
 				A01836C12700F6C700A4F896 /* API */,
-				3126674C2700B90D009834E9 /* ViewModels */,
+        4E7A5CD72700FB970058CAB9 /* Helpers */,
+				4E7A5CD32700FB4F0058CAB9 /* Managers */,
+        3126674C2700B90D009834E9 /* ViewModels */,
 				A01836C52701803200A4F896 /* Model */,
 				4EC3E46D26E7DCC90049AD99 /* EnigmaApp.swift */,
 				4EC3E46E26E7DCC90049AD99 /* ContentView.swift */,
@@ -160,6 +191,7 @@
 				8CD8CAE326FADED300267EAC /* Alamofire */,
 				8CD8CAE826FADF1200267EAC /* GoogleSignIn */,
 				8CD8CAED26FAECB700267EAC /* FirebaseMessaging */,
+				312667502700BC3F009834E9 /* SwiftyBeaver */,
 			);
 			productName = "Enigma (iOS)";
 			productReference = 4EC3E47426E7DCCA0049AD99 /* Enigma.app */;
@@ -213,6 +245,7 @@
 				8CD8CAE226FADED300267EAC /* XCRemoteSwiftPackageReference "Alamofire" */,
 				8CD8CAE726FADF1200267EAC /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				8CD8CAEC26FAECB700267EAC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				3126674F2700BC3F009834E9 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
 			);
 			productRefGroup = 4EC3E47526E7DCCA0049AD99 /* Products */;
 			projectDirPath = "";
@@ -248,12 +281,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E7A5CDC2700FBBF0058CAB9 /* KFManager.swift in Sources */,
 				4EC3E48226E7DCCA0049AD99 /* ContentView.swift in Sources */,
 				4EC3E48026E7DCCA0049AD99 /* EnigmaApp.swift in Sources */,
 				3126674E2700B91E009834E9 /* AuthViewModel.swift in Sources */,
-				A01836C42700F6E500A4F896 /* GoogleCoordinator.swift in Sources */,
+        A01836C42700F6E500A4F896 /* GoogleCoordinator.swift in Sources */,
 				A01836C72701805000A4F896 /* AppConstants.swift in Sources */,
-			);
+        4E7A5CD52700FB5C0058CAB9 /* Logger.swift in Sources */,
+				4E7A5CD92700FBA10058CAB9 /* PodHelper.swift in Sources */,
+       );
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4EC3E47826E7DCCA0049AD99 /* Sources */ = {
@@ -261,7 +297,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EC3E48326E7DCCA0049AD99 /* ContentView.swift in Sources */,
+				4E7A5CDA2700FBA10058CAB9 /* PodHelper.swift in Sources */,
+				4E7A5CD62700FB5C0058CAB9 /* Logger.swift in Sources */,
 				4EC3E48126E7DCCA0049AD99 /* EnigmaApp.swift in Sources */,
+				4E7A5CDD2700FBBF0058CAB9 /* KFManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +544,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3126674F2700BC3F009834E9 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyBeaver/SwiftyBeaver";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.5;
+			};
+		};
 		8CD8CADD26FADE7A00267EAC /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -540,6 +587,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		312667502700BC3F009834E9 /* SwiftyBeaver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3126674F2700BC3F009834E9 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */;
+			productName = SwiftyBeaver;
+		};
 		8CD8CADE26FADE7A00267EAC /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8CD8CADD26FADE7A00267EAC /* XCRemoteSwiftPackageReference "Kingfisher" */;
