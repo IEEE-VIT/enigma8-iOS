@@ -22,12 +22,24 @@ class GoogleCoordinator: NSObject {
     func googleSignin() {
         let vc = (UIApplication.shared.windows.last?.rootViewController)!
         GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: vc) { user, error in
-            guard let error = error else {
-                print(error?.localizedDescription ?? "")
+            guard error == nil else {
+                Logger.error("THIS IS AN ERROR")
                 return
+                }
+            guard let user = user else {
+                Logger.error("THIS IS AN ERROR")
+                return }
+                user.authentication.do { authentication, error in
+                guard error == nil else {
+                    Logger.error("THIS IS AN ERROR")
+                    return }
+                guard let authentication = authentication else {
+                    Logger.error("THIS IS AN ERROR")
+                    return }
+                    let idToken = authentication.idToken
+                // Send ID token to backend
             }
-         self.authVM.signInWithGoogle(with: user?.serverAuthCode ?? "")
+            self.authVM.signInWithGoogle(with: user.serverAuthCode ?? "")
         }
     }
-    
 }

@@ -107,11 +107,10 @@
 		4EC3E46C26E7DCC90049AD99 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-
 				A01836C12700F6C700A4F896 /* API */,
-        4E7A5CD72700FB970058CAB9 /* Helpers */,
+				4E7A5CD72700FB970058CAB9 /* Helpers */,
 				4E7A5CD32700FB4F0058CAB9 /* Managers */,
-        3126674C2700B90D009834E9 /* ViewModels */,
+				3126674C2700B90D009834E9 /* ViewModels */,
 				A01836C52701803200A4F896 /* Model */,
 				4EC3E46D26E7DCC90049AD99 /* EnigmaApp.swift */,
 				4EC3E46E26E7DCC90049AD99 /* ContentView.swift */,
@@ -285,11 +284,11 @@
 				4EC3E48226E7DCCA0049AD99 /* ContentView.swift in Sources */,
 				4EC3E48026E7DCCA0049AD99 /* EnigmaApp.swift in Sources */,
 				3126674E2700B91E009834E9 /* AuthViewModel.swift in Sources */,
-        A01836C42700F6E500A4F896 /* GoogleCoordinator.swift in Sources */,
+				A01836C42700F6E500A4F896 /* GoogleCoordinator.swift in Sources */,
 				A01836C72701805000A4F896 /* AppConstants.swift in Sources */,
-        4E7A5CD52700FB5C0058CAB9 /* Logger.swift in Sources */,
+				4E7A5CD52700FB5C0058CAB9 /* Logger.swift in Sources */,
 				4E7A5CD92700FBA10058CAB9 /* PodHelper.swift in Sources */,
-       );
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4EC3E47826E7DCCA0049AD99 /* Sources */ = {
