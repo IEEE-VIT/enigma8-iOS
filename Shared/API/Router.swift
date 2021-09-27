@@ -10,7 +10,6 @@ import Alamofire
 
 enum Router: URLRequestConvertible {
     
-    case getLeaderboard
     case loginGoogle(SignUpModel.Request)
     case loginApple(SignUpModel.AppleRequest)
     
@@ -19,8 +18,6 @@ enum Router: URLRequestConvertible {
     
     var method: HTTPMethod {
         switch self {
-        case .getLeaderboard:
-            return .get
         case .loginGoogle, .loginApple:
             return .post
         
@@ -29,8 +26,6 @@ enum Router: URLRequestConvertible {
 
     var path: String {
         switch self {
-        case .getLeaderboard:
-            return "game/leaderboard/"
         case .loginGoogle:
             return "auth/app/google/"
         case .loginApple:
@@ -44,7 +39,7 @@ enum Router: URLRequestConvertible {
     }
     
     var authString: String? {
-        return "\(UserDefaults.standard.value(forKey: "EnigmaToken") ?? "Token 0c066a55fa319fcc58ff01abd37d2e3d0409fe9e")"
+        return "\(UserDefaults.standard.value(forKey: "EnigmaToken") ?? "")"
     }
         
     // For codable requests
