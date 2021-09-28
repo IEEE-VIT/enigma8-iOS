@@ -27,11 +27,11 @@
 		4EC3E48326E7DCCA0049AD99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC3E46E26E7DCC90049AD99 /* ContentView.swift */; };
 		4EC3E48426E7DCCA0049AD99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EC3E46F26E7DCCA0049AD99 /* Assets.xcassets */; };
 		4EC3E48526E7DCCA0049AD99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EC3E46F26E7DCCA0049AD99 /* Assets.xcassets */; };
-		8C58B4CF26FEFD6F00F26303 /* AppleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C58B4CE26FEFD6F00F26303 /* AppleCoordinator.swift */; };
 		8CD8CADF26FADE7A00267EAC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CADE26FADE7A00267EAC /* Kingfisher */; };
 		8CD8CAE426FADED300267EAC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CAE326FADED300267EAC /* Alamofire */; };
 		8CD8CAE926FADF1200267EAC /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CAE826FADF1200267EAC /* GoogleSignIn */; };
 		8CD8CAEE26FAECB700267EAC /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CAED26FAECB700267EAC /* FirebaseMessaging */; };
+		8CEEBAF82702524D00515E4A /* AppleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEEBAF72702524D00515E4A /* AppleCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +52,7 @@
 		4EC3E47E26E7DCCA0049AD99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EC3E47F26E7DCCA0049AD99 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		8C58B4CE26FEFD6F00F26303 /* AppleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleCoordinator.swift; sourceTree = "<group>"; };
+		8CEEBAF72702524D00515E4A /* AppleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +113,7 @@
 		31D994602701EBB000E506D9 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				8CEEBAF62702523500515E4A /* Auth */,
 				31D994612701EBB000E506D9 /* APIClient.swift */,
 				31D994622701EBB000E506D9 /* Router.swift */,
 			);
@@ -142,6 +144,7 @@
 				4EC3E47626E7DCCA0049AD99 /* iOS */,
 				4EC3E47D26E7DCCA0049AD99 /* macOS */,
 				4EC3E47526E7DCCA0049AD99 /* Products */,
+				8CEEBAF3270250B700515E4A /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -187,18 +190,18 @@
 			path = macOS;
 			sourceTree = "<group>";
 		};
-		8C58B4CC26FEFD5C00F26303 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				8C58B4CD26FEFD6200F26303 /* Auth */,
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
-		8C58B4CD26FEFD6200F26303 /* Auth */ = {
+		8CEEBAF3270250B700515E4A /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
 				8C58B4CE26FEFD6F00F26303 /* AppleCoordinator.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		8CEEBAF62702523500515E4A /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				8CEEBAF72702524D00515E4A /* AppleCoordinator.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -321,10 +324,10 @@
 				3196110B270206080030901E /* SignUpModel.swift in Sources */,
 				4EC3E48226E7DCCA0049AD99 /* ContentView.swift in Sources */,
 				4EC3E48026E7DCCA0049AD99 /* EnigmaApp.swift in Sources */,
-				8C58B4CF26FEFD6F00F26303 /* AppleCoordinator.swift in Sources */,
 				3126674E2700B91E009834E9 /* AuthViewModel.swift in Sources */,
 				4E7A5CD52700FB5C0058CAB9 /* Logger.swift in Sources */,
 				4E7A5CD92700FBA10058CAB9 /* PodHelper.swift in Sources */,
+				8CEEBAF82702524D00515E4A /* AppleCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,7 +17,16 @@ class AuthViewModel: ObservableObject {
     
     
     func signInWithApple(code: String, token: String) {
-        // code
+        APIClient.request(fromRouter: Router.loginApple(SignUpModel.AppleRequest(code: code, access_token: token))) { (response: SignUpModel.Response?, error) in
+            if let error = error {
+                self.isSignedIn = false
+                print(error.debugDescription)
+                return
+            }
+            print(response ?? "Error parsing response from Backend")
+            UserDefaults.standard.setValue(response?.key ?? "error", forKey: "EnigmaToken")
+            self.isSignedIn = true
+        }
     }
     func signInWithGoogle(with code: String) {
         // code

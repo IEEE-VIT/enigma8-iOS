@@ -11,6 +11,12 @@ import CryptoKit
 
 class AppleCoordinator: NSObject, ASAuthorizationControllerDelegate {
     
+    let authVM: AuthViewModel
+    
+    init(authVM: AuthViewModel){
+        self.authVM = authVM
+    }
+    
     func signInWithApple() {
         let provider = ASAuthorizationAppleIDProvider()
         let request = provider.createRequest()
@@ -30,16 +36,15 @@ class AppleCoordinator: NSObject, ASAuthorizationControllerDelegate {
                 print("Unable to serialize token string from data: \(appleIDToken.debugDescription)")
                 return
             }
-            guard let data = appleIDCredential.authorizationCode else {
+            guard let authCode = appleIDCredential.authorizationCode else {
                 print("Unable to fetch Authorization Code")
                 return
             }
-            guard let code = String(data: data, encoding: .utf8) else {
+            guard let authCodeString = String(data: authCode, encoding: .utf8) else {
                 print("Unable to Serialize Authorization Code")
                 return
             }
-            
-            //TODO: Send Code to backend and receive Authorized Token in AuthVM
+            self.authVM.signInWithApple(code: authCodeString, token: idTokenString)
         default:
             break
         }
