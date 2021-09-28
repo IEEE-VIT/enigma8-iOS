@@ -29,7 +29,7 @@ enum Router: URLRequestConvertible {
         case .loginGoogle:
             return "auth/app/google/"
         case .loginApple:
-            return "users/auth/apple/"
+            return "auth/app/apple/"
         }
     }
     
