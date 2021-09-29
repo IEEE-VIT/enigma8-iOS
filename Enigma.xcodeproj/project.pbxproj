@@ -32,6 +32,8 @@
 		8CD8CAE926FADF1200267EAC /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CAE826FADF1200267EAC /* GoogleSignIn */; };
 		8CD8CAEE26FAECB700267EAC /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CAED26FAECB700267EAC /* FirebaseMessaging */; };
 		8CEEBAF82702524D00515E4A /* AppleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEEBAF72702524D00515E4A /* AppleCoordinator.swift */; };
+		A01836D227042C3100A4F896 /* GoogleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01836D127042C3100A4F896 /* GoogleCoordinator.swift */; };
+		A01836D427042CCA00A4F896 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01836D327042CCA00A4F896 /* AppConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,8 @@
 		4EC3E47F26E7DCCA0049AD99 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		8C58B4CE26FEFD6F00F26303 /* AppleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleCoordinator.swift; sourceTree = "<group>"; };
 		8CEEBAF72702524D00515E4A /* AppleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleCoordinator.swift; sourceTree = "<group>"; };
+		A01836D127042C3100A4F896 /* GoogleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCoordinator.swift; sourceTree = "<group>"; };
+		A01836D327042CCA00A4F896 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				3196110A270206080030901E /* SignUpModel.swift */,
+				A01836D327042CCA00A4F896 /* AppConstants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				8CEEBAF72702524D00515E4A /* AppleCoordinator.swift */,
+				A01836D127042C3100A4F896 /* GoogleCoordinator.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -327,7 +333,9 @@
 				3126674E2700B91E009834E9 /* AuthViewModel.swift in Sources */,
 				4E7A5CD52700FB5C0058CAB9 /* Logger.swift in Sources */,
 				4E7A5CD92700FBA10058CAB9 /* PodHelper.swift in Sources */,
+				A01836D427042CCA00A4F896 /* AppConstants.swift in Sources */,
 				8CEEBAF82702524D00515E4A /* AppleCoordinator.swift in Sources */,
+				A01836D227042C3100A4F896 /* GoogleCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,6 +29,17 @@ class AuthViewModel: ObservableObject {
         }
     }
     func signInWithGoogle(with code: String) {
+        APIClient.request(fromRouter: Router.loginGoogle(SignUpModel.Request(code: code, type: .google))){
+            (response: SignUpModel.Response?, error) in
+                if let error = error {
+                    self.isSignedIn = false
+                    print(error.debugDescription)
+                    return
+                }
+            print(response ?? "Error parsing response from Backend")
+            UserDefaults.standard.setValue(response?.key ?? "error", forKey: "EnigmaToken")
+            self.isSignedIn = true
+        }
         // code
     }
     func forgotPassword() {
