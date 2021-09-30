@@ -29,19 +29,19 @@ class AppleCoordinator: NSObject, ASAuthorizationControllerDelegate {
         switch authorization.credential {
         case let appleIDCredential as ASAuthorizationAppleIDCredential:
             guard let appleIDToken = appleIDCredential.identityToken else {
-                print("Unable to fetch Identity Token")
+                Logger.error("Unable to fetch Identity Token")
                 return
             }
             guard let idTokenString = String(data: appleIDToken, encoding: .utf8) else {
-                print("Unable to serialize token string from data: \(appleIDToken.debugDescription)")
+                Logger.error("Unable to serialize token string from data: \(appleIDToken.debugDescription)")
                 return
             }
             guard let authCode = appleIDCredential.authorizationCode else {
-                print("Unable to fetch Authorization Code")
+                Logger.error("Unable to fetch Authorization Code")
                 return
             }
             guard let authCodeString = String(data: authCode, encoding: .utf8) else {
-                print("Unable to Serialize Authorization Code")
+                Logger.error("Unable to Serialize Authorization Code")
                 return
             }
             self.authVM.signInWithApple(code: authCodeString, token: idTokenString)
@@ -51,7 +51,7 @@ class AppleCoordinator: NSObject, ASAuthorizationControllerDelegate {
     }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        print(error.localizedDescription)
+        Logger.error(error.localizedDescription)
     }
     
 }

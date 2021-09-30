@@ -25,7 +25,7 @@ class APIClient {
                 callback(obj,nil)
             case .failure(let error):
                 print("FAILURE2")
-                print(error)
+                Logger.error(error)
             }
             
             print(response.request?.url?.absoluteString ?? "")
