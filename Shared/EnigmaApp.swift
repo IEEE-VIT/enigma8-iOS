@@ -16,7 +16,7 @@ struct EnigmaApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TimeView()
         }
     }
 }

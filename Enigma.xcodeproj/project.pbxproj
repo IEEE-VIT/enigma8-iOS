@@ -27,6 +27,10 @@
 		4EC3E48326E7DCCA0049AD99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC3E46E26E7DCC90049AD99 /* ContentView.swift */; };
 		4EC3E48426E7DCCA0049AD99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EC3E46F26E7DCCA0049AD99 /* Assets.xcassets */; };
 		4EC3E48526E7DCCA0049AD99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EC3E46F26E7DCCA0049AD99 /* Assets.xcassets */; };
+		8C119CE8270C8A4B0086A0E5 /* TimerBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C119CE7270C8A4B0086A0E5 /* TimerBlock.swift */; };
+		8C119CEE270C8AB00086A0E5 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C119CED270C8AB00086A0E5 /* TimeView.swift */; };
+		8CC128B4270301C1000483AB /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC128B3270301C1000483AB /* TimerModel.swift */; };
+		8CC128B82705D619000483AB /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC128B72705D618000483AB /* TimerViewModel.swift */; };
 		8CD8CADF26FADE7A00267EAC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CADE26FADE7A00267EAC /* Kingfisher */; };
 		8CD8CAE426FADED300267EAC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CAE326FADED300267EAC /* Alamofire */; };
 		8CD8CAE926FADF1200267EAC /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CAE826FADF1200267EAC /* GoogleSignIn */; };
@@ -51,7 +55,11 @@
 		4EC3E47C26E7DCCA0049AD99 /* Enigma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Enigma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EC3E47E26E7DCCA0049AD99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EC3E47F26E7DCCA0049AD99 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		8C119CE7270C8A4B0086A0E5 /* TimerBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerBlock.swift; sourceTree = "<group>"; };
+		8C119CED270C8AB00086A0E5 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
 		8C58B4CE26FEFD6F00F26303 /* AppleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleCoordinator.swift; sourceTree = "<group>"; };
+		8CC128B3270301C1000483AB /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
+		8CC128B72705D618000483AB /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		8CEEBAF72702524D00515E4A /* AppleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				3126674D2700B91E009834E9 /* AuthViewModel.swift */,
+				8CC128B72705D618000483AB /* TimerViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -90,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				3196110A270206080030901E /* SignUpModel.swift */,
+				8CC128B3270301C1000483AB /* TimerModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -151,6 +161,8 @@
 		4EC3E46C26E7DCC90049AD99 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				8C119CE9270C8A5C0086A0E5 /* App */,
+				8C119CE5270C8A090086A0E5 /* View */,
 				3196110E270207700030901E /* Utilities */,
 				31961109270205E30030901E /* Model */,
 				31D994602701EBB000E506D9 /* API */,
@@ -188,6 +200,38 @@
 				4EC3E47F26E7DCCA0049AD99 /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		8C119CE5270C8A090086A0E5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8C119CE6270C8A170086A0E5 /* Timer */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8C119CE6270C8A170086A0E5 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				8C119CE7270C8A4B0086A0E5 /* TimerBlock.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		8C119CE9270C8A5C0086A0E5 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8C119CEA270C8A630086A0E5 /* Login */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		8C119CEA270C8A630086A0E5 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8C119CED270C8AB00086A0E5 /* TimeView.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		8CEEBAF3270250B700515E4A /* Recovered References */ = {
@@ -319,13 +363,17 @@
 			files = (
 				31D994652701EBB000E506D9 /* Router.swift in Sources */,
 				4E7A5CDC2700FBBF0058CAB9 /* KFManager.swift in Sources */,
+				8C119CEE270C8AB00086A0E5 /* TimeView.swift in Sources */,
 				31D994632701EBB000E506D9 /* APIClient.swift in Sources */,
+				8CC128B82705D619000483AB /* TimerViewModel.swift in Sources */,
 				319611112702078E0030901E /* Data.swift in Sources */,
+				8C119CE8270C8A4B0086A0E5 /* TimerBlock.swift in Sources */,
 				3196110B270206080030901E /* SignUpModel.swift in Sources */,
 				4EC3E48226E7DCCA0049AD99 /* ContentView.swift in Sources */,
 				4EC3E48026E7DCCA0049AD99 /* EnigmaApp.swift in Sources */,
 				3126674E2700B91E009834E9 /* AuthViewModel.swift in Sources */,
 				4E7A5CD52700FB5C0058CAB9 /* Logger.swift in Sources */,
+				8CC128B4270301C1000483AB /* TimerModel.swift in Sources */,
 				4E7A5CD92700FBA10058CAB9 /* PodHelper.swift in Sources */,
 				8CEEBAF82702524D00515E4A /* AppleCoordinator.swift in Sources */,
 			);
