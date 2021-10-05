@@ -30,6 +30,8 @@
 		4EC3E48526E7DCCA0049AD99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EC3E46F26E7DCCA0049AD99 /* Assets.xcassets */; };
 		8C119CE8270C8A4B0086A0E5 /* TimerBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C119CE7270C8A4B0086A0E5 /* TimerBlock.swift */; };
 		8C119CEE270C8AB00086A0E5 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C119CED270C8AB00086A0E5 /* TimeView.swift */; };
+		8C119CF0270CC5AF0086A0E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C119CEF270CC5AF0086A0E5 /* GoogleService-Info.plist */; };
+		8C119CF1270CC5AF0086A0E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C119CEF270CC5AF0086A0E5 /* GoogleService-Info.plist */; };
 		8CC128B4270301C1000483AB /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC128B3270301C1000483AB /* TimerModel.swift */; };
 		8CC128B82705D619000483AB /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC128B72705D618000483AB /* TimerViewModel.swift */; };
 		8CD8CADF26FADE7A00267EAC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CADE26FADE7A00267EAC /* Kingfisher */; };
@@ -61,6 +63,7 @@
 		4EC3E47F26E7DCCA0049AD99 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		8C119CE7270C8A4B0086A0E5 /* TimerBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerBlock.swift; sourceTree = "<group>"; };
 		8C119CED270C8AB00086A0E5 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
+		8C119CEF270CC5AF0086A0E5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8C58B4CE26FEFD6F00F26303 /* AppleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleCoordinator.swift; sourceTree = "<group>"; };
 		8CC128B3270301C1000483AB /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		8CC128B72705D618000483AB /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
@@ -166,6 +169,7 @@
 		4EC3E46726E7DCC80049AD99 = {
 			isa = PBXGroup;
 			children = (
+				8C119CEF270CC5AF0086A0E5 /* GoogleService-Info.plist */,
 				4EC3E46C26E7DCC90049AD99 /* Shared */,
 				4EC3E47626E7DCCA0049AD99 /* iOS */,
 				4EC3E47D26E7DCCA0049AD99 /* macOS */,
@@ -360,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EC3E48426E7DCCA0049AD99 /* Assets.xcassets in Resources */,
+				8C119CF0270CC5AF0086A0E5 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EC3E48526E7DCCA0049AD99 /* Assets.xcassets in Resources */,
+				8C119CF1270CC5AF0086A0E5 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

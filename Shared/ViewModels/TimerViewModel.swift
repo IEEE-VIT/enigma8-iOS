@@ -62,7 +62,6 @@ struct TimeLeft {
             date %= 3600
             self.minutes = date/60
             self.seconds = date%60
-            //print(self.days, self.hours, self.minutes, self.seconds)
         }
     }
     

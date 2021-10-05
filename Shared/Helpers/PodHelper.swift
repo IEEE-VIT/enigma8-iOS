@@ -11,7 +11,7 @@ import Kingfisher
 class PodHelper {
     
     class func configurePods() {
-        //FirebaseApp.configure()
+        FirebaseApp.configure()
         Logger.configure()
         KFManager.configure()
     }
