@@ -11,6 +11,7 @@
 		312667512700BC3F009834E9 /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 312667502700BC3F009834E9 /* SwiftyBeaver */; };
 		3196110B270206080030901E /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3196110A270206080030901E /* SignUpModel.swift */; };
 		319611112702078E0030901E /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319611102702078E0030901E /* Data.swift */; };
+		31AB32DB27024A0A00C43EAA /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AB32DA27024A0A00C43EAA /* APIResponse.swift */; };
 		31D994632701EBB000E506D9 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D994612701EBB000E506D9 /* APIClient.swift */; };
 		31D994642701EBB000E506D9 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D994612701EBB000E506D9 /* APIClient.swift */; };
 		31D994652701EBB000E506D9 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D994622701EBB000E506D9 /* Router.swift */; };
@@ -36,12 +37,15 @@
 		8CD8CAE926FADF1200267EAC /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CAE826FADF1200267EAC /* GoogleSignIn */; };
 		8CD8CAEE26FAECB700267EAC /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CAED26FAECB700267EAC /* FirebaseMessaging */; };
 		8CEEBAF82702524D00515E4A /* AppleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEEBAF72702524D00515E4A /* AppleCoordinator.swift */; };
+		A01836D227042C3100A4F896 /* GoogleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01836D127042C3100A4F896 /* GoogleCoordinator.swift */; };
+		A01836D427042CCA00A4F896 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01836D327042CCA00A4F896 /* AppConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3126674D2700B91E009834E9 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		3196110A270206080030901E /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		319611102702078E0030901E /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		31AB32DA27024A0A00C43EAA /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		31D994612701EBB000E506D9 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		31D994622701EBB000E506D9 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		4E7A5CD42700FB5C0058CAB9 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
@@ -61,6 +65,8 @@
 		8CC128B3270301C1000483AB /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		8CC128B72705D618000483AB /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		8CEEBAF72702524D00515E4A /* AppleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleCoordinator.swift; sourceTree = "<group>"; };
+		A01836D127042C3100A4F896 /* GoogleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCoordinator.swift; sourceTree = "<group>"; };
+		A01836D327042CCA00A4F896 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +104,10 @@
 		31961109270205E30030901E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				31AB32D9270249EA00C43EAA /* API */,
 				3196110A270206080030901E /* SignUpModel.swift */,
 				8CC128B3270301C1000483AB /* TimerModel.swift */,
+				A01836D327042CCA00A4F896 /* AppConstants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -118,6 +126,14 @@
 				319611102702078E0030901E /* Data.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		31AB32D9270249EA00C43EAA /* API */ = {
+			isa = PBXGroup;
+			children = (
+				31AB32DA27024A0A00C43EAA /* APIResponse.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		31D994602701EBB000E506D9 /* API */ = {
@@ -246,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				8CEEBAF72702524D00515E4A /* AppleCoordinator.swift */,
+				A01836D127042C3100A4F896 /* GoogleCoordinator.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -369,13 +386,16 @@
 				319611112702078E0030901E /* Data.swift in Sources */,
 				8C119CE8270C8A4B0086A0E5 /* TimerBlock.swift in Sources */,
 				3196110B270206080030901E /* SignUpModel.swift in Sources */,
+				31AB32DB27024A0A00C43EAA /* APIResponse.swift in Sources */,
 				4EC3E48226E7DCCA0049AD99 /* ContentView.swift in Sources */,
 				4EC3E48026E7DCCA0049AD99 /* EnigmaApp.swift in Sources */,
 				3126674E2700B91E009834E9 /* AuthViewModel.swift in Sources */,
 				4E7A5CD52700FB5C0058CAB9 /* Logger.swift in Sources */,
 				8CC128B4270301C1000483AB /* TimerModel.swift in Sources */,
 				4E7A5CD92700FBA10058CAB9 /* PodHelper.swift in Sources */,
+				A01836D427042CCA00A4F896 /* AppConstants.swift in Sources */,
 				8CEEBAF82702524D00515E4A /* AppleCoordinator.swift in Sources */,
+				A01836D227042C3100A4F896 /* GoogleCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

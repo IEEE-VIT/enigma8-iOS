@@ -18,15 +18,17 @@ class APIClient {
     }()
     
     class func request<T: Codable>(fromRouter router: Router, callback: @escaping (_ response: T?, _ error: String?) -> Void) {
-        APIClient.sessionManager.request(router).responseDecodable { (response: DataResponse<T, AFError>) in
-            switch response.result {
-            case .success(let obj):
-                print("SUCCESS: \(obj)")
-                callback(obj,nil)
-            case .failure(let error):
-                print("FAILURE2")
-                print(error)
-            }
+            APIClient.sessionManager.request(router).responseDecodable { (response: DataResponse<T, AFError>) in
+                switch response.result {
+                case .success(let obj):
+                    print("SUCCESS: \(obj)")
+                    callback(obj,nil)
+                    
+                case .failure(let error):
+                    print("FAILURE")
+                    print(error)
+                    callback(nil,"\(error)")
+                }
             
             print(response.request?.url?.absoluteString ?? "")
             print(response.request?.headers ?? "")
