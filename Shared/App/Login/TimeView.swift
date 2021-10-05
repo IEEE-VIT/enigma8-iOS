@@ -9,18 +9,14 @@ import SwiftUI
 
 struct TimeView: View {
     @StateObject var timeVM: TimerViewModel = TimerViewModel()
-    let timer = Timer.publish(every: 1, on: .main, in: .common)
-    
-    init() {
-        timeVM.getLeftTime()
-    }
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         HStack {
-            TimerBlockView(value: timeVM.timeLeft.days ?? 10)
-            TimerBlockView(value: timeVM.timeLeft.hours ?? 10)
-            TimerBlockView(value: timeVM.timeLeft.minutes ?? 10)
-            TimerBlockView(value: timeVM.timeLeft.seconds ?? 10)
+            TimerBlockView(value: timeVM.timeLeft.days ?? 0)
+            TimerBlockView(value: timeVM.timeLeft.hours ?? 0)
+            TimerBlockView(value: timeVM.timeLeft.minutes ?? 0)
+            TimerBlockView(value: timeVM.timeLeft.seconds ?? 0)
         }
         .onReceive(timer) { _ in
             timeVM.performCountdown()

@@ -12,14 +12,18 @@ class TimerViewModel: ObservableObject {
     
     @Published var timeLeft: TimeLeft = TimeLeft()
     
+    init() {
+        getLeftTime()
+    }
+    
     func getLeftTime() {
-        APIClient.request(fromRouter: Router.timer) { (response: TimerResponse?, error) in
+        APIClient.request(fromRouter: Router.timer) { (response: ApiResponse<TimerResponse>?, error) in
             if let error = error {
                 print(error.debugDescription)
                 return
             }
-            print(response ?? "Unable to parse response from Data")
-            self.timeLeft = TimeLeft(response: response!)
+            print(response?.data! ?? "Unable to parse Timer Response from Data")
+            self.timeLeft = TimeLeft(response: response?.data! ?? TimerResponse())
         }
     }
     
@@ -44,10 +48,10 @@ class TimerViewModel: ObservableObject {
 }
 
 struct TimeLeft {
-    @State var days: Int?
-    @State var hours: Int?
-    @State var minutes: Int?
-    @State var seconds: Int?
+    var days: Int?
+    var hours: Int?
+    var minutes: Int?
+    var seconds: Int?
     
     init(response: TimerResponse) {
         if(!(response.enigmaStarted ?? true)) {
@@ -58,6 +62,7 @@ struct TimeLeft {
             date %= 3600
             self.minutes = date/60
             self.seconds = date%60
+            //print(self.days, self.hours, self.minutes, self.seconds)
         }
     }
     
