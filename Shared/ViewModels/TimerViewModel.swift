@@ -19,57 +19,35 @@ class TimerViewModel: ObservableObject {
     func getLeftTime() {
         APIClient.request(fromRouter: Router.timer) { (response: ApiResponse<TimerResponse>?, error) in
             if let error = error {
-                print(error.debugDescription)
+                Logger.error(error.debugDescription)
                 return
             }
-            print(response?.data! ?? "Unable to parse Timer Response from Data")
             self.timeLeft = TimeLeft(response: response?.data! ?? TimerResponse())
         }
     }
     
     func performCountdown() {
-        if(timeLeft.seconds != 0){
-            timeLeft.seconds! -= 1
-        } else if(timeLeft.minutes != 0) {
-            timeLeft.minutes! -= 1
-            timeLeft.seconds = 59
-        } else if(timeLeft.hours != 0) {
-            timeLeft.hours! -= 1
-            timeLeft.minutes = 59
-            timeLeft.seconds = 59
-        } else if(timeLeft.days != 0) {
-            timeLeft.days! -= 1
-            timeLeft.hours = 23
-            timeLeft.minutes = 59
-            timeLeft.seconds = 59
+        if(timeLeft.fetched) {
+            timeLeft.enigmaDate = Calendar.current.date(byAdding: .second, value: -1, to: timeLeft.enigmaDate) ?? Date()
+            timeLeft.enigmaDateComponents = Calendar.current.dateComponents([.day, .hour, .minute, .second], from: timeLeft.recordedDate, to: timeLeft.enigmaDate)
         }
     }
     
 }
 
 struct TimeLeft {
-    var days: Int?
-    var hours: Int?
-    var minutes: Int?
-    var seconds: Int?
+    var recordedDate: Date = Date()
+    var enigmaDate: Date = Date()
+    var enigmaDateComponents: DateComponents = Calendar.current.dateComponents([.day, .hour, .minute, .second], from: Date(), to: Date())
+    var fetched: Bool = false
     
-    init(response: TimerResponse) {
-        if(!(response.enigmaStarted ?? true)) {
-            var date = response.date ?? 100000
-            self.days = date/86400
-            date %= 86400
-            self.hours = date/3600
-            date %= 3600
-            self.minutes = date/60
-            self.seconds = date%60
+    init(response: TimerResponse? = nil) {
+        if(response != nil && !(response!.enigmaStarted ?? true)) {
+            let secondsLeft = response!.date ?? 100000
+            self.enigmaDate = Calendar.current.date(byAdding: .second, value: secondsLeft, to: Date()) ?? Date()
+            self.recordedDate = Date()
+            self.enigmaDateComponents = Calendar.current.dateComponents([.day, .hour, .minute, .second], from: self.recordedDate, to: self.enigmaDate)
+            self.fetched = true
         }
     }
-    
-    init() {
-        self.days = 0
-        self.hours = 0
-        self.minutes = 0
-        self.seconds = 0
-    }
-    
 }

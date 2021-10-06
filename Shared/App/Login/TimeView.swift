@@ -13,10 +13,14 @@ struct TimeView: View {
     
     var body: some View {
         HStack {
-            TimerBlockView(value: timeVM.timeLeft.days ?? 0)
-            TimerBlockView(value: timeVM.timeLeft.hours ?? 0)
-            TimerBlockView(value: timeVM.timeLeft.minutes ?? 0)
-            TimerBlockView(value: timeVM.timeLeft.seconds ?? 0)
+            if(timeVM.timeLeft.fetched == false) {
+                ProgressView()
+            } else {
+                TimerBlockView(value: timeVM.timeLeft.enigmaDateComponents.day ?? 0)
+                TimerBlockView(value: timeVM.timeLeft.enigmaDateComponents.hour ?? 0)
+                TimerBlockView(value: timeVM.timeLeft.enigmaDateComponents.minute ?? 0)
+                TimerBlockView(value: timeVM.timeLeft.enigmaDateComponents.second ?? 0)
+            }
         }
         .onReceive(timer) { _ in
             timeVM.performCountdown()
