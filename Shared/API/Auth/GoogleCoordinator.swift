@@ -22,7 +22,7 @@ class GoogleCoordinator: NSObject {
     func googleSignin() {
         let vc = (UIApplication.shared.windows.last?.rootViewController)!
         GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: vc) { user, error in
-            guard let error = error else {
+            guard error == nil else {
                 print(error?.localizedDescription ?? "")
                 return
                 

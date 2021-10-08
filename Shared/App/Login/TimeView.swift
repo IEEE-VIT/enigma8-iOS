@@ -13,17 +13,23 @@ struct TimeView: View {
     
     var body: some View {
         HStack {
-            if(timeVM.timeLeft.fetched == false) {
-                ProgressView()
-            } else {
-                TimerBlockView(value: timeVM.timeLeft.enigmaDateComponents.day ?? 0)
-                TimerBlockView(value: timeVM.timeLeft.enigmaDateComponents.hour ?? 0)
-                TimerBlockView(value: timeVM.timeLeft.enigmaDateComponents.minute ?? 0)
-                TimerBlockView(value: timeVM.timeLeft.enigmaDateComponents.second ?? 0)
+            TimerBlockView(value: timeVM.timeLeft.enigmaDateComponents.day ?? 0)
+            TimerBlockView(value: timeVM.timeLeft.enigmaDateComponents.hour ?? 0)
+            TimerBlockView(value: timeVM.timeLeft.enigmaDateComponents.minute ?? 0)
+            TimerBlockView(value: timeVM.timeLeft.enigmaDateComponents.second ?? 0)
+            if((timeVM.timeLeft.fetched && timeVM.timeLeft.enigmaDateComponents.value(for: .second)==0) || timeVM.timeLeft.hasStarted) {
+                Button("Continue") {
+                    timeVM.getLeftTime()
+                    if(timeVM.timeLeft.hasStarted) {
+                        //TODO: NAVIGATION TO PLAY VIEW
+                    }
+                }
             }
         }
         .onReceive(timer) { _ in
-            timeVM.performCountdown()
+            if(!timeVM.timeLeft.hasStarted && timeVM.timeLeft.fetched) {
+                timeVM.performCountdown()
+            }
         }
     }
 }

@@ -18,11 +18,11 @@ class APIClient {
     }()
     
     class func request<T: Codable>(fromRouter router: Router, callback: @escaping (_ response: T?, _ error: String?) -> Void) {
-            APIClient.sessionManager.request(router).responseDecodable { (response: DataResponse<T, AFError>) in
+            APIClient.sessionManager.request(router).responseDecodable { (response: DataResponse<ApiResponse<T>?, AFError>) in
                 switch response.result {
                 case .success(let obj):
                     print("SUCCESS: \(obj)")
-                    callback(obj,nil)
+                    callback(obj?.data,nil)
                     
                 case .failure(let error):
                     print("FAILURE")
@@ -33,7 +33,9 @@ class APIClient {
             print(response.request?.url?.absoluteString ?? "")
             print(response.request?.headers ?? "")
             print(try? response.request?.httpBody?.toJSON())
-        }
+            }.responseJSON { jsonResponse in
+                Logger.debug(jsonResponse)
+            }
     }
     
 }
