@@ -15,6 +15,9 @@ final class SignUpModel {
         init(code: String,type : SignupType){
             self.code = code
         }
+        private enum CodingKeys: String, CodingKey {
+            case code = "id_token"
+        }
     }
     
     struct AppleRequest : Encodable {
@@ -28,8 +31,12 @@ final class SignUpModel {
     }
     
     struct Response : Codable {
-        var key : String?
-        var username_exists : Bool?
+        var jwt: String?
+        var isNew: Bool?
+        
+        private enum CodingKeys: String, CodingKey {
+            case jwt = "JWT"
+        }
     }
 }
 

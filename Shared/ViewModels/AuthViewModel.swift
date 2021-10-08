@@ -24,7 +24,7 @@ class AuthViewModel: ObservableObject {
                 return
             }
             print(response ?? "Error parsing response from Backend")
-            UserDefaults.standard.setValue(response?.key ?? "error", forKey: "EnigmaToken")
+            UserDefaults.standard.setValue(response?.jwt ?? "error", forKey: "EnigmaToken")
             self.isSignedIn = true
         }
     }
@@ -37,7 +37,7 @@ class AuthViewModel: ObservableObject {
                     return
                 }
             print(response ?? "Error parsing response from Backend")
-            UserDefaults.standard.setValue(response?.key ?? "error", forKey: "EnigmaToken")
+            UserDefaults.standard.setValue(response?.jwt , forKey: "EnigmaToken")
             self.isSignedIn = true
         }
         // code

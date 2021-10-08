@@ -39,7 +39,12 @@ enum Router: URLRequestConvertible {
     }
     
     var authString: String? {
-        return "\(UserDefaults.standard.value(forKey: "EnigmaToken") ?? "")"
+        switch self {
+        case .loginApple, .loginGoogle:
+            return nil
+        default:
+            return "\(UserDefaults.standard.value(forKey: "EnigmaToken") ?? "")"
+        }
     }
         
     // For codable requests
