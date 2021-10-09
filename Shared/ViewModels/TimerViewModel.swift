@@ -17,12 +17,13 @@ class TimerViewModel: ObservableObject {
     }
     
     func getLeftTime() {
-        APIClient.request(fromRouter: Router.timer) { (response: ApiResponse<TimerResponse>?, error) in
+        Logger.info("Requesting Time")
+        APIClient.request(fromRouter: Router.timer) { (response: TimerResponse?, error) in
             if let error = error {
                 Logger.error(error.debugDescription)
                 return
             }
-            self.timeLeft = TimeLeft(response: response?.data! ?? TimerResponse())
+            self.timeLeft = TimeLeft(response: response)
         }
     }
     
@@ -30,6 +31,9 @@ class TimerViewModel: ObservableObject {
         if(timeLeft.fetched && !timeLeft.hasStarted) {
             timeLeft.enigmaDate = Calendar.current.date(byAdding: .second, value: -1, to: timeLeft.enigmaDate) ?? Date()
             timeLeft.enigmaDateComponents = Calendar.current.dateComponents([.day, .hour, .minute, .second], from: timeLeft.recordedDate, to: timeLeft.enigmaDate)
+            if(Calendar.current.dateComponents([.second], from: timeLeft.recordedDate, to: timeLeft.enigmaDate).second == 0) {
+                timeLeft.hasStarted = true
+            }
         }
     }
     
@@ -43,14 +47,15 @@ struct TimeLeft {
     var hasStarted: Bool = false
     
     init(response: TimerResponse? = nil) {
-        if(response != nil && !(response!.enigmaStarted ?? false)) {
-            let secondsLeft = response!.date ?? 100000
-            self.enigmaDate = Calendar.current.date(byAdding: .second, value: secondsLeft, to: Date()) ?? Date()
-            self.recordedDate = Date()
-            self.enigmaDateComponents = Calendar.current.dateComponents([.day, .hour, .minute, .second], from: self.recordedDate, to: self.enigmaDate)
-            self.fetched = true
-        } else if(response!.enigmaStarted ?? true) {
-            self.hasStarted = true
+        if(response != nil) {
+            if(!(response!.enigmaStarted ?? false)) {
+                let secondsLeft = response!.date ?? 0
+                self.enigmaDate = Calendar.current.date(byAdding: .second, value: secondsLeft, to: Date()) ?? Date()
+                self.recordedDate = Date()
+                self.enigmaDateComponents = Calendar.current.dateComponents([.day, .hour, .minute, .second], from: self.recordedDate, to: self.enigmaDate)
+                self.fetched = true
+            }
+            self.hasStarted = response!.enigmaStarted ?? false
             self.fetched = true
         }
     }

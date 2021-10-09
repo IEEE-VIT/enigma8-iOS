@@ -33,8 +33,6 @@ class APIClient {
             print(response.request?.url?.absoluteString ?? "")
             print(response.request?.headers ?? "")
             print(try? response.request?.httpBody?.toJSON())
-            }.responseJSON { jsonResponse in
-                Logger.debug(jsonResponse)
             }
     }
     
