@@ -30,6 +30,10 @@
 		4EC3E48326E7DCCA0049AD99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC3E46E26E7DCC90049AD99 /* ContentView.swift */; };
 		4EC3E48426E7DCCA0049AD99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EC3E46F26E7DCCA0049AD99 /* Assets.xcassets */; };
 		4EC3E48526E7DCCA0049AD99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EC3E46F26E7DCCA0049AD99 /* Assets.xcassets */; };
+		8CAC2B6D27103AF5008049D3 /* TimerBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAC2B6C27103AF5008049D3 /* TimerBlock.swift */; };
+		8CAC2B7027103B39008049D3 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAC2B6F27103B39008049D3 /* TimeView.swift */; };
+		8CC128B4270301C1000483AB /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC128B3270301C1000483AB /* TimerModel.swift */; };
+		8CC128B82705D619000483AB /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC128B72705D618000483AB /* TimerViewModel.swift */; };
 		8CD8CADF26FADE7A00267EAC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CADE26FADE7A00267EAC /* Kingfisher */; };
 		8CD8CAE426FADED300267EAC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CAE326FADED300267EAC /* Alamofire */; };
 		8CD8CAE926FADF1200267EAC /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CAE826FADF1200267EAC /* GoogleSignIn */; };
@@ -59,7 +63,10 @@
 		4EC3E47C26E7DCCA0049AD99 /* Enigma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Enigma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EC3E47E26E7DCCA0049AD99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EC3E47F26E7DCCA0049AD99 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
-		8C58B4CE26FEFD6F00F26303 /* AppleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleCoordinator.swift; sourceTree = "<group>"; };
+		8CAC2B6C27103AF5008049D3 /* TimerBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerBlock.swift; sourceTree = "<group>"; };
+		8CAC2B6F27103B39008049D3 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
+		8CC128B3270301C1000483AB /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
+		8CC128B72705D618000483AB /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		8CEEBAF72702524D00515E4A /* AppleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleCoordinator.swift; sourceTree = "<group>"; };
 		A01836D127042C3100A4F896 /* GoogleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCoordinator.swift; sourceTree = "<group>"; };
 		A01836D327042CCA00A4F896 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
@@ -92,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				3126674D2700B91E009834E9 /* AuthViewModel.swift */,
+				8CC128B72705D618000483AB /* TimerViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -99,6 +107,7 @@
 		314D79B7270C683B003C2F8A /* App */ = {
 			isa = PBXGroup;
 			children = (
+				8CAC2B6E27103B09008049D3 /* Login */,
 				314D79B8270C685A003C2F8A /* LoginView.swift */,
 			);
 			path = App;
@@ -107,6 +116,7 @@
 		314D79BA270C6BBC003C2F8A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8CAC2B6B27103ACE008049D3 /* Timer */,
 				314D79BB270C6BC2003C2F8A /* Common */,
 			);
 			path = Views;
@@ -125,6 +135,7 @@
 			children = (
 				31AB32D9270249EA00C43EAA /* API */,
 				3196110A270206080030901E /* SignUpModel.swift */,
+				8CC128B3270301C1000483AB /* TimerModel.swift */,
 				A01836D327042CCA00A4F896 /* AppConstants.swift */,
 			);
 			path = Model;
@@ -188,7 +199,6 @@
 				4EC3E47626E7DCCA0049AD99 /* iOS */,
 				4EC3E47D26E7DCCA0049AD99 /* macOS */,
 				4EC3E47526E7DCCA0049AD99 /* Products */,
-				8CEEBAF3270250B700515E4A /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -236,12 +246,20 @@
 			path = macOS;
 			sourceTree = "<group>";
 		};
-		8CEEBAF3270250B700515E4A /* Recovered References */ = {
+		8CAC2B6B27103ACE008049D3 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
-				8C58B4CE26FEFD6F00F26303 /* AppleCoordinator.swift */,
+				8CAC2B6C27103AF5008049D3 /* TimerBlock.swift */,
 			);
-			name = "Recovered References";
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		8CAC2B6E27103B09008049D3 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8CAC2B6F27103B39008049D3 /* TimeView.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		8CEEBAF62702523500515E4A /* Auth */ = {
@@ -367,14 +385,18 @@
 				31D994652701EBB000E506D9 /* Router.swift in Sources */,
 				4E7A5CDC2700FBBF0058CAB9 /* KFManager.swift in Sources */,
 				31D994632701EBB000E506D9 /* APIClient.swift in Sources */,
+				8CC128B82705D619000483AB /* TimerViewModel.swift in Sources */,
 				319611112702078E0030901E /* Data.swift in Sources */,
 				3196110B270206080030901E /* SignUpModel.swift in Sources */,
 				31AB32DB27024A0A00C43EAA /* APIResponse.swift in Sources */,
 				4EC3E48226E7DCCA0049AD99 /* ContentView.swift in Sources */,
 				4EC3E48026E7DCCA0049AD99 /* EnigmaApp.swift in Sources */,
 				3126674E2700B91E009834E9 /* AuthViewModel.swift in Sources */,
+				8CAC2B6D27103AF5008049D3 /* TimerBlock.swift in Sources */,
 				314D79B9270C685A003C2F8A /* LoginView.swift in Sources */,
 				4E7A5CD52700FB5C0058CAB9 /* Logger.swift in Sources */,
+				8CAC2B7027103B39008049D3 /* TimeView.swift in Sources */,
+				8CC128B4270301C1000483AB /* TimerModel.swift in Sources */,
 				4E7A5CD92700FBA10058CAB9 /* PodHelper.swift in Sources */,
 				A01836D427042CCA00A4F896 /* AppConstants.swift in Sources */,
 				8CEEBAF82702524D00515E4A /* AppleCoordinator.swift in Sources */,
