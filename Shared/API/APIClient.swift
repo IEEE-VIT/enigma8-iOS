@@ -10,30 +10,28 @@ import Alamofire
 
 class APIClient {
     
-    static let sessionManager: Session = {
-        let config = URLSessionConfiguration.default
-        config.timeoutIntervalForRequest = 20
-        let session = Session(configuration: config)
-        return session
-    }()
-    
     class func request<T: Codable>(fromRouter router: Router, callback: @escaping (_ response: T?, _ error: String?) -> Void) {
-            APIClient.sessionManager.request(router).responseDecodable { (response: DataResponse<ApiResponse<T>?, AFError>) in
+        AF.request(router)
+            .responseDecodable { (response: DataResponse<ApiResponse<T>?, AFError>) in
                 switch response.result {
-                case .success(let obj):
-                    print("SUCCESS: \(obj)")
-                    callback(obj?.data,nil)
-                    
+                case .success(let object):
+                    let success: Bool = object?.success ?? false
+                    let data : T? = success ? object?.data : nil
+                    let error: String? = success ? nil : object?.message ?? "Something went wrong"
+                    callback(data,error)
                 case .failure(let error):
-                    print("FAILURE")
-                    print(error)
-                    callback(nil,"\(error)")
+                    Logger.error(error.errorDescription)
+                    callback(nil,error.errorDescription ?? "Something went wrong")
                 }
-            
-            print(response.request?.url?.absoluteString ?? "")
-            print(response.request?.headers ?? "")
-            print(try? response.request?.httpBody?.toJSON())
+                
+                Logger.info(response.request?.url?.absoluteString ?? "")
+                Logger.info(try? response.request?.httpBody?.toJSON())
             }
+            .responseJSON(completionHandler: APIClient.handleJSON(json:))
     }
     
+    
+    private class func handleJSON(json: AFDataResponse<Any>){
+        Logger.info(try? json.data?.toJSON())
+    }
 }

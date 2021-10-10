@@ -14,25 +14,32 @@ struct TimeView: View {
     var body: some View {
         VStack {
             HStack {
-                TimerBlockView(value: timeVM.timeLeft.enigmaDateComponents.day ?? 0)
-                TimerBlockView(value: timeVM.timeLeft.enigmaDateComponents.hour ?? 0)
-                TimerBlockView(value: timeVM.timeLeft.enigmaDateComponents.minute ?? 0)
-                TimerBlockView(value: timeVM.timeLeft.enigmaDateComponents.second ?? 0)
+                TimerBlockView(value: timeVM.enigmaDateComponents.day ?? 0)
+                TimerBlockView(value: timeVM.enigmaDateComponents.hour ?? 0)
+                TimerBlockView(value: timeVM.enigmaDateComponents.minute ?? 0)
+                TimerBlockView(value: timeVM.enigmaDateComponents.second ?? 0)
             }
-            if(timeVM.timeLeft.fetched && timeVM.timeLeft.hasStarted) {
-                CustomButton(buttonText: "Continue") {
-                    timeVM.getLeftTime(); //Confirm Enigma Started
-                    if(timeVM.timeLeft.hasStarted) {
-                        Logger.info("CONFIRMED: Enigma Started")
-                        //TODO: NAVIGATION TO PLAY VIEW
-                    }
-                }
+            if(timeVM.started) {
+                CustomButton(buttonText: "Continue",action: continuePressed)
             }
         }
-        .onReceive(timer) { _ in
-            if(!timeVM.timeLeft.hasStarted && timeVM.timeLeft.fetched) {
-                timeVM.performCountdown()
-            }
+        .onReceive(timer, perform: performCountdown)
+    }
+    
+    func performCountdown(_ output: Timer.TimerPublisher.Output) {
+        guard timeVM.performCountdown() else {
+            self.timer.upstream.connect().cancel()
+            timeVM.getLeftTime()
+            return
+        }
+    }
+    
+    func continuePressed() {
+        timeVM.getLeftTime()
+        if(timeVM.started) {
+            //TODO: NAVIGATION TO PLAY VIEW
+        } else {
+            // TODO: SHOW ALERT "ENIGMA STARTS AT XX:XX:XX IST"
         }
     }
 }
