@@ -17,6 +17,13 @@ struct Story:Codable {
         return URL(string: icon ?? "")
     }
     
+    private enum CodingKeys: String, CodingKey {
+        case sender = "sender"
+        case message = "message"
+        case icon = "sender_icon"
+        case index = "index"
+    }
+    
     static let storySample: Story = Story(sender: "John AppleSeed", message: "Lorem Ipsum Dolor Sit amet Lorem Ipsum Dolor Sit amet Lorem Ipsum Dolor Sit amet Lorem Ipsum Dolor Sit amet Lorem Ipsum Dolor Sit amet Lorem Ipsum Dolor Sit amet", icon: "https://upload.wikimedia.org/wikipedia/commons/f/fc/Johnny_Appleseed_photograph.jpg", index: 0)
     
 }
