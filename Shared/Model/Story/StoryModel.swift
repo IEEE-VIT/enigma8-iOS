@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftUI
 
 struct Story:Codable {
     var sender: String?
