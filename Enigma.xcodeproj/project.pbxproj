@@ -14,6 +14,9 @@
 		3196110B270206080030901E /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3196110A270206080030901E /* SignUpModel.swift */; };
 		319611112702078E0030901E /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319611102702078E0030901E /* Data.swift */; };
 		31AB32DB27024A0A00C43EAA /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AB32DA27024A0A00C43EAA /* APIResponse.swift */; };
+		31CEEDA12715C38900298399 /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CEEDA02715C38900298399 /* DropdownView.swift */; };
+		31CEEDA32715C5A900298399 /* ProfileSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CEEDA22715C5A900298399 /* ProfileSetupView.swift */; };
+		31CEEDA92715E62400298399 /* RadioGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CEEDA82715E62400298399 /* RadioGroupView.swift */; };
 		31D994632701EBB000E506D9 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D994612701EBB000E506D9 /* APIClient.swift */; };
 		31D994642701EBB000E506D9 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D994612701EBB000E506D9 /* APIClient.swift */; };
 		31D994652701EBB000E506D9 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D994622701EBB000E506D9 /* Router.swift */; };
@@ -53,6 +56,9 @@
 		3196110A270206080030901E /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		319611102702078E0030901E /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		31AB32DA27024A0A00C43EAA /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		31CEEDA02715C38900298399 /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
+		31CEEDA22715C5A900298399 /* ProfileSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSetupView.swift; sourceTree = "<group>"; };
+		31CEEDA82715E62400298399 /* RadioGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioGroupView.swift; sourceTree = "<group>"; };
 		31D994612701EBB000E506D9 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		31D994622701EBB000E506D9 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		4E7A5CD42700FB5C0058CAB9 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
@@ -115,6 +121,7 @@
 			children = (
 				8CAC2B6E27103B09008049D3 /* Login */,
 				314D79B8270C685A003C2F8A /* LoginView.swift */,
+				31CEEDA22715C5A900298399 /* ProfileSetupView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -122,6 +129,7 @@
 		314D79BA270C6BBC003C2F8A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				31CEED9F2715C37300298399 /* UserProfile */,
 				8CEF83E72712F16A00E96E2E /* Story */,
 				8CAC2B6B27103ACE008049D3 /* Timer */,
 				314D79BB270C6BC2003C2F8A /* Common */,
@@ -171,6 +179,15 @@
 				31AB32DA27024A0A00C43EAA /* APIResponse.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		31CEED9F2715C37300298399 /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				31CEEDA02715C38900298399 /* DropdownView.swift */,
+				31CEEDA82715E62400298399 /* RadioGroupView.swift */,
+			);
+			path = UserProfile;
 			sourceTree = "<group>";
 		};
 		31D994602701EBB000E506D9 /* API */ = {
@@ -416,8 +433,10 @@
 				319611112702078E0030901E /* Data.swift in Sources */,
 				3196110B270206080030901E /* SignUpModel.swift in Sources */,
 				31AB32DB27024A0A00C43EAA /* APIResponse.swift in Sources */,
+				31CEEDA92715E62400298399 /* RadioGroupView.swift in Sources */,
 				4EC3E48226E7DCCA0049AD99 /* ContentView.swift in Sources */,
 				8CEF83EC2712F23500E96E2E /* StoryModel.swift in Sources */,
+				31CEEDA12715C38900298399 /* DropdownView.swift in Sources */,
 				4EC3E48026E7DCCA0049AD99 /* EnigmaApp.swift in Sources */,
 				3126674E2700B91E009834E9 /* AuthViewModel.swift in Sources */,
 				8CAC2B6D27103AF5008049D3 /* TimerBlock.swift in Sources */,
@@ -429,6 +448,7 @@
 				A01836D427042CCA00A4F896 /* AppConstants.swift in Sources */,
 				8CEEBAF82702524D00515E4A /* AppleCoordinator.swift in Sources */,
 				A01836D227042C3100A4F896 /* GoogleCoordinator.swift in Sources */,
+				31CEEDA32715C5A900298399 /* ProfileSetupView.swift in Sources */,
 				314D79BF270C6C29003C2F8A /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
