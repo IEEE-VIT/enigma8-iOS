@@ -18,36 +18,39 @@ struct ProfileSetupView: View {
     var usernameTaken: Bool = false
     var body: some View {
         VStack {
-            Text("Setup your profile") // this will be replaced by the navbar title
+            //TODO: replace Setup your profile Text with navbarTitle once Navigation is set up
+            Text("Setup your profile")
                 .font(.largeTitle)
-            Spacer()
             VStack(alignment: .leading) {
-                Text("Enter your username")
-                    .font(.title)
-                Text("(This cannot be changed later)")
-                    .font(.subheadline)
-                TextField("Enter your username", text: $username)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding(.top)
-                
-                if displayRules {
-                    Text("*minimum 8 characters")
+                VStack(alignment: .leading) {
+                    Text("Enter your username")
+                        .font(.title)
+                    Text("(This cannot be changed later)")
+                        .font(.subheadline)
+                    TextField("Enter your username", text: $username)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(.top)
+                    
+                    if displayRules {
+                        Text("*minimum 8 characters")
+                            .foregroundColor(Color.red)
+                            .font(.caption)
+                    }
+                    Text("*no special characters allowed")
                         .foregroundColor(Color.red)
                         .font(.caption)
-                }
-                Text("*no special characters allowed")
-                    .foregroundColor(Color.red)
-                    .font(.caption)
-                if usernameTaken {
-                    Text("*This username is already taken. Try another")
-                        .foregroundColor(Color.red)
-                        .font(.caption)
-                }
-                RadioButtonGroup(titleText: "Are you a college student?", options: ["Yes","No"])
-                    .padding()
-                Text("How did you hear about Enigma?")
-                    .font(.title2)
-                    .padding(.top)
+                    if usernameTaken {
+                        Text("*This username is already taken. Try another")
+                            .foregroundColor(Color.red)
+                            .font(.caption)
+                    }
+                    RadioButtonGroup(titleText: "Are you a college student?", options: ["Yes","No"])
+                        .padding()
+                    Text("How did you hear about Enigma?")
+                        .font(.title2)
+                        .padding(.top)
+                }.frame(width: .infinity)
+               
                 HStack {
                     DropdownView(selectedOption: surveyOptions[0], dropdownOptions: surveyOptions)
                     Spacer(minLength: 100)
