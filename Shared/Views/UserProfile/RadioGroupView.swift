@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct RadioButtonGroup: View {
-    var titleText: String
-    var options: [String]
-    @State var selected: Int = 0
+    var titleText: String = "Are you a college student?"
+    var options: [String] = ["Yes", "No"]
+    @Binding var selected: Int
     var numberOfOptions: Int {
         options.count
     }
@@ -40,7 +40,8 @@ struct RadioButtonGroup: View {
 }
 
 struct RadioButtonGroup_Previews: PreviewProvider {
+    static var selectedInt = 0
     static var previews: some View {
-        RadioButtonGroup(titleText: "Are you a college student?", options: ["Yes", "No"])
+        RadioButtonGroup(titleText: "Are you a college student?", options: ["Yes", "No"], selected: .constant(selectedInt))
     }
 }
