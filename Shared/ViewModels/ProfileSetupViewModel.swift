@@ -22,8 +22,10 @@ class ProfileSetupViewModel: ObservableObject {
     var profileSuccess: Bool = false
     
     
+    // CHECK
     func setupProfile() {
-        APIClient.request(fromRouter: Router.profileSetup(ProfileSetupModel.Request(username: username, isCollegeStudent: boolIsCollege, outreach: outreach))) { (response: ProfileSetupModel.Response?,error) in
+        let request = ProfileSetupModel.Request(username: username, isCollegeStudent: boolIsCollege, outreach: outreach)
+        APIClient.request(fromRouter: .profileSetup(request)) { (response: ProfileSetupModel.Response?,error) in
             if let error = error {
                 self.errorMessage = error.debugDescription
                 return

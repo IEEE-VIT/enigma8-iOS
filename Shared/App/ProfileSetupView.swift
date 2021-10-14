@@ -44,23 +44,16 @@ struct ProfileSetupView: View {
                     .frame(width: geo.size.width * 0.8)
                 Spacer()
                 HStack {
-                    Spacer()
+                    
                     NavigationLink(destination: TimeView(), isActive: $profileVM.profileSuccess) {
-                        Button(action: profileVM.setupProfile) {
-                            Text("Next")
-                                .padding(.horizontal, 20)
-                                .padding(.vertical, 10)
-                                .foregroundColor(.black)
-                        }
+                        Spacer(minLength: 100)
+                        CustomButton(buttonText: "Next", action: profileVM.setupProfile)
+                        Spacer(minLength: 100)
                     }
-                    .background(Color.gray)
-                    .cornerRadius(10)
-                    .padding()
-                    Spacer()
                 }
             }
+            .padding()
         }
-        .padding()
     }
 }
 
