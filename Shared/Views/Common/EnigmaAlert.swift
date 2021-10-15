@@ -14,6 +14,7 @@ struct EnigmaAlert: View {
     var confirmAction: () -> Void = {}
     var cancelAction: () -> Void = {}
     var image: some View = Image(systemName: "xmark.circle").resizable().frame(width: 40, height: 40)
+    var widthPercentage = 0.8
     
     var body: some View {
         VStack(spacing: 20) {
@@ -35,6 +36,7 @@ struct EnigmaAlert: View {
                     .stroke(Color.primary, lineWidth: 2))
         .background(RoundedRectangle(cornerRadius: 20)
                         .fill(Color(white: 0, opacity: 0.2)))
+        .frame(width: UIScreen.main.bounds.width*widthPercentage)
     }
 }
 
