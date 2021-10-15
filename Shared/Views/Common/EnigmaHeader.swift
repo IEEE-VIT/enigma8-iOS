@@ -8,20 +8,27 @@
 import SwiftUI
 
 struct EnigmaHeader: View {
+    var infoAction: () -> Void = {print("Info Headers")}
+    var notifsAction: () -> Void = {print("Notifs Headers")}
+    
     var body: some View {
         HStack {
-            Image(systemName: "message")
-                .resizable()
-                .frame(width: 25, height: 25)
+            Button(action: notifsAction){
+                Image(systemName: "bell.badge.fill")
+                    .resizable()
+                    .frame(width: 25, height: 25)
+            }.foregroundColor(.black)
             Spacer()
             Text("ENIGMA")
                 .font(.system(size: 25))
             Spacer()
-            Image(systemName: "info.circle")
-                .resizable()
-                .frame(width: 25, height: 25)
+            Button(action: infoAction) {
+                Image(systemName: "info.circle")
+                    .resizable()
+                    .frame(width: 25, height: 25)
+            }.foregroundColor(.black)
         }.padding()
-            .background(Color(white: 0, opacity: 0.1))
+         .background(Color(white: 0, opacity: 0.1))
     }
 }
 
