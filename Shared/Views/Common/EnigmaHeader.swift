@@ -8,12 +8,9 @@
 import SwiftUI
 
 struct EnigmaHeader: View {
-    var infoAction: () -> Void = {print("Info Headers")}
-    var notifsAction: () -> Void = {print("Notifs Headers")}
-    
     var body: some View {
         HStack {
-            Button(action: notifsAction){
+            NavigationLink(destination: Text("You're at Notifs")){
                 Image(systemName: "bell.badge.fill")
                     .resizable()
                     .frame(width: 25, height: 25)
@@ -22,7 +19,7 @@ struct EnigmaHeader: View {
             Text("ENIGMA")
                 .font(.system(size: 25))
             Spacer()
-            Button(action: infoAction) {
+            NavigationLink(destination: Text("You're at Instructions")){
                 Image(systemName: "info.circle")
                     .resizable()
                     .frame(width: 25, height: 25)
