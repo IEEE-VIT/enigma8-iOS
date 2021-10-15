@@ -13,7 +13,7 @@ struct EnigmaAlert: View {
     var cancelText: String = "Cancel"
     var confirmAction: () -> Void = {}
     var cancelAction: () -> Void = {}
-    var image: some View = Image(systemName: "xmark.circle").resizable().frame(width: 40, height: 40)
+    var image: String = "xmark.circle"
     var widthPercentage = 0.8
     
     var body: some View {
@@ -22,7 +22,7 @@ struct EnigmaAlert: View {
                 .font(.system(size:20))
                 .fontWeight(.medium)
                 .multilineTextAlignment(.center)
-            image
+            Image(systemName: image).resizable().frame(width: 40, height: 40)
             HStack {
                 Spacer(minLength: 30)
                 CustomButton(buttonText: confirmText, action: confirmAction, bgroundColor: Color.white, font: .system(size: 15, weight: .medium))
