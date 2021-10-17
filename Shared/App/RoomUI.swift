@@ -11,16 +11,7 @@ import AVKit
 
 struct RoomUI: View {
     //STATIC DATA WILL MOVE TO VIEWMODEL
-    var roomNumber = 1
-    var questionNumber = 1
-    var powerup = "Something"
-    var question = "This is a lorem ipsum question This is a lorem ipsum questionThis is a lorem ipsum question This is a lorem ipsum question This is a lorem ipsum question This is a lorem ipsum question This is a lorem ipsum question This is a lorem ipsum question"
-    var mediaURL = URL(string: "https://pbs.twimg.com/media/EoS2HGIU4AArhRT.jpg:large")
-    //var mediaURL = URL(string: "https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_1280_10MG.mp4")
-    enum QMediaType {
-        case image, video
-    }
-    let mediaType = QMediaType.image
+    @StateObject var gameVM = GameViewModel()
     @State var answerText = ""
     var hintAction: () -> Void = {}
     
@@ -29,32 +20,32 @@ struct RoomUI: View {
             VStack {
                 HStack {
                     VStack(alignment: .leading) {
-                        Text("Room \(roomNumber)")
-                        Text("Q\(questionNumber)")
+                        Text("Room \(gameVM.currentStatus.roomNo)")
+                        Text("Q\(gameVM.currentStatus.question.questionNo)")
                     }.padding()
                     Spacer()
                     HStack {
                         Image(systemName: "bell")
-                        Text(powerup)
+                        Text(gameVM.currentStatus.chosenPowerup)
                     }.padding()
                         .background(Color(white: 0, opacity: 0.2))
                 }
                 Group {
-                    Text(question)
-                    switch(mediaType) {
+                    Text(gameVM.currentStatus.question.question)
+                    switch(gameVM.currentStatus.question.mediaType) {
                     case .image:
-                        KFImage(mediaURL)
+                        KFImage(gameVM.currentStatus.question.mediaURL)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                     case .video:
-                        VideoPlayer(player: AVPlayer(url: mediaURL!)).aspectRatio(contentMode: .fit)
+                        VideoPlayer(player: AVPlayer(url: gameVM.currentStatus.question.mediaURL)).aspectRatio(contentMode: .fit)
                     }//TODO: SET FRAME FOR BOTH VIDEO AND IMAGE
                     HStack {
                         TextField("Your Answer", text: $answerText)
                             .autocapitalization(.none)
                             .padding()
                             .border(.black, width: 3)
-                        Button(action: {}) {
+                        Button(action: hintAction) {
                             VStack {
                                 Image(systemName: "lightbulb")
                                 Text("Hint")
