@@ -39,6 +39,7 @@
 		4EC3E48526E7DCCA0049AD99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EC3E46F26E7DCCA0049AD99 /* Assets.xcassets */; };
 		8C46F76727198F93003132B1 /* RoomUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C46F76627198F93003132B1 /* RoomUI.swift */; };
 		8C4FD31C271B36B30053F75A /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4FD31B271B36B30053F75A /* GameViewModel.swift */; };
+		8C46F761271949A2003132B1 /* EnigmaHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C46F760271949A2003132B1 /* EnigmaHeader.swift */; };
 		8CAC2B6D27103AF5008049D3 /* TimerBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAC2B6C27103AF5008049D3 /* TimerBlock.swift */; };
 		8CAC2B7027103B39008049D3 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAC2B6F27103B39008049D3 /* TimeView.swift */; };
 		8CC128B4270301C1000483AB /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC128B3270301C1000483AB /* TimerModel.swift */; };
@@ -83,6 +84,7 @@
 		4EC3E47F26E7DCCA0049AD99 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		8C46F76627198F93003132B1 /* RoomUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomUI.swift; sourceTree = "<group>"; };
 		8C4FD31B271B36B30053F75A /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		8C46F760271949A2003132B1 /* EnigmaHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnigmaHeader.swift; sourceTree = "<group>"; };
 		8CAC2B6C27103AF5008049D3 /* TimerBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerBlock.swift; sourceTree = "<group>"; };
 		8CAC2B6F27103B39008049D3 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
 		8CC128B3270301C1000483AB /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				314D79BE270C6C29003C2F8A /* CustomButton.swift */,
+				8C46F760271949A2003132B1 /* EnigmaHeader.swift */,
 				31DDD20E271764BB002315FC /* CustomTextField.swift */,
 			);
 			path = Common;
@@ -448,6 +451,7 @@
 				8CC128B82705D619000483AB /* TimerViewModel.swift in Sources */,
 				319611112702078E0030901E /* Data.swift in Sources */,
 				3196110B270206080030901E /* SignUpModel.swift in Sources */,
+				8C46F761271949A2003132B1 /* EnigmaHeader.swift in Sources */,
 				31AB32DB27024A0A00C43EAA /* APIResponse.swift in Sources */,
 				8C46F76727198F93003132B1 /* RoomUI.swift in Sources */,
 				31DDD20727171EE5002315FC /* ProfileSetupViewModel.swift in Sources */,
