@@ -151,6 +151,7 @@
 			children = (
 				8CAC2B6E27103B09008049D3 /* Login */,
 				314D79B8270C685A003C2F8A /* LoginView.swift */,
+				31CEEDA22715C5A900298399 /* ProfileSetupView.swift */,
 
 				31A266602718A1C6005B1A17 /* RoomsView.swift */,
 
@@ -164,6 +165,7 @@
 		314D79BA270C6BBC003C2F8A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				31CEED9F2715C37300298399 /* UserProfile */,
 
 				31A2665B2718995A005B1A17 /* Leaderboard */,
 
@@ -195,6 +197,7 @@
 				3196110A270206080030901E /* SignUpModel.swift */,
 				8CC128B3270301C1000483AB /* TimerModel.swift */,
 				A01836D327042CCA00A4F896 /* AppConstants.swift */,
+				31D55DE0271768D80068A8AF /* SetupProfileModel.swift */,
 
 				31A2665E27189A0B005B1A17 /* LeaderboardItem.swift */,
 
