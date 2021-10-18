@@ -10,10 +10,9 @@ import SwiftUI
 struct LeaderboardRow: View {
     var isUser: Bool = false
     var user: LeaderboardItem
-    var rank: Int
     var body: some View {
         HStack {
-            Text("\(rank)")
+            Text("\(user.rank ?? 0)")
                 .padding(.trailing)
             Text(user.username ?? "someUsername")
             Spacer()
@@ -29,7 +28,7 @@ struct LeaderboardRow: View {
 
 struct LeaderboardRow_Previews: PreviewProvider {
     static var previews: some View {
-        LeaderboardRow(user: LeaderboardItem.data[0], rank: 2)
+        LeaderboardRow(user: LeaderboardItem.data[0])
             .previewLayout(.sizeThatFits)
     }
 }
