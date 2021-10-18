@@ -11,10 +11,23 @@ class ProfileSetupViewModel: ObservableObject {
     @Published var username: String = ""
     var surveyOptions: [String] = ["Social Media", "Friends", "Other"]
     @Published var isCollegeStudent: Int = 1
-    @Published var errorMessage: String? = nil
-    var displayRules: Bool {
+    var errorMessage: String? = nil
+    static let countRule = "minimum 8 characters"
+    static let alphanumericsRule = "no special characters"
+    var displayCountRules: Bool {
         username.count < 8
     }
+    @Published var responseSuccess: Int? = 0
+    var displayAlphanumericsRule: Bool {
+        return !username.isEmpty && username.range(of: "[^a-zA-Z0-9]", options: .regularExpression) != nil // this won't allow spaces or hyphens
+    }
+    var displayRules: Bool {
+        displayCountRules || displayAlphanumericsRule
+    }
+    var displayBoth: Bool {
+        displayCountRules && displayAlphanumericsRule
+    }
+
     private var boolIsCollege: Bool {
         isCollegeStudent == 0 ? true : false
     }
@@ -30,7 +43,9 @@ class ProfileSetupViewModel: ObservableObject {
                 self.errorMessage = error.debugDescription
                 return
             }
+            print(response ?? "Error parsing response from Backend")
             self.profileSuccess = true
+            self.responseSuccess = 1
            
         }
     }
