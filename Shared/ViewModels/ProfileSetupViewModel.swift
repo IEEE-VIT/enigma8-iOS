@@ -27,7 +27,7 @@ class ProfileSetupViewModel: ObservableObject {
     var displayBoth: Bool {
         displayCountRules && displayAlphanumericsRule
     }
-    // check for alphanumerics, put display rules under error message
+
     private var boolIsCollege: Bool {
         isCollegeStudent == 0 ? true : false
     }

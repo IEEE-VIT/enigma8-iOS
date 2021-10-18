@@ -38,6 +38,7 @@ struct ProfileSetupView: View {
                             .foregroundColor(Color.red)
                             .font(.caption)
                     }
+
                     Text("How did you hear about Enigma?")
                         .font(.title2)
                         .padding(.top)

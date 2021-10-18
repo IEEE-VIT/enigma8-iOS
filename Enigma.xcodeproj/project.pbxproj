@@ -13,11 +13,18 @@
 		314D79BF270C6C29003C2F8A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314D79BE270C6C29003C2F8A /* CustomButton.swift */; };
 		3196110B270206080030901E /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3196110A270206080030901E /* SignUpModel.swift */; };
 		319611112702078E0030901E /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319611102702078E0030901E /* Data.swift */; };
+		31A266612718A1C6005B1A17 /* RoomsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A266602718A1C6005B1A17 /* RoomsView.swift */; };
+		31A2665D2718996D005B1A17 /* LeaderboardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A2665C2718996D005B1A17 /* LeaderboardRow.swift */; };
+		31A2665F27189A0B005B1A17 /* LeaderboardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A2665E27189A0B005B1A17 /* LeaderboardItem.swift */; };
 		31AB32DB27024A0A00C43EAA /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AB32DA27024A0A00C43EAA /* APIResponse.swift */; };
+
+		31C131F7271D3DA100BD5301 /* RoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C131F6271D3DA100BD5301 /* RoomModel.swift */; };
+
 		31CEEDA12715C38900298399 /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CEEDA02715C38900298399 /* DropdownView.swift */; };
 		31CEEDA32715C5A900298399 /* ProfileSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CEEDA22715C5A900298399 /* ProfileSetupView.swift */; };
 		31CEEDA92715E62400298399 /* RadioGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CEEDA82715E62400298399 /* RadioGroupView.swift */; };
 		31D55DE1271768D80068A8AF /* SetupProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D55DE0271768D80068A8AF /* SetupProfileModel.swift */; };
+
 		31D994632701EBB000E506D9 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D994612701EBB000E506D9 /* APIClient.swift */; };
 		31D994642701EBB000E506D9 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D994612701EBB000E506D9 /* APIClient.swift */; };
 		31D994652701EBB000E506D9 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D994622701EBB000E506D9 /* Router.swift */; };
@@ -37,6 +44,10 @@
 		4EC3E48326E7DCCA0049AD99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC3E46E26E7DCC90049AD99 /* ContentView.swift */; };
 		4EC3E48426E7DCCA0049AD99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EC3E46F26E7DCCA0049AD99 /* Assets.xcassets */; };
 		4EC3E48526E7DCCA0049AD99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EC3E46F26E7DCCA0049AD99 /* Assets.xcassets */; };
+		8C46F76527195924003132B1 /* EnigmaAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C46F76427195924003132B1 /* EnigmaAlert.swift */; };
+		8C46F76727198F93003132B1 /* RoomUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C46F76627198F93003132B1 /* RoomUI.swift */; };
+		8C4FD31C271B36B30053F75A /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4FD31B271B36B30053F75A /* GameViewModel.swift */; };
+		8C46F761271949A2003132B1 /* EnigmaHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C46F760271949A2003132B1 /* EnigmaHeader.swift */; };
 		8CAC2B6D27103AF5008049D3 /* TimerBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAC2B6C27103AF5008049D3 /* TimerBlock.swift */; };
 		8CAC2B7027103B39008049D3 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAC2B6F27103B39008049D3 /* TimeView.swift */; };
 		8CC128B4270301C1000483AB /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC128B3270301C1000483AB /* TimerModel.swift */; };
@@ -58,11 +69,18 @@
 		314D79BE270C6C29003C2F8A /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		3196110A270206080030901E /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		319611102702078E0030901E /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		31A266602718A1C6005B1A17 /* RoomsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsView.swift; sourceTree = "<group>"; };
+		31A2665C2718996D005B1A17 /* LeaderboardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardRow.swift; sourceTree = "<group>"; };
+		31A2665E27189A0B005B1A17 /* LeaderboardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardItem.swift; sourceTree = "<group>"; };
 		31AB32DA27024A0A00C43EAA /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+
+		31C131F6271D3DA100BD5301 /* RoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomModel.swift; sourceTree = "<group>"; };
+
 		31CEEDA02715C38900298399 /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
 		31CEEDA22715C5A900298399 /* ProfileSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSetupView.swift; sourceTree = "<group>"; };
 		31CEEDA82715E62400298399 /* RadioGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioGroupView.swift; sourceTree = "<group>"; };
 		31D55DE0271768D80068A8AF /* SetupProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileModel.swift; sourceTree = "<group>"; };
+
 		31D994612701EBB000E506D9 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		31D994622701EBB000E506D9 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		31DDD20627171EE5002315FC /* ProfileSetupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSetupViewModel.swift; sourceTree = "<group>"; };
@@ -79,6 +97,10 @@
 		4EC3E47C26E7DCCA0049AD99 /* Enigma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Enigma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EC3E47E26E7DCCA0049AD99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EC3E47F26E7DCCA0049AD99 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		8C46F76427195924003132B1 /* EnigmaAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnigmaAlert.swift; sourceTree = "<group>"; };
+		8C46F76627198F93003132B1 /* RoomUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomUI.swift; sourceTree = "<group>"; };
+		8C4FD31B271B36B30053F75A /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		8C46F760271949A2003132B1 /* EnigmaHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnigmaHeader.swift; sourceTree = "<group>"; };
 		8CAC2B6C27103AF5008049D3 /* TimerBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerBlock.swift; sourceTree = "<group>"; };
 		8CAC2B6F27103B39008049D3 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
 		8CC128B3270301C1000483AB /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
@@ -119,6 +141,7 @@
 				3126674D2700B91E009834E9 /* AuthViewModel.swift */,
 				8CC128B72705D618000483AB /* TimerViewModel.swift */,
 				31DDD20627171EE5002315FC /* ProfileSetupViewModel.swift */,
+				8C4FD31B271B36B30053F75A /* GameViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -129,6 +152,12 @@
 				8CAC2B6E27103B09008049D3 /* Login */,
 				314D79B8270C685A003C2F8A /* LoginView.swift */,
 				31CEEDA22715C5A900298399 /* ProfileSetupView.swift */,
+
+				31A266602718A1C6005B1A17 /* RoomsView.swift */,
+
+				8C46F76627198F93003132B1 /* RoomUI.swift */,
+				31CEEDA22715C5A900298399 /* ProfileSetupView.swift */,
+
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -137,6 +166,11 @@
 			isa = PBXGroup;
 			children = (
 				31CEED9F2715C37300298399 /* UserProfile */,
+
+				31A2665B2718995A005B1A17 /* Leaderboard */,
+
+				31CEED9F2715C37300298399 /* UserProfile */,
+
 				8CEF83E72712F16A00E96E2E /* Story */,
 				8CAC2B6B27103ACE008049D3 /* Timer */,
 				314D79BB270C6BC2003C2F8A /* Common */,
@@ -148,6 +182,8 @@
 			isa = PBXGroup;
 			children = (
 				314D79BE270C6C29003C2F8A /* CustomButton.swift */,
+				8C46F76427195924003132B1 /* EnigmaAlert.swift */,
+				8C46F760271949A2003132B1 /* EnigmaHeader.swift */,
 				31DDD20E271764BB002315FC /* CustomTextField.swift */,
 			);
 			path = Common;
@@ -162,6 +198,11 @@
 				8CC128B3270301C1000483AB /* TimerModel.swift */,
 				A01836D327042CCA00A4F896 /* AppConstants.swift */,
 				31D55DE0271768D80068A8AF /* SetupProfileModel.swift */,
+
+				31A2665E27189A0B005B1A17 /* LeaderboardItem.swift */,
+
+				31D55DE0271768D80068A8AF /* SetupProfileModel.swift */,
+
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,6 +221,14 @@
 				319611102702078E0030901E /* Data.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		31A2665B2718995A005B1A17 /* Leaderboard */ = {
+			isa = PBXGroup;
+			children = (
+				31A2665C2718996D005B1A17 /* LeaderboardRow.swift */,
+			);
+			path = Leaderboard;
 			sourceTree = "<group>";
 		};
 		31AB32D9270249EA00C43EAA /* API */ = {
@@ -318,6 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				8CEF83EB2712F23500E96E2E /* StoryModel.swift */,
+				31C131F6271D3DA100BD5301 /* RoomModel.swift */,
 			);
 			path = Story;
 			sourceTree = "<group>";
@@ -439,18 +489,28 @@
 				4E7A5CDC2700FBBF0058CAB9 /* KFManager.swift in Sources */,
 				31D994632701EBB000E506D9 /* APIClient.swift in Sources */,
 				8CEF83E92712F17900E96E2E /* StoryBubble.swift in Sources */,
+				31A2665F27189A0B005B1A17 /* LeaderboardItem.swift in Sources */,
 				8CC128B82705D619000483AB /* TimerViewModel.swift in Sources */,
 				319611112702078E0030901E /* Data.swift in Sources */,
 				3196110B270206080030901E /* SignUpModel.swift in Sources */,
+
+				31C131F7271D3DA100BD5301 /* RoomModel.swift in Sources */,
+
+				8C46F761271949A2003132B1 /* EnigmaHeader.swift in Sources */,
+
 				31AB32DB27024A0A00C43EAA /* APIResponse.swift in Sources */,
+				8C46F76727198F93003132B1 /* RoomUI.swift in Sources */,
 				31DDD20727171EE5002315FC /* ProfileSetupViewModel.swift in Sources */,
 				31CEEDA92715E62400298399 /* RadioGroupView.swift in Sources */,
 				4EC3E48226E7DCCA0049AD99 /* ContentView.swift in Sources */,
+				31A266612718A1C6005B1A17 /* RoomsView.swift in Sources */,
 				8CEF83EC2712F23500E96E2E /* StoryModel.swift in Sources */,
 				31CEEDA12715C38900298399 /* DropdownView.swift in Sources */,
 				4EC3E48026E7DCCA0049AD99 /* EnigmaApp.swift in Sources */,
+				8C4FD31C271B36B30053F75A /* GameViewModel.swift in Sources */,
 				3126674E2700B91E009834E9 /* AuthViewModel.swift in Sources */,
 				8CAC2B6D27103AF5008049D3 /* TimerBlock.swift in Sources */,
+				31A2665D2718996D005B1A17 /* LeaderboardRow.swift in Sources */,
 				314D79B9270C685A003C2F8A /* LoginView.swift in Sources */,
 				4E7A5CD52700FB5C0058CAB9 /* Logger.swift in Sources */,
 				8CAC2B7027103B39008049D3 /* TimeView.swift in Sources */,
@@ -458,6 +518,7 @@
 				4E7A5CD92700FBA10058CAB9 /* PodHelper.swift in Sources */,
 				A01836D427042CCA00A4F896 /* AppConstants.swift in Sources */,
 				8CEEBAF82702524D00515E4A /* AppleCoordinator.swift in Sources */,
+				8C46F76527195924003132B1 /* EnigmaAlert.swift in Sources */,
 				A01836D227042C3100A4F896 /* GoogleCoordinator.swift in Sources */,
 				31D55DE1271768D80068A8AF /* SetupProfileModel.swift in Sources */,
 				31CEEDA32715C5A900298399 /* ProfileSetupView.swift in Sources */,
