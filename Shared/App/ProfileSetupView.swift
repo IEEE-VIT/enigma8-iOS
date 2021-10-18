@@ -22,20 +22,23 @@ struct ProfileSetupView: View {
                         .font(.subheadline)
                     CustomTextField(textFieldString: "Enter your username", bindingString: $profileVM.username)
                     if profileVM.displayRules {
-                        Text("*minimum 8 characters")
-                            .foregroundColor(Color.red)
-                            .font(.caption)
+                        if profileVM.displayBoth {
+                            Text("*\(ProfileSetupViewModel.countRule)\n*\(ProfileSetupViewModel.alphanumericsRule)")
+                                .foregroundColor(Color.red)
+                                .font(.caption)
+                        }
+                        else {
+                            Text("*\(profileVM.displayCountRules ? ProfileSetupViewModel.countRule : ProfileSetupViewModel.alphanumericsRule)")
+                                .foregroundColor(Color.red)
+                                .font(.caption)
+                        }
                     }
-                    Text("*no special characters allowed")
-                        .foregroundColor(Color.red)
-                        .font(.caption)
                     if let errorMessage = profileVM.errorMessage {
                         Text("*\(errorMessage)")
                             .foregroundColor(Color.red)
                             .font(.caption)
                     }
-                    RadioButtonGroup(titleText: "Are you a college student?", options: ["Yes","No"], selected: $profileVM.isCollegeStudent)
-                        .padding()
+
                     Text("How did you hear about Enigma?")
                         .font(.title2)
                         .padding(.top)
@@ -52,10 +55,12 @@ struct ProfileSetupView: View {
                     }
                 }
             }
-            .padding()
+            
         }
+        .padding()
     }
 }
+
 
 struct ProfileSetupView_Previews: PreviewProvider {
     static var previews: some View {
