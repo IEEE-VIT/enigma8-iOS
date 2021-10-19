@@ -18,6 +18,11 @@
 		31A2665F27189A0B005B1A17 /* LeaderboardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A2665E27189A0B005B1A17 /* LeaderboardItem.swift */; };
 		31AB32DB27024A0A00C43EAA /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AB32DA27024A0A00C43EAA /* APIResponse.swift */; };
 
+
+		31C13211271D6D6500BD5301 /* FeedbackUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C13210271D6D6500BD5301 /* FeedbackUI.swift */; };
+		31C13214271D72CC00BD5301 /* FeedbackQuestionAnswerBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C13213271D72CC00BD5301 /* FeedbackQuestionAnswerBlock.swift */; };
+		31C13216271D738C00BD5301 /* CustomTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C13215271D738C00BD5301 /* CustomTextEditor.swift */; };
+
 		31C131F9271D4F7D00BD5301 /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C131F8271D4F7D00BD5301 /* InstructionsView.swift */; };
 		31C13202271D55F000BD5301 /* GameMechanics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C13201271D55F000BD5301 /* GameMechanics.swift */; };
 		31C13206271D560F00BD5301 /* Powerups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C13205271D560F00BD5301 /* Powerups.swift */; };
@@ -25,6 +30,7 @@
 		31C1320A271D567000BD5301 /* ScoringSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C13209271D566F00BD5301 /* ScoringSystem.swift */; };
 		31C1320C271D56BA00BD5301 /* InstructionsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C1320B271D56BA00BD5301 /* InstructionsHeader.swift */; };
 		31C1320F271D63B800BD5301 /* Powerupcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C1320E271D63B800BD5301 /* Powerupcard.swift */; };
+
 
 
 		31C131F7271D3DA100BD5301 /* RoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C131F6271D3DA100BD5301 /* RoomModel.swift */; };
@@ -87,6 +93,11 @@
 		31A2665E27189A0B005B1A17 /* LeaderboardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardItem.swift; sourceTree = "<group>"; };
 		31AB32DA27024A0A00C43EAA /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 
+
+		31C13210271D6D6500BD5301 /* FeedbackUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackUI.swift; sourceTree = "<group>"; };
+		31C13213271D72CC00BD5301 /* FeedbackQuestionAnswerBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackQuestionAnswerBlock.swift; sourceTree = "<group>"; };
+		31C13215271D738C00BD5301 /* CustomTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextEditor.swift; sourceTree = "<group>"; };
+
 		31C131F8271D4F7D00BD5301 /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
 		31C13201271D55F000BD5301 /* GameMechanics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMechanics.swift; sourceTree = "<group>"; };
 		31C13205271D560F00BD5301 /* Powerups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Powerups.swift; sourceTree = "<group>"; };
@@ -94,6 +105,7 @@
 		31C13209271D566F00BD5301 /* ScoringSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoringSystem.swift; sourceTree = "<group>"; };
 		31C1320B271D56BA00BD5301 /* InstructionsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsHeader.swift; sourceTree = "<group>"; };
 		31C1320E271D63B800BD5301 /* Powerupcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Powerupcard.swift; sourceTree = "<group>"; };
+
 
 
 		31C131F6271D3DA100BD5301 /* RoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomModel.swift; sourceTree = "<group>"; };
@@ -184,7 +196,11 @@
 				8C46F76627198F93003132B1 /* RoomUI.swift */,
 				31CEEDA22715C5A900298399 /* ProfileSetupView.swift */,
 
+
+				31C13210271D6D6500BD5301 /* FeedbackUI.swift */,
+
 				31C131F8271D4F7D00BD5301 /* InstructionsView.swift */,
+
 
 
 
@@ -198,6 +214,9 @@
 				31CEED9F2715C37300298399 /* UserProfile */,
 
 				31C13200271D55DE00BD5301 /* Instructions */,
+
+
+				31C13212271D72AB00BD5301 /* FeedBackUISubviews */,
 
 
 				31A2665B2718995A005B1A17 /* Leaderboard */,
@@ -219,6 +238,7 @@
 				8C46F76427195924003132B1 /* EnigmaAlert.swift */,
 				8C46F760271949A2003132B1 /* EnigmaHeader.swift */,
 				31DDD20E271764BB002315FC /* CustomTextField.swift */,
+				31C13215271D738C00BD5301 /* CustomTextEditor.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -273,6 +293,14 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+
+		31C13212271D72AB00BD5301 /* FeedBackUISubviews */ = {
+			isa = PBXGroup;
+			children = (
+				31C13213271D72CC00BD5301 /* FeedbackQuestionAnswerBlock.swift */,
+			);
+			path = FeedBackUISubviews;
+
 		31C13200271D55DE00BD5301 /* Instructions */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +320,7 @@
 				31C1320E271D63B800BD5301 /* Powerupcard.swift */,
 			);
 			path = PowerupInstructions;
+
 			sourceTree = "<group>";
 		};
 		31CEED9F2715C37300298399 /* UserProfile */ = {
@@ -551,6 +580,8 @@
 				31A2665F27189A0B005B1A17 /* LeaderboardItem.swift in Sources */,
 				8CC128B82705D619000483AB /* TimerViewModel.swift in Sources */,
 				319611112702078E0030901E /* Data.swift in Sources */,
+				31C13214271D72CC00BD5301 /* FeedbackQuestionAnswerBlock.swift in Sources */,
+				31C13216271D738C00BD5301 /* CustomTextEditor.swift in Sources */,
 				3196110B270206080030901E /* SignUpModel.swift in Sources */,
 
 				31C131F7271D3DA100BD5301 /* RoomModel.swift in Sources */,
@@ -563,7 +594,11 @@
 				31CEEDA92715E62400298399 /* RadioGroupView.swift in Sources */,
 				4EC3E48226E7DCCA0049AD99 /* ContentView.swift in Sources */,
 
+
+				31C13211271D6D6500BD5301 /* FeedbackUI.swift in Sources */,
+
 				31C13202271D55F000BD5301 /* GameMechanics.swift in Sources */,
+
 
 				31A266612718A1C6005B1A17 /* RoomsView.swift in Sources */,
 
