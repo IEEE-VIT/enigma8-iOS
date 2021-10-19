@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LeaderboardRow: View {
+    // TODO: align columns
     var isUser: Bool = false
     var user: LeaderboardItem
     var body: some View {
@@ -23,6 +24,8 @@ struct LeaderboardRow: View {
         }
         .scaleEffect(isUser ? 1.1 : 1.0)
         .padding(.all, 20)
+        .background(isUser ? Color.red : Color.gray)
+        .shadow(radius: isUser ? 4 : 0)
     }
 }
 
