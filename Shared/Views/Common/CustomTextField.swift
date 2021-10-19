@@ -13,7 +13,7 @@ struct CustomTextField: View {
     var body: some View {
        TextField(textFieldString, text: bindingString)
             .textFieldStyle(RoundedBorderTextFieldStyle())
-            .padding(.top)
+//            .padding(.top)
         
     }
 }
