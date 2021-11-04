@@ -14,6 +14,7 @@ enum Router: URLRequestConvertible {
     case loginApple(SignUpModel.AppleRequest)
     case timer
     case profileSetup(ProfileSetupModel.Request)
+    case currentStory(StoryModel.Request), fullStory(StoryModel.Request)
     
     static let baseURL = URL(string: "https://enigma8.herokuapp.com")!
     
@@ -21,7 +22,7 @@ enum Router: URLRequestConvertible {
         switch self {
         case .loginGoogle, .loginApple, .profileSetup:
             return .post
-        case .timer:
+        case .timer, .currentStory, .fullStory:
             return .get
         }
     }
@@ -36,6 +37,10 @@ enum Router: URLRequestConvertible {
             return "static/timer/"
         case .profileSetup:
             return "user/create/"
+        case .currentStory:
+            return "story/currentStory"
+        case .fullStory:
+            return "story/fullStory"
         }
     }
     
@@ -83,6 +88,8 @@ enum Router: URLRequestConvertible {
             return try self.encoder.encode(body, into: request)
         case .loginApple(let appleBody):
             return try self.encoder.encode(appleBody, into: request)
+        case .currentStory(let roomId), .fullStory(let roomId):
+            return try self.encoder.encode(roomId, into: request)
         default:
             return try self.encoding.encode(request, with: self.parameters)
         }
