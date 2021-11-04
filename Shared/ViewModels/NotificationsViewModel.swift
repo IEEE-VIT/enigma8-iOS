@@ -8,5 +8,18 @@
 import Foundation
 
 class NotificationsViewModel: ObservableObject {
-    @Published var notificationList: Array<Notification> = [Notification(text: "Something Something Something Something Something Something Something Something Something Something Something Something Something Something ", time: 1635670075, isViewed: false), Notification(text: "Something", time: 1635670075, isViewed: true)]
+    @Published var notificationList: [Notification] = []
+    @Published var isFetched = false
+    
+    init() {
+        getNotifications()
+    }
+    
+    func getNotifications() {
+        APIClient.request(fromRouter: Router.notifications) { (response: NotificationsResponse?, error) in
+            guard let response = response else {return}
+            self.notificationList = response.notifs
+            self.isFetched = true
+        }
+    }
 }

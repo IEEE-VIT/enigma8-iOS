@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct NotificationView: View {
-    var notif: Notification = Notification(text: "Lorem ipsum dolor sit amet", time: 1234, isViewed: true)
+    var notif: Notification = Notification(text: "Lorem ipsum dolor sit amet", timestamp: "2021-11-04T15:09:58.620Z")
     
     var body: some View {
             HStack(spacing: 0) {
-                notif.isViewed! ? Image(systemName: "circle").padding() : Image(systemName: "circle.fill").padding()
+                //TODO: Decide on if notification seen logic
+//                notif.isViewed! ? Image(systemName: "circle").padding() : Image(systemName: "circle.fill").padding()
                 VStack(alignment: .leading) {
                     Text(notif.text!)
                     Text(notif.parsedTime)

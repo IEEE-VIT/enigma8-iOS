@@ -16,23 +16,25 @@ struct NotificationsView: View {
                 Text("Notifications")
                     .font(.system(size: 30))
                     .bold()
-                if(notifsVM.notificationList.count <= 0) {
-                    VStack(alignment: .center, spacing: 10) {
-                        Spacer()
-                        Image(systemName: "bell.fill")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: geometry.size.width, height: 200, alignment: .center)
-                            .padding(.bottom)
-                        Text("Nothing Yet!")
-                            .bold()
-                        Text("Come Back Soon for more.")
-                        Spacer()
-                    }
-                } else {
-                    LazyVStack {
-                        ForEach( 0 ..< notifsVM.notificationList.count) { i in
-                            NotificationView(notif: notifsVM.notificationList[i])
+                if(notifsVM.isFetched) {
+                    if (notifsVM.notificationList.isEmpty) {
+                        VStack(alignment: .center, spacing: 10) {
+                            Spacer()
+                            Image(systemName: "bell.fill")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: geometry.size.width, height: 200, alignment: .center)
+                                .padding(.bottom)
+                            Text("Nothing Yet!")
+                                .bold()
+                            Text("Come Back Soon for more.")
+                            Spacer()
+                        }
+                    } else {
+                        LazyVStack {
+                            ForEach( 0 ..< notifsVM.notificationList.count) { i in
+                                NotificationView(notif: notifsVM.notificationList[i])
+                            }
                         }
                     }
                 }

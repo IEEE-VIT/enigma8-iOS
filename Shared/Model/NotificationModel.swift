@@ -7,13 +7,23 @@
 
 import Foundation
 
+struct NotificationsResponse: Codable {
+    var notifs: [Notification]
+}
+
 struct Notification : Codable {
+    var _id: String?
+    var type: String?
     var text: String?
-    var time: Double?
-    var isViewed: Bool?
+    var timestamp: String?
+    var metadata: String?
     
     var parsedTime: String {
-        let date = Calendar.current.dateComponents([.month, .day, .hour, .minute, .second], from: Date(timeIntervalSince1970: time ?? 1635670075), to: Date())
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        let parsedDate = dateFormatter.date(from:timestamp!)!
+        let date = Calendar.current.dateComponents([.month, .day, .hour, .minute, .second], from: parsedDate, to: Date())
         if let month = date.month, month > 0 {
             return month == 1 ? "\(month) month ago": "\(month) months ago"
         } else if let day = date.day, day > 0 {
@@ -27,11 +37,5 @@ struct Notification : Codable {
         } else {
             return "just now"
         }
-    }
-    
-    private enum CodingKeys: String, CodingKey {
-        case text = "text"
-        case time = "time"
-        case isViewed = "isViewed"
     }
 }
