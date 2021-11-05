@@ -13,7 +13,7 @@ struct RoomsView: View {
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
-    var rooms: [RoomModel]
+    @StateObject var rooms = RoomsViewModel()
     
     var body: some View {
         ScrollView {
@@ -28,17 +28,17 @@ struct RoomsView: View {
                 Spacer()
                 // MARK: GRID
                 LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(rooms) { room in
+                    ForEach(rooms.allInfo, id: \.self) { room in
                         VStack {
                             HStack {
                                 ForEach(0..<3) { _ in
                                     Image(systemName: "circle")
                                 }
                             }
-                            KFImage(URL(string: room.media ?? ""))
+                            KFImage(URL(string: room.room?.media ?? ""))
                                 .resizable()
                                 .scaledToFit()
-                            Text(room.title ?? "Room \(room.roomNo ?? 0)")
+                            Text(room.room?.title ?? "Room \(room.room?.roomNo ?? "0")")
                         }
                     }
 //                    ForEach(rooms, id: \.self) { roomnum in
@@ -57,6 +57,6 @@ struct RoomsView: View {
 
 struct RoomsView_Previews: PreviewProvider {
     static var previews: some View {
-        RoomsView(rooms: RoomModel.sampleData)
+        RoomsView(rooms: RoomsViewModel())
     }
 }
