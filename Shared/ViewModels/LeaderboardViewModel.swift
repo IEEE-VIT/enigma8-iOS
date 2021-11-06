@@ -33,7 +33,7 @@ class LeaderboardViewModel: ObservableObject {
             self.leaderboard = []
             fetchLeaderboard()
         } else {
-            APIClient.request(fromRouter: Router.leaderboardSearch(Leaderboard.SearchRequest(page: currentPage, query: searchQuery.lowercased(), perPage: 10))) { (response: Leaderboard.Response?, error) in
+            APIClient.request(fromRouter: Router.leaderboard(Leaderboard.Request(page: currentPage, query: searchQuery.lowercased(), perPage: 10))) { (response: Leaderboard.Response?, error) in
                 guard let response = response else { return }
                 if(response.leaderboard.isEmpty) {//Checks if no more users to fetch
                     self.noMorePages = true

@@ -8,14 +8,10 @@
 import Foundation
 
 struct Leaderboard {
-    struct SearchRequest: Codable {
-        var page: Int
-        var query: String
-        var perPage: Int
-    }
     struct Request:Codable {
-        var page: Int
-        var perPage: Int
+        var page: Int?
+        var query: String?
+        var perPage: Int?
     }
     struct Response: Codable {
         var page: Int?
