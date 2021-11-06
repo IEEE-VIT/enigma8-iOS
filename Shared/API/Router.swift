@@ -12,7 +12,7 @@ enum Router: URLRequestConvertible {
     
     case loginGoogle(SignUpModel.Request)
     case loginApple(SignUpModel.AppleRequest)
-    case timer
+    case timer, getUser
     case profileSetup(ProfileSetupModel.Request)
     case notifications
     
@@ -22,7 +22,7 @@ enum Router: URLRequestConvertible {
         switch self {
         case .loginGoogle, .loginApple, .profileSetup:
             return .post
-        case .timer, .notifications:
+        case .timer, .notifications, .getUser:
             return .get
         }
     }
@@ -39,6 +39,8 @@ enum Router: URLRequestConvertible {
             return "user/create/"
         case .notifications:
             return "notifs/notifications"
+        case .getUser:
+            return "user/getDetails/"
         }
     }
     

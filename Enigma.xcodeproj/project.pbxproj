@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3104C7C227350F5900B1C155 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104C7C127350F5900B1C155 /* UserModel.swift */; };
+		3104C7C42735102000B1C155 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104C7C32735102000B1C155 /* ProfileView.swift */; };
+		3104C7C6273513B500B1C155 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104C7C5273513B500B1C155 /* ProfileViewModel.swift */; };
 		3126674E2700B91E009834E9 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126674D2700B91E009834E9 /* AuthViewModel.swift */; };
 		312667512700BC3F009834E9 /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 312667502700BC3F009834E9 /* SwiftyBeaver */; };
 		314D79B9270C685A003C2F8A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314D79B8270C685A003C2F8A /* LoginView.swift */; };
@@ -77,6 +80,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3104C7C127350F5900B1C155 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		3104C7C32735102000B1C155 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		3104C7C5273513B500B1C155 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		3126674D2700B91E009834E9 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		314D79B8270C685A003C2F8A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		314D79BE270C6C29003C2F8A /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -169,6 +175,7 @@
 				31DDD20627171EE5002315FC /* ProfileSetupViewModel.swift */,
 				8C4FD31B271B36B30053F75A /* GameViewModel.swift */,
 				8C73DAC8272E8DE5009943BE /* NotificationsViewModel.swift */,
+				3104C7C5273513B500B1C155 /* ProfileViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -184,6 +191,7 @@
 				31C13210271D6D6500BD5301 /* FeedbackUI.swift */,
 				31C131F8271D4F7D00BD5301 /* InstructionsView.swift */,
 				8C73DAC6272E8A04009943BE /* NotificationsView.swift */,
+				3104C7C32735102000B1C155 /* ProfileView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -227,6 +235,7 @@
 				31A2665E27189A0B005B1A17 /* LeaderboardItem.swift */,
 				31D55DE0271768D80068A8AF /* SetupProfileModel.swift */,
 				8C73DACA272E8E88009943BE /* NotificationModel.swift */,
+				3104C7C127350F5900B1C155 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -556,9 +565,11 @@
 				31C13206271D560F00BD5301 /* Powerups.swift in Sources */,
 				8CEF83E92712F17900E96E2E /* StoryBubble.swift in Sources */,
 				31A2665F27189A0B005B1A17 /* LeaderboardItem.swift in Sources */,
+				3104C7C227350F5900B1C155 /* UserModel.swift in Sources */,
 				8CC128B82705D619000483AB /* TimerViewModel.swift in Sources */,
 				319611112702078E0030901E /* Data.swift in Sources */,
 				31C13214271D72CC00BD5301 /* FeedbackQuestionAnswerBlock.swift in Sources */,
+				3104C7C6273513B500B1C155 /* ProfileViewModel.swift in Sources */,
 				31C13216271D738C00BD5301 /* CustomTextEditor.swift in Sources */,
 				3196110B270206080030901E /* SignUpModel.swift in Sources */,
 				31C131F7271D3DA100BD5301 /* RoomModel.swift in Sources */,
