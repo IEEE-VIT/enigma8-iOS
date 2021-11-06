@@ -40,6 +40,7 @@ struct NotificationsView: View {
                 }
             }
         }.padding()
+        .onAppear(perform: notifsVM.getNotifications)
     }
 }
 
