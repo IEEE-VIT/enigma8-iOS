@@ -52,7 +52,11 @@ enum Router: URLRequestConvertible {
         case .loginApple, .loginGoogle:
             return nil
         default:
-            return "Bearer \(UserDefaults.standard.value(forKey: "EnigmaToken") ?? "")"
+            if(UserDefaults.standard.value(forKey: "EnigmaToken") != nil) {
+                return "Bearer \(UserDefaults.standard.value(forKey: "EnigmaToken") ?? "")"
+            } else {
+                return nil
+            }
         }
     }
         

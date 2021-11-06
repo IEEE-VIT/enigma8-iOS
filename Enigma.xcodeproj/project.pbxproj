@@ -69,6 +69,7 @@
 		8CD8CAE926FADF1200267EAC /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CAE826FADF1200267EAC /* GoogleSignIn */; };
 		8CD8CAEE26FAECB700267EAC /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CAED26FAECB700267EAC /* FirebaseMessaging */; };
 		8CEEBAF82702524D00515E4A /* AppleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEEBAF72702524D00515E4A /* AppleCoordinator.swift */; };
+		8CEEE0172736F9CF00CD06AB /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEEE0162736F9CF00CD06AB /* SafariView.swift */; };
 		8CEF83E92712F17900E96E2E /* StoryBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF83E82712F17900E96E2E /* StoryBubble.swift */; };
 		8CEF83EC2712F23500E96E2E /* StoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF83EB2712F23500E96E2E /* StoryModel.swift */; };
 		A01836D227042C3100A4F896 /* GoogleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01836D127042C3100A4F896 /* GoogleCoordinator.swift */; };
@@ -130,6 +131,7 @@
 		8CC128B3270301C1000483AB /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		8CC128B72705D618000483AB /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		8CEEBAF72702524D00515E4A /* AppleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleCoordinator.swift; sourceTree = "<group>"; };
+		8CEEE0162736F9CF00CD06AB /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		8CEF83E82712F17900E96E2E /* StoryBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBubble.swift; sourceTree = "<group>"; };
 		8CEF83EB2712F23500E96E2E /* StoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryModel.swift; sourceTree = "<group>"; };
 		A01836D127042C3100A4F896 /* GoogleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCoordinator.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				319611102702078E0030901E /* Data.swift */,
+				8CEEE0162736F9CF00CD06AB /* SafariView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -571,6 +574,7 @@
 				31C13211271D6D6500BD5301 /* FeedbackUI.swift in Sources */,
 				31C13202271D55F000BD5301 /* GameMechanics.swift in Sources */,
 				31A266612718A1C6005B1A17 /* RoomsView.swift in Sources */,
+				8CEEE0172736F9CF00CD06AB /* SafariView.swift in Sources */,
 				8CEF83EC2712F23500E96E2E /* StoryModel.swift in Sources */,
 				31CEEDA12715C38900298399 /* DropdownView.swift in Sources */,
 				4EC3E48026E7DCCA0049AD99 /* EnigmaApp.swift in Sources */,

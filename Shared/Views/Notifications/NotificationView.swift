@@ -6,22 +6,27 @@
 //
 
 import SwiftUI
+import SafariServices
 
 struct NotificationView: View {
     var notif: Notification = Notification(text: "Lorem ipsum dolor sit amet", timestamp: "2021-11-04T15:09:58.620Z")
+    @State var showSafari = false
     
     var body: some View {
             HStack(spacing: 0) {
-                //TODO: Decide on if notification seen logic
-//                notif.isViewed! ? Image(systemName: "circle").padding() : Image(systemName: "circle.fill").padding()
                 VStack(alignment: .leading) {
-                    Text(notif.text!)
+                    Text(notif.text ?? "")
                     Text(notif.parsedTime)
                         .foregroundColor(.gray)
                 }
                 Spacer()
-                CustomButton(buttonText: "VIEW")
-                    .frame(width: 80)
+                if(notif.metadata != nil) {
+                    CustomButton(buttonText: "VIEW", action: {showSafari = true})
+                        .frame(width: 80)
+                }
+        }
+        .sheet(isPresented: $showSafari) {
+            SafariView(url: URL(string: notif.metadata ?? "https://google.com")!)
         }
     }
 }
