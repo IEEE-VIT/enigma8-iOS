@@ -15,10 +15,6 @@ class LeaderboardViewModel: ObservableObject {
     var noMorePages = false
     var currentPage = 1
     
-    init() {
-        fetchLeaderboard()
-    }
-    
     func fetchLeaderboard() {
         APIClient.request(fromRouter: Router.leaderboard(Leaderboard.Request(page: currentPage, perPage: 10))) { (response: Leaderboard.Response?, error) in
             guard let response = response else { return }

@@ -29,19 +29,18 @@ struct LeaderboardView: View {
                 }
                 .padding(.horizontal, 50)
             }
-            // TODO: fix LazyVStack
             ScrollView {
                 LazyVStack {
                     ForEach(leaderboardVM.leaderboard, id: \.self) { user in
-                        LeaderboardRow(isUser: leaderboardVM.currentUser!.username == user.username, user: user)
+                        LeaderboardRow(isUser: leaderboardVM.currentUser?.username == user.username, user: user)
                             .onAppear {
                                 leaderboardVM.fetchMorePages(currentRow: user)
-                                if leaderboardVM.currentUser != nil, user.username == leaderboardVM.currentUser!.username {
+                                if user.username == leaderboardVM.currentUser?.username {
                                     self.userVisible = true
                                 }
                             }
                             .onDisappear {
-                                if leaderboardVM.currentUser != nil, user.username == leaderboardVM.currentUser!.username {
+                                if user.username == leaderboardVM.currentUser?.username {
                                     self.userVisible = false
                                 }
                             }
@@ -52,6 +51,7 @@ struct LeaderboardView: View {
                 LeaderboardRow(isUser: true, user: leaderboardVM.currentUser!)
             }
         }
+        .onAppear(perform: leaderboardVM.fetchLeaderboard)
     }
 }
 
