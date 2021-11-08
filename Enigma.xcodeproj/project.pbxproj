@@ -12,7 +12,9 @@
 		314D79B9270C685A003C2F8A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314D79B8270C685A003C2F8A /* LoginView.swift */; };
 		314D79BF270C6C29003C2F8A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314D79BE270C6C29003C2F8A /* CustomButton.swift */; };
 		318BCCA32733FC0600E0B6F3 /* StoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BCCA22733FC0600E0B6F3 /* StoryViewModel.swift */; };
-		318BCCA7273422DE00E0B6F3 /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BCCA6273422DE00E0B6F3 /* StoryView.swift */; };
+		318BCCA7273422DE00E0B6F3 /* CurrentStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BCCA6273422DE00E0B6F3 /* CurrentStoryView.swift */; };
+		318DB98927391790000AB95A /* FullStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB98827391790000AB95A /* FullStoryView.swift */; };
+		318DB98C27392525000AB95A /* RoomWiseStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB98B27392525000AB95A /* RoomWiseStory.swift */; };
 		3196110B270206080030901E /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3196110A270206080030901E /* SignUpModel.swift */; };
 		319611112702078E0030901E /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319611102702078E0030901E /* Data.swift */; };
 		31969157271D961F00FDBEF6 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31969156271D961F00FDBEF6 /* LeaderboardView.swift */; };
@@ -78,7 +80,9 @@
 		314D79B8270C685A003C2F8A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		314D79BE270C6C29003C2F8A /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		318BCCA22733FC0600E0B6F3 /* StoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewModel.swift; sourceTree = "<group>"; };
-		318BCCA6273422DE00E0B6F3 /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
+		318BCCA6273422DE00E0B6F3 /* CurrentStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentStoryView.swift; sourceTree = "<group>"; };
+		318DB98827391790000AB95A /* FullStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullStoryView.swift; sourceTree = "<group>"; };
+		318DB98B27392525000AB95A /* RoomWiseStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomWiseStory.swift; sourceTree = "<group>"; };
 		3196110A270206080030901E /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		319611102702078E0030901E /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		31969156271D961F00FDBEF6 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
@@ -177,7 +181,8 @@
 				31CEEDA22715C5A900298399 /* ProfileSetupView.swift */,
 				31C13210271D6D6500BD5301 /* FeedbackUI.swift */,
 				31C131F8271D4F7D00BD5301 /* InstructionsView.swift */,
-				318BCCA6273422DE00E0B6F3 /* StoryView.swift */,
+				318BCCA6273422DE00E0B6F3 /* CurrentStoryView.swift */,
+				318DB98827391790000AB95A /* FullStoryView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 		314D79BA270C6BBC003C2F8A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				318DB98A27392508000AB95A /* FullStoryView */,
 				31C13200271D55DE00BD5301 /* Instructions */,
 				31C13212271D72AB00BD5301 /* FeedBackUISubviews */,
 				31A2665B2718995A005B1A17 /* Leaderboard */,
@@ -207,6 +213,14 @@
 				31C13215271D738C00BD5301 /* CustomTextEditor.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		318DB98A27392508000AB95A /* FullStoryView */ = {
+			isa = PBXGroup;
+			children = (
+				318DB98B27392525000AB95A /* RoomWiseStory.swift */,
+			);
+			path = FullStoryView;
 			sourceTree = "<group>";
 		};
 		31961109270205E30030901E /* Model */ = {
@@ -536,6 +550,7 @@
 				4E7A5CDC2700FBBF0058CAB9 /* KFManager.swift in Sources */,
 				31C1320A271D567000BD5301 /* ScoringSystem.swift in Sources */,
 				31D994632701EBB000E506D9 /* APIClient.swift in Sources */,
+				318DB98927391790000AB95A /* FullStoryView.swift in Sources */,
 				31C13206271D560F00BD5301 /* Powerups.swift in Sources */,
 				8CEF83E92712F17900E96E2E /* StoryBubble.swift in Sources */,
 				31A2665F27189A0B005B1A17 /* LeaderboardItem.swift in Sources */,
@@ -565,6 +580,7 @@
 				31A2665D2718996D005B1A17 /* LeaderboardRow.swift in Sources */,
 				314D79B9270C685A003C2F8A /* LoginView.swift in Sources */,
 				4E7A5CD52700FB5C0058CAB9 /* Logger.swift in Sources */,
+				318DB98C27392525000AB95A /* RoomWiseStory.swift in Sources */,
 				8CAC2B7027103B39008049D3 /* TimeView.swift in Sources */,
 				31C13208271D561F00BD5301 /* LetsPlay.swift in Sources */,
 				8CC128B4270301C1000483AB /* TimerModel.swift in Sources */,
@@ -574,7 +590,7 @@
 				8CEEBAF82702524D00515E4A /* AppleCoordinator.swift in Sources */,
 				8C46F76527195924003132B1 /* EnigmaAlert.swift in Sources */,
 				A01836D227042C3100A4F896 /* GoogleCoordinator.swift in Sources */,
-				318BCCA7273422DE00E0B6F3 /* StoryView.swift in Sources */,
+				318BCCA7273422DE00E0B6F3 /* CurrentStoryView.swift in Sources */,
 				31D55DE1271768D80068A8AF /* SetupProfileModel.swift in Sources */,
 				31CEEDA32715C5A900298399 /* ProfileSetupView.swift in Sources */,
 				314D79BF270C6C29003C2F8A /* CustomButton.swift in Sources */,
