@@ -9,6 +9,10 @@ import Foundation
 
 class RoomsViewModel: ObservableObject {
     @Published var allInfo: [RoomsModel] = []
+    @Published var roomUnlocked: Bool = false
+    @Published var starsNeeded: Int = 999
+    @Published var presentNumberOfStars: Bool = false
+    @Published var powerUpSelected: Bool = false
     init(){
         fetchAllInfo()
     }
@@ -19,10 +23,15 @@ class RoomsViewModel: ObservableObject {
                 Logger.error(error.debugDescription)
                 return
             }
-            if !self.allInfo.isEmpty {
-                self.allInfo.removeAll()
-            }
-            self.allInfo.append(contentsOf: response.data ?? [])
+            self.allInfo = response.data ?? []
+        }
+    }
+    func checkIfRoomUnlocked(roomId: String) {
+        let request = RoomUnlock.RoomUnlockRequest(roomId: roomId)
+        APIClient.request(fromRouter: .unlockRoom(request)) { (response: RoomUnlock.RoomUnlockResponse?, error) in
+            guard let response = response else { return }
+            self.roomUnlocked = response.unlock ?? false
+            self.starsNeeded = response.starsNeeded ?? 999
         }
     }
 }
