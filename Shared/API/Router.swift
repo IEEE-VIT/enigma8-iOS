@@ -91,6 +91,8 @@ enum Router: URLRequestConvertible {
             return try self.encoder.encode(body, into: request)
         case .loginApple(let appleBody):
             return try self.encoder.encode(appleBody, into: request)
+        case .selectPowerup(let powerupSelect):
+            return try self.encoder.encode(powerupSelect, into:request)
         default:
             return try self.encoding.encode(request, with: self.parameters)
         }

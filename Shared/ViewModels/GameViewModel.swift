@@ -10,6 +10,7 @@ import Foundation
 class GameViewModel: ObservableObject {
     @Published var currentStatus: CurrentStatus = CurrentStatus()
     @Published var powerupList: [Powerup.PowerupModel] = []
+    @Published var navigateToRoom: Bool = false
     
     func getPowerups() {
         APIClient.request(fromRouter: Router.getPowerup) { (response: Powerup.Response?, error) in
@@ -19,9 +20,11 @@ class GameViewModel: ObservableObject {
     }
     
     func selectPowerup(powerup: Powerup.PowerupModel) -> Void {
-        APIClient.request(fromRouter: Router.selectPowerup(Powerup.SelectRequest(roomId: currentStatus.roomId, powerupId: powerup.id))) { (response: String?, error) in
-            //guard let response = response else {return}
-            //TODO: Go to Game View
+        APIClient.request(fromRouter: Router.selectPowerup(Powerup.SelectRequest(roomId: currentStatus.roomId, powerupId: powerup.id))) { (response: Powerup.SelectResponse?, error) in
+            guard let response = response else {return}
+            if(response.powerup != nil) {//Success in Selecting Powerup
+                self.navigateToRoom = true
+            }
         }
     }
 }
