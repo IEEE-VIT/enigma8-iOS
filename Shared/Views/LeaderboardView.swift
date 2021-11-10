@@ -10,6 +10,8 @@ import SwiftUI
 struct LeaderboardView: View {
     @StateObject var leaderboardVM: LeaderboardViewModel = LeaderboardViewModel()
     @State var userVisible: Bool = false
+    @State var showClear: Bool = false
+    @State var query: String = ""
     var body: some View {
         VStack {
             // TODO: Add navBarTitle
@@ -23,9 +25,19 @@ struct LeaderboardView: View {
                 HStack {
                     Image(systemName: "magnifyingglass")
                         .padding(.trailing)
-                    TextField("Search", text: $leaderboardVM.searchQuery, onCommit: {
-                        leaderboardVM.searchLeaderboard()
+                    TextField("Search", text: $query, onCommit: {
+                        leaderboardVM.fetchLeaderboard(query: query)
+                        self.showClear = true
                     })
+                    if(showClear) {
+                        Button(action: {
+                            self.query = ""
+                            self.showClear = false
+                            leaderboardVM.fetchLeaderboard(query:"")
+                        }) {
+                            Text("Clear")
+                        }
+                    }
                 }
                 .padding(.horizontal, 50)
             }
@@ -51,7 +63,7 @@ struct LeaderboardView: View {
                 LeaderboardRow(isUser: true, user: leaderboardVM.currentUser!)
             }
         }
-        .onAppear(perform: leaderboardVM.fetchLeaderboard)
+        .onAppear(perform: { leaderboardVM.fetchLeaderboard() })
     }
 }
 

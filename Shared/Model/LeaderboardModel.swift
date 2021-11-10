@@ -15,18 +15,19 @@ struct Leaderboard {
     }
     struct Response: Codable {
         var page: Int?
-        var userRank: LeaderboardItem
-        var leaderboard: [LeaderboardItem]
+        var userRank: LeaderboardItem?
+        var leaderboard: [LeaderboardItem]?
+        var totalPage: Int?
     }
 }
 
 struct LeaderboardItem: Codable, Hashable {
     var username: String?
-    var score: Int?
+    var score: Double?
     var questionsSolved: Int?
     var rank: Int?
     
-    init(username: String?, score: Int?, questionsSolved: Int?, rank: Int?) {
+    init(username: String?, score: Double?, questionsSolved: Int?, rank: Int?) {
         self.username = username
         self.score = score
         self.questionsSolved = questionsSolved

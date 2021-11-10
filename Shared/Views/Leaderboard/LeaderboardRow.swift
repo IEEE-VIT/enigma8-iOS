@@ -17,7 +17,7 @@ struct LeaderboardRow: View {
                 .padding(.trailing)
             Text(user.username ?? "someUsername")
             Spacer()
-            Text("\(user.score ?? 0)")
+            Text(String(format: "%.2f", user.score ?? 0))
             Spacer()
             Text("\(user.questionsSolved ?? 0)")
                 .padding(.trailing)
