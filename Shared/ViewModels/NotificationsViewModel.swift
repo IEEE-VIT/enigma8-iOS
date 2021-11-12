@@ -14,8 +14,12 @@ class NotificationsViewModel: ObservableObject {
     func getNotifications() {
         APIClient.request(fromRouter: Router.notifications) { (response: NotificationsResponse?, error) in
             guard let response = response else {return}
-            self.notificationList = response.notifs
-            self.isFetched = true
+            if let notifs = response.notifs as? [Notification] { // Checking type
+                self.notificationList = notifs
+                self.isFetched = true
+            } else {
+                print(response.notifs)
+            }
         }
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 import SafariServices
 
 struct NotificationView: View {
-    var notif: Notification = Notification(text: "Lorem ipsum dolor sit amet", timestamp: "2021-11-04T15:09:58.620Z")
+    var notif: Notification = Notification(text: "Lorem ipsum dolor sit amet", timestamp: 12341234122)
     @State var showSafari = false
     
     var body: some View {
