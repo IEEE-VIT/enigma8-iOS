@@ -59,6 +59,10 @@
 		8C46F76527195924003132B1 /* EnigmaAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C46F76427195924003132B1 /* EnigmaAlert.swift */; };
 		8C46F76727198F93003132B1 /* RoomUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C46F76627198F93003132B1 /* RoomUI.swift */; };
 		8C4FD31C271B36B30053F75A /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4FD31B271B36B30053F75A /* GameViewModel.swift */; };
+		8C73DAC7272E8A04009943BE /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C73DAC6272E8A04009943BE /* NotificationsView.swift */; };
+		8C73DAC9272E8DE5009943BE /* NotificationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C73DAC8272E8DE5009943BE /* NotificationsViewModel.swift */; };
+		8C73DACB272E8E88009943BE /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C73DACA272E8E88009943BE /* NotificationModel.swift */; };
+		8C73DACE272E9897009943BE /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C73DACD272E9897009943BE /* NotificationView.swift */; };
 		8CAC2B6D27103AF5008049D3 /* TimerBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAC2B6C27103AF5008049D3 /* TimerBlock.swift */; };
 		8CAC2B7027103B39008049D3 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAC2B6F27103B39008049D3 /* TimeView.swift */; };
 		8CC128B4270301C1000483AB /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC128B3270301C1000483AB /* TimerModel.swift */; };
@@ -68,6 +72,7 @@
 		8CD8CAE926FADF1200267EAC /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CAE826FADF1200267EAC /* GoogleSignIn */; };
 		8CD8CAEE26FAECB700267EAC /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CAED26FAECB700267EAC /* FirebaseMessaging */; };
 		8CEEBAF82702524D00515E4A /* AppleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEEBAF72702524D00515E4A /* AppleCoordinator.swift */; };
+		8CEEE0172736F9CF00CD06AB /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEEE0162736F9CF00CD06AB /* SafariView.swift */; };
 		8CEF83E92712F17900E96E2E /* StoryBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF83E82712F17900E96E2E /* StoryBubble.swift */; };
 		8CEF83EC2712F23500E96E2E /* StoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF83EB2712F23500E96E2E /* StoryModel.swift */; };
 		A01836D227042C3100A4F896 /* GoogleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01836D127042C3100A4F896 /* GoogleCoordinator.swift */; };
@@ -123,11 +128,16 @@
 		8C46F76427195924003132B1 /* EnigmaAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnigmaAlert.swift; sourceTree = "<group>"; };
 		8C46F76627198F93003132B1 /* RoomUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomUI.swift; sourceTree = "<group>"; };
 		8C4FD31B271B36B30053F75A /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		8C73DAC6272E8A04009943BE /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
+		8C73DAC8272E8DE5009943BE /* NotificationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewModel.swift; sourceTree = "<group>"; };
+		8C73DACA272E8E88009943BE /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		8C73DACD272E9897009943BE /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		8CAC2B6C27103AF5008049D3 /* TimerBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerBlock.swift; sourceTree = "<group>"; };
 		8CAC2B6F27103B39008049D3 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
 		8CC128B3270301C1000483AB /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		8CC128B72705D618000483AB /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		8CEEBAF72702524D00515E4A /* AppleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleCoordinator.swift; sourceTree = "<group>"; };
+		8CEEE0162736F9CF00CD06AB /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		8CEF83E82712F17900E96E2E /* StoryBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBubble.swift; sourceTree = "<group>"; };
 		8CEF83EB2712F23500E96E2E /* StoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryModel.swift; sourceTree = "<group>"; };
 		A01836D127042C3100A4F896 /* GoogleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCoordinator.swift; sourceTree = "<group>"; };
@@ -164,6 +174,7 @@
 				8CC128B72705D618000483AB /* TimerViewModel.swift */,
 				31DDD20627171EE5002315FC /* ProfileSetupViewModel.swift */,
 				8C4FD31B271B36B30053F75A /* GameViewModel.swift */,
+				8C73DAC8272E8DE5009943BE /* NotificationsViewModel.swift */,
 				3104C7C5273513B500B1C155 /* ProfileViewModel.swift */,
 			);
 			path = ViewModels;
@@ -179,6 +190,7 @@
 				31CEEDA22715C5A900298399 /* ProfileSetupView.swift */,
 				31C13210271D6D6500BD5301 /* FeedbackUI.swift */,
 				31C131F8271D4F7D00BD5301 /* InstructionsView.swift */,
+				8C73DAC6272E8A04009943BE /* NotificationsView.swift */,
 				3104C7C32735102000B1C155 /* ProfileView.swift */,
 			);
 			path = App;
@@ -187,6 +199,7 @@
 		314D79BA270C6BBC003C2F8A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8C73DACC272E9875009943BE /* Notifications */,
 				31C13200271D55DE00BD5301 /* Instructions */,
 				31C13212271D72AB00BD5301 /* FeedBackUISubviews */,
 				31A2665B2718995A005B1A17 /* Leaderboard */,
@@ -221,6 +234,7 @@
 				A01836D327042CCA00A4F896 /* AppConstants.swift */,
 				31A2665E27189A0B005B1A17 /* LeaderboardItem.swift */,
 				31D55DE0271768D80068A8AF /* SetupProfileModel.swift */,
+				8C73DACA272E8E88009943BE /* NotificationModel.swift */,
 				3104C7C127350F5900B1C155 /* UserModel.swift */,
 			);
 			path = Model;
@@ -238,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				319611102702078E0030901E /* Data.swift */,
+				8CEEE0162736F9CF00CD06AB /* SafariView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -376,6 +391,14 @@
 				4EC3E47F26E7DCCA0049AD99 /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		8C73DACC272E9875009943BE /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				8C73DACD272E9897009943BE /* NotificationView.swift */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 		8CAC2B6B27103ACE008049D3 /* Timer */ = {
@@ -557,10 +580,12 @@
 				31969157271D961F00FDBEF6 /* LeaderboardView.swift in Sources */,
 				31CEEDA92715E62400298399 /* RadioGroupView.swift in Sources */,
 				4EC3E48226E7DCCA0049AD99 /* ContentView.swift in Sources */,
+				8C73DACE272E9897009943BE /* NotificationView.swift in Sources */,
+				8C73DAC7272E8A04009943BE /* NotificationsView.swift in Sources */,
 				31C13211271D6D6500BD5301 /* FeedbackUI.swift in Sources */,
 				31C13202271D55F000BD5301 /* GameMechanics.swift in Sources */,
-				3104C7C42735102000B1C155 /* ProfileView.swift in Sources */,
 				31A266612718A1C6005B1A17 /* RoomsView.swift in Sources */,
+				8CEEE0172736F9CF00CD06AB /* SafariView.swift in Sources */,
 				8CEF83EC2712F23500E96E2E /* StoryModel.swift in Sources */,
 				31CEEDA12715C38900298399 /* DropdownView.swift in Sources */,
 				4EC3E48026E7DCCA0049AD99 /* EnigmaApp.swift in Sources */,
@@ -572,10 +597,12 @@
 				4E7A5CD52700FB5C0058CAB9 /* Logger.swift in Sources */,
 				8CAC2B7027103B39008049D3 /* TimeView.swift in Sources */,
 				31C13208271D561F00BD5301 /* LetsPlay.swift in Sources */,
+				8C73DACB272E8E88009943BE /* NotificationModel.swift in Sources */,
 				8CC128B4270301C1000483AB /* TimerModel.swift in Sources */,
 				4E7A5CD92700FBA10058CAB9 /* PodHelper.swift in Sources */,
 				A01836D427042CCA00A4F896 /* AppConstants.swift in Sources */,
 				31C1320F271D63B800BD5301 /* Powerupcard.swift in Sources */,
+				8C73DAC9272E8DE5009943BE /* NotificationsViewModel.swift in Sources */,
 				8CEEBAF82702524D00515E4A /* AppleCoordinator.swift in Sources */,
 				8C46F76527195924003132B1 /* EnigmaAlert.swift in Sources */,
 				A01836D227042C3100A4F896 /* GoogleCoordinator.swift in Sources */,
