@@ -18,7 +18,7 @@ class NotificationsViewModel: ObservableObject {
                 self.notificationList = notifs
                 self.isFetched = true
             } else {
-                print(response.notifs)
+                Logger.error("Unable to parse notifications as [Notification]")
             }
         }
     }
