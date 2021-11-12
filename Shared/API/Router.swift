@@ -14,6 +14,8 @@ enum Router: URLRequestConvertible {
     case loginApple(SignUpModel.AppleRequest)
     case timer, getUser
     case profileSetup(ProfileSetupModel.Request)
+    case getPowerup
+    case selectPowerup(Powerup.SelectRequest)
     case leaderboard(Leaderboard.Request)
     case notifications
     
@@ -21,9 +23,9 @@ enum Router: URLRequestConvertible {
     
     var method: HTTPMethod {
         switch self {
-        case .loginGoogle, .loginApple, .profileSetup:
+        case .loginGoogle, .loginApple, .profileSetup, .selectPowerup:
             return .post
-        case .timer, .leaderboard, .notifications, .getUser:
+        case .timer, .leaderboard, .notifications, .getUser, .getPowerup:
             return .get
         }
     }
@@ -38,6 +40,10 @@ enum Router: URLRequestConvertible {
             return "static/timer/"
         case .profileSetup:
             return "user/create/"
+        case .getPowerup:
+            return "user/getPowerups/"
+        case .selectPowerup:
+            return "user/selectPowerup/"
         case .leaderboard:
             return "game/leaderboards"
         case .notifications:
@@ -95,6 +101,8 @@ enum Router: URLRequestConvertible {
             return try self.encoder.encode(body, into: request)
         case .loginApple(let appleBody):
             return try self.encoder.encode(appleBody, into: request)
+        case .selectPowerup(let powerupSelect):
+            return try self.encoder.encode(powerupSelect, into:request)
         case .leaderboard(let leaderboardRequest):
             return try self.encoder.encode(leaderboardRequest, into: request)
         default:

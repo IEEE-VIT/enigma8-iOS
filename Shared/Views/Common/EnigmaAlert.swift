@@ -35,7 +35,7 @@ struct EnigmaAlert: View {
         .overlay(RoundedRectangle(cornerRadius: 20)
                     .stroke(Color.primary, lineWidth: 2))
         .background(RoundedRectangle(cornerRadius: 20)
-                        .fill(Color(white: 0, opacity: 0.2)))
+                        .fill(Color.white))
         .frame(width: UIScreen.main.bounds.width*widthPercentage)
     }
 }
