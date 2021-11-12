@@ -17,9 +17,9 @@ struct LeaderboardRow: View {
                 .padding(.trailing)
             Text(user.username ?? "someUsername")
             Spacer()
-            Text("\(user.score ?? 0)")
+            Text(String(format: "%.2f", user.score ?? 0))
             Spacer()
-            Text("\(user.solved ?? 0)")
+            Text("\(user.questionsSolved ?? 0)")
                 .padding(.trailing)
         }
         .scaleEffect(isUser ? 1.1 : 1.0)

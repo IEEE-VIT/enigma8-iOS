@@ -18,7 +18,7 @@
 		319611112702078E0030901E /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319611102702078E0030901E /* Data.swift */; };
 		31969157271D961F00FDBEF6 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31969156271D961F00FDBEF6 /* LeaderboardView.swift */; };
 		31A2665D2718996D005B1A17 /* LeaderboardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A2665C2718996D005B1A17 /* LeaderboardRow.swift */; };
-		31A2665F27189A0B005B1A17 /* LeaderboardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A2665E27189A0B005B1A17 /* LeaderboardItem.swift */; };
+		31A2665F27189A0B005B1A17 /* LeaderboardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A2665E27189A0B005B1A17 /* LeaderboardModel.swift */; };
 		31A266612718A1C6005B1A17 /* RoomsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A266602718A1C6005B1A17 /* RoomsView.swift */; };
 		31AB32DB27024A0A00C43EAA /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AB32DA27024A0A00C43EAA /* APIResponse.swift */; };
 		31C131F7271D3DA100BD5301 /* RoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C131F6271D3DA100BD5301 /* RoomModel.swift */; };
@@ -65,6 +65,7 @@
 		8C73DACE272E9897009943BE /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C73DACD272E9897009943BE /* NotificationView.swift */; };
 		8CAC2B6D27103AF5008049D3 /* TimerBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAC2B6C27103AF5008049D3 /* TimerBlock.swift */; };
 		8CAC2B7027103B39008049D3 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAC2B6F27103B39008049D3 /* TimeView.swift */; };
+		8CB59C4C2733EBE500DDD725 /* LeaderboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB59C4B2733EBE500DDD725 /* LeaderboardViewModel.swift */; };
 		8CC128B4270301C1000483AB /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC128B3270301C1000483AB /* TimerModel.swift */; };
 		8CC128B82705D619000483AB /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC128B72705D618000483AB /* TimerViewModel.swift */; };
 		8CD8CADF26FADE7A00267EAC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CADE26FADE7A00267EAC /* Kingfisher */; };
@@ -90,7 +91,7 @@
 		319611102702078E0030901E /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		31969156271D961F00FDBEF6 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
 		31A2665C2718996D005B1A17 /* LeaderboardRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardRow.swift; sourceTree = "<group>"; };
-		31A2665E27189A0B005B1A17 /* LeaderboardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardItem.swift; sourceTree = "<group>"; };
+		31A2665E27189A0B005B1A17 /* LeaderboardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardModel.swift; sourceTree = "<group>"; };
 		31A266602718A1C6005B1A17 /* RoomsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsView.swift; sourceTree = "<group>"; };
 		31AB32DA27024A0A00C43EAA /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		31C131F6271D3DA100BD5301 /* RoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomModel.swift; sourceTree = "<group>"; };
@@ -134,6 +135,7 @@
 		8C73DACD272E9897009943BE /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		8CAC2B6C27103AF5008049D3 /* TimerBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerBlock.swift; sourceTree = "<group>"; };
 		8CAC2B6F27103B39008049D3 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
+		8CB59C4B2733EBE500DDD725 /* LeaderboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewModel.swift; sourceTree = "<group>"; };
 		8CC128B3270301C1000483AB /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		8CC128B72705D618000483AB /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		8CEEBAF72702524D00515E4A /* AppleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleCoordinator.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				8CC128B72705D618000483AB /* TimerViewModel.swift */,
 				31DDD20627171EE5002315FC /* ProfileSetupViewModel.swift */,
 				8C4FD31B271B36B30053F75A /* GameViewModel.swift */,
+				8CB59C4B2733EBE500DDD725 /* LeaderboardViewModel.swift */,
 				8C73DAC8272E8DE5009943BE /* NotificationsViewModel.swift */,
 				3104C7C5273513B500B1C155 /* ProfileViewModel.swift */,
 			);
@@ -232,6 +235,7 @@
 				3196110A270206080030901E /* SignUpModel.swift */,
 				8CC128B3270301C1000483AB /* TimerModel.swift */,
 				A01836D327042CCA00A4F896 /* AppConstants.swift */,
+				31A2665E27189A0B005B1A17 /* LeaderboardModel.swift */,
 				31A2665E27189A0B005B1A17 /* LeaderboardItem.swift */,
 				31D55DE0271768D80068A8AF /* SetupProfileModel.swift */,
 				8C73DACA272E8E88009943BE /* NotificationModel.swift */,
@@ -564,6 +568,7 @@
 				31D994632701EBB000E506D9 /* APIClient.swift in Sources */,
 				31C13206271D560F00BD5301 /* Powerups.swift in Sources */,
 				8CEF83E92712F17900E96E2E /* StoryBubble.swift in Sources */,
+				31A2665F27189A0B005B1A17 /* LeaderboardModel.swift in Sources */,
 				31A2665F27189A0B005B1A17 /* LeaderboardItem.swift in Sources */,
 				3104C7C227350F5900B1C155 /* UserModel.swift in Sources */,
 				8CC128B82705D619000483AB /* TimerViewModel.swift in Sources */,
@@ -579,6 +584,7 @@
 				31DDD20727171EE5002315FC /* ProfileSetupViewModel.swift in Sources */,
 				31969157271D961F00FDBEF6 /* LeaderboardView.swift in Sources */,
 				31CEEDA92715E62400298399 /* RadioGroupView.swift in Sources */,
+				8CB59C4C2733EBE500DDD725 /* LeaderboardViewModel.swift in Sources */,
 				4EC3E48226E7DCCA0049AD99 /* ContentView.swift in Sources */,
 				8C73DACE272E9897009943BE /* NotificationView.swift in Sources */,
 				8C73DAC7272E8A04009943BE /* NotificationsView.swift in Sources */,
