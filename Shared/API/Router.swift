@@ -15,6 +15,7 @@ enum Router: URLRequestConvertible {
     case timer, getUser
     case profileSetup(ProfileSetupModel.Request)
     case leaderboard(Leaderboard.Request)
+    case notifications
     
     static let baseURL = URL(string: "https://enigma8.herokuapp.com")!
     
@@ -22,7 +23,7 @@ enum Router: URLRequestConvertible {
         switch self {
         case .loginGoogle, .loginApple, .profileSetup:
             return .post
-        case .timer, .leaderboard, .getUser:
+        case .timer, .leaderboard, .notifications, .getUser:
             return .get
         }
     }
@@ -39,6 +40,8 @@ enum Router: URLRequestConvertible {
             return "user/create/"
         case .leaderboard:
             return "game/leaderboards"
+        case .notifications:
+            return "notifs/notifications"
         case .getUser:
             return "user/getDetails/"
         }
@@ -54,7 +57,11 @@ enum Router: URLRequestConvertible {
         case .loginApple, .loginGoogle:
             return nil
         default:
-            return "Bearer \(UserDefaults.standard.value(forKey: "EnigmaToken") ?? "")"
+            if(UserDefaults.standard.value(forKey: "EnigmaToken") != nil) {
+                return "Bearer \(UserDefaults.standard.value(forKey: "EnigmaToken") ?? "")"
+            } else {
+                return nil
+            }
         }
     }
         
