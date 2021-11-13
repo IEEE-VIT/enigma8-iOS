@@ -13,7 +13,7 @@ struct RoomsView: View {
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
-    var rooms: [RoomModel]
+    @StateObject var rooms = RoomsViewModel()
     
     var body: some View {
         ScrollView {
@@ -24,39 +24,46 @@ struct RoomsView: View {
                         .font(.title)
                     Spacer()
                 }
-                
-                Spacer()
                 // MARK: GRID
                 LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(rooms) { room in
+                    ForEach(rooms.allInfo, id: \.self) { room in
                         VStack {
-                            HStack {
-                                ForEach(0..<3) { _ in
-                                    Image(systemName: "circle")
+                            RoomQuestionStatusView(questionStatus: room.journey?.questionsStatus ?? [.null, .null, .null])
+                            //TODO: EMBED ROOMTILE IN NAVIGATION LINK
+                            /*
+                             NavigationLink isActive when rooms.roomUnlocked is true
+                             Navigate to RoomUI when powerUpSelected is true
+                             Navigate to PowerupView/Story view when powerUpSelected is false
+                             */
+                            RoomTile(room: room)
+                                .onTapGesture {
+                                    if let roomUnlocked = room.journey?.roomUnlocked {
+                                        if roomUnlocked == true {
+                                            rooms.roomUnlocked = true
+                                            rooms.powerUpSelected = room.journey?.powerupId == nil ? false : true
+                                        }
+                                        else {
+                                            rooms.checkIfRoomUnlocked(roomId: room.room?._id ?? "")
+                                        }
+                                    }
+                                    else {
+                                        rooms.checkIfRoomUnlocked(roomId: room.room?._id ?? "")
+                                    }
                                 }
-                            }
-                            KFImage(URL(string: room.media ?? ""))
-                                .resizable()
-                                .scaledToFit()
-                            Text(room.title ?? "Room \(room.roomNo ?? 0)")
                         }
                     }
-//                    ForEach(rooms, id: \.self) { roomnum in
-//                        VStack {
-//                            Text("Room \(roomnum)")
-//                            Image(systemName: "star")
-//                                .resizable()
-//                        }
-//                    }
                 }
             }
             .padding()
+        }
+        .onAppear {
+            rooms.fetchAllInfo()
         }
     }
 }
 
 struct RoomsView_Previews: PreviewProvider {
     static var previews: some View {
-        RoomsView(rooms: RoomModel.sampleData)
+        RoomsView(rooms: RoomsViewModel())
     }
 }

@@ -12,7 +12,8 @@ enum Router: URLRequestConvertible {
     
     case loginGoogle(SignUpModel.Request)
     case loginApple(SignUpModel.AppleRequest)
-    case timer, getUser
+    case unlockRoom(RoomUnlock.RoomUnlockRequest)
+    case timer, getUser, allRooms
     case profileSetup(ProfileSetupModel.Request)
     case getPowerup
     case selectPowerup(Powerup.SelectRequest)
@@ -25,7 +26,7 @@ enum Router: URLRequestConvertible {
         switch self {
         case .loginGoogle, .loginApple, .profileSetup, .selectPowerup:
             return .post
-        case .timer, .leaderboard, .notifications, .getUser, .getPowerup:
+        case .timer, .getUser, .allRooms, .unlockRoom, .leaderboard, .notifications, .getPowerup:
             return .get
         }
     }
@@ -40,6 +41,10 @@ enum Router: URLRequestConvertible {
             return "static/timer/"
         case .profileSetup:
             return "user/create/"
+        case .allRooms:
+            return "room/allRooms/"
+        case .unlockRoom:
+            return "room/checkIfRoomUnlocked/"
         case .getPowerup:
             return "user/getPowerups/"
         case .selectPowerup:
@@ -101,6 +106,8 @@ enum Router: URLRequestConvertible {
             return try self.encoder.encode(body, into: request)
         case .loginApple(let appleBody):
             return try self.encoder.encode(appleBody, into: request)
+        case .unlockRoom(let roomId):
+            return try self.encoder.encode(roomId, into: request)
         case .selectPowerup(let powerupSelect):
             return try self.encoder.encode(powerupSelect, into:request)
         case .leaderboard(let leaderboardRequest):
