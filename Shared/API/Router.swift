@@ -15,14 +15,18 @@ enum Router: URLRequestConvertible {
     case unlockRoom(RoomUnlock.RoomUnlockRequest)
     case timer, getUser, allRooms
     case profileSetup(ProfileSetupModel.Request)
+    case getPowerup
+    case selectPowerup(Powerup.SelectRequest)
+    case leaderboard(Leaderboard.Request)
+    case notifications
     
     static let baseURL = URL(string: "https://enigma8.herokuapp.com")!
     
     var method: HTTPMethod {
         switch self {
-        case .loginGoogle, .loginApple, .profileSetup:
+        case .loginGoogle, .loginApple, .profileSetup, .selectPowerup:
             return .post
-        case .timer, .getUser, .allRooms, .unlockRoom:
+        case .timer, .getUser, .allRooms, .unlockRoom, .leaderboard, .notifications, .getPowerup:
             return .get
         }
     }
@@ -41,6 +45,14 @@ enum Router: URLRequestConvertible {
             return "room/allRooms/"
         case .unlockRoom:
             return "room/checkIfRoomUnlocked/"
+        case .getPowerup:
+            return "user/getPowerups/"
+        case .selectPowerup:
+            return "user/selectPowerup/"
+        case .leaderboard:
+            return "game/leaderboards"
+        case .notifications:
+            return "notifs/notifications"
         case .getUser:
             return "user/getDetails/"
         }
@@ -56,7 +68,11 @@ enum Router: URLRequestConvertible {
         case .loginApple, .loginGoogle:
             return nil
         default:
-            return "\(UserDefaults.standard.value(forKey: "EnigmaToken") ?? "")"
+            if(UserDefaults.standard.value(forKey: "EnigmaToken") != nil) {
+                return "Bearer \(UserDefaults.standard.value(forKey: "EnigmaToken") ?? "")"
+            } else {
+                return nil
+            }
         }
     }
         
@@ -92,6 +108,10 @@ enum Router: URLRequestConvertible {
             return try self.encoder.encode(appleBody, into: request)
         case .unlockRoom(let roomId):
             return try self.encoder.encode(roomId, into: request)
+        case .selectPowerup(let powerupSelect):
+            return try self.encoder.encode(powerupSelect, into:request)
+        case .leaderboard(let leaderboardRequest):
+            return try self.encoder.encode(leaderboardRequest, into: request)
         default:
             return try self.encoding.encode(request, with: self.parameters)
         }
