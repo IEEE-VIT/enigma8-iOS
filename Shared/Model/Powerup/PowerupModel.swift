@@ -16,7 +16,7 @@ struct Powerup: Codable {
     
     struct SelectResponse: Codable {
         var powerup: PowerupModel?
-        var room: RoomModel?//TODO: might require change
+        var room: Room?//TODO: might require change
     }
     
     struct Response: Codable {

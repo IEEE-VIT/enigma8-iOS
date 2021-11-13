@@ -7,23 +7,37 @@
 
 import Foundation
 
-struct Story:Codable {
+struct Story:Codable, Hashable {
+    var roomNo: String?
     var sender: String?
     var message: String?
-    var icon: String?
-    var index: Int?
+    var senderEnum: StorySender {
+        StorySender(rawValue: self.sender ?? "person1") ?? .sender1
+    }
+    
+    init(roomNo: String?, sender: String?, message: String?) {
+        self.roomNo = roomNo
+        self.sender = sender
+        self.message = message
+    }
+    static let storySample: Story = Story(roomNo: "1", sender: "person1", message: "Lorem Ipsum Dolor Sit amet Lorem Ipsum Dolor Sit amet Lorem Ipsum Dolor Sit amet Lorem Ipsum Dolor Sit amet Lorem Ipsum Dolor Sit amet Lorem Ipsum Dolor Sit amet")
+    
+}
 
-    var iconURL: URL? {
-        return URL(string: icon ?? "")
+enum StorySender: String {
+    case sender1 = "person1"
+    case sender2 = "person2"
+}
+
+class StoryModel {
+    struct Request: Codable {
+        let roomId: String?
+        
+        init(roomId: String) {
+            self.roomId = roomId
+        }
     }
-    
-    private enum CodingKeys: String, CodingKey {
-        case sender = "sender"
-        case message = "message"
-        case icon = "sender_icon"
-        case index = "index"
+    struct Response: Codable {
+        var story: [Story?]?
     }
-    
-    static let storySample: Story = Story(sender: "John AppleSeed", message: "Lorem Ipsum Dolor Sit amet Lorem Ipsum Dolor Sit amet Lorem Ipsum Dolor Sit amet Lorem Ipsum Dolor Sit amet Lorem Ipsum Dolor Sit amet Lorem Ipsum Dolor Sit amet", icon: "https://upload.wikimedia.org/wikipedia/commons/f/fc/Johnny_Appleseed_photograph.jpg", index: 0)
-    
 }
