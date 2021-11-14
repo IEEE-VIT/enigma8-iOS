@@ -30,11 +30,7 @@ enum Router: URLRequestConvertible {
         switch self {
         case .loginGoogle, .loginApple, .profileSetup, .selectPowerup, .submitAnswer:
             return .post
-<<<<<<< HEAD
-        case .timer, .getUser, .allRooms, .unlockRoom, .leaderboard, .notifications, .getPowerup, .currentStory, .fullStory, .getQuestion, .getHint:
-=======
         case .timer, .getUser, .allRooms, .unlockRoom, .leaderboard, .notifications, .getPowerup, .getQuestion, .getHint, .currentStory, .fullStory:
->>>>>>> 0927a94 (feat: storyVM (#63))
             return .get
         }
     }
