@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct PowerupView: View {
-    @StateObject var powerupVM: GameViewModel = GameViewModel()
+    @StateObject var powerupVM: GameViewModel = GameViewModel(currentStatus: RoomsModel())
     @State var chosenPowerup: Powerup.PowerupModel?
     @State var showAlert = false
     
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                NavigationLink(destination: RoomUI(), isActive: $powerupVM.navigateToRoom) {EmptyView()}
+                NavigationLink(destination: RoomUI(gameVM: powerupVM), isActive: $powerupVM.navigateToRoom) {EmptyView()}
                 VStack(alignment: .leading) {
                     Text("Choose a Powerup")
                         .bold()
@@ -40,6 +40,7 @@ struct PowerupView: View {
             }.frame(width: geo.size.width, height: geo.size.height)
         }
         .onAppear(perform: powerupVM.getPowerups)
+        .navigationBarHidden(true)
     }
 }
 

@@ -13,9 +13,9 @@ class RoomsViewModel: ObservableObject {
     @Published var starsNeeded: Int = 999
     @Published var presentNumberOfStars: Bool = false
     @Published var powerUpSelected: Bool = false
-    init(){
-        fetchAllInfo()
-    }
+    @Published var navigateToRoom: Bool = false
+    @Published var toRoom: RoomsModel?
+
     func fetchAllInfo(){
         
         APIClient.request(fromRouter: .allRooms) { (response: AllRoomsResponse?, error) in
@@ -23,15 +23,24 @@ class RoomsViewModel: ObservableObject {
                 Logger.error(error.debugDescription)
                 return
             }
-            self.allInfo = response.data ?? []
+            if let rooms = response.data as? [RoomsModel] {
+                self.allInfo = rooms
+            }
         }
     }
-    func checkIfRoomUnlocked(roomId: String) {
-        let request = RoomUnlock.RoomUnlockRequest(roomId: roomId)
+    func checkIfRoomUnlocked(room: RoomsModel?) {
+        guard let room = room else {return}
+        let request = RoomUnlock.RoomUnlockRequest(roomId: room.room?._id)
         APIClient.request(fromRouter: .unlockRoom(request)) { (response: RoomUnlock.RoomUnlockResponse?, error) in
             guard let response = response else { return }
             self.roomUnlocked = response.unlock ?? false
             self.starsNeeded = response.starsNeeded ?? 999
+            if(self.roomUnlocked) {
+                self.toRoom = room
+                self.navigateToRoom = true
+            } else {
+                self.presentNumberOfStars = true
+            }
         }
     }
 }

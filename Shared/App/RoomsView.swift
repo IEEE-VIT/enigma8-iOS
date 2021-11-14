@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Kingfisher
+import PopupView
 
 struct RoomsView: View {
     let columns = [
@@ -16,7 +17,11 @@ struct RoomsView: View {
     @StateObject var rooms = RoomsViewModel()
     
     var body: some View {
+        NavigationView {
         ScrollView {
+            NavigationLink(destination: rooms.powerUpSelected ?
+                           AnyView(RoomUI(gameVM: GameViewModel(currentStatus: rooms.toRoom ?? RoomsModel()))) : AnyView(PowerupView(powerupVM: GameViewModel(currentStatus: rooms.toRoom ?? RoomsModel()))),
+                           isActive: $rooms.navigateToRoom) {EmptyView()}
             VStack {
                 // MARK: TITLE
                 HStack {
@@ -29,25 +34,21 @@ struct RoomsView: View {
                     ForEach(rooms.allInfo, id: \.self) { room in
                         VStack {
                             RoomQuestionStatusView(questionStatus: room.journey?.questionsStatus ?? [.null, .null, .null])
-                            //TODO: EMBED ROOMTILE IN NAVIGATION LINK
-                            /*
-                             NavigationLink isActive when rooms.roomUnlocked is true
-                             Navigate to RoomUI when powerUpSelected is true
-                             Navigate to PowerupView/Story view when powerUpSelected is false
-                             */
                             RoomTile(room: room)
                                 .onTapGesture {
+                                    print("Room Clicked \(room.journey?.roomUnlocked ?? true)")
                                     if let roomUnlocked = room.journey?.roomUnlocked {
                                         if roomUnlocked == true {
+                                            print("something")
                                             rooms.roomUnlocked = true
                                             rooms.powerUpSelected = room.journey?.powerupId == nil ? false : true
+                                            rooms.toRoom = room
+                                            rooms.navigateToRoom = true
+                                        } else {
+                                            rooms.checkIfRoomUnlocked(room: room)
                                         }
-                                        else {
-                                            rooms.checkIfRoomUnlocked(roomId: room.room?._id ?? "")
-                                        }
-                                    }
-                                    else {
-                                        rooms.checkIfRoomUnlocked(roomId: room.room?._id ?? "")
+                                    } else {
+                                        rooms.checkIfRoomUnlocked(room: room)
                                     }
                                 }
                         }
@@ -56,9 +57,16 @@ struct RoomsView: View {
             }
             .padding()
         }
+        .popup(isPresented: $rooms.presentNumberOfStars, animation: Animation.spring()) {
+            EnigmaAlert(text: "You require \(rooms.starsNeeded) number of keys to unlock this", confirmAction: {rooms.presentNumberOfStars.toggle()})
+        }
         .onAppear {
             rooms.fetchAllInfo()
+        }.navigationBarTitle("Enigma", displayMode: .automatic)
+        .navigationBarHidden(true)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
+        .navigationBarHidden(true)//both hiddens required
     }
 }
 
