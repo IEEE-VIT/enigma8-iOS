@@ -8,27 +8,49 @@
 import SwiftUI
 
 struct HeaderNavView: View {
-    //TODO: Set up appstorage
-//    TODO: in AuthVM, when sign in is successful add a userdefault "isSignedIn". Here, if isSignedIn is true, you display this View, otherwise display the LoginView
     @State var tabSelected = 0
     var body: some View {
         VStack {
             EnigmaHeader()
-            switch(tabSelected){
-            case 0:
+            TabView(selection: $tabSelected) {
                 RoomsView(rooms: RoomsViewModel())
-            case 1:
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "house")
+                            Text("Home")
+                                .font(.system(size:10))
+                        }
+                    }
+                    .tag(0)
                 LeaderboardView()
-            case 2:
-                FullStoryView(storyViewModel: StoryViewModel(roomId: "")) // TODO: call user/getDetails route in StoryViewModel to get current room and reload StoryVM when it changes
-            case 3:
-                ProfileView()
-            default:
-                LoginView(authVM: AuthViewModel())
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "chart.bar")
+                            Text("Leaderboard")
+                                .font(.system(size: 10))
+                        }
+                    }
+                    .tag(1)
+                FullStoryView(storyViewModel: StoryViewModel(roomId: ""))
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "book")
+                            Text("Story")
+                                .font(.system(size:10))
+                        }
+                    }
+                    .tag(2)
+                ProfileView(userVM: ProfileViewModel())
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "person.crop.circle")
+                            Text("Profile")
+                                .font(.system(size: 10))
+                        }
+                    }
+                    .tag(3)
             }
-            TabBarView(tabSelected: $tabSelected)
         }
-        
     }
 }
 
