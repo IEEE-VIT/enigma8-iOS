@@ -31,6 +31,15 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Cinzel-Bold.ttf</string>
+		<string>CinzelDecorative-Bold.ttf</string>
+		<string>CinzelDecorative-Regular.ttf</string>
+		<string>Mulish-Bold.ttf</string>
+		<string>Mulish-Regular.ttf</string>
+		<string>Mulish-SemiBold.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -40,6 +49,8 @@
 	<true/>
 	<key>UILaunchScreen</key>
 	<dict/>
+	<key>UILaunchStoryboardName</key>
+	<string>Launch Screen</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
