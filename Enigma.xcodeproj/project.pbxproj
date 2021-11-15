@@ -15,13 +15,16 @@
 		312667512700BC3F009834E9 /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 312667502700BC3F009834E9 /* SwiftyBeaver */; };
 		314D79B9270C685A003C2F8A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314D79B8270C685A003C2F8A /* LoginView.swift */; };
 		314D79BF270C6C29003C2F8A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314D79BE270C6C29003C2F8A /* CustomButton.swift */; };
-
+		317DAB3A274263A700F6FD1F /* RoomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317DAB39274263A700F6FD1F /* RoomProgressView.swift */; };
+		317DAB3C2742686900F6FD1F /* RoomProgressViewLine1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317DAB3B2742686900F6FD1F /* RoomProgressViewLine1.swift */; };
+		317DAB3E274272BF00F6FD1F /* RoomProgressViewLine2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317DAB3D274272BF00F6FD1F /* RoomProgressViewLine2.swift */; };
+		317DAB402742848D00F6FD1F /* RoomProgressComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317DAB3F2742848D00F6FD1F /* RoomProgressComponents.swift */; };
 		318BCCA32733FC0600E0B6F3 /* StoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BCCA22733FC0600E0B6F3 /* StoryViewModel.swift */; };
 		318BCCA7273422DE00E0B6F3 /* CurrentStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BCCA6273422DE00E0B6F3 /* CurrentStoryView.swift */; };
-		318DB98927391790000AB95A /* FullStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB98827391790000AB95A /* FullStoryView.swift */; };
-		318DB98C27392525000AB95A /* RoomWiseStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB98B27392525000AB95A /* RoomWiseStory.swift */; };
 		318DB9852738FCFA000AB95A /* RoomTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB9842738FCFA000AB95A /* RoomTile.swift */; };
 		318DB9872738FE25000AB95A /* RoomQuestionStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB9862738FE25000AB95A /* RoomQuestionStatusView.swift */; };
+		318DB98927391790000AB95A /* FullStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB98827391790000AB95A /* FullStoryView.swift */; };
+		318DB98C27392525000AB95A /* RoomWiseStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB98B27392525000AB95A /* RoomWiseStory.swift */; };
 		3196110B270206080030901E /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3196110A270206080030901E /* SignUpModel.swift */; };
 		319611112702078E0030901E /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319611102702078E0030901E /* Data.swift */; };
 		31969157271D961F00FDBEF6 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31969156271D961F00FDBEF6 /* LeaderboardView.swift */; };
@@ -103,12 +106,16 @@
 		3126674D2700B91E009834E9 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		314D79B8270C685A003C2F8A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		314D79BE270C6C29003C2F8A /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		317DAB39274263A700F6FD1F /* RoomProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomProgressView.swift; sourceTree = "<group>"; };
+		317DAB3B2742686900F6FD1F /* RoomProgressViewLine1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomProgressViewLine1.swift; sourceTree = "<group>"; };
+		317DAB3D274272BF00F6FD1F /* RoomProgressViewLine2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomProgressViewLine2.swift; sourceTree = "<group>"; };
+		317DAB3F2742848D00F6FD1F /* RoomProgressComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomProgressComponents.swift; sourceTree = "<group>"; };
 		318BCCA22733FC0600E0B6F3 /* StoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewModel.swift; sourceTree = "<group>"; };
 		318BCCA6273422DE00E0B6F3 /* CurrentStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentStoryView.swift; sourceTree = "<group>"; };
-		318DB98827391790000AB95A /* FullStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullStoryView.swift; sourceTree = "<group>"; };
-		318DB98B27392525000AB95A /* RoomWiseStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomWiseStory.swift; sourceTree = "<group>"; };
 		318DB9842738FCFA000AB95A /* RoomTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTile.swift; sourceTree = "<group>"; };
 		318DB9862738FE25000AB95A /* RoomQuestionStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomQuestionStatusView.swift; sourceTree = "<group>"; };
+		318DB98827391790000AB95A /* FullStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullStoryView.swift; sourceTree = "<group>"; };
+		318DB98B27392525000AB95A /* RoomWiseStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomWiseStory.swift; sourceTree = "<group>"; };
 		3196110A270206080030901E /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		319611102702078E0030901E /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		31969156271D961F00FDBEF6 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
@@ -205,9 +212,7 @@
 				8CC128B72705D618000483AB /* TimerViewModel.swift */,
 				31DDD20627171EE5002315FC /* ProfileSetupViewModel.swift */,
 				8C4FD31B271B36B30053F75A /* GameViewModel.swift */,
-
 				318BCCA22733FC0600E0B6F3 /* StoryViewModel.swift */,
-
 				3104C7C72735285200B1C155 /* RoomsViewModel.swift */,
 				8CB59C4B2733EBE500DDD725 /* LeaderboardViewModel.swift */,
 				8C73DAC8272E8DE5009943BE /* NotificationsViewModel.swift */,
@@ -237,6 +242,7 @@
 		314D79BA270C6BBC003C2F8A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				317DAB382742639600F6FD1F /* ProfileView */,
 				318DB98A27392508000AB95A /* FullStoryView */,
 				318DB9832738FCBF000AB95A /* RoomsView */,
 				8C1F5E4F273596A2001D8CCE /* Game */,
@@ -265,14 +271,17 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		318DB98A27392508000AB95A /* FullStoryView */ = {
+		317DAB382742639600F6FD1F /* ProfileView */ = {
 			isa = PBXGroup;
 			children = (
-				318DB98B27392525000AB95A /* RoomWiseStory.swift */,
+				317DAB39274263A700F6FD1F /* RoomProgressView.swift */,
+				317DAB3B2742686900F6FD1F /* RoomProgressViewLine1.swift */,
+				317DAB3D274272BF00F6FD1F /* RoomProgressViewLine2.swift */,
+				317DAB3F2742848D00F6FD1F /* RoomProgressComponents.swift */,
 			);
-			path = FullStoryView;
-            sourceTree = "<group>";
-        };
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
 		318DB9832738FCBF000AB95A /* RoomsView */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +289,14 @@
 				318DB9862738FE25000AB95A /* RoomQuestionStatusView.swift */,
 			);
 			path = RoomsView;
+			sourceTree = "<group>";
+		};
+		318DB98A27392508000AB95A /* FullStoryView */ = {
+			isa = PBXGroup;
+			children = (
+				318DB98B27392525000AB95A /* RoomWiseStory.swift */,
+			);
+			path = FullStoryView;
 			sourceTree = "<group>";
 		};
 		31961109270205E30030901E /* Model */ = {
@@ -678,6 +695,7 @@
 				8CB59C4C2733EBE500DDD725 /* LeaderboardViewModel.swift in Sources */,
 				4EC3E48226E7DCCA0049AD99 /* ContentView.swift in Sources */,
 				8C73DACE272E9897009943BE /* NotificationView.swift in Sources */,
+				317DAB3C2742686900F6FD1F /* RoomProgressViewLine1.swift in Sources */,
 				8C73DAC7272E8A04009943BE /* NotificationsView.swift in Sources */,
 				31C13211271D6D6500BD5301 /* FeedbackUI.swift in Sources */,
 				31C13202271D55F000BD5301 /* GameMechanics.swift in Sources */,
@@ -699,9 +717,12 @@
 				8CAC2B7027103B39008049D3 /* TimeView.swift in Sources */,
 				31C13208271D561F00BD5301 /* LetsPlay.swift in Sources */,
 				8C1F5E4B273592D2001D8CCE /* PowerupRow.swift in Sources */,
+				317DAB3E274272BF00F6FD1F /* RoomProgressViewLine2.swift in Sources */,
+				317DAB402742848D00F6FD1F /* RoomProgressComponents.swift in Sources */,
 				8C73DACB272E8E88009943BE /* NotificationModel.swift in Sources */,
 				8CC128B4270301C1000483AB /* TimerModel.swift in Sources */,
 				4E7A5CD92700FBA10058CAB9 /* PodHelper.swift in Sources */,
+				317DAB3A274263A700F6FD1F /* RoomProgressView.swift in Sources */,
 				A01836D427042CCA00A4F896 /* AppConstants.swift in Sources */,
 				8CEDD1E727404B0200CE4856 /* HintModel.swift in Sources */,
 				8CEDD1E5274012A200CE4856 /* QuestionModel.swift in Sources */,
