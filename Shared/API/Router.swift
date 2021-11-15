@@ -17,17 +17,20 @@ enum Router: URLRequestConvertible {
     case profileSetup(ProfileSetupModel.Request)
     case currentStory(StoryModel.Request), fullStory(StoryModel.Request)
     case getPowerup
+    case getQuestion(Question.Request)
     case selectPowerup(Powerup.SelectRequest)
     case leaderboard(Leaderboard.Request)
+    case submitAnswer(Answer.Request)
     case notifications
+    case getHint(Hint.Request)
     
     static let baseURL = URL(string: "https://enigma8.herokuapp.com")!
     
     var method: HTTPMethod {
         switch self {
-        case .loginGoogle, .loginApple, .profileSetup, .selectPowerup:
+        case .loginGoogle, .loginApple, .profileSetup, .selectPowerup, .submitAnswer:
             return .post
-        case .timer, .getUser, .allRooms, .unlockRoom, .leaderboard, .notifications, .getPowerup, .currentStory, .fullStory:
+        case .timer, .getUser, .allRooms, .unlockRoom, .leaderboard, .notifications, .getPowerup, .getQuestion, .getHint, .currentStory, .fullStory:
             return .get
         }
     }
@@ -60,6 +63,12 @@ enum Router: URLRequestConvertible {
             return "notifs/notifications"
         case .getUser:
             return "user/getDetails/"
+        case .getQuestion:
+            return "transact/getQuestion"
+        case .getHint:
+            return "transact/useHint"
+        case .submitAnswer:
+            return "transact/submitAnswer"
         }
     }
     
@@ -119,6 +128,12 @@ enum Router: URLRequestConvertible {
             return try self.encoder.encode(powerupSelect, into:request)
         case .leaderboard(let leaderboardRequest):
             return try self.encoder.encode(leaderboardRequest, into: request)
+        case .getQuestion(let questionRequest):
+            return try self.encoder.encode(questionRequest, into: request)
+        case .getHint(let hintRequest):
+            return try self.encoder.encode(hintRequest, into: request)
+        case .submitAnswer(let answerRequest):
+            return try self.encoder.encode(answerRequest, into: request)
         default:
             return try self.encoding.encode(request, with: self.parameters)
         }
