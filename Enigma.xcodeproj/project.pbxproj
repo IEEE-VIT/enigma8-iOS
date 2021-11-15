@@ -7,24 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
-		3104C7C82735285200B1C155 /* RoomsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104C7C72735285200B1C155 /* RoomsViewModel.swift */; };
-
 		3104C7C227350F5900B1C155 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104C7C127350F5900B1C155 /* UserModel.swift */; };
 		3104C7C42735102000B1C155 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104C7C32735102000B1C155 /* ProfileView.swift */; };
 		3104C7C6273513B500B1C155 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104C7C5273513B500B1C155 /* ProfileViewModel.swift */; };
-
+		3104C7C82735285200B1C155 /* RoomsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3104C7C72735285200B1C155 /* RoomsViewModel.swift */; };
 		3126674E2700B91E009834E9 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3126674D2700B91E009834E9 /* AuthViewModel.swift */; };
 		312667512700BC3F009834E9 /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 312667502700BC3F009834E9 /* SwiftyBeaver */; };
 		314D79B9270C685A003C2F8A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314D79B8270C685A003C2F8A /* LoginView.swift */; };
 		314D79BF270C6C29003C2F8A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314D79BE270C6C29003C2F8A /* CustomButton.swift */; };
-
+		317DAB3527421CAF00F6FD1F /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317DAB3427421CAF00F6FD1F /* TabView.swift */; };
+		317DAB372742225A00F6FD1F /* HeaderNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317DAB362742225A00F6FD1F /* HeaderNavView.swift */; };
 		318BCCA32733FC0600E0B6F3 /* StoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BCCA22733FC0600E0B6F3 /* StoryViewModel.swift */; };
 		318BCCA7273422DE00E0B6F3 /* CurrentStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BCCA6273422DE00E0B6F3 /* CurrentStoryView.swift */; };
-		318DB98927391790000AB95A /* FullStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB98827391790000AB95A /* FullStoryView.swift */; };
-		318DB98C27392525000AB95A /* RoomWiseStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB98B27392525000AB95A /* RoomWiseStory.swift */; };
 		318DB9852738FCFA000AB95A /* RoomTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB9842738FCFA000AB95A /* RoomTile.swift */; };
 		318DB9872738FE25000AB95A /* RoomQuestionStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB9862738FE25000AB95A /* RoomQuestionStatusView.swift */; };
+		318DB98927391790000AB95A /* FullStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB98827391790000AB95A /* FullStoryView.swift */; };
+		318DB98C27392525000AB95A /* RoomWiseStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB98B27392525000AB95A /* RoomWiseStory.swift */; };
 		3196110B270206080030901E /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3196110A270206080030901E /* SignUpModel.swift */; };
 		319611112702078E0030901E /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 319611102702078E0030901E /* Data.swift */; };
 		31969157271D961F00FDBEF6 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31969156271D961F00FDBEF6 /* LeaderboardView.swift */; };
@@ -95,22 +93,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-
-		3104C7C72735285200B1C155 /* RoomsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsViewModel.swift; sourceTree = "<group>"; };
-
 		3104C7C127350F5900B1C155 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		3104C7C32735102000B1C155 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		3104C7C5273513B500B1C155 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
-
+		3104C7C72735285200B1C155 /* RoomsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsViewModel.swift; sourceTree = "<group>"; };
 		3126674D2700B91E009834E9 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		314D79B8270C685A003C2F8A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		314D79BE270C6C29003C2F8A /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		317DAB3427421CAF00F6FD1F /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		317DAB362742225A00F6FD1F /* HeaderNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderNavView.swift; sourceTree = "<group>"; };
 		318BCCA22733FC0600E0B6F3 /* StoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewModel.swift; sourceTree = "<group>"; };
 		318BCCA6273422DE00E0B6F3 /* CurrentStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentStoryView.swift; sourceTree = "<group>"; };
-		318DB98827391790000AB95A /* FullStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullStoryView.swift; sourceTree = "<group>"; };
-		318DB98B27392525000AB95A /* RoomWiseStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomWiseStory.swift; sourceTree = "<group>"; };
 		318DB9842738FCFA000AB95A /* RoomTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTile.swift; sourceTree = "<group>"; };
 		318DB9862738FE25000AB95A /* RoomQuestionStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomQuestionStatusView.swift; sourceTree = "<group>"; };
+		318DB98827391790000AB95A /* FullStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullStoryView.swift; sourceTree = "<group>"; };
+		318DB98B27392525000AB95A /* RoomWiseStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomWiseStory.swift; sourceTree = "<group>"; };
 		3196110A270206080030901E /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
 		319611102702078E0030901E /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		31969156271D961F00FDBEF6 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
@@ -203,14 +200,11 @@
 				8CC128B72705D618000483AB /* TimerViewModel.swift */,
 				31DDD20627171EE5002315FC /* ProfileSetupViewModel.swift */,
 				8C4FD31B271B36B30053F75A /* GameViewModel.swift */,
-
 				318BCCA22733FC0600E0B6F3 /* StoryViewModel.swift */,
-
 				3104C7C72735285200B1C155 /* RoomsViewModel.swift */,
 				8CB59C4B2733EBE500DDD725 /* LeaderboardViewModel.swift */,
 				8C73DAC8272E8DE5009943BE /* NotificationsViewModel.swift */,
 				3104C7C5273513B500B1C155 /* ProfileViewModel.swift */,
-
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -229,6 +223,7 @@
 				318DB98827391790000AB95A /* FullStoryView.swift */,
 				8C73DAC6272E8A04009943BE /* NotificationsView.swift */,
 				3104C7C32735102000B1C155 /* ProfileView.swift */,
+				317DAB362742225A00F6FD1F /* HeaderNavView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -260,8 +255,18 @@
 				8C46F760271949A2003132B1 /* EnigmaHeader.swift */,
 				31DDD20E271764BB002315FC /* CustomTextField.swift */,
 				31C13215271D738C00BD5301 /* CustomTextEditor.swift */,
+				317DAB3427421CAF00F6FD1F /* TabView.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		318DB9832738FCBF000AB95A /* RoomsView */ = {
+			isa = PBXGroup;
+			children = (
+				318DB9842738FCFA000AB95A /* RoomTile.swift */,
+				318DB9862738FE25000AB95A /* RoomQuestionStatusView.swift */,
+			);
+			path = RoomsView;
 			sourceTree = "<group>";
 		};
 		318DB98A27392508000AB95A /* FullStoryView */ = {
@@ -270,15 +275,6 @@
 				318DB98B27392525000AB95A /* RoomWiseStory.swift */,
 			);
 			path = FullStoryView;
-            sourceTree = "<group>";
-        };
-		318DB9832738FCBF000AB95A /* RoomsView */ = {
-			isa = PBXGroup;
-			children = (
-				318DB9842738FCFA000AB95A /* RoomTile.swift */,
-				318DB9862738FE25000AB95A /* RoomQuestionStatusView.swift */,
-			);
-			path = RoomsView;
 			sourceTree = "<group>";
 		};
 		31961109270205E30030901E /* Model */ = {
@@ -291,7 +287,6 @@
 				8CC128B3270301C1000483AB /* TimerModel.swift */,
 				A01836D327042CCA00A4F896 /* AppConstants.swift */,
 				31A2665E27189A0B005B1A17 /* LeaderboardModel.swift */,
-				31A2665E27189A0B005B1A17 /* LeaderboardItem.swift */,
 				31D55DE0271768D80068A8AF /* SetupProfileModel.swift */,
 				8C73DACA272E8E88009943BE /* NotificationModel.swift */,
 				3104C7C127350F5900B1C155 /* UserModel.swift */,
@@ -475,7 +470,7 @@
 				8C1F5E512735A52F001D8CCE /* PowerupView.swift */,
 			);
 			path = Powerup;
-      sourceTree = "<group>";
+			sourceTree = "<group>";
 		};
 		8C73DACC272E9875009943BE /* Notifications */ = {
 			isa = PBXGroup;
@@ -651,18 +646,15 @@
 				31C13206271D560F00BD5301 /* Powerups.swift in Sources */,
 				8CEF83E92712F17900E96E2E /* StoryBubble.swift in Sources */,
 				31A2665F27189A0B005B1A17 /* LeaderboardModel.swift in Sources */,
-				31A2665F27189A0B005B1A17 /* LeaderboardItem.swift in Sources */,
+				31A2665F27189A0B005B1A17 /* LeaderboardModel.swift in Sources */,
 				3104C7C227350F5900B1C155 /* UserModel.swift in Sources */,
 				8CC128B82705D619000483AB /* TimerViewModel.swift in Sources */,
 				3104C7C82735285200B1C155 /* RoomsViewModel.swift in Sources */,
 				319611112702078E0030901E /* Data.swift in Sources */,
 				318BCCA32733FC0600E0B6F3 /* StoryViewModel.swift in Sources */,
 				31C13214271D72CC00BD5301 /* FeedbackQuestionAnswerBlock.swift in Sources */,
-
 				318DB9852738FCFA000AB95A /* RoomTile.swift in Sources */,
-
 				3104C7C6273513B500B1C155 /* ProfileViewModel.swift in Sources */,
-
 				31C13216271D738C00BD5301 /* CustomTextEditor.swift in Sources */,
 				3196110B270206080030901E /* SignUpModel.swift in Sources */,
 				31C131F7271D3DA100BD5301 /* RoomModel.swift in Sources */,
@@ -704,9 +696,11 @@
 				8C73DAC9272E8DE5009943BE /* NotificationsViewModel.swift in Sources */,
 				8CEEBAF82702524D00515E4A /* AppleCoordinator.swift in Sources */,
 				8C46F76527195924003132B1 /* EnigmaAlert.swift in Sources */,
+				317DAB3527421CAF00F6FD1F /* TabView.swift in Sources */,
 				A01836D227042C3100A4F896 /* GoogleCoordinator.swift in Sources */,
 				318BCCA7273422DE00E0B6F3 /* CurrentStoryView.swift in Sources */,
 				31D55DE1271768D80068A8AF /* SetupProfileModel.swift in Sources */,
+				317DAB372742225A00F6FD1F /* HeaderNavView.swift in Sources */,
 				31CEEDA32715C5A900298399 /* ProfileSetupView.swift in Sources */,
 				314D79BF270C6C29003C2F8A /* CustomButton.swift in Sources */,
 			);
