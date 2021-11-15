@@ -50,23 +50,22 @@ struct Room: Codable, Hashable {
     }
 }
 
-//TODO: powerupUsed had malformed response from backend. Waiting for fix.
 struct Journey: Codable, Hashable {
     var _id: String?
     var userId: String?
     var roomId: String?
     var stars: Int?
-    //var powerupUsed: String?
+    var powerupUsed: PowerupUsed?
     var roomUnlocked: Bool?
     var powerupId: String?
     var questionsStatus: [questionStatus?]?
     
-    init(id: String?, userId: String?, roomId: String?, stars: Int?, roomUnlocked: Bool?, powerupId: String?, questionsStatus: [String?]?) {
+    init(id: String?, userId: String?, roomId: String?, stars: Int?, powerupUsed: PowerupUsed,roomUnlocked: Bool?, powerupId: String?, questionsStatus: [String?]?) {
         self._id = id
         self.userId = userId
         self.roomId = roomId
         self.stars = stars
-        //self.powerupUsed = powerupUsed
+        self.powerupUsed = powerupUsed
         self.roomUnlocked = roomUnlocked
         self.powerupId = powerupId
         if let questionsStatus = questionsStatus {
@@ -76,6 +75,13 @@ struct Journey: Codable, Hashable {
     }
     
     
+}
+
+enum PowerupUsed: String, Codable {
+    case yes = "yes"
+    case no = "no"
+    case active = "active"
+    case null = ""
 }
 
 enum questionStatus: String, Codable {
@@ -98,7 +104,7 @@ enum questionStatus: String, Codable {
 
 extension AllRoomsResponse {
     static let sampleData: AllRoomsResponse = AllRoomsResponse(data: [
-        RoomsModel(journey: Journey(id: nil, userId: nil, roomId: nil, stars: 0, roomUnlocked: false, powerupId: nil, questionsStatus: ["locked", "locked", "locked"]),room: Room(id: "61656a08fdeca6f21cf87708", roomNo: "3", questionId: [
+        RoomsModel(journey: Journey(id: nil, userId: nil, roomId: nil, stars: 0, powerupUsed: .yes, roomUnlocked: false, powerupId: nil, questionsStatus: ["locked", "locked", "locked"]),room: Room(id: "61656a08fdeca6f21cf87708", roomNo: "3", questionId: [
             "61621059336ae702be39fe7a"
         ], media: "https://google.com/url?cd=vfe&psig=AOvVaw2CnTXmnerWF7EZiB1oqpQK&sa=i&source=images&url=https%3A%2F%2Fpixabay.com%2Fimages%2Fsearch%2F&ust=1633859516954000&ved=0CAsQjRxqFwoTCMDUiJOHvfMCFQAAAAAdAAAAABAD", title: "Room 3", starQuota: 30))
     ])

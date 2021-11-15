@@ -36,14 +36,17 @@ struct RoomsView: View {
                             RoomQuestionStatusView(questionStatus: room.journey?.questionsStatus ?? [.null, .null, .null])
                             RoomTile(room: room)
                                 .onTapGesture {
-                                    print("Room Clicked \(room.journey?.roomUnlocked ?? true)")
                                     if let roomUnlocked = room.journey?.roomUnlocked {
                                         if roomUnlocked == true {
-                                            print("something")
-                                            rooms.roomUnlocked = true
-                                            rooms.powerUpSelected = room.journey?.powerupId == nil ? false : true
-                                            rooms.toRoom = room
-                                            rooms.navigateToRoom = true
+                                            if(rooms.checkIfRoomSolved(room: room) == false) {
+                                                rooms.roomUnlocked = true
+                                                rooms.powerUpSelected = room.journey?.powerupId == nil ? false : true
+                                                rooms.toRoom = room
+                                                rooms.navigateToRoom = true
+                                            } else {
+                                                rooms.roomSolved = true
+                                                rooms.presentRoomLocked = true
+                                            }
                                         } else {
                                             rooms.checkIfRoomUnlocked(room: room)
                                         }
@@ -57,8 +60,8 @@ struct RoomsView: View {
             }
             .padding()
         }
-        .popup(isPresented: $rooms.presentNumberOfStars, animation: Animation.spring()) {
-            EnigmaAlert(text: "You require \(rooms.starsNeeded) number of keys to unlock this", confirmAction: {rooms.presentNumberOfStars.toggle()})
+        .popup(isPresented: $rooms.presentRoomLocked, animation: Animation.spring()) {
+            EnigmaAlert(text: rooms.roomSolved ? "You have already solved this room!" : "You require \(rooms.starsNeeded) number of keys to unlock this", confirmAction: {rooms.presentRoomLocked.toggle()})
         }
         .onAppear {
             rooms.fetchAllInfo()

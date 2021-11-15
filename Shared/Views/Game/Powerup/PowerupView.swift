@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PopupView
 
 struct PowerupView: View {
     @StateObject var powerupVM: GameViewModel = GameViewModel(currentStatus: RoomsModel())
@@ -34,10 +35,10 @@ struct PowerupView: View {
                 .stroke(Color.black, lineWidth: 3))
                 .padding(.horizontal)
                 .frame(height: geo.size.height*0.8, alignment: .center)
-                if(showAlert) {
-                    EnigmaAlert(text: "Are you sure you want to use \(chosenPowerup?.name ?? "this") powerup?", confirmAction: { powerupVM.selectPowerup(powerup: chosenPowerup ?? Powerup.PowerupModel())}, cancelAction: {showAlert = false})
-                }
             }.frame(width: geo.size.width, height: geo.size.height)
+            .popup(isPresented: $showAlert, animation: Animation.spring()) {
+                    EnigmaAlert(text: "Are you sure you want to use \(chosenPowerup?.name ?? "this") powerup?", confirmAction: { powerupVM.selectPowerup(powerup: chosenPowerup ?? Powerup.PowerupModel())}, cancelAction: {showAlert = false})
+            }
         }
         .onAppear(perform: powerupVM.getPowerups)
         .navigationBarHidden(true)

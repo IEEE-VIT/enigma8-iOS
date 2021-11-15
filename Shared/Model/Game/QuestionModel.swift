@@ -15,7 +15,7 @@ struct Question: Codable {
     struct Response: Codable {
         var id, text, media: String?
         var questionNo: Int?
-        
+        var mediaType: MediaType?
         var mediaURL: URL? {
             return URL(string: media ?? "https://google.com")
         }
@@ -24,6 +24,11 @@ struct Question: Codable {
             case id = "_id", questionNo, text, media
         }
         
+    }
+    
+    enum MediaType: String, Codable {
+        case img = "img"
+        case vid = "vid"
     }
     
 }

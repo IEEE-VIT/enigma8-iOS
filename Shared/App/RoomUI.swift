@@ -34,18 +34,15 @@ struct RoomUI: View {
                 Group {
                     ScrollView {
                         Text(gameVM.currentQuestion?.text ?? "")
-                        KFImage(gameVM.currentQuestion?.mediaURL)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
+                        switch(gameVM.currentQuestion?.mediaType ?? .img) {
+                        case .img:
+                            KFImage(gameVM.currentQuestion?.mediaURL)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                        case .vid:
+                            VideoPlayer(player: AVPlayer(url: gameVM.currentQuestion?.mediaURL ?? URL(string:"https://google.com")!)).aspectRatio(contentMode: .fit)
+                        }
                     }
-//                    switch(gameVM.currentStatus.question.mediaType) {
-//                    case .image:
-//                        KFImage(gameVM.currentStatus.question.mediaURL)
-//                            .resizable()
-//                            .aspectRatio(contentMode: .fit)
-//                    case .video:
-//                        VideoPlayer(player: AVPlayer(url: gameVM.currentStatus.question.mediaURL)).aspectRatio(contentMode: .fit)
-//                    }//TODO: WAITING FOR BACKEND TO SEND MEDIATYPE
                     HStack {
                         TextField("Your Answer", text: $gameVM.answerText, onCommit: gameVM.submitAnswer)
                             .autocapitalization(.none)
