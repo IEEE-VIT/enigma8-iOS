@@ -22,7 +22,9 @@ struct FullStoryView: View {
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
                 .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
             } else {
+                Spacer()
                 Text("Loading Stories!")
+                Spacer()
             }
         }
         .onAppear{

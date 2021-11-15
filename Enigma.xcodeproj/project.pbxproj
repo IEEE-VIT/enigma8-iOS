@@ -15,6 +15,7 @@
 		312667512700BC3F009834E9 /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 312667502700BC3F009834E9 /* SwiftyBeaver */; };
 		314D79B9270C685A003C2F8A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314D79B8270C685A003C2F8A /* LoginView.swift */; };
 		314D79BF270C6C29003C2F8A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314D79BE270C6C29003C2F8A /* CustomButton.swift */; };
+		317DAB372742225A00F6FD1F /* HeaderNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317DAB362742225A00F6FD1F /* HeaderNavView.swift */; };
 		318BCCA32733FC0600E0B6F3 /* StoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BCCA22733FC0600E0B6F3 /* StoryViewModel.swift */; };
 		318BCCA7273422DE00E0B6F3 /* CurrentStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BCCA6273422DE00E0B6F3 /* CurrentStoryView.swift */; };
 		318DB9852738FCFA000AB95A /* RoomTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB9842738FCFA000AB95A /* RoomTile.swift */; };
@@ -113,6 +114,7 @@
 		3126674D2700B91E009834E9 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		314D79B8270C685A003C2F8A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		314D79BE270C6C29003C2F8A /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		317DAB362742225A00F6FD1F /* HeaderNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderNavView.swift; sourceTree = "<group>"; };
 		318BCCA22733FC0600E0B6F3 /* StoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewModel.swift; sourceTree = "<group>"; };
 		318BCCA6273422DE00E0B6F3 /* CurrentStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentStoryView.swift; sourceTree = "<group>"; };
 		318DB9842738FCFA000AB95A /* RoomTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTile.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				8C73DAC6272E8A04009943BE /* NotificationsView.swift */,
 				3104C7C32735102000B1C155 /* ProfileView.swift */,
 				8CB814682742928A00E19DEE /* Onboarding.swift */,
+				317DAB362742225A00F6FD1F /* HeaderNavView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -769,6 +772,7 @@
 				A01836D227042C3100A4F896 /* GoogleCoordinator.swift in Sources */,
 				318BCCA7273422DE00E0B6F3 /* CurrentStoryView.swift in Sources */,
 				31D55DE1271768D80068A8AF /* SetupProfileModel.swift in Sources */,
+				317DAB372742225A00F6FD1F /* HeaderNavView.swift in Sources */,
 				31CEEDA32715C5A900298399 /* ProfileSetupView.swift in Sources */,
 				314D79BF270C6C29003C2F8A /* CustomButton.swift in Sources */,
 			);
