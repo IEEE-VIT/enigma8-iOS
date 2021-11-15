@@ -84,7 +84,7 @@ struct RoomUI: View {
                     EnigmaAlert(text: "Using this hint will cause to reduce points. Are you sure to use a hint?", confirmAction: gameVM.getHint, cancelAction: {gameVM.showPopup.toggle()})
                 } else {
                     //TODO: Make Single button hint
-                    EnigmaAlert(text: gameVM.fetchedHint, confirmAction: {gameVM.showPopup.toggle()}, cancelAction: {gameVM.showPopup.toggle()})
+                    EnigmaAlert(text: gameVM.fetchedHint, confirmAction: {gameVM.showPopup.toggle();showHintConfirmation = false}, cancelAction: {gameVM.showPopup.toggle(); showHintConfirmation = false;})
                 }
             }
         }

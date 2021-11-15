@@ -17,7 +17,6 @@ class LeaderboardViewModel: ObservableObject {
     
     func fetchLeaderboard(query: String? = nil) {
         if(query != nil && (query?.isEmpty ?? false)) {//if searchquery is reset, reset vars and fetch everything again
-            currentPage = 1
             self.leaderboard = []
             self.searchQuery = nil
         } else {

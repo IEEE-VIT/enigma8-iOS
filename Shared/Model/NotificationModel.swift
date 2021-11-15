@@ -13,7 +13,7 @@ struct NotificationsResponse: Codable {
 
 struct Notification : Codable {
     var id: String?
-    var type: String?
+    var type: String?//TODO: enum social, feedback safari if type != feedback
     var text: String?
     var timestamp: Double?
     var metadata: String?
@@ -40,7 +40,7 @@ struct Notification : Codable {
         } else if let second = date.second, second > 0 {
             return second == 1 ? "\(second) second ago" : "\(second) seconds ago"
         } else {
-            return "just now"
+            return "some time ago"
         }
     }
 }
