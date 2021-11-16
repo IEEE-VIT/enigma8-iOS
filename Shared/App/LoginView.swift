@@ -46,6 +46,7 @@ struct LoginView: View {
             NavigationLink(destination: ProfileSetupView(),isActive: $authVM.isNew) {
                 EmptyView()
             }
+            NavigationLink(destination: HeaderNavView().navigationBarTitle("").navigationBarHidden(true), isActive: Binding<Bool>(get: {return !authVM.isNew && authVM.isSignedIn}, set: {p in self.authVM.isNew = p})) { EmptyView() }
         }
         .background(OnboardingBackground())
     }

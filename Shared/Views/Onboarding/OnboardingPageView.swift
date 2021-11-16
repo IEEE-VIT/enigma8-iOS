@@ -14,7 +14,7 @@ struct OnboardingPageView: View {
         GeometryReader { geo in
             VStack(alignment: .center) {
                 Spacer()
-                Image("ENIGMA")
+                Image(ImageConstants.enigmaLogo)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .padding(.bottom, 40)

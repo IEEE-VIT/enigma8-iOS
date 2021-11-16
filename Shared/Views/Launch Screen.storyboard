@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -13,57 +13,46 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="SplashBG" translatesAutoresizingMaskIntoConstraints="NO" id="BWo-JN-jvy">
-                                <rect key="frame" x="-79" y="-5" width="573" height="901"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" semanticContentAttribute="spatial" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginBG" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JUH-GM-nIL">
+                                <rect key="frame" x="-103.5" y="-84.5" width="621" height="1075"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rHq-mH-bli">
-                                <rect key="frame" x="48" y="227" width="224" height="114"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pl4-Gt-ZvA">
+                                <rect key="frame" x="62" y="369.5" width="290" height="167"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ENIGMA" translatesAutoresizingMaskIntoConstraints="NO" id="9IE-HY-g4Y">
-                                        <rect key="frame" x="0.0" y="0.0" width="224" height="45.5"/>
-                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20" scale="small"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Q0X-G1-lsT">
+                                        <rect key="frame" x="0.0" y="0.0" width="290" height="96"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Feather" translatesAutoresizingMaskIntoConstraints="NO" id="V0a-BJ-d3x">
-                                        <rect key="frame" x="0.0" y="45.5" width="224" height="23"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TagLine" translatesAutoresizingMaskIntoConstraints="NO" id="AL5-g9-3Ik">
-                                        <rect key="frame" x="0.0" y="68.5" width="224" height="45.5"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TagLine" translatesAutoresizingMaskIntoConstraints="NO" id="xzy-Kw-HMO">
+                                        <rect key="frame" x="0.0" y="96" width="290" height="71"/>
                                     </imageView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="AL5-g9-3Ik" firstAttribute="height" secondItem="rHq-mH-bli" secondAttribute="height" multiplier="0.396648" id="3BF-qn-2WQ"/>
-                                    <constraint firstItem="AL5-g9-3Ik" firstAttribute="width" secondItem="V0a-BJ-d3x" secondAttribute="width" id="jcX-48-eal"/>
-                                    <constraint firstItem="9IE-HY-g4Y" firstAttribute="width" secondItem="rHq-mH-bli" secondAttribute="width" id="o0Q-2G-LYj"/>
-                                    <constraint firstItem="9IE-HY-g4Y" firstAttribute="height" secondItem="rHq-mH-bli" secondAttribute="height" multiplier="0.4" id="yMW-Yh-veb"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="BWo-JN-jvy" firstAttribute="centerY" secondItem="Bcu-3y-fUS" secondAttribute="centerY" id="2sN-Em-ZnD"/>
-                            <constraint firstItem="rHq-mH-bli" firstAttribute="centerY" secondItem="Bcu-3y-fUS" secondAttribute="centerY" id="B1b-cp-kEh"/>
-                            <constraint firstItem="BWo-JN-jvy" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="1.2" id="TBK-Le-jGs"/>
-                            <constraint firstItem="rHq-mH-bli" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.2" id="UOq-e6-fGW"/>
-                            <constraint firstItem="BWo-JN-jvy" firstAttribute="centerX" secondItem="Bcu-3y-fUS" secondAttribute="centerX" id="ZKr-cF-ugg"/>
-                            <constraint firstItem="rHq-mH-bli" firstAttribute="centerX" secondItem="Bcu-3y-fUS" secondAttribute="centerX" id="ibJ-qd-N0O"/>
-                            <constraint firstItem="BWo-JN-jvy" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="1.38406" id="kaq-Qw-BSq"/>
-                            <constraint firstItem="rHq-mH-bli" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.7" id="xnf-pc-bd6"/>
+                            <constraint firstItem="JUH-GM-nIL" firstAttribute="centerX" secondItem="Bcu-3y-fUS" secondAttribute="centerX" id="CsM-c0-L1h"/>
+                            <constraint firstItem="JUH-GM-nIL" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="1.2" id="D9B-2D-bfw"/>
+                            <constraint firstItem="pl4-Gt-ZvA" firstAttribute="centerX" secondItem="Bcu-3y-fUS" secondAttribute="centerX" id="O8D-kC-vUk"/>
+                            <constraint firstItem="pl4-Gt-ZvA" firstAttribute="centerY" secondItem="Bcu-3y-fUS" secondAttribute="centerY" id="Pus-Hn-UYp"/>
+                            <constraint firstItem="pl4-Gt-ZvA" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.7" id="SfP-4k-fiQ"/>
+                            <constraint firstItem="JUH-GM-nIL" firstAttribute="centerY" secondItem="Bcu-3y-fUS" secondAttribute="centerY" id="pQg-4S-Hpa"/>
+                            <constraint firstItem="JUH-GM-nIL" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="1.5" id="ugE-bI-Qbl"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52.173913043478265" y="375"/>
+            <point key="canvasLocation" x="49.275362318840585" y="375"/>
         </scene>
     </scenes>
     <resources>
-        <image name="ENIGMA" width="921" height="207"/>
-        <image name="Feather" width="1148" height="123"/>
-        <image name="SplashBG" width="1440" height="2560"/>
+        <image name="LoginBG" width="256" height="455"/>
+        <image name="Logo" width="287" height="96"/>
         <image name="TagLine" width="928" height="71"/>
     </resources>
 </document>
