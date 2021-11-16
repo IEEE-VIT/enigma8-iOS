@@ -40,6 +40,7 @@ struct ProfileSetupView: View {
             .background(OnboardingBackground())
         }
         .navigationBarBackButtonHidden(true)
+        
     }
 }
 

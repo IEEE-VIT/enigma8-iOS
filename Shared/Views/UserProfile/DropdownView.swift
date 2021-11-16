@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DropdownView: View {
 //    var dropdownText: String
-    @State private var isExpanded = true
+    @State private var isExpanded = false
     @State var selectedOption: String
     var dropdownOptions: [String]
     
