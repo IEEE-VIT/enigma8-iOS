@@ -12,13 +12,17 @@ extension Color {
     static let eRed = Color(UIColor(named: ColorConstants.red.rawValue)!)
     static let eGold = Color(UIColor(named: ColorConstants.gold.rawValue)!)
     static let eBlack = Color(UIColor(named: ColorConstants.black.rawValue)!)
+    static let egrey = Color(UIColor(named: ColorConstants.grey.rawValue)!)
+
     static let blueGradientStart = Color(UIColor(named: ColorConstants.blueGradientStart.rawValue)!)
     static let blueGradientEnd = Color(UIColor(named: ColorConstants.blueGradientEnd.rawValue)!)
     static let goldGradientStart = Color(UIColor(named: ColorConstants.goldGradientStart.rawValue)!)
     static let goldGradientEnd = Color(UIColor(named: ColorConstants.goldGradientEnd.rawValue)!)
     
+    
     enum ColorConstants: String {
         case black = "Black"
+        case grey = "Grey"
         case blue = "Blue"
         case red = "Coral Red"
         case gold = "Gold"

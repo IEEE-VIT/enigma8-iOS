@@ -13,12 +13,13 @@ import GoogleSignIn
 class GoogleCoordinator: NSObject {
     var authVM: AuthViewModel
     let signInConfig: GIDConfiguration
+    
     init(authVM: AuthViewModel) {
         self.authVM = authVM
         self.signInConfig = GIDConfiguration.init(clientID: AppConstants.Google.clientId, serverClientID: AppConstants.Google.serverClientId)
         super.init()
     }
-   // google sign in flow
+   
     func googleSignin() {
         let vc = (UIApplication.shared.windows.last?.rootViewController)!
         GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: vc) { user, error in
@@ -28,15 +29,15 @@ class GoogleCoordinator: NSObject {
                 
             }
             user?.authentication.do { authentication, error in
-                  guard error == nil else { return }
-                  guard let authentication = authentication else { return }
-
-                  let idToken = authentication.idToken
-                  // Send ID token to backend (example below).
-                self.authVM.signInWithGoogle(with: idToken ?? "")
                 
-              }
-            
+                guard let idToken = authentication?.idToken else {
+                    Logger.error(error?.localizedDescription)
+                    return
+                }
+                
+                self.authVM.signInWithGoogle(with: idToken)
+                
+            }
         }
     }
     

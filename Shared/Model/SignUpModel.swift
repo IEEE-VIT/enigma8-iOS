@@ -36,15 +36,20 @@ final class SignUpModel {
         
         private enum CodingKeys: String, CodingKey {
             case jwt = "JWT"
+            case isNew
         }
     }
 }
 
 enum SignupType : String{
-    case google
-    case apple
+    case google = "google"
+    case apple = "apple"
     
     var isGoogle : Bool {
         return self == .google
+    }
+    
+    var ButtonImage: String {
+        return self.rawValue
     }
 }

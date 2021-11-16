@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct CustomButton: View {
-    var buttonText: String = "Sign up with Google"
-    var borderColor: Color = Color.white
+    var buttonText: String = "Submit"
+    var borderColor: Color = Color.clear
     var action: () -> Void = {}
     var fgroundColor: Color = Color.black
-    var bgroundColor: Color = Color.gray
-    var font: Font = .body
-    var cornerRad: CGFloat = 10.0
+    var bgroundColor: Color = Color.eBlue
+    var font: Font = .Mulish(size: 14, weight: .semibold)
+    var cornerRad: CGFloat = 4
     var body: some View {
+        HStack(spacing: 0) {
+            Spacer(minLength: 100)
             Button(action: action){
                 Text(buttonText)
                     .lineLimit(1)
@@ -28,13 +30,27 @@ struct CustomButton: View {
                     .border(borderColor, width: 2.0)
                     .font(font)
                     .cornerRadius(cornerRad)
-                    
+                Spacer(minLength: 100)
             }
         }
+    }
+}
+
+struct SocialButton: View {
+    var action: () -> Void = {}
+    var image: SignupType
+    var body: some View {
+        Button(action: action){
+            Image(image.rawValue)
+                .resizable()
+                .scaledToFit()
+        }
+    }
 }
 
 struct CustomButton_Previews: PreviewProvider {
     static var previews: some View {
         CustomButton()
+            .previewLayout(.sizeThatFits)
     }
 }

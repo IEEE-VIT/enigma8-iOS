@@ -8,40 +8,22 @@
 import SwiftUI
 
 struct ProfileSetupView: View {
-    @StateObject var profileVM: ProfileSetupViewModel
+    
+    @StateObject var profileVM: ProfileSetupViewModel = ProfileSetupViewModel()
+    
     var body: some View {
         GeometryReader { geo in
-            VStack(alignment: .leading) {
-                //TODO: replace Setup your profile Text with navbarTitle once Navigation is set up
-                Text("Setup your profile")
-                    .font(.largeTitle)
+            VStack(alignment: .leading,spacing:35) {
+                Image(ImageConstants.profileHeader)
+                    .resizable()
+                    .scaledToFit()
+                    .padding(.horizontal,75)
+                
                 VStack(alignment: .leading) {
-                    Text("Enter your username")
-                        .font(.title)
-                    Text("(This cannot be changed later)")
-                        .font(.subheadline)
+                    CustomLabel(text:"Enter your username")
                     CustomTextField(textFieldString: "Enter your username", bindingString: $profileVM.username)
-                    if profileVM.displayRules {
-                        if profileVM.displayBoth {
-                            Text("*\(ProfileSetupViewModel.countRule)\n*\(ProfileSetupViewModel.alphanumericsRule)")
-                                .foregroundColor(Color.red)
-                                .font(.caption)
-                        }
-                        else {
-                            Text("*\(profileVM.displayCountRules ? ProfileSetupViewModel.countRule : ProfileSetupViewModel.alphanumericsRule)")
-                                .foregroundColor(Color.red)
-                                .font(.caption)
-                        }
-                    }
-                    if let errorMessage = profileVM.errorMessage {
-                        Text("*\(errorMessage)")
-                            .foregroundColor(Color.red)
-                            .font(.caption)
-                    }
-
-                    Text("How did you hear about Enigma?")
-                        .font(.title2)
-                        .padding(.top)
+                        .padding(.bottom,100)
+                    CustomLabel(text:"How did you hear about Enigma?")
                 }
                 DropdownView(selectedOption: profileVM.outreach, dropdownOptions: profileVM.surveyOptions)
                     .frame(width: geo.size.width * 0.8)
@@ -49,15 +31,16 @@ struct ProfileSetupView: View {
                 HStack {
                     
                     NavigationLink(destination: TimeView(), isActive: $profileVM.profileSuccess) {
-                        Spacer(minLength: 100)
-                        CustomButton(buttonText: "Next", action: profileVM.setupProfile)
-                        Spacer(minLength: 100)
+                        
+                        CustomButton(buttonText: "Submit", action: profileVM.setupProfile)
                     }
                 }
             }
-            
+            .padding(32)
+            .background(OnboardingBackground())
         }
-        .padding()
+        .navigationBarBackButtonHidden(true)
+        
     }
 }
 
@@ -65,5 +48,6 @@ struct ProfileSetupView: View {
 struct ProfileSetupView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileSetupView(profileVM: ProfileSetupViewModel())
+            .edgesIgnoringSafeArea(.all)
     }
 }
