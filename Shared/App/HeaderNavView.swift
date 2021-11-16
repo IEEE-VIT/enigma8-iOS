@@ -14,6 +14,8 @@ struct HeaderNavView: View {
             EnigmaHeader()
             TabView(selection: $tabSelected) {
                 RoomsView(rooms: RoomsViewModel())
+                    .navigationTitle("")
+                    .navigationBarHidden(true)
                     .tabItem {
                         VStack {
                             Image(systemName: "house")
@@ -23,6 +25,8 @@ struct HeaderNavView: View {
                     }
                     .tag(0)
                 LeaderboardView()
+                    .navigationTitle("")
+                    .navigationBarHidden(true)
                     .tabItem {
                         VStack {
                             Image(systemName: "chart.bar")
@@ -32,6 +36,8 @@ struct HeaderNavView: View {
                     }
                     .tag(1)
                 FullStoryView(storyViewModel: StoryViewModel(roomId: ""))
+                    .navigationTitle("")
+                    .navigationBarHidden(true)
                     .tabItem {
                         VStack {
                             Image(systemName: "book")
@@ -41,6 +47,8 @@ struct HeaderNavView: View {
                     }
                     .tag(2)
                 ProfileView(userVM: ProfileViewModel())
+                    .navigationTitle("")
+                    .navigationBarHidden(true)
                     .tabItem {
                         VStack {
                             Image(systemName: "person.crop.circle")
