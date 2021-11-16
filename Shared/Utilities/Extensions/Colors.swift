@@ -9,6 +9,7 @@ import SwiftUI
 
 extension Color {
     static let eBlue = Color(UIColor(named: ColorConstants.blue.rawValue)!)
+    static let eSecondaryBlue = Color(UIColor(named: ColorConstants.secondaryBlue.rawValue)!)
     static let eRed = Color(UIColor(named: ColorConstants.red.rawValue)!)
     static let eGold = Color(UIColor(named: ColorConstants.gold.rawValue)!)
     static let eBlack = Color(UIColor(named: ColorConstants.black.rawValue)!)
@@ -24,6 +25,7 @@ extension Color {
         case black = "Black"
         case grey = "Grey"
         case blue = "Blue"
+        case secondaryBlue = "SecondaryBlue"
         case red = "Coral Red"
         case gold = "Gold"
         case blueGradientStart = "GBStart"
