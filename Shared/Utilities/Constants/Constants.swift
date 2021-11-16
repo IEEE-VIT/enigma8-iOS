@@ -9,6 +9,7 @@ import Foundation
 
 struct ImageConstants {
     static let enigmaLogo = "Logo"
+    static let enigmaOnlyLogo = "Enigma"
     static let onboardingBG = "LoginBG"
     static let profileHeader = "SetupProfileHeader"
 }

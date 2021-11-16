@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "SplashBG.png",
+      "filename" : "ENIGMA.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "SplashBG-1.png",
+      "filename" : "ENIGMA-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "SplashBG-2.png",
+      "filename" : "ENIGMA-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct Onboarding: View {
+    @AppStorage("onBoardShown") var onBoardShown: Bool = false
     @State var tabSelection = 0
-    @State var navigate = false
     var body: some View {
         NavigationView {
             GeometryReader { geo in
-                //TODO: Change Destination
-                NavigationLink(destination: RoomsView(), isActive: $navigate) {EmptyView()}
                 ZStack {
                     TabView(selection: $tabSelection) {
                         ForEach(0 ..< AppConstants.onBoardingScreens.count) { i in
@@ -31,7 +29,7 @@ struct Onboarding: View {
                                 .foregroundColor(Color.eGold)
                         }.frame(width: geo.size.width*0.8, height: geo.size.height*0.9, alignment: .bottomTrailing)
                     } else {
-                        Button(action: { self.navigate = true }) {
+                        Button(action: {self.onBoardShown = true}) {
                             Text("Get Started")
                                 .font(.Mulish(weight: .bold))
                                 .foregroundColor(Color.eGold)
