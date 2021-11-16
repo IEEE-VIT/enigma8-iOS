@@ -10,10 +10,19 @@ import SwiftUI
 struct CustomTextField: View {
     var textFieldString: String
     var bindingString: Binding<String>
+    
     var body: some View {
        TextField(textFieldString, text: bindingString)
-            .textFieldStyle(RoundedBorderTextFieldStyle())
-//            .padding(.top)
-        
+            .padding()
+            .overlay(RoundedRectangle(cornerRadius: 4).strokeBorder(LinearGradient.gold,style: StrokeStyle(lineWidth: 2.0)))
+                        .foregroundColor(.white)
+    }
+}
+
+struct CustomTextField_Previews: PreviewProvider {
+    static var previews: some View {
+        CustomTextField(textFieldString: "Enter UserName", bindingString: .constant(""))
+            .previewLayout(.sizeThatFits)
+            .background(OnboardingBackground())
     }
 }

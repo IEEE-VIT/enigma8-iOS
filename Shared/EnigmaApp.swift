@@ -16,8 +16,8 @@ struct EnigmaApp: App {
     
     var body: some Scene {
         WindowGroup {
-//            EnigmaHeader()
             ContentView()
+                .edgesIgnoringSafeArea(.all)
         }
     }
 }

@@ -8,35 +8,53 @@
 import SwiftUI
 
 struct LoginView: View {
+    
     // MARK: - PROPERTIES
-     @StateObject var authVM: AuthViewModel
-     let googleVM : GoogleCoordinator
-     let appleVM : AppleCoordinator
-     
-     // MARK: - INITIALIZE
-     init(authVM: AuthViewModel) {
-         self.appleVM = AppleCoordinator(authVM: authVM)
-         self.googleVM = GoogleCoordinator(authVM: authVM)
+    @StateObject var authVM: AuthViewModel
+    let googleVM : GoogleCoordinator
+    let appleVM : AppleCoordinator
+    
+    // MARK: - INITIALIZE
+    init(authVM: AuthViewModel) {
+        self.appleVM = AppleCoordinator(authVM: authVM)
+        self.googleVM = GoogleCoordinator(authVM: authVM)
         _authVM = StateObject(wrappedValue: authVM)
-     }
-
+    }
+    
+    // MARK: - BODY
     var body: some View {
-        VStack {
+        VStack(spacing:15) {
+            
             Spacer()
-            Text("ENIGMA")
-                .font(.title)
+            
+            Image(ImageConstants.enigmaLogo)
+                .resizable()
+                .scaledToFit()
+                .padding(36)
+                .padding(.bottom,50)
+            
             Spacer()
-            CustomButton(buttonText: "Sign up with Google",action: googleVM.googleSignin)
-                .padding(.horizontal,40)
-            CustomButton(buttonText:"Sign up with Apple", action: appleVM.signInWithApple)
-                .padding(.horizontal,40)
+            
+            Group {
+                SocialButton(action: appleVM.signInWithApple, image: .apple)
+                SocialButton(action: googleVM.googleSignin, image: .google)
+            }
+            .padding(.horizontal,40)
+            
             Spacer()
+            
+            NavigationLink(destination: ProfileSetupView(),isActive: $authVM.isNew) {
+                EmptyView()
+            }
         }
+        .background(OnboardingBackground())
     }
 }
 
+// MARK: - PREVIEWS
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView(authVM: AuthViewModel())
+            .edgesIgnoringSafeArea(.all)
     }
 }

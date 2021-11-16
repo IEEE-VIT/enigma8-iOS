@@ -9,33 +9,41 @@ import SwiftUI
 
 struct DropdownView: View {
 //    var dropdownText: String
-    @State private var isExpanded = false
+    @State private var isExpanded = true
     @State var selectedOption: String
     var dropdownOptions: [String]
+    
+    @State var disclosureOption: String = "   -Select-"
     var body: some View {
-        DisclosureGroup(selectedOption, isExpanded: $isExpanded) {
-            VStack(alignment: .leading) {
+        DisclosureGroup(disclosureOption, isExpanded: $isExpanded) {
+            VStack(alignment: .leading,spacing:0) {
                 ForEach(dropdownOptions, id: \.self) { option in
                     HStack {
                         Text(option)
-                            .onTapGesture {
-                                self.selectedOption = option
-                                withAnimation {
-                                    self.isExpanded.toggle()
-                                }
-                        }
+                            .font(Font.Mulish(size: 12, weight: .regular))
+                            .padding()
                         Spacer()
                     }
+                    .frame(height: 36)
+                    .background(self.selectedOption == option ? Color.egrey : Color.eBlack)
+                    .onTapGesture {
+                        self.selectedOption = option
+                }
                 }
             }
+            .border(LinearGradient.gold,width:2)
         }
-        .foregroundColor(Color.black)
-        .font(.body)
-        .accentColor(Color.black)
-        .padding()
-        .background(Color.gray)
-        .cornerRadius(8)
+        .foregroundColor(Color.white)
+        .padding(.top)
+        .background(Color.eBlack)
+        .border(LinearGradient.gold,width:2)
+        .onChange(of: self.isExpanded) { expanded in
+            if !expanded {
+                self.disclosureOption = "   " + self.selectedOption
+            }
+        }
 //        .padding()
+        Spacer()
     }
 }
 
