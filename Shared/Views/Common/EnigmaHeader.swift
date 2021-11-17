@@ -11,33 +11,36 @@ struct EnigmaHeader: View {
     var showBackButton: Bool = false
     var hideHeaderIcons: Bool = false
     var body: some View {
-        HStack {
-            if(!hideHeaderIcons) {
-                NavigationLink(destination: NotificationsView(notifsVM: NotificationsViewModel()).navigationTitle("").navigationBarHidden(true)){
-                    Image(showBackButton ? ImageConstants.back : ImageConstants.notifs)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .gradientForeground(colors: [.goldGradientStart, .goldGradientEnd])
-                        .frame(width: 25, height: 25)
+        VStack(spacing:0) {
+            HStack {
+                if(!hideHeaderIcons) {
+                    NavigationLink(destination: NotificationsView(notifsVM: NotificationsViewModel()).navigationTitle("").navigationBarHidden(true)){
+                        Image(showBackButton ? ImageConstants.back : ImageConstants.notifs)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .gradientForeground(colors: [.goldGradientStart, .goldGradientEnd])
+                            .frame(width: 25, height: 25)
+                    }
                 }
-            }
-            Spacer()
-            Image("Enigma")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: UIScreen.main.bounds.width*0.3)
-                .font(.system(size: 25))
-            Spacer()
-            if(!hideHeaderIcons) {
-                NavigationLink(destination: InstructionsView().navigationTitle("").navigationBarHidden(true)){
-                    Image(ImageConstants.info)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 30, height: 30)
+                Spacer()
+                Image(ImageConstants.enigmaOnlyLogo)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: UIScreen.main.bounds.width*0.3)
+                    .font(.system(size: 25))
+                Spacer()
+                if(!hideHeaderIcons) {
+                    NavigationLink(destination: InstructionsView().navigationTitle("").navigationBarHidden(true)){
+                        Image(ImageConstants.info)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 30, height: 30)
+                    }
                 }
-            }
-        }.padding()
-        .background(Color.black)
+            }.padding()
+            .background(Color.black)
+            Rectangle().fill(Color.goldGradientEnd).frame(height: 1)
+        }
     }
 }
 
