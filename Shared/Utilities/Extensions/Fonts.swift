@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 extension Font {
-    public static func Cinzel(size: CGFloat = 32,weight:Font.Weight = .semibold) -> Self {
+    public static func Cinzel(size: CGFloat = 20,weight:Font.Weight = .bold) -> Self {
         return .custom(weight.CinzelFontName, size: size)
     }
     public static func Mulish(size: CGFloat = 20, weight: Font.Weight = .semibold) -> Self {

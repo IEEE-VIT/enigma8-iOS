@@ -8,10 +8,10 @@
 import Foundation
 
 struct NotificationsResponse: Codable {
-    var notifs: [Notification?]
+    var notifs: [Notification?]?
 }
 
-struct Notification : Codable {
+struct Notification : Codable,Identifiable {
     var id: String?
     var type: String?
     var text: String?

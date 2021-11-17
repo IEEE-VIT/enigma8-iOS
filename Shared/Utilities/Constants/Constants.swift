@@ -12,6 +12,8 @@ struct ImageConstants {
     static let enigmaOnlyLogo = "Enigma"
     static let onboardingBG = "LoginBG"
     static let profileHeader = "SetupProfileHeader"
+    static let bullet = "notificationBullet"
+    static let pharoah = "Pharoah"
 }
 
 struct AppStorageConstants {
