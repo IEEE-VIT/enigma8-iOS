@@ -94,6 +94,7 @@
 		8CB814692742928A00E19DEE /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB814682742928A00E19DEE /* Onboarding.swift */; };
 		8CC128B4270301C1000483AB /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC128B3270301C1000483AB /* TimerModel.swift */; };
 		8CC128B82705D619000483AB /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC128B72705D618000483AB /* TimerViewModel.swift */; };
+		8CD337F62744AF0800E69F93 /* LeaderboardHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD337F52744AF0800E69F93 /* LeaderboardHeader.swift */; };
 		8CD8CADF26FADE7A00267EAC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CADE26FADE7A00267EAC /* Kingfisher */; };
 		8CD8CAE426FADED300267EAC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CAE326FADED300267EAC /* Alamofire */; };
 		8CD8CAE926FADF1200267EAC /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CAE826FADF1200267EAC /* GoogleSignIn */; };
@@ -194,6 +195,7 @@
 		8CB814682742928A00E19DEE /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		8CC128B3270301C1000483AB /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		8CC128B72705D618000483AB /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
+		8CD337F52744AF0800E69F93 /* LeaderboardHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardHeader.swift; sourceTree = "<group>"; };
 		8CEDD1E4274012A200CE4856 /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
 		8CEDD1E627404B0200CE4856 /* HintModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintModel.swift; sourceTree = "<group>"; };
 		8CEDD1E827404BE800CE4856 /* AnswerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerModel.swift; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 			isa = PBXGroup;
 			children = (
 				31A2665C2718996D005B1A17 /* LeaderboardRow.swift */,
+				8CD337F52744AF0800E69F93 /* LeaderboardHeader.swift */,
 			);
 			path = Leaderboard;
 			sourceTree = "<group>";
@@ -752,6 +755,7 @@
 				31AB32DB27024A0A00C43EAA /* APIResponse.swift in Sources */,
 				8C46F76727198F93003132B1 /* RoomUI.swift in Sources */,
 				31DDD20727171EE5002315FC /* ProfileSetupViewModel.swift in Sources */,
+				8CD337F62744AF0800E69F93 /* LeaderboardHeader.swift in Sources */,
 				31969157271D961F00FDBEF6 /* LeaderboardView.swift in Sources */,
 				31CEEDA92715E62400298399 /* RadioGroupView.swift in Sources */,
 				8CB59C4C2733EBE500DDD725 /* LeaderboardViewModel.swift in Sources */,
