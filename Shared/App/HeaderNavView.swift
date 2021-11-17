@@ -10,7 +10,7 @@ import SwiftUI
 struct HeaderNavView: View {
     @State var tabSelected = 0
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             EnigmaHeader()
             TabView(selection: $tabSelected) {
                 RoomsView(rooms: RoomsViewModel())

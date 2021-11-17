@@ -19,6 +19,7 @@ struct LeaderboardView: View {
                 .font(.Cinzel(size: 25))
                         .gradientForeground(colors: [.goldGradientStart,.goldGradientEnd])
                         .padding(.leading)
+                        .padding(.top, 20)
                         .frame(width: wholeGeo.size.width, alignment: .leading)
                 .frame(height: 35)
             ZStack {
