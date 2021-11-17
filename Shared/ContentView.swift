@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @AppStorage("onBoardShown") var onBoardShown: Bool = false
+    @AppStorage(AppStorageConstants.onboarding) var onboarded: Bool = false
     @AppStorage("userLoggedIn") var userLoggedIn: Bool = false
     var body: some View {
         NavigationView {
-            if(onBoardShown) {
+            if(onboarded) {
                 if(userLoggedIn) {
                     HeaderNavView()
                         .navigationTitle("")

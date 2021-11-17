@@ -13,3 +13,7 @@ struct ImageConstants {
     static let onboardingBG = "LoginBG"
     static let profileHeader = "SetupProfileHeader"
 }
+
+struct AppStorageConstants {
+    static let onboarding = "EnigmaOnboarded"
+}
