@@ -16,8 +16,7 @@ struct EnigmaApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .edgesIgnoringSafeArea(.all)
+            CurrentStoryView(storyVM: StoryViewModel(roomId: "616165bc22fc9fa672b9849a"))
         }
     }
 }

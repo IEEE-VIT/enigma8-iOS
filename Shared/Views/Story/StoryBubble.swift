@@ -11,22 +11,35 @@ import Kingfisher
 struct StoryBubble: View {
     
     var story: Story
-    var bgColor: Color = Color(white: 0, opacity: 0.2)
-    var maxSizeP = 0.8
+    var width: CGFloat
     var body: some View {
-        HStack(alignment: .top) {
-            VStack (alignment: .leading, spacing: 10) {
-                Text(story.sender ?? "Name")
-                    .font(.system(size: 20))
-                Text(story.message ?? "Message")
-            }
-        }.padding(10)
-            .background(bgColor)
+        VStack (alignment:story.senderEnum.titleAlignment,spacing: 0) {
+            
+            CustomLabel(text:story.sender ?? "Name",font:.Cinzel(size: 14, weight: .bold))
+                .padding(5)
+            
+            Text(story.message ?? "Message")
+                .foregroundColor(story.senderEnum.color)
+                .font(.Mulish(size: 15, weight: .semibold))
+                .padding(8)
+                .background(Color.storyGrey)
+                .cornerRadius(6)
+        }
+        .frame(maxWidth: .infinity,alignment: story.senderEnum.bubbleAlignment)
+        .padding(.leading, width * story.senderEnum.leadingAchor)
+        .padding(.trailing, width * story.senderEnum.trailingAchor)
+        .padding(.vertical)
     }
 }
 
 struct StoryBubble_Previews: PreviewProvider {
     static var previews: some View {
-        StoryBubble(story: Story.storySample, bgColor: Color(white: 0, opacity: 0.2) )
+        Group {
+            StoryBubble(story: Story.storySample, width: 360)
+            StoryBubble(story: Story.storyMJ, width: 360)
+        }
+        .frame(width: 360)
+        .previewLayout(.sizeThatFits)
+        .background(Color.black)
     }
 }
