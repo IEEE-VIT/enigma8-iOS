@@ -56,11 +56,11 @@
 		4E7A5CDA2700FBA10058CAB9 /* PodHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A5CD82700FBA10058CAB9 /* PodHelper.swift */; };
 		4E7A5CDC2700FBBF0058CAB9 /* KFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A5CDB2700FBBF0058CAB9 /* KFManager.swift */; };
 		4E7A5CDD2700FBBF0058CAB9 /* KFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A5CDB2700FBBF0058CAB9 /* KFManager.swift */; };
-		4E944D3027436C6300DC14B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E944D2F27436C6200DC14B4 /* GoogleService-Info.plist */; };
 		4E944D3327436FCF00DC14B4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E944D3227436FCF00DC14B4 /* Constants.swift */; };
 		4E944D3527437CF800DC14B4 /* OnboardingBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E944D3427437CF800DC14B4 /* OnboardingBackground.swift */; };
 		4E944D392743845F00DC14B4 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E944D382743845F00DC14B4 /* CustomLabel.swift */; };
 		4E944D3B2743911C00DC14B4 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E944D3A2743911B00DC14B4 /* Gradient.swift */; };
+		4EB111DC2744B3AF00632784 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EB111DB2744B3AE00632784 /* GoogleService-Info.plist */; };
 		4EC3E48026E7DCCA0049AD99 /* EnigmaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC3E46D26E7DCC90049AD99 /* EnigmaApp.swift */; };
 		4EC3E48126E7DCCA0049AD99 /* EnigmaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC3E46D26E7DCC90049AD99 /* EnigmaApp.swift */; };
 		4EC3E48226E7DCCA0049AD99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC3E46E26E7DCC90049AD99 /* ContentView.swift */; };
@@ -154,11 +154,11 @@
 		4E7A5CD42700FB5C0058CAB9 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		4E7A5CD82700FBA10058CAB9 /* PodHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodHelper.swift; sourceTree = "<group>"; };
 		4E7A5CDB2700FBBF0058CAB9 /* KFManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KFManager.swift; sourceTree = "<group>"; };
-		4E944D2F27436C6200DC14B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4E944D3227436FCF00DC14B4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4E944D3427437CF800DC14B4 /* OnboardingBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingBackground.swift; sourceTree = "<group>"; };
 		4E944D382743845F00DC14B4 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		4E944D3A2743911B00DC14B4 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
+		4EB111DB2744B3AE00632784 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		4EC3E46D26E7DCC90049AD99 /* EnigmaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnigmaApp.swift; sourceTree = "<group>"; };
 		4EC3E46E26E7DCC90049AD99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4EC3E46F26E7DCCA0049AD99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -484,7 +484,7 @@
 		4EC3E47626E7DCCA0049AD99 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				4E944D2F27436C6200DC14B4 /* GoogleService-Info.plist */,
+				4EB111DB2744B3AE00632784 /* GoogleService-Info.plist */,
 				4EC3E47726E7DCCA0049AD99 /* Info.plist */,
 			);
 			path = iOS;
@@ -695,11 +695,11 @@
 			files = (
 				8CB814622742858F00E19DEE /* CinzelDecorative-Bold.ttf in Resources */,
 				8CB8145F2742856400E19DEE /* Cinzel-Bold.ttf in Resources */,
-				4E944D3027436C6300DC14B4 /* GoogleService-Info.plist in Resources */,
 				8CB814632742858F00E19DEE /* CinzelDecorative-Regular.ttf in Resources */,
 				8CB248552742AF1E0063522F /* Launch Screen.storyboard in Resources */,
 				8CB8145B2742851D00E19DEE /* Mulish-Bold.ttf in Resources */,
 				4EC3E48426E7DCCA0049AD99 /* Assets.xcassets in Resources */,
+				4EB111DC2744B3AF00632784 /* GoogleService-Info.plist in Resources */,
 				8CB8145C2742851D00E19DEE /* Mulish-Regular.ttf in Resources */,
 				8CB8145D2742851D00E19DEE /* Mulish-SemiBold.ttf in Resources */,
 			);
@@ -936,7 +936,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LYKFDFQQ2D;
+				DEVELOPMENT_TEAM = F8CHS6PHQS;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -958,7 +958,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LYKFDFQQ2D;
+				DEVELOPMENT_TEAM = F8CHS6PHQS;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
