@@ -17,6 +17,7 @@ struct ImageConstants {
     static let notifs = "Notifications"
     static let info = "Info"
     static let back = "Back"
+    static let timer = "timerBanner"
 }
 
 struct AppStorageConstants {
