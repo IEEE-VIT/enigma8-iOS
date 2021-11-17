@@ -18,7 +18,8 @@ struct EnigmaApp: App {
     var body: some Scene {
         WindowGroup {
             HeaderNavView()
-                .environmentObject(roomsVM)
+                   .environmentObject(roomsVM)
+      //      LoginView(authVM: AuthViewModel())
         }
     }
 }
