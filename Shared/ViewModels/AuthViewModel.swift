@@ -12,7 +12,6 @@ import Combine
 
 class AuthViewModel: ObservableObject {
     
-    @AppStorage("userLoggedIn") var userLoggedIn: Bool = false
     @Published var isSignedIn: Bool = false
     @Published var error: String = ""
     @Published var isNew: Bool = false
@@ -42,7 +41,6 @@ class AuthViewModel: ObservableObject {
             print(response ?? "Error parsing response from Backend")
             UserDefaults.standard.setValue(response?.jwt , forKey: "EnigmaToken")
             self.isSignedIn = true
-            self.userLoggedIn = true
             self.isNew = response?.isNew ?? false
         }
       
