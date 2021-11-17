@@ -12,27 +12,26 @@ struct CurrentStoryView: View {
     var body: some View {
         VStack {
             ScrollView {
-                ForEach(storyVM.storySoFar, id: \.self) { message in
-                    HStack {
-                        if message?.senderEnum == .sender2 {
-                            Spacer()
-                        }
-                        StoryBubble(story: message ?? Story(roomNo: nil, sender: nil, message: nil))
-                            .padding()
-                        if message?.senderEnum == .sender1 {
-                            Spacer()
+                ScrollViewReader { sr in
+                    ForEach(storyVM.storySoFar) { message in
+                        StoryBubble(story: message, width: UIScreen.main.bounds.width)
+                            .id(message.id)
+                    }
+                    .onChange(of: storyVM.storySoFar.count) { _ in
+                        Logger.debug("\(storyVM.storySoFar.count)")
+                        withAnimation{
+                        sr.scrollTo(storyVM.storySoFar.last?.id)
                         }
                     }
                 }
             }
-            HStack {
-                Spacer(minLength: 100)
-                //TODO: EMBED IN NAVLINK. ISACTIVE: storyVM.roomComplete
-                    CustomButton(buttonText: (storyVM.roomComplete ? "Continue": (storyVM.nextIndex == 0 ? "Start" : "Next")), action: storyVM.updateCurrentStory)
-                Spacer(minLength: 100)
-            }
+            
+            //TODO: EMBED IN NAVLINK. ISACTIVE: storyVM.roomComplete
+            CustomButton(buttonText: storyVM.buttonTitle, action: storyVM.updateCurrentStory,bgroundColor: .eGold)
         }
-        .padding()
+        .background(Image(ImageConstants.storyBG).resizable()
+                        .scaledToFill().edgesIgnoringSafeArea(.all))
+
         .onAppear {
             storyVM.getStory()
         }

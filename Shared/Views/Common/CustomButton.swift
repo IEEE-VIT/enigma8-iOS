@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CustomButton: View {
-    var buttonText: String = "Submit"
+    @State var buttonText: String = "Submit"
     var borderColor: Color = Color.clear
     var action: () -> Void = {}
     var fgroundColor: Color = Color.black

@@ -15,6 +15,8 @@ extension Color {
     static let eBlack = Color(UIColor(named: ColorConstants.black.rawValue)!)
     static let egrey = Color(UIColor(named: ColorConstants.grey.rawValue)!)
 
+    static let storyGrey = Color(UIColor(named: ColorConstants.chat.rawValue)!)
+
     static let blueGradientStart = Color(UIColor(named: ColorConstants.blueGradientStart.rawValue)!)
     static let blueGradientEnd = Color(UIColor(named: ColorConstants.blueGradientEnd.rawValue)!)
     static let goldGradientStart = Color(UIColor(named: ColorConstants.goldGradientStart.rawValue)!)
@@ -32,5 +34,6 @@ extension Color {
         case blueGradientEnd = "GBEnd"
         case goldGradientStart = "GGStart"
         case goldGradientEnd = "GGEnd"
+        case chat = "Chat"
     }
 }
