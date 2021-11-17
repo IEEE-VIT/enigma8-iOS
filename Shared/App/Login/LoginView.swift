@@ -27,11 +27,7 @@ struct LoginView: View {
             
             Spacer()
             
-            Image(ImageConstants.enigmaLogo)
-                .resizable()
-                .scaledToFit()
-                .padding(36)
-                .padding(.bottom,50)
+            EnigmaLogo()
             
             Spacer()
             

@@ -14,8 +14,8 @@ struct TimerBlock: View {
     var body: some View {
         VStack(alignment: .center,spacing:16) {
             HStack(spacing:width * 0.1) {
-                TimerCell(value: 0)
-                TimerCell(value: 2)
+                TimerCell(value: Int(value/10))
+                TimerCell(value: value%10)
         }
         .frame(width: width)
             CustomLabel(text: title,font:.Mulish(size: 18, weight: .regular))

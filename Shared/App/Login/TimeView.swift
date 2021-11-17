@@ -9,20 +9,38 @@ import SwiftUI
 
 struct TimeView: View {
     @StateObject var timeVM: TimerViewModel = TimerViewModel()
+    @State var showDemoQuestion: Bool = false
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
-        VStack {
-            TimerBanner()
-            TimerBlockView(components: timeVM.enigmaDateComponents)
-            if(timeVM.started) {
-                CustomButton(buttonText: "Continue",action: continuePressed)
+        GeometryReader { gr in
+            VStack(spacing:50) {
+                TimerBanner()
+                
+                CustomLabel(text: "ENIGMA", font: .Cinzel(size: 49, weight: .black))
+                    
+                Text("The Ultimate Cryptic Hunt Begins in ")
+                    .font(.Mulish(size: 23, weight: .regular))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.5)
+                    .foregroundColor(.eGold)
+                
+                TimerBlockView(components: timeVM.enigmaDateComponents, width: gr.size.width)
+                
+                Spacer()
+                
+                CustomGradientButton(buttonText: timeVM.started ? "Play Now" : "Demo Question",action: continuePressed)
+                TimerBanner(reverse: true)
             }
-            TimerBanner(reverse: true)
-        }
-        frame(maxWidth: .infinity)
+            .frame(maxWidth: .infinity)
             .padding(16)
+            .background(Color.black)
             .onReceive(timer, perform: performCountdown)
+            .fullScreenCover(isPresented: $showDemoQuestion) {
+               Text("DEMO GAME HERE") // TODO
+            }
+        }
+        .frame(maxWidth: .infinity)
     }
     
     func performCountdown(_ output: Timer.TimerPublisher.Output) {
@@ -38,24 +56,21 @@ struct TimeView: View {
         if(timeVM.started) {
             //TODO: NAVIGATION TO PLAY VIEW
         } else {
-            // TODO: SHOW ALERT "ENIGMA STARTS AT XX:XX:XX IST"
+            self.showDemoQuestion = true
         }
     }
 }
 
 struct TimerBlockView:View {
     var components: DateComponents
+    var width: CGFloat
     var body: some View {
-        GeometryReader { gr in
-            HStack {
-                Spacer()
-                TimerBlock(value: components.day ?? 0, width: gr.size.width * 0.3, title: "Days")
-                Spacer()
-                TimerBlock(value: components.hour ?? 0, width: gr.size.width * 0.3, title: "Hours")
-                Spacer()
-                TimerBlock(value: components.minute ?? 0, width: gr.size.width * 0.3, title: "Minutes")
-                Spacer()
-            }
+        HStack {
+            TimerBlock(value: components.day ?? 0, width: width * 0.3, title: "Days")
+            Spacer()
+            TimerBlock(value: components.hour ?? 0, width: width * 0.3, title: "Hours")
+            Spacer()
+            TimerBlock(value: components.minute ?? 0, width: width * 0.3, title: "Minutes")
         }
     }
 }
