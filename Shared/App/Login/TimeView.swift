@@ -13,17 +13,16 @@ struct TimeView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                TimerBlockView(value: timeVM.enigmaDateComponents.day ?? 0)
-                TimerBlockView(value: timeVM.enigmaDateComponents.hour ?? 0)
-                TimerBlockView(value: timeVM.enigmaDateComponents.minute ?? 0)
-                TimerBlockView(value: timeVM.enigmaDateComponents.second ?? 0)
-            }
+            TimerBanner()
+            TimerBlockView(components: timeVM.enigmaDateComponents)
             if(timeVM.started) {
                 CustomButton(buttonText: "Continue",action: continuePressed)
             }
+            TimerBanner(reverse: true)
         }
-        .onReceive(timer, perform: performCountdown)
+        frame(maxWidth: .infinity)
+            .padding(16)
+            .onReceive(timer, perform: performCountdown)
     }
     
     func performCountdown(_ output: Timer.TimerPublisher.Output) {
@@ -41,6 +40,33 @@ struct TimeView: View {
         } else {
             // TODO: SHOW ALERT "ENIGMA STARTS AT XX:XX:XX IST"
         }
+    }
+}
+
+struct TimerBlockView:View {
+    var components: DateComponents
+    var body: some View {
+        GeometryReader { gr in
+            HStack {
+                Spacer()
+                TimerBlock(value: components.day ?? 0, width: gr.size.width * 0.3, title: "Days")
+                Spacer()
+                TimerBlock(value: components.hour ?? 0, width: gr.size.width * 0.3, title: "Hours")
+                Spacer()
+                TimerBlock(value: components.minute ?? 0, width: gr.size.width * 0.3, title: "Minutes")
+                Spacer()
+            }
+        }
+    }
+}
+
+struct TimerBanner: View {
+    var reverse : Bool = false
+    var body: some View{
+        Image(ImageConstants.timer)
+            .resizable()
+            .scaledToFit()
+            .rotationEffect(.degrees(reverse ? 180 : 0))
     }
 }
 
