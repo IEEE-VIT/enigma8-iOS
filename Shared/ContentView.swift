@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @AppStorage(AppStorageConstants.onboarding) var onboarded: Bool = false
-    @AppStorage("userLoggedIn") var userLoggedIn: Bool = false
+    @AppStorage(AppStorageConstants.login) var userLoggedIn: Bool = false
     var body: some View {
         NavigationView {
             if(onboarded) {
