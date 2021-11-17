@@ -11,3 +11,12 @@ import SwiftUI
 extension LinearGradient {
     static let gold = LinearGradient(gradient: Gradient(colors: [.goldGradientStart, .goldGradientEnd]), startPoint: .top, endPoint: .bottom)
 }
+
+extension View {
+    public func gradientForeground(colors: [Color]) -> some View {
+        self.overlay(LinearGradient(gradient: .init(colors: colors),
+                                    startPoint: .top,
+                                    endPoint: .bottom))
+            .mask(self)
+    }
+}
