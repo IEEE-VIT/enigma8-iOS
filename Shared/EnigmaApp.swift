@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct EnigmaApp: App {
+    @StateObject var roomsVM = RoomsViewModel()
     
     init() {
         PodHelper.configurePods()
@@ -16,7 +17,8 @@ struct EnigmaApp: App {
     
     var body: some Scene {
         WindowGroup {
-            CurrentStoryView(storyVM: StoryViewModel(roomId: "616165bc22fc9fa672b9849a"))
+            HeaderNavView()
+                .environmentObject(roomsVM)
         }
     }
 }

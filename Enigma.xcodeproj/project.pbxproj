@@ -19,7 +19,6 @@
 		318BCCA32733FC0600E0B6F3 /* StoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BCCA22733FC0600E0B6F3 /* StoryViewModel.swift */; };
 		318BCCA7273422DE00E0B6F3 /* CurrentStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BCCA6273422DE00E0B6F3 /* CurrentStoryView.swift */; };
 		318DB9852738FCFA000AB95A /* RoomTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB9842738FCFA000AB95A /* RoomTile.swift */; };
-		318DB9872738FE25000AB95A /* RoomQuestionStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB9862738FE25000AB95A /* RoomQuestionStatusView.swift */; };
 		318DB98927391790000AB95A /* FullStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB98827391790000AB95A /* FullStoryView.swift */; };
 		318DB98C27392525000AB95A /* RoomWiseStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB98B27392525000AB95A /* RoomWiseStory.swift */; };
 		3196110B270206080030901E /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3196110A270206080030901E /* SignUpModel.swift */; };
@@ -60,6 +59,7 @@
 		4E944D3527437CF800DC14B4 /* OnboardingBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E944D3427437CF800DC14B4 /* OnboardingBackground.swift */; };
 		4E944D392743845F00DC14B4 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E944D382743845F00DC14B4 /* CustomLabel.swift */; };
 		4E944D3B2743911C00DC14B4 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E944D3A2743911B00DC14B4 /* Gradient.swift */; };
+		4EAD04FF27456B4B003DC5F3 /* RoomsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAD04FE27456B4B003DC5F3 /* RoomsHeader.swift */; };
 		4EB111DC2744B3AF00632784 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EB111DB2744B3AE00632784 /* GoogleService-Info.plist */; };
 		4EB111DE2744E5E000632784 /* NotificationBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB111DD2744E5E000632784 /* NotificationBackground.swift */; };
 		4EC3E48026E7DCCA0049AD99 /* EnigmaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC3E46D26E7DCC90049AD99 /* EnigmaApp.swift */; };
@@ -125,7 +125,6 @@
 		318BCCA22733FC0600E0B6F3 /* StoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewModel.swift; sourceTree = "<group>"; };
 		318BCCA6273422DE00E0B6F3 /* CurrentStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentStoryView.swift; sourceTree = "<group>"; };
 		318DB9842738FCFA000AB95A /* RoomTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTile.swift; sourceTree = "<group>"; };
-		318DB9862738FE25000AB95A /* RoomQuestionStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomQuestionStatusView.swift; sourceTree = "<group>"; };
 		318DB98827391790000AB95A /* FullStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullStoryView.swift; sourceTree = "<group>"; };
 		318DB98B27392525000AB95A /* RoomWiseStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomWiseStory.swift; sourceTree = "<group>"; };
 		3196110A270206080030901E /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
@@ -161,6 +160,7 @@
 		4E944D3427437CF800DC14B4 /* OnboardingBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingBackground.swift; sourceTree = "<group>"; };
 		4E944D382743845F00DC14B4 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		4E944D3A2743911B00DC14B4 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
+		4EAD04FE27456B4B003DC5F3 /* RoomsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsHeader.swift; sourceTree = "<group>"; };
 		4EB111DB2744B3AE00632784 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		4EB111DD2744E5E000632784 /* NotificationBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBackground.swift; sourceTree = "<group>"; };
 		4EC3E46D26E7DCC90049AD99 /* EnigmaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnigmaApp.swift; sourceTree = "<group>"; };
@@ -307,7 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				318DB9842738FCFA000AB95A /* RoomTile.swift */,
-				318DB9862738FE25000AB95A /* RoomQuestionStatusView.swift */,
+				4EAD04FE27456B4B003DC5F3 /* RoomsHeader.swift */,
 			);
 			path = RoomsView;
 			sourceTree = "<group>";
@@ -742,6 +742,7 @@
 				318DB98927391790000AB95A /* FullStoryView.swift in Sources */,
 				31C13206271D560F00BD5301 /* Powerups.swift in Sources */,
 				8CEF83E92712F17900E96E2E /* StoryBubble.swift in Sources */,
+				4EAD04FF27456B4B003DC5F3 /* RoomsHeader.swift in Sources */,
 				31A2665F27189A0B005B1A17 /* LeaderboardModel.swift in Sources */,
 				31A2665F27189A0B005B1A17 /* LeaderboardModel.swift in Sources */,
 				3104C7C227350F5900B1C155 /* UserModel.swift in Sources */,
@@ -777,7 +778,6 @@
 				31A266612718A1C6005B1A17 /* RoomsView.swift in Sources */,
 				8CEEE0172736F9CF00CD06AB /* SafariView.swift in Sources */,
 				8CEF83EC2712F23500E96E2E /* StoryModel.swift in Sources */,
-				318DB9872738FE25000AB95A /* RoomQuestionStatusView.swift in Sources */,
 				31CEEDA12715C38900298399 /* DropdownView.swift in Sources */,
 				8CB814692742928A00E19DEE /* Onboarding.swift in Sources */,
 				4EC3E48026E7DCCA0049AD99 /* EnigmaApp.swift in Sources */,

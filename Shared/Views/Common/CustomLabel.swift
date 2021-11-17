@@ -10,7 +10,7 @@ import SwiftUI
 struct CustomLabel: View {
     var text: String
     var font : Font = .Mulish(size: 15, weight: .bold)
-    let gradient = LinearGradient(gradient: Gradient(colors: [.goldGradientStart, .goldGradientEnd]), startPoint: .top, endPoint: .bottom)
+    var gradient: LinearGradient = LinearGradient.gold
     
     var body: some View {
         

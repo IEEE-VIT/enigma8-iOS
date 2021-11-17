@@ -14,9 +14,28 @@ class RoomsViewModel: ObservableObject {
     @Published var presentRoomLocked: Bool = false
     @Published var powerUpSelected: Bool = false
     @Published var navigateToRoom: Bool = false
+    @Published var navigateToPowerups: Bool = false
     @Published var roomSolved: Bool = false
-    @Published var toRoom: RoomsModel?
+    @Published var toRoom: RoomsModel = RoomsModel(journey: nil, room: nil)
 
+    
+    @Published var user: UserModel?
+    @Published var starsRequired: Int = 0
+    
+    init() {
+        fetchUser()
+        fetchAllInfo()
+    }
+    
+    func fetchUser(){
+        APIClient.request(fromRouter: .getUser) { (response: UserModel?,error) in
+            guard let response = response else {
+                return
+            }
+            self.user = response
+        }
+    }
+    
     func fetchAllInfo(){
         APIClient.request(fromRouter: .allRooms) { (response: AllRoomsResponse?, error) in
             guard let response = response else {
@@ -25,6 +44,8 @@ class RoomsViewModel: ObservableObject {
             }
             if let rooms = response.data as? [RoomsModel] {
                 self.allInfo = rooms
+                let nextRoomStarQuota = rooms.first(where: { !($0.journey?.roomUnlocked ?? false) })?.room?.starQuota ?? 0
+                self.starsRequired = nextRoomStarQuota - (self.user?.stars ?? 0)
             }
         }
     }

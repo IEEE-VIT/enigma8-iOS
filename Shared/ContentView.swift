@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @AppStorage(AppStorageConstants.onboarding) var onboarded: Bool = false
     @AppStorage(AppStorageConstants.login) var userLoggedIn: Bool = false
+    @StateObject var roomsVM: RoomsViewModel = RoomsViewModel()
     var body: some View {
         NavigationView {
             if(onboarded) {
@@ -17,6 +18,7 @@ struct ContentView: View {
                     HeaderNavView()
                         .navigationTitle("")
                         .navigationBarHidden(true)
+                        .environmentObject(roomsVM)
                 } else {
                     LoginView(authVM: AuthViewModel())
                             .navigationTitle("")

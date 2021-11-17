@@ -9,11 +9,12 @@ import SwiftUI
 
 struct HeaderNavView: View {
     @State var tabSelected = 0
+    @EnvironmentObject var rooms : RoomsViewModel
     var body: some View {
         VStack(spacing: 0) {
             EnigmaHeader()
             TabView(selection: $tabSelected) {
-                RoomsView(rooms: RoomsViewModel())
+                RoomsView()
                     .navigationTitle("")
                     .navigationBarHidden(true)
                     .tabItem {
@@ -46,7 +47,7 @@ struct HeaderNavView: View {
                         }
                     }
                     .tag(2)
-                ProfileView(userVM: ProfileViewModel())
+                ProfileView()
                     .navigationTitle("")
                     .navigationBarHidden(true)
                     .tabItem {
