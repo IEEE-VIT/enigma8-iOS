@@ -20,7 +20,8 @@ extension Font {
 extension Font.Weight {
     var CinzelFontName: String {
         switch self {
-        case .bold: return "CinzelDecorative-Regular"
+        case .bold: return "Cinzel-Bold"
+        case .black: return "CinzelDecorative-Bold"
         case .semibold: return "Cinzel-Bold"
         case .regular: return "CinzelDecorative-Regular"
         default: return "Cinzel-Bold"

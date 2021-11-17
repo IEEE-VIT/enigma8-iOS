@@ -48,6 +48,29 @@ struct SocialButton: View {
     }
 }
 
+struct CustomGradientButton: View {
+    var buttonText: String = "Submit"
+    var action: () -> Void = {}
+    var font: Font = .Mulish(size: 14, weight: .semibold)
+    var body: some View {
+        HStack(spacing: 0) {
+            Spacer(minLength: 100)
+            Button(action: action){
+                CustomLabel(text: buttonText)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.3)
+                    .frame(maxWidth: .infinity)
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 12)
+                    .font(font)
+                    .overlay(RoundedRectangle(cornerRadius: 5).stroke(LinearGradient.gold, lineWidth: 1))
+                    
+                Spacer(minLength: 100)
+            }
+        }
+    }
+}
+
 struct CustomButton_Previews: PreviewProvider {
     static var previews: some View {
         CustomButton()

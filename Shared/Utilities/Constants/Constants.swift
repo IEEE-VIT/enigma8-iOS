@@ -14,6 +14,7 @@ struct ImageConstants {
     static let profileHeader = "SetupProfileHeader"
     static let bullet = "notificationBullet"
     static let pharoah = "Pharoah"
+    static let timer = "timerBanner"
 }
 
 struct AppStorageConstants {
