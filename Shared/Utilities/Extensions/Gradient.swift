@@ -10,6 +10,9 @@ import SwiftUI
 
 extension LinearGradient {
     static let gold = LinearGradient(gradient: Gradient(colors: [.goldGradientStart, .goldGradientEnd]), startPoint: .top, endPoint: .bottom)
+    
+    static let blue = LinearGradient(gradient: Gradient(colors: [.blueGradientStart, .blueGradientEnd]), startPoint: .top, endPoint: .bottom)
+
 }
 
 extension View {
