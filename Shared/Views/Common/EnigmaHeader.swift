@@ -8,18 +8,28 @@
 import SwiftUI
 
 struct EnigmaHeader: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var showBackButton: Bool = false
     var hideHeaderIcons: Bool = false
     var body: some View {
         VStack(spacing:0) {
             HStack {
                 if(!hideHeaderIcons) {
-                    NavigationLink(destination: NotificationsView(notifsVM: NotificationsViewModel()).navigationTitle("").navigationBarHidden(true)){
-                        Image(showBackButton ? ImageConstants.back : ImageConstants.notifs)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .gradientForeground(colors: [.goldGradientStart, .goldGradientEnd])
-                            .frame(width: 25, height: 25)
+                    if(showBackButton) {
+                        Button(action: {self.presentationMode.wrappedValue.dismiss()}) {
+                            Image(ImageConstants.back)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 25, height: 25)
+                        }
+                    } else {
+                        NavigationLink(destination: NotificationsView(notifsVM: NotificationsViewModel()).navigationTitle("").navigationBarHidden(true)){
+                            Image(ImageConstants.notifs)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .gradientForeground(colors: [.goldGradientStart, .goldGradientEnd])
+                                .frame(width: 25, height: 25)
+                        }
                     }
                 }
                 Spacer()
