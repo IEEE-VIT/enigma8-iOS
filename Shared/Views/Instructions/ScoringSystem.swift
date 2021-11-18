@@ -8,25 +8,27 @@
 import SwiftUI
 
 struct ScoringSystem: View {
-    var sampleText = """
-            Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit.
-            Urna dictum massa diam laoreet suspendisse sed
-            suspendisse senectus.
-            Amet vitae et tellus curabitur commodo id.
-            Consequat vestibulum, sed felis, sem tortor eget
-            dictumst.
-            Mattis sagittis, adipiscing ullamcorper velit euismod
-            suscipit.
-            """
     var body: some View {
         VStack {
-            InstructionsHeader(viewName: "Scoring System")
-            Spacer()
-            Text(sampleText)
-            Spacer()
+            VStack(alignment: .center, spacing: 20) {
+                VStack(alignment: .leading) {
+                    ForEach(AppConstants.instructionsScoringSystem, id: \.self) { point in
+                        HStack(alignment: .top) {
+                            Image("BulletPoint")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 8)
+                                .padding(.top, 5)
+                            Text(point)
+                                .font(.Mulish(size: 12, weight: .medium))
+                                .foregroundColor(Color.eGold)
+                        }
+                        .padding(.vertical)
+                    }
+                }
+                Spacer()
+            }
         }
-        .padding()
     }
 }
 

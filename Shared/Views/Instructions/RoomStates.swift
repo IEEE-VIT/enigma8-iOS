@@ -1,17 +1,17 @@
 //
-//  GameMechanics.swift
+//  RoomStates.swift
 //  Enigma (iOS)
 //
-//  Created by Ananya George on 10/18/21.
+//  Created by Ananya George on 11/18/21.
 //
 
 import SwiftUI
 
-struct GameMechanics: View {
+struct RoomStates: View {
     var body: some View {
-        VStack(alignment: .center, spacing: 20) {
+        ScrollView {
             VStack(alignment: .leading) {
-                ForEach(AppConstants.instructionsGameMechanics, id: \.self) { point in
+                ForEach(AppConstants.instructionsRoomStates, id: \.self) { point in
                     HStack(alignment: .top) {
                         Image("BulletPoint")
                             .resizable()
@@ -22,27 +22,31 @@ struct GameMechanics: View {
                             .font(.Mulish(size: 12, weight: .medium))
                             .foregroundColor(Color.eGold)
                     }
+                    .padding(.top)
                 }
             }
             Spacer()
             HStack {
-                Image("Key")
+                Image("RoomInstructionFlames")
                     .resizable()
                     .scaledToFit()
-                    .frame(height: 35)
-                Text(": Key")
-                    .font(.Mulish(size: 14, weight: .regular))
-                    .foregroundColor(Color.eBlue)
+                    .frame(height: 173)
+                    .padding()
+                VStack(alignment: .leading){
+                    ForEach(AppConstants.instructionsRoomStatus, id: \.self) { state in
+                        RoomStatesTorches(name: state)
+                    }
+                }
+                .padding()
             }
-            .padding()
             Spacer()
         }
-        .padding()
+        .padding(.horizontal)
     }
 }
 
-struct GameMechanics_Previews: PreviewProvider {
+struct RoomStates_Previews: PreviewProvider {
     static var previews: some View {
-        GameMechanics()
+        RoomStates()
     }
 }
