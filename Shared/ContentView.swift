@@ -11,13 +11,21 @@ struct ContentView: View {
     @AppStorage(AppStorageConstants.onboarding) var onboarded: Bool = false
     @AppStorage(AppStorageConstants.login) var userLoggedIn: Bool = false
     @StateObject var roomsVM: RoomsViewModel = RoomsViewModel()
+    @StateObject var timerVM: TimerViewModel = TimerViewModel()
     var body: some View {
             if(onboarded) {
                 if(userLoggedIn) {
-                    HeaderNavView()
-                        .navigationTitle("")
-                        .navigationBarHidden(true)
-                        .environmentObject(roomsVM)
+                    if(timerVM.started && timerVM.navigateToRooms) {
+                        HeaderNavView()
+                            .navigationTitle("")
+                            .navigationBarHidden(true)
+                            .environmentObject(roomsVM)
+                    } else {
+                        TimeView()
+                            .navigationTitle("")
+                            .navigationBarHidden(true)
+                            .environmentObject(timerVM)
+                    }
                 } else {
                     LoginView(authVM: AuthViewModel())
                             .navigationTitle("")

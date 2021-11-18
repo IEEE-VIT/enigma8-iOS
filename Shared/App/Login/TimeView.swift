@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TimeView: View {
-    @StateObject var timeVM: TimerViewModel = TimerViewModel()
+    @EnvironmentObject var timeVM: TimerViewModel
     @State var showDemoQuestion: Bool = false
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -54,7 +54,9 @@ struct TimeView: View {
     func continuePressed() {
         timeVM.getLeftTime()
         if(timeVM.started) {
-            //TODO: NAVIGATION TO PLAY VIEW
+            withAnimation {
+                timeVM.navigateToRooms = true
+            }
         } else {
             self.showDemoQuestion = true
         }
@@ -88,5 +90,6 @@ struct TimerBanner: View {
 struct TimeView_Previews: PreviewProvider {
     static var previews: some View {
         TimeView()
+            .environmentObject(TimerViewModel())
     }
 }

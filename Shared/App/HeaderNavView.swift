@@ -58,7 +58,7 @@ struct HeaderNavView: View {
                         }
                     }
                     .tag(3)
-            }
+            }.accentColor(.eGold)
         }
     }
 }

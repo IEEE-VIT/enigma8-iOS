@@ -11,7 +11,7 @@ import Combine
 // MARK: - AUTHENTICATION VIEW MODEL
 
 class AuthViewModel: ObservableObject {
-    
+    @AppStorage(AppStorageConstants.login) var userLoggedIn: Bool = false
     @Published var isSignedIn: Bool = false
     @Published var error: String = ""
     @Published var isNew: Bool = false
@@ -42,6 +42,9 @@ class AuthViewModel: ObservableObject {
             UserDefaults.standard.setValue(response?.jwt , forKey: "EnigmaToken")
             self.isSignedIn = true
             self.isNew = response?.isNew ?? false
+            if(!self.isNew) {
+                self.userLoggedIn = true
+            }
         }
       
     }
