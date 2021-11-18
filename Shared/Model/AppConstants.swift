@@ -69,5 +69,7 @@ struct AppConstants {
         "Enigma is an individual player game and the players are requested to maintain the integrity of the game and not to divulge the solutions anywhere."
     ]
     
+    static let tabBarIcons: [String] = ["Home", "Leaderboard", "Story", "Profile"]
+    
 }
 
