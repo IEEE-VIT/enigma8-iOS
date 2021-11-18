@@ -46,6 +46,7 @@
 		31D34D6A2746482C002CC921 /* RoomStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D34D692746482C002CC921 /* RoomStates.swift */; };
 		31D34D6C2746499A002CC921 /* RoomStatesTorches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D34D6B2746499A002CC921 /* RoomStatesTorches.swift */; };
 		31D34D6E27464DCB002CC921 /* LetsPlayIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D34D6D27464DCB002CC921 /* LetsPlayIcons.swift */; };
+		31D34D7127465F29002CC921 /* ProfileViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D34D7027465F29002CC921 /* ProfileViewHeader.swift */; };
 		31D55DE1271768D80068A8AF /* SetupProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D55DE0271768D80068A8AF /* SetupProfileModel.swift */; };
 		31D994632701EBB000E506D9 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D994612701EBB000E506D9 /* APIClient.swift */; };
 		31D994642701EBB000E506D9 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D994612701EBB000E506D9 /* APIClient.swift */; };
@@ -156,6 +157,7 @@
 		31D34D692746482C002CC921 /* RoomStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomStates.swift; sourceTree = "<group>"; };
 		31D34D6B2746499A002CC921 /* RoomStatesTorches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomStatesTorches.swift; sourceTree = "<group>"; };
 		31D34D6D27464DCB002CC921 /* LetsPlayIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetsPlayIcons.swift; sourceTree = "<group>"; };
+		31D34D7027465F29002CC921 /* ProfileViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewHeader.swift; sourceTree = "<group>"; };
 		31D55DE0271768D80068A8AF /* SetupProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileModel.swift; sourceTree = "<group>"; };
 		31D994612701EBB000E506D9 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		31D994622701EBB000E506D9 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 		314D79BA270C6BBC003C2F8A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				31D34D6F27465F15002CC921 /* Profile */,
 				8CB248502742A57A0063522F /* Onboarding */,
 				318DB98A27392508000AB95A /* FullStoryView */,
 				318DB9832738FCBF000AB95A /* RoomsView */,
@@ -424,6 +427,14 @@
 				31CEEDA82715E62400298399 /* RadioGroupView.swift */,
 			);
 			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		31D34D6F27465F15002CC921 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				31D34D7027465F29002CC921 /* ProfileViewHeader.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		31D994602701EBB000E506D9 /* API */ = {
@@ -751,6 +762,7 @@
 				4E7A5CDC2700FBBF0058CAB9 /* KFManager.swift in Sources */,
 				31C1320A271D567000BD5301 /* ScoringSystem.swift in Sources */,
 				31D994632701EBB000E506D9 /* APIClient.swift in Sources */,
+				31D34D7127465F29002CC921 /* ProfileViewHeader.swift in Sources */,
 				318DB98927391790000AB95A /* FullStoryView.swift in Sources */,
 				31C13206271D560F00BD5301 /* Powerups.swift in Sources */,
 				8CEF83E92712F17900E96E2E /* StoryBubble.swift in Sources */,
