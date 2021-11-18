@@ -8,21 +8,30 @@
 import SwiftUI
 
 struct Powerups: View {
-    var sampleText = """
-Lorem ipsum dolor sit amet, consectetur adipiscing
-elit. Diam auctor et in velit.
-"""
     var body: some View {
         ScrollView {
-            VStack {
-                InstructionsHeader(viewName: "Powerups")
-                Text(sampleText)
-                ForEach(0..<10) {
-                    Powerupcard(powerupName: "Powerup \($0 + 1)", powerupInfo: "Information")
-                        .padding(.horizontal)
+            VStack(alignment: .leading) {
+                ForEach(AppConstants.instructionsPowerups, id: \.self) { point in
+                    HStack(alignment: .top) {
+                        Image("BulletPoint")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 8)
+                            .padding(.top, 5)
+                        Text(point)
+                            .font(.Mulish(size: 12, weight: .medium))
+                            .foregroundColor(Color.eGold)
+                    }
+                    .padding(.top)
                 }
             }
+            Image("Powerups_onboarding")
+                .resizable()
+                .scaledToFit()
+                .padding()
+            Spacer()
         }
+        .padding(.horizontal)
     }
 }
 

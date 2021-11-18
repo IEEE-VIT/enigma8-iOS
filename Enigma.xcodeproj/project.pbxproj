@@ -42,6 +42,10 @@
 		31CEEDA12715C38900298399 /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CEEDA02715C38900298399 /* DropdownView.swift */; };
 		31CEEDA32715C5A900298399 /* ProfileSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CEEDA22715C5A900298399 /* ProfileSetupView.swift */; };
 		31CEEDA92715E62400298399 /* RadioGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CEEDA82715E62400298399 /* RadioGroupView.swift */; };
+		31D34D682746303D002CC921 /* InstructionsCommonHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D34D672746303D002CC921 /* InstructionsCommonHeader.swift */; };
+		31D34D6A2746482C002CC921 /* RoomStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D34D692746482C002CC921 /* RoomStates.swift */; };
+		31D34D6C2746499A002CC921 /* RoomStatesTorches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D34D6B2746499A002CC921 /* RoomStatesTorches.swift */; };
+		31D34D6E27464DCB002CC921 /* LetsPlayIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D34D6D27464DCB002CC921 /* LetsPlayIcons.swift */; };
 		31D55DE1271768D80068A8AF /* SetupProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D55DE0271768D80068A8AF /* SetupProfileModel.swift */; };
 		31D994632701EBB000E506D9 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D994612701EBB000E506D9 /* APIClient.swift */; };
 		31D994642701EBB000E506D9 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D994612701EBB000E506D9 /* APIClient.swift */; };
@@ -148,6 +152,10 @@
 		31CEEDA02715C38900298399 /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
 		31CEEDA22715C5A900298399 /* ProfileSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSetupView.swift; sourceTree = "<group>"; };
 		31CEEDA82715E62400298399 /* RadioGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioGroupView.swift; sourceTree = "<group>"; };
+		31D34D672746303D002CC921 /* InstructionsCommonHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsCommonHeader.swift; sourceTree = "<group>"; };
+		31D34D692746482C002CC921 /* RoomStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomStates.swift; sourceTree = "<group>"; };
+		31D34D6B2746499A002CC921 /* RoomStatesTorches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomStatesTorches.swift; sourceTree = "<group>"; };
+		31D34D6D27464DCB002CC921 /* LetsPlayIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetsPlayIcons.swift; sourceTree = "<group>"; };
 		31D55DE0271768D80068A8AF /* SetupProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileModel.swift; sourceTree = "<group>"; };
 		31D994612701EBB000E506D9 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		31D994622701EBB000E506D9 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -385,6 +393,10 @@
 				31C13205271D560F00BD5301 /* Powerups.swift */,
 				31C13207271D561F00BD5301 /* LetsPlay.swift */,
 				31C1320B271D56BA00BD5301 /* InstructionsHeader.swift */,
+				31D34D672746303D002CC921 /* InstructionsCommonHeader.swift */,
+				31D34D692746482C002CC921 /* RoomStates.swift */,
+				31D34D6B2746499A002CC921 /* RoomStatesTorches.swift */,
+				31D34D6D27464DCB002CC921 /* LetsPlayIcons.swift */,
 			);
 			path = Instructions;
 			sourceTree = "<group>";
@@ -748,12 +760,14 @@
 				3104C7C227350F5900B1C155 /* UserModel.swift in Sources */,
 				8CC128B82705D619000483AB /* TimerViewModel.swift in Sources */,
 				3104C7C82735285200B1C155 /* RoomsViewModel.swift in Sources */,
+				31D34D6C2746499A002CC921 /* RoomStatesTorches.swift in Sources */,
 				4E944D3B2743911C00DC14B4 /* Gradient.swift in Sources */,
 				4EC66BA4274502A700CAF970 /* EnigmaLogo.swift in Sources */,
 				319611112702078E0030901E /* Data.swift in Sources */,
 				318BCCA32733FC0600E0B6F3 /* StoryViewModel.swift in Sources */,
 				31C13214271D72CC00BD5301 /* FeedbackQuestionAnswerBlock.swift in Sources */,
 				318DB9852738FCFA000AB95A /* RoomTile.swift in Sources */,
+				31D34D6E27464DCB002CC921 /* LetsPlayIcons.swift in Sources */,
 				3104C7C6273513B500B1C155 /* ProfileViewModel.swift in Sources */,
 				8CB81465274285AB00E19DEE /* Fonts.swift in Sources */,
 				31C13216271D738C00BD5301 /* CustomTextEditor.swift in Sources */,
@@ -769,11 +783,13 @@
 				8CB59C4C2733EBE500DDD725 /* LeaderboardViewModel.swift in Sources */,
 				8CB248522742A5920063522F /* OnboardingPageView.swift in Sources */,
 				4EC3E48226E7DCCA0049AD99 /* ContentView.swift in Sources */,
+				31D34D6A2746482C002CC921 /* RoomStates.swift in Sources */,
 				8C73DACE272E9897009943BE /* NotificationView.swift in Sources */,
 				8C73DAC7272E8A04009943BE /* NotificationsView.swift in Sources */,
 				31C13211271D6D6500BD5301 /* FeedbackUI.swift in Sources */,
 				4E944D3327436FCF00DC14B4 /* Constants.swift in Sources */,
 				31C13202271D55F000BD5301 /* GameMechanics.swift in Sources */,
+				31D34D682746303D002CC921 /* InstructionsCommonHeader.swift in Sources */,
 				3104C7C42735102000B1C155 /* ProfileView.swift in Sources */,
 				31A266612718A1C6005B1A17 /* RoomsView.swift in Sources */,
 				8CEEE0172736F9CF00CD06AB /* SafariView.swift in Sources */,
