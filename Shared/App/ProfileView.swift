@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @AppStorage("userLoggedIn") var isLoggedIn: Bool = true
     @EnvironmentObject var userVM: RoomsViewModel
     var body: some View {
         VStack {
@@ -44,12 +45,15 @@ struct ProfileView: View {
                 //TODO: ADD PROGRESSVIEW
                 // TODO: WRAP IN NAVIGATION LINK, DESTINATION LOGINVIEW
                 HStack {
-                    CustomButton(buttonText:"LOGOUT")
+                    CustomButton(buttonText:"LOGOUT", action: {
+                        isLoggedIn = false
+                    })
                 }
                 .padding()
                 
             }
         }
+        .padding()
         .background(Image("UserProfileViewBG").resizable().scaledToFill().edgesIgnoringSafeArea(.all))
         .background(Color.eBlack)
         .edgesIgnoringSafeArea(.all)
