@@ -11,83 +11,99 @@ import AVKit
 import PopupView
 
 struct RoomUI: View {
-    @StateObject var gameVM = GameViewModel(currentStatus: RoomsModel())
+    @StateObject var gameVM = GameViewModel(currentStatus: RoomsModel()) //journey: nil, room: Room(id: "asdfasdf", roomNo: "4", questionId: ["asdf"], media: "adsfadsf", title: "Room 5", starQuota: 34)
     @State var showHintConfirmation: Bool = false
     var hintAction: () -> Void = {}
     
     var body: some View {
         ZStack {
             NavigationLink(destination: RoomsView(), isActive: $gameVM.navigateBackToRooms) {EmptyView()}
-            VStack {
+            VStack(spacing: 0) {
+                EnigmaHeader(showBackButton: true)
                 HStack {
                     VStack(alignment: .leading) {
                         Text(gameVM.currentStatus?.room?.title ?? "")
-                        Text("Q \(gameVM.currentQuestion?.questionNo ?? 1)")
-                    }.padding()
+                            .gradientForeground(colors: [.goldGradientStart, .goldGradientEnd])
+                        Text("Q \(gameVM.roomStatus?.question?.questionNo ?? 1)")
+                            .gradientForeground(colors: [.blueGradientStart, .blueGradientEnd])
+                    }
+                    .font(.Cinzel(size: 20, weight: .regular))
+                    .padding()
                     Spacer()
                     HStack {
-                        Image(systemName: "bell")
-                        Text("Powerup")//TODO: Convert to Backend Value
-                    }.padding()
-                        .background(Color(white: 0, opacity: 0.2))
+                        KFImage(gameVM.roomStatus?.powerupDetails?.iconURL)
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                        Text(gameVM.roomStatus?.powerupDetails?.name ?? "Powerup")
+                            .font(.Mulish(size: 16))
+                            .foregroundColor(.eBlue)
+                    }.padding(10)
+                        .background(Color(white: 1, opacity: 0.05))
                 }
                 Group {
                     ScrollView {
-                        Text(gameVM.currentQuestion?.text ?? "")
-                        switch(gameVM.currentQuestion?.mediaType ?? .img) {
+                        Text(gameVM.roomStatus?.question?.text ?? "")
+                            .font(.Mulish(size: 17))
+                            .foregroundColor(Color.eGold)
+                        switch(gameVM.roomStatus?.question?.mediaType ?? .img) {
                         case .img:
-                            KFImage(gameVM.currentQuestion?.mediaURL)
+                            KFImage(gameVM.roomStatus?.question?.mediaURL)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                         case .vid:
-                            VideoPlayer(player: AVPlayer(url: gameVM.currentQuestion?.mediaURL ?? URL(string:"https://google.com")!)).aspectRatio(contentMode: .fit)
+                            VideoPlayer(player: AVPlayer(url: gameVM.roomStatus?.question?.mediaURL ?? URL(string:"https://google.com")!)).aspectRatio(contentMode: .fit)
                         }
-                    }
-                    HStack {
-                        TextField("Your Answer", text: $gameVM.answerText, onCommit: gameVM.submitAnswer)
-                            .autocapitalization(.none)
-                            .padding()
-                            .border(.black, width: 3)
-                        Button(action: {gameVM.showPopup = true;showHintConfirmation = true}) {
-                            VStack {
-                                Image(systemName: "lightbulb")
-                                Text("Hint")
-                                    .font(.system(size: 10))
+                        HStack {
+                            TextField("Your Answer", text: $gameVM.answerText, onCommit: gameVM.submitAnswer)
+                                .autocapitalization(.none)
+                                .accentColor(.eGold)
+                                .padding()
+                                .foregroundColor(.eGold)
+                                .background(Color(white: 1, opacity: 0.05))
+                            Button(action: {gameVM.answerStatus = .hintQuery;gameVM.showPopup = !gameVM.hintFetched ? true : false}) {
+                                Image(ImageConstants.hint)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 50, height: 50)
+                            }.foregroundColor(.black)
+                        }.padding(.vertical)
+                        if(gameVM.answerStatus == .wrong) {
+                                Text("*Oops! Wrong answer. Try again")
+                                    .foregroundColor(.red)
+                                    .padding(.bottom)
+                        }
+                        if(gameVM.fetchedHint != "") {
+                            HStack(spacing: 0) {
+                                Text("Hint : ")
+                                    .font(.Mulish(size: 16, weight: .bold))
+                                Text(gameVM.fetchedHint)
+                                    .font(.Mulish(size: 16))
                             }
-                            .padding(.horizontal)
-                            .padding(.vertical, 10)
-                            .background(Color(white: 0, opacity: 0.1))
-                            .cornerRadius(100)
-                        }.foregroundColor(.black)
+                            .foregroundColor(Color.eBlue)
+                        }
+                        CustomButton(buttonText: "Submit", action: gameVM.submitAnswer, bgroundColor: .eGold)
+                            .padding(.vertical)
                     }
-                    if(gameVM.answerStatus == .wrong) {
-                        Text("*Oops! Wrong answer. Try again")
-                            .foregroundColor(.red)
-                    }
-                    CustomButton(buttonText: "Submit", action: gameVM.submitAnswer, bgroundColor: Color(white: 0, opacity: 0.2))
                 }.padding()
             }
             
-        }.popup(isPresented: $gameVM.showPopup, animation: Animation.spring(), closeOnTap: false) {
+        }
+        .popup(isPresented: $gameVM.showPopup, animation: Animation.spring(), closeOnTap: false, dismissCallback: {gameVM.answerStatus = .none}) {
             switch(gameVM.answerStatus) {
             case .close:
-                EnigmaAlert(text: "You are close to the answer! Keep Trying!", confirmAction: {gameVM.showPopup.toggle()}, cancelAction: {gameVM.showPopup.toggle()})
+                EnigmaAlert(title: "You are close to the answer!",text:" Keep Trying!", showCloseButton: true, closeAction: {gameVM.showPopup.toggle()})
             case .correct:
-                EnigmaAlert(text: "Wohoo! You got the right answer! You've earned a key.", confirmAction: {gameVM.showPopup.toggle(); gameVM.getQuestion()})
+                EnigmaAlert(title: "Wohoo!\n You got the right answer!",text: "You've earned a key!", showCloseButton: true, closeAction: {gameVM.showPopup.toggle(); gameVM.getQuestion()})
             case .nextRoom:
-                EnigmaAlert(text: "Wohoo! You got the right answer! You've earned a key.", confirmText: "Go To Next Room", cancelText: "Stay in this Room",confirmAction: {gameVM.navigateBackToRooms = true}, cancelAction: {gameVM.showPopup.toggle(); gameVM.getQuestion()})
+                EnigmaAlert(title: "Wohoo!\n You got the right answer!",text: "You've earned a key!",confirmText: "Go to another room", cancelText: "Continue in this room", confirmAction: {gameVM.navigateBackToRooms = true}, cancelAction: {gameVM.showPopup.toggle(); gameVM.getQuestion()}, image: "Key")
+            case .hintQuery:
+                EnigmaAlert(title: "Using hint will deduct points from your score", subtitle: "Are you sure to use a hint?",confirmText: "Confirm", showCloseButton:true, confirmAction: {gameVM.getHint();gameVM.showPopup.toggle()}, closeAction: {gameVM.showPopup.toggle()}, image: "Hint")
             default:
                 EmptyView()
             }
-            if(showHintConfirmation) {
-                if(!gameVM.hintFetched) {
-                    EnigmaAlert(text: "Using this hint will cause to reduce points. Are you sure to use a hint?", confirmAction: gameVM.getHint, cancelAction: {gameVM.showPopup.toggle()})
-                } else {
-                    //TODO: Make Single button hint
-                    EnigmaAlert(text: gameVM.fetchedHint, confirmAction: {gameVM.showPopup.toggle()}, cancelAction: {gameVM.showPopup.toggle()})
-                }
-            }
         }
+        .animation(.default)
+        .background(Color.eBlack)
         .onAppear(perform: gameVM.getQuestion)
         .navigationBarHidden(true)
     }

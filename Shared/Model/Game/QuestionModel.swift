@@ -11,8 +11,14 @@ struct Question: Codable {
     struct Request:Codable {
         let roomId: String
     }
-    
     struct Response: Codable {
+        var question: Model?
+        var powerupDetails: Powerup.PowerupModel?
+        var powerupUsed: PowerupUsed?
+        var hint: String?
+    }
+    
+    struct Model: Codable {
         var id, text, media: String?
         var questionNo: Int?
         var mediaType: MediaType?

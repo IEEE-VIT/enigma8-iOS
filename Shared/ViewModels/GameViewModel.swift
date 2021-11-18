@@ -8,14 +8,18 @@
 import Foundation
 
 class GameViewModel: ObservableObject {
+
     var currentStatus: RoomsModel?
     @Published var powerupList: [Powerup.PowerupModel] = [Powerup.PowerupModel(name: "something", detail: "this is detailed powerup this is detailed this is detailed powerup this is detailed", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/How_to_use_icon.svg/1920px-How_to_use_icon.svg.png", available: true),Powerup.PowerupModel(name: "something", detail: "this is detailed powerup this is detailed this is detailed powerup this is detailed", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/How_to_use_icon.svg/1920px-How_to_use_icon.svg.png", available: true),Powerup.PowerupModel(name: "something", detail: "this is detailed powerup this is detailed this is detailed powerup this is detailed", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/How_to_use_icon.svg/1920px-How_to_use_icon.svg.png", available: true),Powerup.PowerupModel(name: "something", detail: "this is detailed powerup this is detailed this is detailed powerup this is detailed", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/How_to_use_icon.svg/1920px-How_to_use_icon.svg.png", available: true),Powerup.PowerupModel(name: "something", detail: "this is detailed powerup this is detailed this is detailed powerup this is detailed", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/How_to_use_icon.svg/1920px-How_to_use_icon.svg.png", available: true)]
     @Published var showAlert: Bool = false
     @Published var chosenPowerup: Powerup.PowerupModel?
 
     @Published var currentQuestion: Question.Response?
+    var currentStatus: RoomsModel? = RoomsModel(journey: nil, room: Room(id: "asdfasdf", roomNo: "4", questionId: ["asdf"], media: "adsfadsf", title: "Room 5", starQuota: 34))
+    @Published var powerupList: [Powerup.PowerupModel] = []
+    @Published var roomStatus: Question.Response? // = Question.Response(question: Question.Model(id: "adf", text: "Lorem ipsum dolor sit Lorem ipsum dolor sit Lorem ipsum dolor sitLorem ipsum dolor sit Lorem ipsum dolor sit", media: "https://picsum.photos/536/354", questionNo: 3, mediaType: .img), powerupDetails: Powerup.PowerupModel(id: "", name: "Al Fiki", detail: "asdfasdf", icon: "https://www.shareicon.net/data/2017/03/02/880210_images_512x512.png", available: true))
     @Published var navigateToRoom: Bool = false
-    @Published var fetchedHint: String = ""
+    @Published var fetchedHint: String = "This is a hint"
     @Published var answerText: String = ""
     @Published var answerStatus: AnswerStatus = .none
     @Published var hintFetched: Bool = false
@@ -57,10 +61,11 @@ class GameViewModel: ObservableObject {
             }
             guard let response = response else {return}
             //Reset Everything
-            self.hintFetched = false
+            self.hintFetched = response.hint != nil ? true : false
+            self.fetchedHint = response.hint ?? ""
             self.answerStatus = .none
             self.answerText = ""
-            self.currentQuestion = response
+            self.roomStatus = response
         }
     }
     
@@ -96,5 +101,5 @@ class GameViewModel: ObservableObject {
 }
 
 enum AnswerStatus {
-    case correct, close, wrong, none, nextRoom
+    case correct, close, wrong, none, nextRoom, hintQuery
 }
