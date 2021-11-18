@@ -8,24 +8,49 @@
 import SwiftUI
 
 struct EnigmaHeader: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    var showBackButton: Bool = false
+    var hideHeaderIcons: Bool = false
     var body: some View {
-        HStack {
-            NavigationLink(destination: Text("You're at Notifs")){
-                Image(systemName: "bell.badge.fill")
+        VStack(spacing:0) {
+            HStack {
+                if(!hideHeaderIcons) {
+                    if(showBackButton) {
+                        Button(action: {self.presentationMode.wrappedValue.dismiss()}) {
+                            Image(ImageConstants.back)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 25, height: 25)
+                        }
+                    } else {
+                        NavigationLink(destination: NotificationsView(notifsVM: NotificationsViewModel()).navigationTitle("").navigationBarHidden(true)){
+                            Image(ImageConstants.notifs)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .gradientForeground(colors: [.goldGradientStart, .goldGradientEnd])
+                                .frame(width: 25, height: 25)
+                        }
+                    }
+                }
+                Spacer()
+                Image(ImageConstants.enigmaOnlyLogo)
                     .resizable()
-                    .frame(width: 25, height: 25)
-            }.foregroundColor(.black)
-            Spacer()
-            Text("ENIGMA")
-                .font(.system(size: 25))
-            Spacer()
-            NavigationLink(destination: Text("You're at Instructions")){
-                Image(systemName: "info.circle")
-                    .resizable()
-                    .frame(width: 25, height: 25)
-            }.foregroundColor(.black)
-        }.padding()
-         .background(Color(white: 0, opacity: 0.1))
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: UIScreen.main.bounds.width*0.3)
+                    .font(.system(size: 25))
+                Spacer()
+                if(!hideHeaderIcons) {
+                    NavigationLink(destination: InstructionsView().navigationTitle("").navigationBarHidden(true)){
+                        Image(ImageConstants.info)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 30, height: 30)
+                    }
+                }
+            }.padding()
+            .background(Color.black)
+            Rectangle().fill(Color.goldGradientEnd).frame(height: 1)
+        }
     }
 }
 

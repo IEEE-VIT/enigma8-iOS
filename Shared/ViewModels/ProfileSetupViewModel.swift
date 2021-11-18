@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import SwiftUI
 
 class ProfileSetupViewModel: ObservableObject {
+    @AppStorage(AppStorageConstants.login) var userSetUp: Bool = false
     @Published var username: String = ""
     var surveyOptions: [String] = ["Social Media", "Friends", "Other"]
     @Published var isCollegeStudent: Int = 1
@@ -45,6 +47,7 @@ class ProfileSetupViewModel: ObservableObject {
             }
             print(response ?? "Error parsing response from Backend")
             self.profileSuccess = true
+            self.userSetUp = true
             self.responseSuccess = 1
            
         }

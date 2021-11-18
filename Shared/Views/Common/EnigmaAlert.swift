@@ -6,37 +6,79 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct EnigmaAlert: View {
-    var text: String = "This powerup can only be used once in this room. Are you sure you want to use the XYZ powerup for this question?"
-    var confirmText: String = "Confirm"
-    var cancelText: String = "Cancel"
-    var confirmAction: () -> Void = {}
-    var cancelAction: () -> Void = {}
-    var image: String = "xmark.circle"
-    var widthPercentage = 0.8
+    var title: String? //= "Wohoo!\n You got the right answer."
+    var subtitle: String? //= "Using this will reduce points."
+    var text: String? //= "You've earned a key!"
+    var confirmText: String? //= "Confirm"
+    var cancelText: String? //= "Cancel"
+    var showCloseButton: Bool = false
+    var confirmAction: () -> Void = {print("Clicked Confirm")}
+    var cancelAction: () -> Void = {print("Clicked Cancel")}
+    var closeAction: () -> Void = {print("Clicked Close")}
+    var image: String? //= "Key"
+    var imageURL: URL?
+    var widthPercentage = 0.7
     
     var body: some View {
-        VStack(spacing: 20) {
-            Text(text)
-                .font(.system(size:20))
-                .fontWeight(.medium)
-                .multilineTextAlignment(.center)
-            Image(systemName: image).resizable().frame(width: 40, height: 40)
-            HStack {
-                Spacer(minLength: 30)
-                CustomButton(buttonText: confirmText, action: confirmAction, bgroundColor: Color.white, font: .system(size: 15, weight: .medium))
-                Spacer(minLength: 30)
-                CustomButton(buttonText: cancelText, action: cancelAction, bgroundColor: Color.white, font: .system(size: 15, weight: .medium))
-                Spacer(minLength: 30)
-            }
-        }
-        .padding()
-        .overlay(RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.primary, lineWidth: 2))
-        .background(RoundedRectangle(cornerRadius: 20)
-                        .fill(Color.white))
-        .frame(width: UIScreen.main.bounds.width*widthPercentage)
+        GeometryReader { geo in
+            ZStack {
+                VStack(spacing: 20) {
+                    if(title != nil) {
+                        Text(title ?? "")
+                            .font(.Mulish(weight: .bold))
+                            .foregroundColor(Color.eSecondaryBlue)
+                            .multilineTextAlignment(.center)
+                    }
+                    if(subtitle != nil) {
+                        Text(subtitle ?? "")
+                            .font(.Mulish(size: 17, weight: .semibold))
+                            .foregroundColor(Color.eBlue)
+                            .multilineTextAlignment(.center)
+                    }
+                    if(text != nil) {
+                        Text(text ?? "")
+                            .font(.Mulish(size: 15, weight: .regular))
+                            .foregroundColor(Color.eBlue)
+                            .multilineTextAlignment(.center)
+                    }
+                    if(image != nil) {
+                        Image(image ?? "")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 40, height: 40)
+                    }
+                    if(imageURL != nil) {
+                        KFImage(imageURL)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 40, height: 40)
+                    }
+                    if(confirmText != nil) {                        CustomButton(buttonText: confirmText ?? "", action: confirmAction)
+                    }
+                    if(cancelText != nil) {
+                        CustomButton(buttonText: cancelText ?? "", action: cancelAction)
+                    }
+                }
+                .frame(width: geo.size.width*widthPercentage,alignment: .top)
+                .padding()
+                .border(LinearGradient.gold)
+                .padding()
+                .background(RoundedRectangle(cornerRadius: 5)
+                                .fill(Color.eBlack))
+                .frame(height: geo.size.height,alignment: .top)
+                if(showCloseButton) {
+                    Button(action: closeAction) {
+                        Image("closeButton")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 50, height: 50)
+                    }.frame(width: geo.size.width*(widthPercentage+0.2), height: geo.size.height+20, alignment: .topTrailing)
+                }
+            }.frame(width: geo.size.width, alignment: .center)
+        }.frame(minHeight: UIScreen.main.bounds.height/2.5, maxHeight: UIScreen.main.bounds.height/2, alignment: .top)
     }
 }
 

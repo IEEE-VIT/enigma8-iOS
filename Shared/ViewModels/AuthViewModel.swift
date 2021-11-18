@@ -14,7 +14,7 @@ class AuthViewModel: ObservableObject {
     
     @Published var isSignedIn: Bool = false
     @Published var error: String = ""
-    
+    @Published var isNew: Bool = false
     
     func signInWithApple(code: String, token: String) {
         APIClient.request(fromRouter: Router.loginApple(SignUpModel.AppleRequest(code: code, access_token: token))) { (response: SignUpModel.Response?, error) in
@@ -26,8 +26,10 @@ class AuthViewModel: ObservableObject {
             print(response ?? "Error parsing response from Backend")
             UserDefaults.standard.setValue(response?.jwt ?? "error", forKey: "EnigmaToken")
             self.isSignedIn = true
+            self.isNew = response?.isNew ?? false
         }
     }
+    
     func signInWithGoogle(with code: String) {
         APIClient.request(fromRouter: Router.loginGoogle(SignUpModel.Request(code: code, type: .google))){
             (response: SignUpModel.Response?, error) in
@@ -39,14 +41,9 @@ class AuthViewModel: ObservableObject {
             print(response ?? "Error parsing response from Backend")
             UserDefaults.standard.setValue(response?.jwt , forKey: "EnigmaToken")
             self.isSignedIn = true
+            self.isNew = response?.isNew ?? false
         }
-        // code
-    }
-    func forgotPassword() {
-        // code
-    }
-    func logout() {
-        // code
+      
     }
     
 }

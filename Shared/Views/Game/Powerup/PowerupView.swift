@@ -10,36 +10,32 @@ import PopupView
 
 struct PowerupView: View {
     @StateObject var powerupVM: GameViewModel = GameViewModel(currentStatus: RoomsModel())
-    @State var chosenPowerup: Powerup.PowerupModel?
-    @State var showAlert = false
     
     var body: some View {
-        GeometryReader { geo in
-            ZStack {
-                NavigationLink(destination: RoomUI(gameVM: powerupVM), isActive: $powerupVM.navigateToRoom) {EmptyView()}
-                VStack(alignment: .leading) {
-                    Text("Choose a Powerup")
-                        .bold()
-                        .font(.title)
-                    Text("*Chosen powerup can be used in this room only")
-                        .font(.system(size: 12))
-                    ScrollView {
-                        ForEach(powerupVM.powerupList.sorted{ ($0.available ?? false) && !($1.available ?? false) }) { powerup in
-                                Button(action: { chosenPowerup = powerup; showAlert = true }) {
-                                    PowerupRow(powerup: powerup)
-                               }.foregroundColor(.black)
+        GeometryReader { gr in
+            NavigationLink(destination: RoomUI(gameVM: powerupVM), isActive: $powerupVM.navigateToRoom) {EmptyView()}
+            
+            VStack(alignment: .center) {
+                CustomLabel(text: "Choose a Powerup",font:.Cinzel(size: 26, weight: .bold))
+                Text("*Chosen powerup can be used in this room only")
+                    .font(.Mulish(size: 13, weight: .semibold))
+                    .foregroundColor(.eGold)
+                ScrollView(showsIndicators: false) {
+                    VStack(spacing:gr.size.width * 0.04) {
+                        ForEach(powerupVM.powerupList) { powerup in
+                            Button(action: {powerupVM.choosePowerup(powerup: powerup)}) {
+                                PowerupRow(powerup: powerup, width: gr.size.width)
+                            }
                         }
                     }
-                }.padding()
-                .overlay(RoundedRectangle(cornerRadius: 20)
-                .stroke(Color.black, lineWidth: 3))
-                .padding(.horizontal)
-                .frame(height: geo.size.height*0.8, alignment: .center)
-            }.frame(width: geo.size.width, height: geo.size.height)
-            .popup(isPresented: $showAlert, animation: Animation.spring()) {
-                    EnigmaAlert(text: "Are you sure you want to use \(chosenPowerup?.name ?? "this") powerup?", confirmAction: { powerupVM.selectPowerup(powerup: chosenPowerup ?? Powerup.PowerupModel())}, cancelAction: {showAlert = false})
+                }
             }
+            .padding(.vertical,20)
+            //            .popup(isPresented: $showAlert, animation: Animation.spring()) {
+            //                    EnigmaAlert(text: "Are you sure you want to use \(chosenPowerup?.name ?? "this") powerup?", confirmAction: { powerupVM.selectPowerup(powerup: chosenPowerup ?? Powerup.PowerupModel())}, cancelAction: {showAlert = false})
+            //            }
         }
+        .background(Color.eBlack)
         .onAppear(perform: powerupVM.getPowerups)
         .navigationBarHidden(true)
     }

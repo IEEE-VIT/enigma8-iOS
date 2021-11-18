@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @StateObject var userVM = ProfileViewModel()
+    @EnvironmentObject var userVM: RoomsViewModel
     var body: some View {
         VStack {
             HStack {
@@ -26,11 +26,11 @@ struct ProfileView: View {
                 .padding()
             Spacer()
             VStack(alignment: .leading, spacing: 10) {
-                Text("Username: \(userVM.username)")
-                Text("Score: \(userVM.score)")
-                Text("Leaderboard Ranking: \(userVM.rank)")
-                Text("Stars Earned: \(userVM.stars)")
-                Text("Email: \(userVM.email)")
+                Text("Username: \(self.userVM.user?.username ?? "")")
+                Text("Score: \(self.userVM.user?.score ?? 0)")
+                Text("Leaderboard Ranking: \(self.userVM.user?.rank ?? 0)")
+                Text("Stars Earned: \(self.userVM.user?.stars ?? 0)")
+                Text("Email: \(self.userVM.user?.email ?? "")")
             }
             Spacer()
             RoomProgressView()

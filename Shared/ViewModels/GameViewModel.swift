@@ -8,11 +8,16 @@
 import Foundation
 
 class GameViewModel: ObservableObject {
+
     var currentStatus: RoomsModel?
     @Published var powerupList: [Powerup.PowerupModel] = []
+    @Published var showAlert: Bool = false
+    @Published var chosenPowerup: Powerup.PowerupModel?
+
     @Published var currentQuestion: Question.Response?
+    @Published var roomStatus: Question.Response?
     @Published var navigateToRoom: Bool = false
-    @Published var fetchedHint: String = ""
+    @Published var fetchedHint: String = "This is a hint"
     @Published var answerText: String = ""
     @Published var answerStatus: AnswerStatus = .none
     @Published var hintFetched: Bool = false
@@ -29,6 +34,11 @@ class GameViewModel: ObservableObject {
             guard let response = response else {return}
             self.powerupList = response.powerups!
         }
+    }
+    
+    func choosePowerup(powerup: Powerup.PowerupModel) {
+        self.chosenPowerup = powerup
+        self.showAlert = true
     }
     
     func selectPowerup(powerup: Powerup.PowerupModel) -> Void {
@@ -49,10 +59,11 @@ class GameViewModel: ObservableObject {
             }
             guard let response = response else {return}
             //Reset Everything
-            self.hintFetched = false
+            self.hintFetched = response.hint != nil ? true : false
+            self.fetchedHint = response.hint ?? ""
             self.answerStatus = .none
             self.answerText = ""
-            self.currentQuestion = response
+            self.roomStatus = response
         }
     }
     
@@ -88,5 +99,5 @@ class GameViewModel: ObservableObject {
 }
 
 enum AnswerStatus {
-    case correct, close, wrong, none, nextRoom
+    case correct, close, wrong, none, nextRoom, hintQuery
 }

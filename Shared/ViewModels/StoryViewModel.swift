@@ -10,7 +10,7 @@ import SwiftUI
 
 class StoryViewModel: ObservableObject {
     @Published var story: [Story?] = []
-    @Published var storySoFar: [Story?] = []
+    @Published var storySoFar: [Story] = []
     @Published var fullStory: [Story?] = []
     @Published var fullStoryRoomwise = [String:[Story]]()
     @Published var fullStoryRoomIndex = 0
@@ -18,6 +18,7 @@ class StoryViewModel: ObservableObject {
     var roomId: String? = ""
     @Published var nextIndex: Int = 0
     @Published var roomComplete = false
+    @Published var buttonTitle: String = "Start"
     init(roomId: String) {
         self.roomId = roomId
         getFullStory()
@@ -36,14 +37,18 @@ class StoryViewModel: ObservableObject {
     }
     
     func updateCurrentStory(){
-        if self.story.count > 0 {
-            if self.nextIndex < self.story.count {
-                self.storySoFar.append(self.story[nextIndex])
-                self.nextIndex += 1
+        withAnimation {
+            if self.story.count > 0 {
+                if self.nextIndex < self.story.count {
+                    guard let story = self.story[nextIndex] else { return }
+                    self.storySoFar.append(story)
+                    self.nextIndex += 1
+                }
+                if self.nextIndex == self.story.count {
+                    self.roomComplete = true
+                }
             }
-            if self.nextIndex == self.story.count {
-                self.roomComplete = true
-            }
+            self.buttonTitle = roomComplete ? "Continue": (nextIndex == 0 ? "Start" : "Next")
         }
     }
     

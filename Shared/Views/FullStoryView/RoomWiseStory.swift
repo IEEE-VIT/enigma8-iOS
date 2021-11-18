@@ -17,7 +17,7 @@ struct RoomWiseStory: View {
                         if message?.senderEnum == .sender2 {
                             Spacer()
                         }
-                        StoryBubble(story: message ?? Story(roomNo: nil, sender: nil, message: nil))
+                        StoryBubble(story: message ?? Story(roomNo: nil, sender: nil, message: nil), width: 360) //TODO
                             .padding()
                         if message?.senderEnum == .sender1 {
                             Spacer()

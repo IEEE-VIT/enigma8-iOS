@@ -14,41 +14,29 @@ struct RoomsView: View {
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
-    @StateObject var rooms = RoomsViewModel()
+    @EnvironmentObject var rooms : RoomsViewModel
     
     var body: some View {
         NavigationView {
-        ScrollView {
-            NavigationLink(destination: rooms.powerUpSelected ?
-                           AnyView(RoomUI(gameVM: GameViewModel(currentStatus: rooms.toRoom ?? RoomsModel()))) : AnyView(PowerupView(powerupVM: GameViewModel(currentStatus: rooms.toRoom ?? RoomsModel()))),
-                           isActive: $rooms.navigateToRoom) {EmptyView()}
             VStack {
-                // MARK: TITLE
-                HStack {
-                    Text("Rooms")
-                        .font(.title)
-                    Spacer()
-                }
-                // MARK: GRID
-                LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(rooms.allInfo, id: \.self) { room in
-                        VStack {
-                            RoomQuestionStatusView(questionStatus: room.journey?.questionsStatus ?? [.null, .null, .null])
+                NavigationLink(destination: PowerupView(powerupVM: GameViewModel(currentStatus: rooms.toRoom)), isActive: $rooms.navigateToPowerups) {EmptyView() } // TODO
+                RoomsHeader()
+                ScrollView(showsIndicators: false) {
+                    // MARK: GRID
+                    LazyVGrid(columns: columns, spacing: 0) {
+                        ForEach(rooms.allInfo, id: \.self) { room in
                             RoomTile(room: room)
                                 .onTapGesture {
-                                    if let roomUnlocked = room.journey?.roomUnlocked {
-                                        if roomUnlocked == true {
-                                            if(rooms.checkIfRoomSolved(room: room) == false) {
-                                                rooms.roomUnlocked = true
-                                                rooms.powerUpSelected = room.journey?.powerupId == nil ? false : true
-                                                rooms.toRoom = room
-                                                rooms.navigateToRoom = true
-                                            } else {
-                                                rooms.roomSolved = true
-                                                rooms.presentRoomLocked = true
-                                            }
+                                    let roomUnlocked = room.journey?.roomUnlocked ?? false
+                                    if roomUnlocked {
+                                        if(rooms.checkIfRoomSolved(room: room) == false) {
+                                            rooms.roomUnlocked = true
+                                            rooms.powerUpSelected = room.journey?.powerupId == nil ? false : true
+                                            rooms.toRoom = room
+                                            rooms.navigateToPowerups = true
                                         } else {
-                                            rooms.checkIfRoomUnlocked(room: room)
+                                            rooms.roomSolved = true
+                                            rooms.presentRoomLocked = true
                                         }
                                     } else {
                                         rooms.checkIfRoomUnlocked(room: room)
@@ -58,15 +46,17 @@ struct RoomsView: View {
                     }
                 }
             }
-            .padding()
-        }
-        .popup(isPresented: $rooms.presentRoomLocked, animation: Animation.spring()) {
-            EnigmaAlert(text: rooms.roomSolved ? "You have already solved this room!" : "You require \(rooms.starsNeeded) number of keys to unlock this", confirmAction: {rooms.presentRoomLocked.toggle()})
-        }
-        .onAppear {
-            rooms.fetchAllInfo()
-        }.navigationBarTitle("Enigma", displayMode: .automatic)
-        .navigationBarHidden(true)
+            .padding(20)
+            .popup(isPresented: $rooms.presentRoomLocked, animation: Animation.spring()) {
+                EnigmaAlert(text: rooms.roomSolved ? "You have already solved this room!" : "You require \(rooms.starsNeeded) number of keys to unlock this", confirmAction: {rooms.presentRoomLocked.toggle()})
+            }
+            .fullScreenCover(isPresented: $rooms.navigateToRoom, content: {
+                RoomUI(gameVM: GameViewModel(currentStatus: rooms.toRoom))
+            })
+            .onAppear {
+                rooms.fetchAllInfo()
+            }.navigationBarTitle("Enigma", displayMode: .automatic)
+                .navigationBarHidden(true)
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .navigationBarHidden(true)//both hiddens required
@@ -75,6 +65,7 @@ struct RoomsView: View {
 
 struct RoomsView_Previews: PreviewProvider {
     static var previews: some View {
-        RoomsView(rooms: RoomsViewModel())
+        RoomsView()
+            .environmentObject(RoomsViewModel())
     }
 }

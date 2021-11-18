@@ -58,9 +58,9 @@ struct Journey: Codable, Hashable {
     var powerupUsed: PowerupUsed?
     var roomUnlocked: Bool?
     var powerupId: String?
-    var questionsStatus: [questionStatus?]?
+    var questionsStatus: [questionStatus]?
     
-    init(id: String?, userId: String?, roomId: String?, stars: Int?, powerupUsed: PowerupUsed,roomUnlocked: Bool?, powerupId: String?, questionsStatus: [String?]?) {
+    init(id: String?, userId: String?, roomId: String?, stars: Int?, powerupUsed: PowerupUsed,roomUnlocked: Bool?, powerupId: String?, questionsStatus: [String]?) {
         self._id = id
         self.userId = userId
         self.roomId = roomId
@@ -69,7 +69,7 @@ struct Journey: Codable, Hashable {
         self.roomUnlocked = roomUnlocked
         self.powerupId = powerupId
         if let questionsStatus = questionsStatus {
-            self.questionsStatus = questionsStatus.map { questionStatus(rawValue: $0 ?? "") }
+            self.questionsStatus = questionsStatus.map { questionStatus(rawValue: $0) ?? .locked }
         }
         
     }
