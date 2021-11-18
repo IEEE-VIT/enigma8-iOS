@@ -24,5 +24,5 @@ struct ImageConstants {
 
 struct AppStorageConstants {
     static let onboarding = "EnigmaOnboarded"
-    static let login = "UserLoggedIn"
+    static let login = "userLoggedIn"
 }

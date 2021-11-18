@@ -12,7 +12,6 @@ struct ContentView: View {
     @AppStorage(AppStorageConstants.login) var userLoggedIn: Bool = false
     @StateObject var roomsVM: RoomsViewModel = RoomsViewModel()
     var body: some View {
-        NavigationView {
             if(onboarded) {
                 if(userLoggedIn) {
                     HeaderNavView()
@@ -30,7 +29,6 @@ struct ContentView: View {
                     .navigationTitle("")
                     .navigationBarHidden(true)
             }
-        }
     }
 }
 

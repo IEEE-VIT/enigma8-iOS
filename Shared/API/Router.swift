@@ -120,6 +120,8 @@ enum Router: URLRequestConvertible {
             return try self.encoder.encode(body, into: request)
         case .loginApple(let appleBody):
             return try self.encoder.encode(appleBody, into: request)
+        case .profileSetup(let profileBody):
+            return try self.encoder.encode(profileBody, into: request)
         case .currentStory(let roomId), .fullStory(let roomId):
             return try self.encoder.encode(roomId, into: request)
         case .unlockRoom(let roomId):

@@ -66,5 +66,6 @@ struct HeaderNavView: View {
 struct HeaderNavView_Previews: PreviewProvider {
     static var previews: some View {
         HeaderNavView()
+            .environmentObject(RoomsViewModel())
     }
 }

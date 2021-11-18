@@ -10,7 +10,7 @@ import Foundation
 struct UserModel: Codable {
     var username: String?
     var email: String?
-    var score: Int?
+    var score: Double?
     var stars: Int?
     var rank: Int?
     var currentRoomId: String?
