@@ -27,6 +27,9 @@
 		318BCCA7273422DE00E0B6F3 /* CurrentStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BCCA6273422DE00E0B6F3 /* CurrentStoryView.swift */; };
 		318DB9852738FCFA000AB95A /* RoomTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB9842738FCFA000AB95A /* RoomTile.swift */; };
 		318DB9872738FE25000AB95A /* RoomQuestionStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB9862738FE25000AB95A /* RoomQuestionStatusView.swift */; };
+		318BCCA32733FC0600E0B6F3 /* StoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BCCA22733FC0600E0B6F3 /* StoryViewModel.swift */; };
+		318BCCA7273422DE00E0B6F3 /* CurrentStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BCCA6273422DE00E0B6F3 /* CurrentStoryView.swift */; };
+		318DB9852738FCFA000AB95A /* RoomTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB9842738FCFA000AB95A /* RoomTile.swift */; };
 		318DB98927391790000AB95A /* FullStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB98827391790000AB95A /* FullStoryView.swift */; };
 		318DB98C27392525000AB95A /* RoomWiseStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB98B27392525000AB95A /* RoomWiseStory.swift */; };
 		3196110B270206080030901E /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3196110A270206080030901E /* SignUpModel.swift */; };
@@ -141,6 +144,9 @@
 		318BCCA6273422DE00E0B6F3 /* CurrentStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentStoryView.swift; sourceTree = "<group>"; };
 		318DB9842738FCFA000AB95A /* RoomTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTile.swift; sourceTree = "<group>"; };
 		318DB9862738FE25000AB95A /* RoomQuestionStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomQuestionStatusView.swift; sourceTree = "<group>"; };
+		318BCCA22733FC0600E0B6F3 /* StoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewModel.swift; sourceTree = "<group>"; };
+		318BCCA6273422DE00E0B6F3 /* CurrentStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentStoryView.swift; sourceTree = "<group>"; };
+		318DB9842738FCFA000AB95A /* RoomTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTile.swift; sourceTree = "<group>"; };
 		318DB98827391790000AB95A /* FullStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullStoryView.swift; sourceTree = "<group>"; };
 		318DB98B27392525000AB95A /* RoomWiseStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomWiseStory.swift; sourceTree = "<group>"; };
 		3196110A270206080030901E /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
