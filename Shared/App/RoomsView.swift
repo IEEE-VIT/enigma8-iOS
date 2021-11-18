@@ -18,28 +18,25 @@ struct RoomsView: View {
     
     var body: some View {
         NavigationView {
-               // NavigationLink(destination: PowerupView(powerupVM: GameViewModel(currentStatus: rooms.toRoom)), isActive: $rooms.navigateToRoom) {EmptyView() } // TODO
-                VStack {
-                    RoomsHeader()
-                    ScrollView(showsIndicators: false) {
+            VStack {
+                NavigationLink(destination: PowerupView(powerupVM: GameViewModel(currentStatus: rooms.toRoom)), isActive: $rooms.navigateToPowerups) {EmptyView() } // TODO
+                RoomsHeader()
+                ScrollView(showsIndicators: false) {
                     // MARK: GRID
                     LazyVGrid(columns: columns, spacing: 0) {
                         ForEach(rooms.allInfo, id: \.self) { room in
                             RoomTile(room: room)
                                 .onTapGesture {
-                                    if let roomUnlocked = room.journey?.roomUnlocked {
-                                        if roomUnlocked == true {
-                                            if(rooms.checkIfRoomSolved(room: room) == false) {
-                                                rooms.roomUnlocked = true
-                                                rooms.powerUpSelected = room.journey?.powerupId == nil ? false : true
-                                                rooms.toRoom = room
-                                                rooms.navigateToRoom = true
-                                            } else {
-                                                rooms.roomSolved = true
-                                                rooms.presentRoomLocked = true
-                                            }
+                                    let roomUnlocked = room.journey?.roomUnlocked ?? false
+                                    if roomUnlocked {
+                                        if(rooms.checkIfRoomSolved(room: room) == false) {
+                                            rooms.roomUnlocked = true
+                                            rooms.powerUpSelected = room.journey?.powerupId == nil ? false : true
+                                            rooms.toRoom = room
+                                            rooms.navigateToPowerups = true
                                         } else {
-                                            rooms.checkIfRoomUnlocked(room: room)
+                                            rooms.roomSolved = true
+                                            rooms.presentRoomLocked = true
                                         }
                                     } else {
                                         rooms.checkIfRoomUnlocked(room: room)
@@ -49,7 +46,7 @@ struct RoomsView: View {
                     }
                 }
             }
-                .padding(20)
+            .padding(20)
             .popup(isPresented: $rooms.presentRoomLocked, animation: Animation.spring()) {
                 EnigmaAlert(text: rooms.roomSolved ? "You have already solved this room!" : "You require \(rooms.starsNeeded) number of keys to unlock this", confirmAction: {rooms.presentRoomLocked.toggle()})
             }

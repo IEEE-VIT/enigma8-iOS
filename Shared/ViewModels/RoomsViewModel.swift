@@ -38,20 +38,20 @@ class RoomsViewModel: ObservableObject {
     
     func fetchAllInfo(){
         APIClient.request(fromRouter: .allRooms) { (response: AllRoomsResponse?, error) in
-            guard let response = response else {
+            guard let rooms = response?.data else {
                 Logger.error(error.debugDescription)
                 return
             }
-            if let rooms = response.data as? [RoomsModel] {
-                self.allInfo = rooms
-                let nextRoomStarQuota = rooms.first(where: { !($0.journey?.roomUnlocked ?? false) })?.room?.starQuota ?? 0
-                self.starsRequired = nextRoomStarQuota - (self.user?.stars ?? 0)
-            }
+            Logger.debug("GOT ROOMS: \(rooms.compactMap{ $0 })" )
+            self.allInfo = rooms.compactMap{ $0 }
+            let nextRoomStarQuota = rooms.first(where: { !($0?.journey?.roomUnlocked ?? false) })??.room?.starQuota ?? 0
+            self.starsRequired = nextRoomStarQuota - (self.user?.stars ?? 0)
+            
         }
     }
     
     func checkIfRoomSolved(room: RoomsModel?) -> Bool {
-        guard let questions = room?.journey?.questionsStatus as? [questionStatus] else {return false}
+        guard let questions = room?.journey?.questionsStatus else {return false}
         var roomSolved = true
         for question in questions {
             if question != .solved {
@@ -70,8 +70,9 @@ class RoomsViewModel: ObservableObject {
             self.roomUnlocked = response.unlock ?? false
             self.starsNeeded = response.starsNeeded ?? 999
             if(self.roomUnlocked) {
-                self.toRoom = room
-                self.navigateToRoom = true
+               // self.toRoom = room
+               // self.navigateToRoom = true
+                self.navigateToPowerups = true
             } else {
                 self.roomSolved = false
                 self.presentRoomLocked = true

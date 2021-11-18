@@ -8,9 +8,14 @@
 import Foundation
 
 class GameViewModel: ObservableObject {
-    var currentStatus: RoomsModel? = RoomsModel(journey: nil, room: Room(id: "asdfasdf", roomNo: "4", questionId: ["asdf"], media: "adsfadsf", title: "Room 5", starQuota: 34))
+
+    var currentStatus: RoomsModel?
     @Published var powerupList: [Powerup.PowerupModel] = []
-    @Published var roomStatus: Question.Response? // = Question.Response(question: Question.Model(id: "adf", text: "Lorem ipsum dolor sit Lorem ipsum dolor sit Lorem ipsum dolor sitLorem ipsum dolor sit Lorem ipsum dolor sit", media: "https://picsum.photos/536/354", questionNo: 3, mediaType: .img), powerupDetails: Powerup.PowerupModel(id: "", name: "Al Fiki", detail: "asdfasdf", icon: "https://www.shareicon.net/data/2017/03/02/880210_images_512x512.png", available: true))
+    @Published var showAlert: Bool = false
+    @Published var chosenPowerup: Powerup.PowerupModel?
+
+    @Published var currentQuestion: Question.Response?
+    @Published var roomStatus: Question.Response?
     @Published var navigateToRoom: Bool = false
     @Published var fetchedHint: String = "This is a hint"
     @Published var answerText: String = ""
@@ -29,6 +34,11 @@ class GameViewModel: ObservableObject {
             guard let response = response else {return}
             self.powerupList = response.powerups!
         }
+    }
+    
+    func choosePowerup(powerup: Powerup.PowerupModel) {
+        self.chosenPowerup = powerup
+        self.showAlert = true
     }
     
     func selectPowerup(powerup: Powerup.PowerupModel) -> Void {
