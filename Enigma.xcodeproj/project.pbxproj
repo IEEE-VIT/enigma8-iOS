@@ -19,6 +19,14 @@
 		318BCCA32733FC0600E0B6F3 /* StoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BCCA22733FC0600E0B6F3 /* StoryViewModel.swift */; };
 		318BCCA7273422DE00E0B6F3 /* CurrentStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BCCA6273422DE00E0B6F3 /* CurrentStoryView.swift */; };
 		318DB9852738FCFA000AB95A /* RoomTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB9842738FCFA000AB95A /* RoomTile.swift */; };
+		317DAB3A274263A700F6FD1F /* RoomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317DAB39274263A700F6FD1F /* RoomProgressView.swift */; };
+		317DAB3C2742686900F6FD1F /* RoomProgressViewLine1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317DAB3B2742686900F6FD1F /* RoomProgressViewLine1.swift */; };
+		317DAB3E274272BF00F6FD1F /* RoomProgressViewLine2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317DAB3D274272BF00F6FD1F /* RoomProgressViewLine2.swift */; };
+		317DAB402742848D00F6FD1F /* RoomProgressComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317DAB3F2742848D00F6FD1F /* RoomProgressComponents.swift */; };
+		318BCCA32733FC0600E0B6F3 /* StoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BCCA22733FC0600E0B6F3 /* StoryViewModel.swift */; };
+		318BCCA7273422DE00E0B6F3 /* CurrentStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BCCA6273422DE00E0B6F3 /* CurrentStoryView.swift */; };
+		318DB9852738FCFA000AB95A /* RoomTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB9842738FCFA000AB95A /* RoomTile.swift */; };
+		318DB9872738FE25000AB95A /* RoomQuestionStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB9862738FE25000AB95A /* RoomQuestionStatusView.swift */; };
 		318DB98927391790000AB95A /* FullStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB98827391790000AB95A /* FullStoryView.swift */; };
 		318DB98C27392525000AB95A /* RoomWiseStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB98B27392525000AB95A /* RoomWiseStory.swift */; };
 		3196110B270206080030901E /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3196110A270206080030901E /* SignUpModel.swift */; };
@@ -125,6 +133,14 @@
 		318BCCA22733FC0600E0B6F3 /* StoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewModel.swift; sourceTree = "<group>"; };
 		318BCCA6273422DE00E0B6F3 /* CurrentStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentStoryView.swift; sourceTree = "<group>"; };
 		318DB9842738FCFA000AB95A /* RoomTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTile.swift; sourceTree = "<group>"; };
+		317DAB39274263A700F6FD1F /* RoomProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomProgressView.swift; sourceTree = "<group>"; };
+		317DAB3B2742686900F6FD1F /* RoomProgressViewLine1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomProgressViewLine1.swift; sourceTree = "<group>"; };
+		317DAB3D274272BF00F6FD1F /* RoomProgressViewLine2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomProgressViewLine2.swift; sourceTree = "<group>"; };
+		317DAB3F2742848D00F6FD1F /* RoomProgressComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomProgressComponents.swift; sourceTree = "<group>"; };
+		318BCCA22733FC0600E0B6F3 /* StoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewModel.swift; sourceTree = "<group>"; };
+		318BCCA6273422DE00E0B6F3 /* CurrentStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentStoryView.swift; sourceTree = "<group>"; };
+		318DB9842738FCFA000AB95A /* RoomTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTile.swift; sourceTree = "<group>"; };
+		318DB9862738FE25000AB95A /* RoomQuestionStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomQuestionStatusView.swift; sourceTree = "<group>"; };
 		318DB98827391790000AB95A /* FullStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullStoryView.swift; sourceTree = "<group>"; };
 		318DB98B27392525000AB95A /* RoomWiseStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomWiseStory.swift; sourceTree = "<group>"; };
 		3196110A270206080030901E /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
@@ -273,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				8CB248502742A57A0063522F /* Onboarding */,
+				317DAB382742639600F6FD1F /* ProfileView */,
 				318DB98A27392508000AB95A /* FullStoryView */,
 				318DB9832738FCBF000AB95A /* RoomsView */,
 				8C1F5E4F273596A2001D8CCE /* Game */,
@@ -301,6 +318,17 @@
 				4E944D382743845F00DC14B4 /* CustomLabel.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		317DAB382742639600F6FD1F /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				317DAB39274263A700F6FD1F /* RoomProgressView.swift */,
+				317DAB3B2742686900F6FD1F /* RoomProgressViewLine1.swift */,
+				317DAB3D274272BF00F6FD1F /* RoomProgressViewLine2.swift */,
+				317DAB3F2742848D00F6FD1F /* RoomProgressComponents.swift */,
+			);
+			path = ProfileView;
 			sourceTree = "<group>";
 		};
 		318DB9832738FCBF000AB95A /* RoomsView */ = {
@@ -770,6 +798,7 @@
 				8CB248522742A5920063522F /* OnboardingPageView.swift in Sources */,
 				4EC3E48226E7DCCA0049AD99 /* ContentView.swift in Sources */,
 				8C73DACE272E9897009943BE /* NotificationView.swift in Sources */,
+				317DAB3C2742686900F6FD1F /* RoomProgressViewLine1.swift in Sources */,
 				8C73DAC7272E8A04009943BE /* NotificationsView.swift in Sources */,
 				31C13211271D6D6500BD5301 /* FeedbackUI.swift in Sources */,
 				4E944D3327436FCF00DC14B4 /* Constants.swift in Sources */,
@@ -795,9 +824,12 @@
 				8C1F5E4B273592D2001D8CCE /* PowerupRow.swift in Sources */,
 				4EB111DE2744E5E000632784 /* NotificationBackground.swift in Sources */,
 				4E944D392743845F00DC14B4 /* CustomLabel.swift in Sources */,
+				317DAB3E274272BF00F6FD1F /* RoomProgressViewLine2.swift in Sources */,
+				317DAB402742848D00F6FD1F /* RoomProgressComponents.swift in Sources */,
 				8C73DACB272E8E88009943BE /* NotificationModel.swift in Sources */,
 				8CC128B4270301C1000483AB /* TimerModel.swift in Sources */,
 				4E7A5CD92700FBA10058CAB9 /* PodHelper.swift in Sources */,
+				317DAB3A274263A700F6FD1F /* RoomProgressView.swift in Sources */,
 				A01836D427042CCA00A4F896 /* AppConstants.swift in Sources */,
 				8CEDD1E727404B0200CE4856 /* HintModel.swift in Sources */,
 				8CEDD1E5274012A200CE4856 /* QuestionModel.swift in Sources */,

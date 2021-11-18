@@ -33,6 +33,8 @@ struct ProfileView: View {
                 Text("Email: \(self.userVM.user?.email ?? "")")
             }
             Spacer()
+            RoomProgressView()
+                .padding()
             // TODO: WRAP IN NAVIGATION LINK, DESTINATION LOGINVIEW
             HStack {
                 Spacer(minLength: 100)
