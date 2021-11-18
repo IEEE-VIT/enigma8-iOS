@@ -9,7 +9,10 @@ import Foundation
 
 class GameViewModel: ObservableObject {
     var currentStatus: RoomsModel?
-    @Published var powerupList: [Powerup.PowerupModel] = []
+    @Published var powerupList: [Powerup.PowerupModel] = [Powerup.PowerupModel(name: "something", detail: "this is detailed powerup this is detailed this is detailed powerup this is detailed", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/How_to_use_icon.svg/1920px-How_to_use_icon.svg.png", available: true),Powerup.PowerupModel(name: "something", detail: "this is detailed powerup this is detailed this is detailed powerup this is detailed", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/How_to_use_icon.svg/1920px-How_to_use_icon.svg.png", available: true),Powerup.PowerupModel(name: "something", detail: "this is detailed powerup this is detailed this is detailed powerup this is detailed", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/How_to_use_icon.svg/1920px-How_to_use_icon.svg.png", available: true),Powerup.PowerupModel(name: "something", detail: "this is detailed powerup this is detailed this is detailed powerup this is detailed", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/How_to_use_icon.svg/1920px-How_to_use_icon.svg.png", available: true),Powerup.PowerupModel(name: "something", detail: "this is detailed powerup this is detailed this is detailed powerup this is detailed", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/How_to_use_icon.svg/1920px-How_to_use_icon.svg.png", available: true)]
+    @Published var showAlert: Bool = false
+    @Published var chosenPowerup: Powerup.PowerupModel?
+
     @Published var currentQuestion: Question.Response?
     @Published var navigateToRoom: Bool = false
     @Published var fetchedHint: String = ""
@@ -29,6 +32,11 @@ class GameViewModel: ObservableObject {
             guard let response = response else {return}
             self.powerupList = response.powerups!
         }
+    }
+    
+    func choosePowerup(powerup: Powerup.PowerupModel) {
+        self.chosenPowerup = powerup
+        self.showAlert = true
     }
     
     func selectPowerup(powerup: Powerup.PowerupModel) -> Void {

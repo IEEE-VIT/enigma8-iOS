@@ -18,8 +18,8 @@ struct RoomsView: View {
     
     var body: some View {
         NavigationView {
-            NavigationLink(destination: PowerupView(powerupVM: GameViewModel(currentStatus: rooms.toRoom)), isActive: $rooms.navigateToPowerups) {EmptyView() } // TODO
             VStack {
+                NavigationLink(destination: PowerupView(powerupVM: GameViewModel(currentStatus: rooms.toRoom)), isActive: $rooms.navigateToPowerups) {EmptyView() } // TODO
                 RoomsHeader()
                 ScrollView(showsIndicators: false) {
                     // MARK: GRID
@@ -33,7 +33,7 @@ struct RoomsView: View {
                                             rooms.roomUnlocked = true
                                             rooms.powerUpSelected = room.journey?.powerupId == nil ? false : true
                                             rooms.toRoom = room
-                                            rooms.navigateToRoom = true
+                                            rooms.navigateToPowerups = true
                                         } else {
                                             rooms.roomSolved = true
                                             rooms.presentRoomLocked = true
