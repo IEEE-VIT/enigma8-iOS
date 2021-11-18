@@ -17,7 +17,7 @@ struct EnigmaApp: App {
     
     var body: some Scene {
         WindowGroup {
-            HeaderNavView()
+            ContentView()
                  .environmentObject(roomsVM)
         }
     }

@@ -74,6 +74,26 @@ struct Journey: Codable, Hashable {
         
     }
     
+    var roomStatus: questionStatus {
+        guard let questionsStatus = questionsStatus else {
+            return .null
+        }
+        
+        if !(roomUnlocked ?? true) {
+            return .locked
+        }
+        
+        if questionsStatus == Array(repeating: .solved, count: 3) {
+            return .solved
+        }else {
+            return .unlocked
+        }
+        
+    }
+    
+    var isSmooth : Bool {
+        return questionsStatus == Array(repeating: .solved, count: 3)
+    }
     
 }
 
@@ -93,14 +113,26 @@ enum questionStatus: String, Codable {
     var color: Color {
         switch self {
         case .solved:
-            return .yellow
+            return .roomGreen
         case .locked, .null:
-            return .gray
+            return .roomGrey
         case .unlocked:
-            return .green
+            return .roomBlue
+        }
+    }
+    
+    var roomColor: Color {
+        switch self {
+        case .solved:
+            return .roomGreen
+        case .locked, .null:
+            return .roomGrey
+        case .unlocked:
+            return .roomBlue
         }
     }
 }
+
 
 extension AllRoomsResponse {
     static let sampleData: AllRoomsResponse = AllRoomsResponse(data: [
