@@ -15,8 +15,8 @@ struct EnigmaAlert: View {
     var confirmText: String? //= "Confirm"
     var cancelText: String? //= "Cancel"
     var showCloseButton: Bool = false
-    var confirmAction: () -> Void = {}
-    var cancelAction: () -> Void = {}
+    var confirmAction: () -> Void = {print("Clicked Confirm")}
+    var cancelAction: () -> Void = {print("Clicked Cancel")}
     var closeAction: () -> Void = {print("Clicked Close")}
     var image: String? //= "Key"
     var imageURL: URL?
@@ -56,17 +56,15 @@ struct EnigmaAlert: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 40, height: 40)
                     }
-                    if(confirmText != nil) {
-                        CustomButton(buttonText: confirmText ?? "", action: confirmAction, bgroundColor: Color.white, font: .system(size: 15, weight: .medium))
+                    if(confirmText != nil) {                        CustomButton(buttonText: confirmText ?? "", action: confirmAction)
                     }
                     if(cancelText != nil) {
-                        CustomButton(buttonText: cancelText ?? "", action: cancelAction, bgroundColor: Color.white, font: .system(size: 15, weight: .medium))
+                        CustomButton(buttonText: cancelText ?? "", action: cancelAction)
                     }
                 }
                 .frame(width: geo.size.width*widthPercentage,alignment: .top)
                 .padding()
-                .overlay(LinearGradient(colors: [.goldGradientStart, .goldGradientEnd], startPoint: .top, endPoint: .bottom).mask(Rectangle()
-                            .stroke(lineWidth: 2)))
+                .border(LinearGradient.gold)
                 .padding()
                 .background(RoundedRectangle(cornerRadius: 5)
                                 .fill(Color.eBlack))
@@ -79,7 +77,7 @@ struct EnigmaAlert: View {
                             .frame(width: 50, height: 50)
                     }.frame(width: geo.size.width*(widthPercentage+0.2), height: geo.size.height+20, alignment: .topTrailing)
                 }
-            }.frame(width: geo.size.width, alignment: .top)
+            }.frame(width: geo.size.width, alignment: .center)
         }.frame(minHeight: UIScreen.main.bounds.height/2.5, maxHeight: UIScreen.main.bounds.height/2, alignment: .top)
     }
 }
