@@ -10,6 +10,7 @@ import SwiftUI
 
 class TimerViewModel: ObservableObject {
     
+    @Published var navigateToRooms: Bool = false
     @Published var enigmaDate: Date? = nil
     @Published var enigmaDateComponents: DateComponents = DateComponents()
     @Published var started: Bool = false
