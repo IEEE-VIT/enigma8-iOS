@@ -21,7 +21,7 @@ struct LetsPlay: View {
                                 .frame(width: 8)
                                 .padding(.top, 5)
                             Text(point)
-                                .font(.Mulish(size: 12, weight: .medium))
+                                .font(.Mulish(size: 18, weight: .medium))
                                 .foregroundColor(Color.eGold)
                         }
                         .padding(.vertical)
@@ -32,6 +32,7 @@ struct LetsPlay: View {
                 Spacer()
                 HStack {
                     CustomButton(buttonText: "Next", action: {self.instructionsShown = true})
+                        .opacity(instructionsShown ? 0 : 1)
                 }
                 Spacer()
             }

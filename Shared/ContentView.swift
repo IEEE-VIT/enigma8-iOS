@@ -28,6 +28,7 @@ struct ContentView: View {
                                 .environmentObject(headerVM)
                         } else {
                             InstructionsView()
+                                .environmentObject(headerVM)
                         }
                     } else {
                         TimeView()

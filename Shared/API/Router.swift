@@ -15,7 +15,7 @@ enum Router: URLRequestConvertible {
     case unlockRoom(RoomUnlock.RoomUnlockRequest)
     case timer, getUser, allRooms
     case profileSetup(ProfileSetupModel.Request)
-    case currentStory(StoryModel.Request), fullStory(StoryModel.Request)
+    case currentStory(StoryModel.Request), fullStory
     case getPowerup
     case getQuestion(Question.Request)
     case selectPowerup(Powerup.SelectRequest)
@@ -122,7 +122,7 @@ enum Router: URLRequestConvertible {
             return try self.encoder.encode(appleBody, into: request)
         case .profileSetup(let profileBody):
             return try self.encoder.encode(profileBody, into: request)
-        case .currentStory(let roomId), .fullStory(let roomId):
+        case .currentStory(let roomId):
             return try self.encoder.encode(roomId, into: request)
         case .unlockRoom(let roomId):
             return try self.encoder.encode(roomId, into: request)

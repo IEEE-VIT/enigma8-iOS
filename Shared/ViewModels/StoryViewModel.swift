@@ -11,10 +11,7 @@ import SwiftUI
 class StoryViewModel: ObservableObject {
     @Published var story: [Story?] = []
     @Published var storySoFar: [Story] = []
-    @Published var fullStory: [Story?] = []
-    @Published var fullStoryRoomwise = [String:[Story]]()
-    @Published var fullStoryRoomIndex = 0
-    @Published var fullStoryComplete = false
+    @Published var fullStory: [Story] = []
     var roomId: String? = ""
     @Published var nextIndex: Int = 0
     @Published var roomComplete = false
@@ -53,21 +50,12 @@ class StoryViewModel: ObservableObject {
     }
     
     func getFullStory(){
-        self.fullStoryRoomwise.removeAll()
-        let request = StoryModel.Request(roomId: self.roomId ?? "")
-        APIClient.request(fromRouter: .fullStory(request)) { (response: StoryModel.Response?, error) in
-            if let error = error {
+        APIClient.request(fromRouter: .fullStory) { (response: StoryModel.Response?, error) in
+            guard let fullStory = response?.story as? [Story] else {
                 Logger.error(error.debugDescription)
                 return
             }
-            self.fullStory = response?.story ?? []
-            for i in 0..<self.fullStory.count  {
-                if self.fullStoryRoomwise[self.fullStory[i]?.roomNo ?? "0"] == nil {
-                    self.fullStoryRoomwise[self.fullStory[i]?.roomNo ?? "0"] = []
-                }
-                self.fullStoryRoomwise[self.fullStory[i]?.roomNo ?? "0"]?.append(self.fullStory[i] ?? Story(roomNo: "", sender: "", message: ""))
-                
-            }
+            self.fullStory = fullStory
         }
     }
     

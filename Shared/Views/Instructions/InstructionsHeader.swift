@@ -34,7 +34,7 @@ struct InstructionsHeader: View {
                             .frame(height: 16)
                     })
                 }
-                CustomLabel(text: viewName.uppercased(),font: .Cinzel(size: 16, weight: .bold), gradient: .blue)
+                CustomLabel(text: viewName.uppercased(),font: .Cinzel(size: 21, weight: .bold), gradient: .blue)
                     .padding()
                 if (frontButton) {
                     Button(action : {
