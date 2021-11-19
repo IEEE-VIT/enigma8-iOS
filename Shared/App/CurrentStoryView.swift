@@ -12,6 +12,7 @@ struct CurrentStoryView: View {
     @EnvironmentObject var gameVM: GameViewModel
     var body: some View {
         VStack {
+            StoryHeader().padding()
             ScrollView {
                 ScrollViewReader { sr in
                     ForEach(storyVM.storySoFar) { message in
