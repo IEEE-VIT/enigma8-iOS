@@ -28,6 +28,10 @@ final class SignUpModel {
             self.code = code
             self.access_token = access_token
         }
+        
+        private enum CodingKeys: String, CodingKey {
+            case code = "id_token"
+        }
     }
     
     struct Response : Codable {

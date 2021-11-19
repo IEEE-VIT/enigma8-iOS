@@ -85,11 +85,20 @@ struct ProgressLine: View {
     var color: Color
     var isSmooth: Bool
     var isTop: Bool = true
+    var isVertical: Bool = false
     var body: some View {
         ZStack(alignment: .center) {
+            if isVertical {
+                VerticalLine()
+                    .stroke(style: isSmooth ? StrokeStyle(lineWidth: width * 0.04) : StrokeStyle(lineWidth: width * 0.04, dash: [3]))
+                    .fill(color)
+
+            } else {
             Line()
-                .stroke(style: isSmooth ? StrokeStyle(lineWidth: width * 0.04) : StrokeStyle(lineWidth: width * 0.04, dash: [3]))
-                .fill(color)
+                    .stroke(style: isSmooth ? StrokeStyle(lineWidth: width * 0.04) : StrokeStyle(lineWidth: width * 0.04, dash: [3]))
+                    .fill(color)
+
+            }
             Arrow()
                 .stroke(style: StrokeStyle(lineWidth: width * 0.04, lineCap: .round))
                 .fill(color)
@@ -106,6 +115,16 @@ struct Line: Shape {
         let height = rect.size.height
         path.move(to: CGPoint(x: 0, y: height/2))
         path.addLine(to: CGPoint(x: rect.width, y: height/2))
+        return path
+    }
+}
+
+struct VerticalLine: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        let width = rect.size.width
+        path.move(to: CGPoint(x: width/2, y: 0))
+        path.addLine(to: CGPoint(x: width/2, y: rect.height))
         return path
     }
 }
