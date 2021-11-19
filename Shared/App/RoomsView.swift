@@ -15,33 +15,19 @@ struct RoomsView: View {
         GridItem(.flexible())
     ]
     @EnvironmentObject var rooms : RoomsViewModel
-    
+    @EnvironmentObject var headerVM: HeaderRules
     var body: some View {
-            VStack {
-                NavigationLink(destination: PowerupView(powerupVM: GameViewModel(currentStatus: rooms.toRoom)), isActive: $rooms.navigateToPowerups) {EmptyView() } // TODO
-                RoomsHeader()
-                ScrollView(showsIndicators: false) {
-                    // MARK: GRID
-                    LazyVGrid(columns: columns, spacing: 0) {
-                        ForEach(rooms.allInfo, id: \.self) { room in
+        VStack {
+            NavigationLink(destination: PowerupView(powerupVM: GameViewModel(currentStatus: rooms.toRoom)), isActive: $rooms.navigateToPowerups) {EmptyView() } // TODO
+            RoomsHeader()
+            ScrollView(showsIndicators: false) {
+                // MARK: GRID
+                LazyVGrid(columns: columns, spacing: 0) {
+                    ForEach(rooms.allInfo, id: \.self) { room in
+                        Button {
+                            rooms.checkIfRoomUnlocked(room: room.room?._id)
+                        } label: {
                             RoomTile(room: room)
-                                .onTapGesture {
-                                    let roomUnlocked = room.journey?.roomUnlocked ?? false
-                                    if roomUnlocked {
-                                        if(rooms.checkIfRoomSolved(room: room) == false) {
-                                            rooms.roomUnlocked = true
-                                            rooms.powerUpSelected = room.journey?.powerupId == nil ? false : true
-                                            rooms.toRoom = room
-                                            rooms.navigateToPowerups = !rooms.powerUpSelected
-                                            rooms.navigateToRoom = rooms.powerUpSelected
-                                        } else {
-                                            rooms.roomSolved = true
-                                            rooms.presentRoomLocked = true
-                                        }
-                                    } else {
-                                        rooms.checkIfRoomUnlocked(room: room)
-                                    }
-                                }
                         }
                     }
                     .background(Image(ImageConstants.roomBG).resizable().scaledToFit().frame(width: UIScreen.main.bounds.width, alignment: .top))
@@ -59,13 +45,14 @@ struct RoomsView: View {
                 rooms.fetchAllInfo()
             }
             .navigationBarTitle("")
-                .navigationBarHidden(true)
+            .navigationBarHidden(true)
+        }
     }
 }
-
-struct RoomsView_Previews: PreviewProvider {
-    static var previews: some View {
-        RoomsView()
-            .environmentObject(RoomsViewModel())
+    
+    struct RoomsView_Previews: PreviewProvider {
+        static var previews: some View {
+            RoomsView()
+                .environmentObject(RoomsViewModel())
+        }
     }
-}

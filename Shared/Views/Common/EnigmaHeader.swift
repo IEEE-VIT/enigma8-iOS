@@ -19,7 +19,7 @@ struct EnigmaHeader: View {
             HStack {
                 if(!hideHeaderIcons) {
                     if(showBackButton) {
-                        Button(action: {self.headerVM.showInstructions = false; self.headerVM.showNotifications = false}) {
+                        Button(action: {self.headerVM.showInstructions = false; self.headerVM.showNotifications = false;self.headerVM.showRoom = false}) {
                             Image(ImageConstants.back)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)

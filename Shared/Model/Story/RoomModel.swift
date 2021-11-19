@@ -20,9 +20,26 @@ struct RoomUnlock {
         var roomId: String?
     }
     struct RoomUnlockResponse: Codable {
-        var unlock: Bool?
+        var roomStatus: String?
         var starsNeeded: Int?
+        
+        
+        private enum CodingKeys: String, CodingKey {
+            case starsNeeded = "starsNeeded"
+            case roomStatus = "status"
+        }
+        
+        var status: RoomStatus {
+            return RoomStatus(rawValue: roomStatus ?? "locked") ?? .locked
+        }
     }
+}
+
+enum RoomStatus: String {
+    case locked = "locked"
+    case canUnlock = "canUnlock"
+    case unlocked = "unlocked"
+    case complete = "complete"
 }
 
 struct AllRoomsResponse: Codable {

@@ -11,15 +11,15 @@ import AVKit
 import PopupView
 
 struct RoomUI: View {
-    @StateObject var gameVM = GameViewModel(currentStatus: RoomsModel())
     @State var showHintConfirmation: Bool = false
     @EnvironmentObject var gameVM: GameViewModel
-    var hintAction: () -> Void = {}
-    @State var dismissView: Bool = false
+    @EnvironmentObject var headerVM: HeaderRules
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
     
+    var hintAction: () -> Void = {}
     var body: some View {
         ZStack {
-            NavigationLink(destination: RoomsView(), isActive: $gameVM.navigateBackToRooms) {EmptyView()}
             VStack(spacing: 0) {
                 EnigmaHeader(showBackButton: true)
                 HStack {
@@ -108,6 +108,11 @@ struct RoomUI: View {
         .background(Color.eBlack.edgesIgnoringSafeArea(.bottom))
         .onAppear(perform: gameVM.getQuestion)
         .navigationBarHidden(true)
+        .onChange(of: self.headerVM.showRoom) { showRoom in
+            if !showRoom {
+                self.presentationMode.wrappedValue.dismiss()
+            }
+        }
     }
 }
 

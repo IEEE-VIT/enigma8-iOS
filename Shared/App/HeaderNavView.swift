@@ -57,5 +57,5 @@ struct HeaderNavView_Previews: PreviewProvider {
 class HeaderRules: ObservableObject {
     @Published var showNotifications: Bool = false
     @Published var showInstructions: Bool = false
-
+    @Published var showRoom: Bool = false
 }

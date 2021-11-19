@@ -105,7 +105,6 @@
 		8CB814692742928A00E19DEE /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB814682742928A00E19DEE /* Onboarding.swift */; };
 		8CC128B4270301C1000483AB /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC128B3270301C1000483AB /* TimerModel.swift */; };
 		8CC128B82705D619000483AB /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC128B72705D618000483AB /* TimerViewModel.swift */; };
-		8CC830FA2747833E008FD6D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CC830F92747833E008FD6D8 /* GoogleService-Info.plist */; };
 		8CD337F62744AF0800E69F93 /* LeaderboardHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD337F52744AF0800E69F93 /* LeaderboardHeader.swift */; };
 		8CD8CADF26FADE7A00267EAC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CADE26FADE7A00267EAC /* Kingfisher */; };
 		8CD8CAE426FADED300267EAC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CAE326FADED300267EAC /* Alamofire */; };
@@ -220,7 +219,6 @@
 		8CB814682742928A00E19DEE /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		8CC128B3270301C1000483AB /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		8CC128B72705D618000483AB /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
-		8CC830F92747833E008FD6D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8CD337F52744AF0800E69F93 /* LeaderboardHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardHeader.swift; sourceTree = "<group>"; };
 		8CE83E0D2747AD9200A53855 /* StoryHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryHeader.swift; sourceTree = "<group>"; };
 		8CEDD1E4274012A200CE4856 /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
@@ -508,7 +506,6 @@
 		4EC3E46726E7DCC80049AD99 = {
 			isa = PBXGroup;
 			children = (
-				8CC830F92747833E008FD6D8 /* GoogleService-Info.plist */,
 				4E83F15827468675008F693E /* Enigma (iOS).entitlements */,
 				4EC3E46C26E7DCC90049AD99 /* Shared */,
 				4EC3E47626E7DCCA0049AD99 /* iOS */,
@@ -763,7 +760,6 @@
 			files = (
 				8CB814622742858F00E19DEE /* CinzelDecorative-Bold.ttf in Resources */,
 				8CB8145F2742856400E19DEE /* Cinzel-Bold.ttf in Resources */,
-				8CC830FA2747833E008FD6D8 /* GoogleService-Info.plist in Resources */,
 				8CB814632742858F00E19DEE /* CinzelDecorative-Regular.ttf in Resources */,
 				8CB248552742AF1E0063522F /* Launch Screen.storyboard in Resources */,
 				8CB8145B2742851D00E19DEE /* Mulish-Bold.ttf in Resources */,
