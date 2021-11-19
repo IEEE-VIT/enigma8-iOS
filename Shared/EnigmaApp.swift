@@ -15,8 +15,8 @@ struct EnigmaApp: App {
     
     var body: some Scene {
         WindowGroup {
-            HeaderNavView()
-                 .environmentObject(roomsVM)
+            ContentView()
+                // .environmentObject(roomsVM)
                  .preferredColorScheme(.dark)
         }
     }

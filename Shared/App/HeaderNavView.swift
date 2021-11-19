@@ -10,12 +10,25 @@ import SwiftUI
 struct HeaderNavView: View {
     @State var tabSelected = 0
     @EnvironmentObject var rooms : RoomsViewModel
+    @EnvironmentObject var headerVM : HeaderRules
+
     var body: some View {
+        NavigationView {
+            
         VStack {
+            
+            NavigationLink(destination: NotificationsView().navigationTitle("").navigationBarHidden(true),isActive: $headerVM.showNotifications){
+                EmptyView()
+            }
+            
+            NavigationLink(destination: InstructionsView().navigationTitle("").navigationBarHidden(true),isActive: $headerVM.showInstructions){
+                EmptyView()
+            }
+            
             EnigmaHeader()
             switch(tabSelected){
             case 0:
-                RoomsView(rooms: _rooms)
+                RoomsView()
             case 1:
                 LeaderboardView()
             case 2:
@@ -27,7 +40,10 @@ struct HeaderNavView: View {
             }
                 EnigmaTabView(tabSelected: $tabSelected)
         }
-        
+        .navigationViewStyle(StackNavigationViewStyle())
+        .navigationBarHidden(true)//both hiddens required
+
+        }
     }
 }
 
@@ -36,4 +52,10 @@ struct HeaderNavView_Previews: PreviewProvider {
         HeaderNavView()
             .environmentObject(RoomsViewModel())
     }
+}
+
+class HeaderRules: ObservableObject {
+    @Published var showNotifications: Bool = false
+    @Published var showInstructions: Bool = false
+
 }

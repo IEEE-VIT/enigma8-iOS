@@ -42,7 +42,7 @@ struct ProfileView: View {
                     .font(.Mulish(size:14, weight: .regular))
                     .foregroundColor(Color.eGold)
                
-                RoomProgressView(width: UIScreen.main.bounds.width * 0.88)
+                RoomProgressView(width: UIScreen.main.bounds.width * 0.66)
                 Spacer()
                 // TODO: WRAP IN NAVIGATION LINK, DESTINATION LOGINVIEW
                 HStack {

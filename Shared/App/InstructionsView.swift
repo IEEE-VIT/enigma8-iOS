@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct InstructionsView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @EnvironmentObject var headerVM: HeaderRules
     @State var selectedTab = 0
+
     var body: some View {
         VStack(spacing: 0) {
+            EnigmaHeader(showBackButton: true, showInstructionsButton: false)
             InstructionsCommonHeader()
             InstructionsHeader(viewName: AppConstants.instructionsScreens[selectedTab], selectedTab: $selectedTab)
             TabView(selection: $selectedTab) {
@@ -31,7 +35,12 @@ struct InstructionsView: View {
         .padding()
         .background(Image("InstructionsBG").resizable().scaledToFill().edgesIgnoringSafeArea(.all))
         .background(Color.black)
-        .edgesIgnoringSafeArea(.all)
+       // .edgesIgnoringSafeArea(.all)
+        .onChange(of: headerVM.showInstructions) { dismiss in
+            if !dismiss {
+                self.presentationMode.wrappedValue.dismiss()
+            }
+        }
     }
 }
 

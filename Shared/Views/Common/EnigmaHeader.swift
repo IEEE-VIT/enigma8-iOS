@@ -8,22 +8,29 @@
 import SwiftUI
 
 struct EnigmaHeader: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var showBackButton: Bool = false
     var hideHeaderIcons: Bool = false
+    var showInstructionsButton: Bool = true
+
+    @EnvironmentObject var headerVM : HeaderRules
+    
     var body: some View {
         VStack(spacing:0) {
             HStack {
                 if(!hideHeaderIcons) {
                     if(showBackButton) {
-                        Button(action: {self.presentationMode.wrappedValue.dismiss()}) {
+                        Button(action: {self.headerVM.showInstructions = false; self.headerVM.showNotifications = false}) {
                             Image(ImageConstants.back)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 25, height: 25)
                         }
                     } else {
-                        NavigationLink(destination: NotificationsView(notifsVM: NotificationsViewModel()).navigationTitle("").navigationBarHidden(true)){
+                        
+                        Button {
+                            Logger.debug("NOTIF")
+                            self.headerVM.showNotifications = true
+                        } label: {
                             Image(ImageConstants.notifs)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
@@ -39,8 +46,11 @@ struct EnigmaHeader: View {
                     .frame(width: UIScreen.main.bounds.width*0.3)
                     .font(.system(size: 25))
                 Spacer()
-                if(!hideHeaderIcons) {
-                    NavigationLink(destination: InstructionsView().navigationTitle("").navigationBarHidden(true)){
+                if(showInstructionsButton) {
+                    Button {
+                        Logger.debug("INSTRUCTIONS")
+                        self.headerVM.showInstructions = true
+                    } label: {
                         Image(ImageConstants.info)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
