@@ -11,21 +11,17 @@ struct RoomWiseStory: View {
     @State var roomStory: [Story?]
     var body: some View {
         VStack {
-            ScrollView {
                 ForEach(roomStory, id: \.self) { message in
-                    HStack {
+                    HStack{
                         if message?.senderEnum == .sender2 {
                             Spacer()
                         }
                         StoryBubble(story: message ?? Story(roomNo: nil, sender: nil, message: nil), width: 360) //TODO
-                            .padding()
                         if message?.senderEnum == .sender1 {
                             Spacer()
                         }
                     }
                 }
-            }
-            .padding()
         }
     }
 }

@@ -10,26 +10,23 @@ import SwiftUI
 struct FullStoryView: View {
     @StateObject var storyViewModel: StoryViewModel
     var body: some View {
-        VStack {
-            if storyViewModel.fullStoryRoomwise.count > 0 {
-                Text("Room \(storyViewModel.fullStoryRoomIndex + 1)")
-                    .font(.largeTitle)
-                TabView(selection: $storyViewModel.fullStoryRoomIndex){
+        ScrollView {
+            VStack(spacing: 0) {
+                if storyViewModel.fullStoryRoomwise.count > 0 {
                     ForEach(0..<storyViewModel.fullStoryRoomwise.count) { index in
                         RoomWiseStory(roomStory: storyViewModel.fullStoryRoomwise["\(index+1)"] ?? [])
                     }
+                } else {
+                    Spacer()
+                    Text("Loading Stories!")
+                    Spacer()
                 }
-                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
-                .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
-            } else {
-                Spacer()
-                Text("Loading Stories!")
-                Spacer()
             }
+            .onAppear{
+                storyViewModel.getFullStory()
+            }.animation(.default)
         }
-        .onAppear{
-            storyViewModel.getFullStory()
-        }
+        .background(Image(ImageConstants.storyBG).resizable().frame(width: UIScreen.main.bounds.width))
     }
 }
 
