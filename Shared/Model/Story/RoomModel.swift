@@ -11,7 +11,8 @@ import SwiftUI
 struct RoomsModel: Codable, Hashable {
     var journey: Journey?
     var room: Room?
-    
+ 
+    static var data = RoomsModel(journey: Journey(id: nil, userId: nil, roomId: "1234", stars: 0, powerupUsed: .no, roomUnlocked: true, powerupId: "12345", questionsStatus: ["solved","unlocked","locked"]), room: Room(id: "1234", roomNo: "3", questionId: [], media: "https://firebasestorage.googleapis.com/v0/b/enigma-8.appspot.com/o/Room%2FRoom%207.png?alt=media&token=adc9c32c-18e8-4d28-bd26-30dd00192d39", title: "Room 3", starQuota: 0))
 }
 
 struct RoomUnlock {
@@ -74,7 +75,30 @@ struct Journey: Codable, Hashable {
         
     }
     
+    var roomStatus: questionStatus {
+        guard let questionsStatus = questionsStatus else {
+            return .null
+        }
+        
+        if !(roomUnlocked ?? true) {
+            return .locked
+        }
+        
+        if questionsStatus == Array(repeating: .solved, count: 3) {
+            return .solved
+        }else {
+            return .unlocked
+        }
+        
+    }
     
+    var isSmooth : Bool {
+        return roomStatus == .solved
+    }
+    
+    var showArrow: Bool {
+        return (roomStatus == .solved) || (roomStatus == .unlocked)
+    }
 }
 
 enum PowerupUsed: String, Codable {
@@ -93,14 +117,34 @@ enum questionStatus: String, Codable {
     var color: Color {
         switch self {
         case .solved:
-            return .yellow
+            return .roomGreen
         case .locked, .null:
-            return .gray
+            return .roomGrey
         case .unlocked:
-            return .green
+            return .roomBlue
+        }
+    }
+    
+    var roomColor: Color {
+        switch self {
+        case .solved:
+            return .roomGreen
+        case .locked, .null:
+            return .roomGrey
+        case .unlocked:
+            return .roomBlue
+        }
+    }
+    
+    var progressImage: String {
+        if self == .solved {
+            return "Key"
+        } else {
+            return "unsolved_key"
         }
     }
 }
+
 
 extension AllRoomsResponse {
     static let sampleData: AllRoomsResponse = AllRoomsResponse(data: [
