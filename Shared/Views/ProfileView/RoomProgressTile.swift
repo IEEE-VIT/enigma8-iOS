@@ -10,11 +10,16 @@ import SwiftUI
 struct RoomProgressViewTile: View {
     var room: RoomsModel
     var width: CGFloat
-    var isHorizontal: Bool
+    var isTop: Bool
     var body: some View {
-        AdaptiveStack(isHorizontal:isHorizontal,horizontalAlignment: .center, verticalAlignment: .center, spacing: 0) {
-            ProgressLine(width: width, color: room.journey?.roomStatus.color ?? .roomGrey, isSmooth: room.journey?.isSmooth ?? false, isHorizontal: isHorizontal)
+        HStack(spacing: 0) {
+            if isTop {
+                ProgressLine(width: width, color: room.journey?.roomStatus.color ?? .roomGrey, isSmooth: room.journey?.isSmooth ?? false,isTop: isTop)
+            }
             RoomProgressTile(room: room, width: width)
+            if !isTop {
+                ProgressLine(width: width, color: room.journey?.roomStatus.color ?? .roomGrey, isSmooth: room.journey?.isSmooth ?? false,isTop: isTop)
+            }
         }
     }
 }
@@ -57,15 +62,17 @@ struct RoomProgressTile: View {
 struct RoomProgressTile_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            RoomProgressTile(room: RoomsModel(journey: Journey(id: nil, userId: nil, roomId: "1234", stars: 0, powerupUsed: .no, roomUnlocked: true, powerupId: "12345", questionsStatus: ["locked","solved","unlocked"]), room: Room(id: "1234", roomNo: "3", questionId: [], media: "https://firebasestorage.googleapis.com/v0/b/enigma-8.appspot.com/o/Room%2FRoom%207.png?alt=media&token=adc9c32c-18e8-4d28-bd26-30dd00192d39", title: "Room 3", starQuota: 0)),width: 40)
+            RoomProgressTile(room: RoomsModel.data,width: 40)
                 .padding()
                 .background(Color.black)
             
-            RoomProgressViewTile(room: RoomsModel(journey: Journey(id: nil, userId: nil, roomId: "1234", stars: 0, powerupUsed: .no, roomUnlocked: true, powerupId: "12345", questionsStatus: ["solved","unlocked","locked"]), room: Room(id: "1234", roomNo: "3", questionId: [], media: "https://firebasestorage.googleapis.com/v0/b/enigma-8.appspot.com/o/Room%2FRoom%207.png?alt=media&token=adc9c32c-18e8-4d28-bd26-30dd00192d39", title: "Room 3", starQuota: 0)), width: 40, isHorizontal:  false)
+            RoomProgressViewTile(room: RoomsModel.data, width: 40,isTop: true)
                 .padding()
                 .background(Color.black)
             
-            
+            RoomProgressViewTile(room: RoomsModel.data, width: 40,isTop: false)
+                .padding()
+                .background(Color.black)
             
             
         }
@@ -77,7 +84,7 @@ struct ProgressLine: View {
     var width: CGFloat
     var color: Color
     var isSmooth: Bool
-    var isHorizontal: Bool
+    var isTop: Bool = true
     var body: some View {
         ZStack(alignment: .center) {
             Line()
@@ -86,10 +93,9 @@ struct ProgressLine: View {
             Arrow()
                 .stroke(style: StrokeStyle(lineWidth: width * 0.04, lineCap: .round))
                 .fill(color)
+                .rotationEffect(.degrees(isTop ? 0 : 180))
         }
-        .rotationEffect(.degrees(isHorizontal ? 0 : 90))
-        .frame(maxWidth: !isHorizontal ? width * 0.30 : .infinity,maxHeight: isHorizontal ? width * 0.30 : .infinity)
-        
+        .frame(height: 10)
     }
 }
 
@@ -113,31 +119,5 @@ struct Arrow: Shape {
         path.addLine(to: CGPoint(x: 0.69927*height + width/2, y: 0.47932*height))
         path.addLine(to: CGPoint(x: 0.22507*height + width/2, y: 0.86251*height))
         return path
-    }
-}
-
-struct AdaptiveStack<Content: View>: View {
-    let isHorizontal: Bool
-    let horizontalAlignment: HorizontalAlignment
-    let verticalAlignment: VerticalAlignment
-    let spacing: CGFloat?
-    let content: () -> Content
-
-    init(isHorizontal:Bool,horizontalAlignment: HorizontalAlignment = .center, verticalAlignment: VerticalAlignment = .center, spacing: CGFloat? = nil, @ViewBuilder content: @escaping () -> Content) {
-        self.horizontalAlignment = horizontalAlignment
-        self.verticalAlignment = verticalAlignment
-        self.spacing = spacing
-        self.content = content
-        self.isHorizontal = isHorizontal
-    }
-    
-    var body: some View {
-        Group {
-            if isHorizontal {
-                HStack(alignment: .center, spacing: spacing, content: content)
-            } else {
-                VStack(alignment: .center, spacing: spacing, content: content)
-            }
-        }
     }
 }

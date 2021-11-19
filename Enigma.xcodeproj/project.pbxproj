@@ -60,12 +60,12 @@
 		4E7A5CDC2700FBBF0058CAB9 /* KFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A5CDB2700FBBF0058CAB9 /* KFManager.swift */; };
 		4E7A5CDD2700FBBF0058CAB9 /* KFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A5CDB2700FBBF0058CAB9 /* KFManager.swift */; };
 		4E83F15427463FAD008F693E /* RoomProgressTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E83F15327463FAD008F693E /* RoomProgressTile.swift */; };
+		4E83F15C2746DA80008F693E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E83F15B2746DA80008F693E /* GoogleService-Info.plist */; };
 		4E944D3327436FCF00DC14B4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E944D3227436FCF00DC14B4 /* Constants.swift */; };
 		4E944D3527437CF800DC14B4 /* OnboardingBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E944D3427437CF800DC14B4 /* OnboardingBackground.swift */; };
 		4E944D392743845F00DC14B4 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E944D382743845F00DC14B4 /* CustomLabel.swift */; };
 		4E944D3B2743911C00DC14B4 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E944D3A2743911B00DC14B4 /* Gradient.swift */; };
 		4EAD04FF27456B4B003DC5F3 /* RoomsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAD04FE27456B4B003DC5F3 /* RoomsHeader.swift */; };
-		4EB111DC2744B3AF00632784 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EB111DB2744B3AE00632784 /* GoogleService-Info.plist */; };
 		4EB111DE2744E5E000632784 /* NotificationBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB111DD2744E5E000632784 /* NotificationBackground.swift */; };
 		4EC3E48026E7DCCA0049AD99 /* EnigmaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC3E46D26E7DCC90049AD99 /* EnigmaApp.swift */; };
 		4EC3E48126E7DCCA0049AD99 /* EnigmaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC3E46D26E7DCC90049AD99 /* EnigmaApp.swift */; };
@@ -166,12 +166,12 @@
 		4E7A5CD82700FBA10058CAB9 /* PodHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodHelper.swift; sourceTree = "<group>"; };
 		4E7A5CDB2700FBBF0058CAB9 /* KFManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KFManager.swift; sourceTree = "<group>"; };
 		4E83F15327463FAD008F693E /* RoomProgressTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomProgressTile.swift; sourceTree = "<group>"; };
+		4E83F15B2746DA80008F693E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4E944D3227436FCF00DC14B4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4E944D3427437CF800DC14B4 /* OnboardingBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingBackground.swift; sourceTree = "<group>"; };
 		4E944D382743845F00DC14B4 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		4E944D3A2743911B00DC14B4 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		4EAD04FE27456B4B003DC5F3 /* RoomsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsHeader.swift; sourceTree = "<group>"; };
-		4EB111DB2744B3AE00632784 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		4EB111DD2744E5E000632784 /* NotificationBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationBackground.swift; sourceTree = "<group>"; };
 		4EC3E46D26E7DCC90049AD99 /* EnigmaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnigmaApp.swift; sourceTree = "<group>"; };
 		4EC3E46E26E7DCC90049AD99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -512,7 +512,7 @@
 		4EC3E47626E7DCCA0049AD99 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				4EB111DB2744B3AE00632784 /* GoogleService-Info.plist */,
+				4E83F15B2746DA80008F693E /* GoogleService-Info.plist */,
 				4EC3E47726E7DCCA0049AD99 /* Info.plist */,
 			);
 			path = iOS;
@@ -731,7 +731,7 @@
 				8CB248552742AF1E0063522F /* Launch Screen.storyboard in Resources */,
 				8CB8145B2742851D00E19DEE /* Mulish-Bold.ttf in Resources */,
 				4EC3E48426E7DCCA0049AD99 /* Assets.xcassets in Resources */,
-				4EB111DC2744B3AF00632784 /* GoogleService-Info.plist in Resources */,
+				4E83F15C2746DA80008F693E /* GoogleService-Info.plist in Resources */,
 				8CB8145C2742851D00E19DEE /* Mulish-Regular.ttf in Resources */,
 				8CB8145D2742851D00E19DEE /* Mulish-SemiBold.ttf in Resources */,
 			);
