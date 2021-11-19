@@ -14,7 +14,7 @@ struct ContentView: View {
     @StateObject var roomsVM: RoomsViewModel = RoomsViewModel()
     @StateObject var timerVM: TimerViewModel = TimerViewModel()
     @StateObject var headerVM: HeaderRules = HeaderRules()
-
+    @StateObject var authVM: AuthViewModel = AuthViewModel()
     var body: some View {
             if(onboarded) {
                 if(userLoggedIn) {
@@ -31,10 +31,12 @@ struct ContentView: View {
                             .environmentObject(timerVM)
                     }
                 } else {
-                    LoginView(authVM: AuthViewModel())
+                    NavigationView {
+                    LoginView(authVM: authVM, googleVM: GoogleCoordinator(authVM: authVM), appleVM: AppleCoordinator(authVM: authVM))
                             .navigationTitle("")
                             .navigationBarHidden(true)
                             .ignoresSafeArea()
+                    }
                 }
             } else {
                 Onboarding()

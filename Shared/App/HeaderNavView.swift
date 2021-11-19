@@ -36,7 +36,7 @@ struct HeaderNavView: View {
             case 3:
                 ProfileView()
             default:
-                LoginView(authVM: AuthViewModel())
+                Text("") //TODO
             }
                 EnigmaTabView(tabSelected: $tabSelected)
         }

@@ -10,16 +10,9 @@ import SwiftUI
 struct LoginView: View {
     
     // MARK: - PROPERTIES
-    @StateObject var authVM: AuthViewModel
-    let googleVM : GoogleCoordinator
-    let appleVM : AppleCoordinator
-    
-    // MARK: - INITIALIZE
-    init(authVM: AuthViewModel) {
-        self.appleVM = AppleCoordinator(authVM: authVM)
-        self.googleVM = GoogleCoordinator(authVM: authVM)
-        _authVM = StateObject(wrappedValue: authVM)
-    }
+    @ObservedObject var authVM: AuthViewModel
+    @ObservedObject var googleVM : GoogleCoordinator
+    @ObservedObject var appleVM : AppleCoordinator
     
     // MARK: - BODY
     var body: some View {
@@ -43,6 +36,10 @@ struct LoginView: View {
                 EmptyView()
             }
             NavigationLink(destination: HeaderNavView().navigationBarTitle("").navigationBarHidden(true), isActive: Binding<Bool>(get: {return !authVM.isNew && authVM.isSignedIn}, set: {p in self.authVM.isNew = p})) { EmptyView() }
+            Button("PRESS") {
+                Logger.debug(self.authVM.isNew)
+            }
+            .padding(100)
         }
         .background(OnboardingBackground())
     }
@@ -51,7 +48,7 @@ struct LoginView: View {
 // MARK: - PREVIEWS
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(authVM: AuthViewModel())
+        LoginView(authVM: AuthViewModel(), googleVM: GoogleCoordinator(authVM: AuthViewModel()), appleVM: AppleCoordinator(authVM: AuthViewModel()))
             .edgesIgnoringSafeArea(.all)
     }
 }
