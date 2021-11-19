@@ -17,7 +17,6 @@ struct EnigmaApp: App {
         WindowGroup {
             HeaderNavView()
                  .environmentObject(roomsVM)
-//            LoginView(authVM: AuthViewModel())
         }
     }
 }

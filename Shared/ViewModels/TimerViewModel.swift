@@ -10,6 +10,7 @@ import SwiftUI
 
 class TimerViewModel: ObservableObject {
     
+    @AppStorage(AppStorageConstants.enigmaStarted) var enigmaStarted: Bool = false
     @Published var enigmaDate: Date? = nil
     @Published var enigmaDateComponents: DateComponents = DateComponents()
     @Published var started: Bool = false
