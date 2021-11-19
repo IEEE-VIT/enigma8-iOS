@@ -33,7 +33,7 @@ struct EnigmaTabView: View {
                 .background(tabSelected == i ? Color.storyGrey : Color.eBlack)
             }
         }
-        .background(Color.eBlack)
+        .background(Color.eBlack.edgesIgnoringSafeArea(.bottom))
     }
 }
 

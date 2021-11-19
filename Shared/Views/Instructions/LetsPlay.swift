@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LetsPlay: View {
+    @AppStorage(AppStorageConstants.instructionsShown) var instructionsShown: Bool = false
     var body: some View {
         VStack {
             VStack(alignment: .center, spacing: 20) {
@@ -20,7 +21,7 @@ struct LetsPlay: View {
                                 .frame(width: 8)
                                 .padding(.top, 5)
                             Text(point)
-                                .font(.Mulish(size: 12, weight: .medium))
+                                .font(.Mulish(size: 18, weight: .medium))
                                 .foregroundColor(Color.eGold)
                         }
                         .padding(.vertical)
@@ -30,7 +31,8 @@ struct LetsPlay: View {
                 LetsPlayIcons()
                 Spacer()
                 HStack {
-                    CustomButton(buttonText: "Next")
+                    CustomButton(buttonText: "Next", action: {self.instructionsShown = true})
+                        .opacity(instructionsShown ? 0 : 1)
                 }
                 Spacer()
             }

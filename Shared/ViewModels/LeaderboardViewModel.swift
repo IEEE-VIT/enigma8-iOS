@@ -9,7 +9,7 @@ import Foundation
 
 class LeaderboardViewModel: ObservableObject {
     
-    @Published var leaderboard: [LeaderboardItem] = LeaderboardItem.data
+    @Published var leaderboard: [LeaderboardItem] = []
     @Published var currentUser: LeaderboardItem?
     var searchQuery: String? = nil
     var totalPages = 1
