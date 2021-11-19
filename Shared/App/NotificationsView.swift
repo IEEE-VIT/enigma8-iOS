@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct NotificationsView: View {
-    @ObservedObject var notifsVM: NotificationsViewModel
-    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
+    @ObservedObject var notifsVM: NotificationsViewModel = NotificationsViewModel()
+    @State var dismissView: Bool = false
     var body: some View {
         VStack(alignment: .leading) {
+            EnigmaHeader(showBackButton:true,showInstructionsButton: false)
             CustomLabel(text: "Notifications",font: .Cinzel())
                 .padding(20)
             ScrollView {
@@ -24,6 +27,11 @@ struct NotificationsView: View {
         }
         .background(NotificationBackground())
         .onAppear(perform: notifsVM.getNotifications)
+        .onChange(of: dismissView) { dismiss in
+            if dismiss {
+                self.presentationMode.wrappedValue.dismiss()
+            }
+        }
     }
 }
 

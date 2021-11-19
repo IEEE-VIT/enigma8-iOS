@@ -10,9 +10,11 @@ import SwiftUI
 struct ContentView: View {
     @AppStorage(AppStorageConstants.onboarding) var onboarded: Bool = false
     @AppStorage(AppStorageConstants.login) var userLoggedIn: Bool = false
-    @AppStorage(AppStorageConstants.enigmaStarted) var enigmaStarted: Bool = false
+    @AppStorage(AppStorageConstants.enigmaStarted) var enigmaStarted: Bool = true /// TODO: false
     @StateObject var roomsVM: RoomsViewModel = RoomsViewModel()
     @StateObject var timerVM: TimerViewModel = TimerViewModel()
+    @StateObject var headerVM: HeaderRules = HeaderRules()
+
     var body: some View {
             if(onboarded) {
                 if(userLoggedIn) {
@@ -21,6 +23,7 @@ struct ContentView: View {
                             .navigationTitle("")
                             .navigationBarHidden(true)
                             .environmentObject(roomsVM)
+                            .environmentObject(headerVM)
                     } else {
                         TimeView()
                             .navigationTitle("")

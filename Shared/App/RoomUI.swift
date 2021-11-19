@@ -11,10 +11,11 @@ import AVKit
 import PopupView
 
 struct RoomUI: View {
-//    @StateObject var gameVM = GameViewModel(currentStatus: RoomsModel()) //journey: nil, room: Room(id: "asdfasdf", roomNo: "4", questionId: ["asdf"], media: "adsfadsf", title: "Room 5", starQuota: 34)
+    @StateObject var gameVM = GameViewModel(currentStatus: RoomsModel())
     @State var showHintConfirmation: Bool = false
     @EnvironmentObject var gameVM: GameViewModel
     var hintAction: () -> Void = {}
+    @State var dismissView: Bool = false
     
     var body: some View {
         ZStack {
