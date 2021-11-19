@@ -8,24 +8,24 @@
 import SwiftUI
 
 struct RoomProgressViewTile: View {
-    var room: RoomsModel
+    var room: RoomsModel?
     var width: CGFloat
     var isTop: Bool
     var body: some View {
         HStack(spacing: 0) {
             if isTop {
-                ProgressLine(width: width, color: room.journey?.roomStatus.color ?? .roomGrey, isSmooth: room.journey?.isSmooth ?? false,isTop: isTop)
+                ProgressLine(width: width, color: room?.journey?.roomStatus.color ?? .roomGrey, isSmooth: room?.journey?.isSmooth ?? false,isTop: isTop)
             }
             RoomProgressTile(room: room, width: width)
             if !isTop {
-                ProgressLine(width: width, color: room.journey?.roomStatus.color ?? .roomGrey, isSmooth: room.journey?.isSmooth ?? false,isTop: isTop)
+                ProgressLine(width: width, color: room?.journey?.roomStatus.color ?? .roomGrey, isSmooth: room?.journey?.isSmooth ?? false,isTop: isTop)
             }
         }
     }
 }
 
 struct RoomProgressTile: View {
-    var room: RoomsModel
+    var room: RoomsModel?
     var width: CGFloat
     var body: some View {
         VStack(spacing:0) {
@@ -42,14 +42,14 @@ struct RoomProgressTile: View {
                     .scaledToFit()
             }
             ZStack {
-                Circle().fill(room.journey?.roomStatus.color ?? .roomGrey)
-                Text("\(room.room?.roomNo ?? "")")
+                Circle().fill(room?.journey?.roomStatus.color ?? .roomGrey)
+                Text("\(room?.room?.roomNo ?? "")")
                     .font(.Mulish(size: 22, weight: .bold))
                     .minimumScaleFactor(0.1)
                     .foregroundColor(.black)
             }
             .aspectRatio(1, contentMode: .fit)
-            Text("\(room.room?.title ?? "Room")")
+            Text("\(room?.room?.title ?? "Room")")
                 .font(.Mulish(size: 22, weight: .bold))
                 .lineLimit(1)
                 .minimumScaleFactor(0.1)
@@ -62,9 +62,7 @@ struct RoomProgressTile: View {
 struct RoomProgressTile_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            RoomProgressTile(room: RoomsModel.data,width: 40)
-                .padding()
-                .background(Color.black)
+
             
             RoomProgressViewTile(room: RoomsModel.data, width: 40,isTop: true)
                 .padding()
@@ -74,6 +72,12 @@ struct RoomProgressTile_Previews: PreviewProvider {
                 .padding()
                 .background(Color.black)
             
+            VStack {
+                VerticalProgressLine(width: 40, color: .red, isSmooth: true)
+                RoomProgressTile(room: RoomsModel.data,width: 40)
+                    .padding()
+                    .background(Color.black)
+            }
             
         }
         .previewLayout(.sizeThatFits)
@@ -85,26 +89,38 @@ struct ProgressLine: View {
     var color: Color
     var isSmooth: Bool
     var isTop: Bool = true
-    var isVertical: Bool = false
     var body: some View {
         ZStack(alignment: .center) {
-            if isVertical {
-                VerticalLine()
-                    .stroke(style: isSmooth ? StrokeStyle(lineWidth: width * 0.04) : StrokeStyle(lineWidth: width * 0.04, dash: [3]))
-                    .fill(color)
-
-            } else {
+    
             Line()
                     .stroke(style: isSmooth ? StrokeStyle(lineWidth: width * 0.04) : StrokeStyle(lineWidth: width * 0.04, dash: [3]))
                     .fill(color)
 
-            }
             Arrow()
                 .stroke(style: StrokeStyle(lineWidth: width * 0.04, lineCap: .round))
                 .fill(color)
                 .rotationEffect(.degrees(isTop ? 0 : 180))
         }
         .frame(height: 10)
+    }
+}
+
+struct VerticalProgressLine: View {
+    var width: CGFloat
+    var color: Color
+    var isSmooth: Bool
+    var body: some View {
+    ZStack(alignment: .center) {
+                VerticalLine()
+                    .stroke(style: isSmooth ? StrokeStyle(lineWidth: width * 0.04) : StrokeStyle(lineWidth: width * 0.04, dash: [3]))
+                    .fill(color)
+            Arrow()
+                .stroke(style: StrokeStyle(lineWidth: width * 0.04, lineCap: .round))
+                .fill(color)
+                .rotationEffect(.degrees(90))
+                .frame(width: width/2, height: width)
+        }
+        .frame(width: width)
     }
 }
 
