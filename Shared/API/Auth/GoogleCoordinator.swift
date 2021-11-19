@@ -10,8 +10,8 @@ import GoogleSignIn
 
 // MARK: - SIGNIN WITH GOOGLE COORDINATOR
 
-class GoogleCoordinator: NSObject {
-    var authVM: AuthViewModel
+class GoogleCoordinator: NSObject, ObservableObject {
+    @Published var authVM: AuthViewModel
     let signInConfig: GIDConfiguration
     
     init(authVM: AuthViewModel) {

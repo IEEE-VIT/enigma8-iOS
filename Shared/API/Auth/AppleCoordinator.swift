@@ -9,13 +9,14 @@ import Foundation
 import AuthenticationServices
 import CryptoKit
 
-class AppleCoordinator: NSObject, ASAuthorizationControllerDelegate {
+class AppleCoordinator: NSObject, ASAuthorizationControllerDelegate, ObservableObject {
     
-    let authVM: AuthViewModel
+    @Published var authVM: AuthViewModel
     
     init(authVM: AuthViewModel){
         self.authVM = authVM
     }
+    
     private var currentNonce: String?
     
     func signInWithApple() {

@@ -42,6 +42,7 @@ class AuthViewModel: ObservableObject {
             UserDefaults.standard.setValue(response?.jwt , forKey: "EnigmaToken")
             self.isSignedIn = true
             self.isNew = response?.isNew ?? false
+            Logger.debug("ISNEW: \(self.isNew)")
             if(!self.isNew) {
                 self.userLoggedIn = true
             }
