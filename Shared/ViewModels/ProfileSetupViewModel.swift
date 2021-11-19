@@ -12,7 +12,7 @@ class ProfileSetupViewModel: ObservableObject {
     
     @AppStorage(AppStorageConstants.login) var userSetUp: Bool = false
     @Published var username: String = ""
-    var surveyOptions: [String] = ["Social Media", "Friends", "Other"]
+    var surveyOptions: [String] = ["Instagram", "Facebook", "Reddit", "LinkedIn", "Discord", "Word of mouth", "Other"]
     @Published var isCollegeStudent: Int = 1
     var errorMessage: String? = nil
     static let countRule = "minimum 8 characters"

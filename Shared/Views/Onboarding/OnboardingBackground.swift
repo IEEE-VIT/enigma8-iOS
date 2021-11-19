@@ -10,6 +10,7 @@ import SwiftUI
 struct OnboardingBackground: View {
     var body: some View {
         Image(ImageConstants.onboardingBG).resizable().scaledToFill()
+            .edgesIgnoringSafeArea(.bottom)
     }
 }
 

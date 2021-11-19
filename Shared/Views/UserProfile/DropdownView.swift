@@ -34,7 +34,8 @@ struct DropdownView: View {
             .border(LinearGradient.gold,width:2)
         }
         .foregroundColor(Color.white)
-        .padding(.top)
+        .padding(isExpanded ? .top : .vertical)
+        .accentColor(.eGold)
         .background(Color.eBlack)
         .border(LinearGradient.gold,width:2)
         .onChange(of: self.isExpanded) { expanded in
