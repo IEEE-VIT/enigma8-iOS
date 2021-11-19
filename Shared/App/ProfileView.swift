@@ -8,43 +8,54 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @AppStorage("userLoggedIn") var isLoggedIn: Bool = true
     @EnvironmentObject var userVM: RoomsViewModel
     var body: some View {
         VStack {
-            HStack {
-                NavigationLink(destination: ContentView()) {
-                    Image(systemName: "lock.circle.fill")
-                        .scaleEffect(2)
-                    //                        .padding()
-                        .foregroundColor(Color.black)
+            ProfileViewHeader()
+            Spacer()
+            ScrollView {
+                VStack(alignment: .leading) {
+                    HStack {
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text("Username: ")
+                            Text("Score: ")
+                            Text("Leaderboard Ranking: ")
+                            Text("Stars Earned: ")
+                            Text("Email: ")
+                        }
+                        .foregroundColor(Color.eGold)
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text(self.userVM.user?.username ?? "username")
+                            Text("\(self.userVM.user?.score ?? 0)")
+                            Text("\(self.userVM.user?.rank ?? 0)")
+                            Text("\(self.userVM.user?.stars ?? 0)")
+                            Text(self.userVM.user?.email ?? "email@email.com")
+                        }
+                        .foregroundColor(Color.eBlue)
+                        Spacer()
+                    }
+                    .font(.Mulish(size: 14, weight: .semibold))
                 }
+                .padding()
+                Text("PROGRESS")
+                    .font(.Mulish(size:14, weight: .regular))
+                    .foregroundColor(Color.eGold)
+               
+                RoomProgressView(width: UIScreen.main.bounds.width * 0.88)
                 Spacer()
-            }
-            // TODO: REPLACE WITH NAVIGATION TITLE
-            Text("MY PROFILE")
-                .font(.largeTitle)
+                // TODO: WRAP IN NAVIGATION LINK, DESTINATION LOGINVIEW
+                HStack {
+                    CustomButton(buttonText:"LOGOUT", action: {
+                        isLoggedIn = false
+                    })
+                }
                 .padding()
-            Spacer()
-            VStack(alignment: .leading, spacing: 10) {
-                Text("Username: \(self.userVM.user?.username ?? "")")
-                Text("Score: \(self.userVM.user?.score ?? 0)")
-                Text("Leaderboard Ranking: \(self.userVM.user?.rank ?? 0)")
-                Text("Stars Earned: \(self.userVM.user?.stars ?? 0)")
-                Text("Email: \(self.userVM.user?.email ?? "")")
+                
             }
-            Spacer()
-            RoomProgressView()
-                .padding()
-            // TODO: WRAP IN NAVIGATION LINK, DESTINATION LOGINVIEW
-            HStack {
-                Spacer(minLength: 100)
-                CustomButton(buttonText: "LOGOUT", action: {})
-                Spacer(minLength: 100)
-            }
-            .padding()
-            
         }
         .padding()
+        .background(Image("UserProfileViewBG").resizable().scaledToFit())
     }
 }
 

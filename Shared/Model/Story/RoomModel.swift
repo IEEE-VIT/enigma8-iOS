@@ -93,9 +93,12 @@ struct Journey: Codable, Hashable {
     }
     
     var isSmooth : Bool {
-        return questionsStatus == Array(repeating: .solved, count: 3)
+        return roomStatus == .solved
     }
     
+    var showArrow: Bool {
+        return (roomStatus == .solved) || (roomStatus == .unlocked)
+    }
 }
 
 enum PowerupUsed: String, Codable {
@@ -130,6 +133,14 @@ enum questionStatus: String, Codable {
             return .roomGrey
         case .unlocked:
             return .roomBlue
+        }
+    }
+    
+    var progressImage: String {
+        if self == .solved {
+            return "Key"
+        } else {
+            return "unsolved_key"
         }
     }
 }

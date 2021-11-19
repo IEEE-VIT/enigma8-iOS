@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 class ProfileSetupViewModel: ObservableObject {
+    
     @AppStorage(AppStorageConstants.login) var userSetUp: Bool = false
     @Published var username: String = ""
     var surveyOptions: [String] = ["Social Media", "Friends", "Other"]
@@ -39,7 +40,7 @@ class ProfileSetupViewModel: ObservableObject {
     
     // CHECK
     func setupProfile() {
-        let request = ProfileSetupModel.Request(username: username, isCollegeStudent: boolIsCollege, outreach: outreach)
+        let request = ProfileSetupModel.Request(username: username, outreach: outreach)
         APIClient.request(fromRouter: .profileSetup(request)) { (response: ProfileSetupModel.Response?,error) in
             if let error = error {
                 self.errorMessage = error.debugDescription

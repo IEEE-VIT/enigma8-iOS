@@ -11,60 +11,29 @@ struct HeaderNavView: View {
     @State var tabSelected = 0
     @EnvironmentObject var rooms : RoomsViewModel
     var body: some View {
-        VStack(spacing: 0) {
+        VStack {
             EnigmaHeader()
-            TabView(selection: $tabSelected) {
-                RoomsView()
-                    .navigationTitle("")
-                    .navigationBarHidden(true)
-                    .tabItem {
-                        VStack {
-                            Image(systemName: "house")
-                            Text("Home")
-                                .font(.system(size:10))
-                        }
-                    }
-                    .tag(0)
+            switch(tabSelected){
+            case 0:
+                RoomsView(rooms: _rooms)
+            case 1:
                 LeaderboardView()
-                    .navigationTitle("")
-                    .navigationBarHidden(true)
-                    .tabItem {
-                        VStack {
-                            Image(systemName: "chart.bar")
-                            Text("Leaderboard")
-                                .font(.system(size: 10))
-                        }
-                    }
-                    .tag(1)
+            case 2:
                 FullStoryView(storyViewModel: StoryViewModel(roomId: ""))
-                    .navigationTitle("")
-                    .navigationBarHidden(true)
-                    .tabItem {
-                        VStack {
-                            Image(systemName: "book")
-                            Text("Story")
-                                .font(.system(size:10))
-                        }
-                    }
-                    .tag(2)
+            case 3:
                 ProfileView()
-                    .navigationTitle("")
-                    .navigationBarHidden(true)
-                    .tabItem {
-                        VStack {
-                            Image(systemName: "person.crop.circle")
-                            Text("Profile")
-                                .font(.system(size: 10))
-                        }
-                    }
-                    .tag(3)
+            default:
+                LoginView(authVM: AuthViewModel())
             }
+                EnigmaTabView(tabSelected: $tabSelected)
         }
+        
     }
 }
 
 struct HeaderNavView_Previews: PreviewProvider {
     static var previews: some View {
         HeaderNavView()
+            .environmentObject(RoomsViewModel())
     }
 }

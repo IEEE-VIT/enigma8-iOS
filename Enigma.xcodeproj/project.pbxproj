@@ -15,11 +15,9 @@
 		312667512700BC3F009834E9 /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 312667502700BC3F009834E9 /* SwiftyBeaver */; };
 		314D79B9270C685A003C2F8A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314D79B8270C685A003C2F8A /* LoginView.swift */; };
 		314D79BF270C6C29003C2F8A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314D79BE270C6C29003C2F8A /* CustomButton.swift */; };
+		317277DA2746A11600207257 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317277D92746A11600207257 /* TabView.swift */; };
 		317DAB372742225A00F6FD1F /* HeaderNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317DAB362742225A00F6FD1F /* HeaderNavView.swift */; };
 		317DAB3A274263A700F6FD1F /* RoomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317DAB39274263A700F6FD1F /* RoomProgressView.swift */; };
-		317DAB3C2742686900F6FD1F /* RoomProgressViewLine1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317DAB3B2742686900F6FD1F /* RoomProgressViewLine1.swift */; };
-		317DAB3E274272BF00F6FD1F /* RoomProgressViewLine2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317DAB3D274272BF00F6FD1F /* RoomProgressViewLine2.swift */; };
-		317DAB402742848D00F6FD1F /* RoomProgressComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317DAB3F2742848D00F6FD1F /* RoomProgressComponents.swift */; };
 		318BCCA32733FC0600E0B6F3 /* StoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BCCA22733FC0600E0B6F3 /* StoryViewModel.swift */; };
 		318BCCA7273422DE00E0B6F3 /* CurrentStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BCCA6273422DE00E0B6F3 /* CurrentStoryView.swift */; };
 		318DB9852738FCFA000AB95A /* RoomTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB9842738FCFA000AB95A /* RoomTile.swift */; };
@@ -46,6 +44,11 @@
 		31CEEDA12715C38900298399 /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CEEDA02715C38900298399 /* DropdownView.swift */; };
 		31CEEDA32715C5A900298399 /* ProfileSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CEEDA22715C5A900298399 /* ProfileSetupView.swift */; };
 		31CEEDA92715E62400298399 /* RadioGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CEEDA82715E62400298399 /* RadioGroupView.swift */; };
+		31D34D682746303D002CC921 /* InstructionsCommonHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D34D672746303D002CC921 /* InstructionsCommonHeader.swift */; };
+		31D34D6A2746482C002CC921 /* RoomStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D34D692746482C002CC921 /* RoomStates.swift */; };
+		31D34D6C2746499A002CC921 /* RoomStatesTorches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D34D6B2746499A002CC921 /* RoomStatesTorches.swift */; };
+		31D34D6E27464DCB002CC921 /* LetsPlayIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D34D6D27464DCB002CC921 /* LetsPlayIcons.swift */; };
+		31D34D7127465F29002CC921 /* ProfileViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D34D7027465F29002CC921 /* ProfileViewHeader.swift */; };
 		31D55DE1271768D80068A8AF /* SetupProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D55DE0271768D80068A8AF /* SetupProfileModel.swift */; };
 		31D994632701EBB000E506D9 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D994612701EBB000E506D9 /* APIClient.swift */; };
 		31D994642701EBB000E506D9 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31D994612701EBB000E506D9 /* APIClient.swift */; };
@@ -60,7 +63,8 @@
 		4E7A5CDC2700FBBF0058CAB9 /* KFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A5CDB2700FBBF0058CAB9 /* KFManager.swift */; };
 		4E7A5CDD2700FBBF0058CAB9 /* KFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A5CDB2700FBBF0058CAB9 /* KFManager.swift */; };
 		4E83F15427463FAD008F693E /* RoomProgressTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E83F15327463FAD008F693E /* RoomProgressTile.swift */; };
-		4E83F15C2746DA80008F693E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E83F15B2746DA80008F693E /* GoogleService-Info.plist */; };
+		4E83F157274685EE008F693E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E83F156274685EE008F693E /* NotificationManager.swift */; };
+		4E83F1622747839E008F693E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E83F1612747839E008F693E /* GoogleService-Info.plist */; };
 		4E944D3327436FCF00DC14B4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E944D3227436FCF00DC14B4 /* Constants.swift */; };
 		4E944D3527437CF800DC14B4 /* OnboardingBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E944D3427437CF800DC14B4 /* OnboardingBackground.swift */; };
 		4E944D392743845F00DC14B4 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E944D382743845F00DC14B4 /* CustomLabel.swift */; };
@@ -126,11 +130,9 @@
 		3126674D2700B91E009834E9 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		314D79B8270C685A003C2F8A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		314D79BE270C6C29003C2F8A /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		317277D92746A11600207257 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		317DAB362742225A00F6FD1F /* HeaderNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderNavView.swift; sourceTree = "<group>"; };
 		317DAB39274263A700F6FD1F /* RoomProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomProgressView.swift; sourceTree = "<group>"; };
-		317DAB3B2742686900F6FD1F /* RoomProgressViewLine1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomProgressViewLine1.swift; sourceTree = "<group>"; };
-		317DAB3D274272BF00F6FD1F /* RoomProgressViewLine2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomProgressViewLine2.swift; sourceTree = "<group>"; };
-		317DAB3F2742848D00F6FD1F /* RoomProgressComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomProgressComponents.swift; sourceTree = "<group>"; };
 		318BCCA22733FC0600E0B6F3 /* StoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewModel.swift; sourceTree = "<group>"; };
 		318BCCA6273422DE00E0B6F3 /* CurrentStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentStoryView.swift; sourceTree = "<group>"; };
 		318DB9842738FCFA000AB95A /* RoomTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTile.swift; sourceTree = "<group>"; };
@@ -157,6 +159,11 @@
 		31CEEDA02715C38900298399 /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
 		31CEEDA22715C5A900298399 /* ProfileSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSetupView.swift; sourceTree = "<group>"; };
 		31CEEDA82715E62400298399 /* RadioGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioGroupView.swift; sourceTree = "<group>"; };
+		31D34D672746303D002CC921 /* InstructionsCommonHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsCommonHeader.swift; sourceTree = "<group>"; };
+		31D34D692746482C002CC921 /* RoomStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomStates.swift; sourceTree = "<group>"; };
+		31D34D6B2746499A002CC921 /* RoomStatesTorches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomStatesTorches.swift; sourceTree = "<group>"; };
+		31D34D6D27464DCB002CC921 /* LetsPlayIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetsPlayIcons.swift; sourceTree = "<group>"; };
+		31D34D7027465F29002CC921 /* ProfileViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewHeader.swift; sourceTree = "<group>"; };
 		31D55DE0271768D80068A8AF /* SetupProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileModel.swift; sourceTree = "<group>"; };
 		31D994612701EBB000E506D9 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		31D994622701EBB000E506D9 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -166,7 +173,9 @@
 		4E7A5CD82700FBA10058CAB9 /* PodHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodHelper.swift; sourceTree = "<group>"; };
 		4E7A5CDB2700FBBF0058CAB9 /* KFManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KFManager.swift; sourceTree = "<group>"; };
 		4E83F15327463FAD008F693E /* RoomProgressTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomProgressTile.swift; sourceTree = "<group>"; };
-		4E83F15B2746DA80008F693E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4E83F156274685EE008F693E /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		4E83F15827468675008F693E /* Enigma (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Enigma (iOS).entitlements"; sourceTree = "<group>"; };
+		4E83F1612747839E008F693E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4E944D3227436FCF00DC14B4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4E944D3427437CF800DC14B4 /* OnboardingBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingBackground.swift; sourceTree = "<group>"; };
 		4E944D382743845F00DC14B4 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
@@ -275,6 +284,7 @@
 				8C73DAC6272E8A04009943BE /* NotificationsView.swift */,
 				3104C7C32735102000B1C155 /* ProfileView.swift */,
 				317DAB362742225A00F6FD1F /* HeaderNavView.swift */,
+				317277D92746A11600207257 /* TabView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -282,6 +292,7 @@
 		314D79BA270C6BBC003C2F8A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				31D34D6F27465F15002CC921 /* Profile */,
 				8CB248502742A57A0063522F /* Onboarding */,
 				317DAB382742639600F6FD1F /* ProfileView */,
 				318DB98A27392508000AB95A /* FullStoryView */,
@@ -318,9 +329,6 @@
 			isa = PBXGroup;
 			children = (
 				317DAB39274263A700F6FD1F /* RoomProgressView.swift */,
-				317DAB3B2742686900F6FD1F /* RoomProgressViewLine1.swift */,
-				317DAB3D274272BF00F6FD1F /* RoomProgressViewLine2.swift */,
-				317DAB3F2742848D00F6FD1F /* RoomProgressComponents.swift */,
 				4E83F15327463FAD008F693E /* RoomProgressTile.swift */,
 			);
 			path = ProfileView;
@@ -363,6 +371,7 @@
 		3196110E270207700030901E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				4E83F155274685E2008F693E /* Manager */,
 				4E944D3127436FAB00DC14B4 /* Constants */,
 				8CB81457274284C700E19DEE /* Fonts */,
 				3196110F270207770030901E /* Extensions */,
@@ -408,6 +417,10 @@
 				31C13205271D560F00BD5301 /* Powerups.swift */,
 				31C13207271D561F00BD5301 /* LetsPlay.swift */,
 				31C1320B271D56BA00BD5301 /* InstructionsHeader.swift */,
+				31D34D672746303D002CC921 /* InstructionsCommonHeader.swift */,
+				31D34D692746482C002CC921 /* RoomStates.swift */,
+				31D34D6B2746499A002CC921 /* RoomStatesTorches.swift */,
+				31D34D6D27464DCB002CC921 /* LetsPlayIcons.swift */,
 			);
 			path = Instructions;
 			sourceTree = "<group>";
@@ -437,6 +450,14 @@
 			path = UserProfile;
 			sourceTree = "<group>";
 		};
+		31D34D6F27465F15002CC921 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				31D34D7027465F29002CC921 /* ProfileViewHeader.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		31D994602701EBB000E506D9 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -464,6 +485,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		4E83F155274685E2008F693E /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				4E83F156274685EE008F693E /* NotificationManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		4E944D3127436FAB00DC14B4 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -475,6 +504,7 @@
 		4EC3E46726E7DCC80049AD99 = {
 			isa = PBXGroup;
 			children = (
+				4E83F15827468675008F693E /* Enigma (iOS).entitlements */,
 				4EC3E46C26E7DCC90049AD99 /* Shared */,
 				4EC3E47626E7DCCA0049AD99 /* iOS */,
 				4EC3E47D26E7DCCA0049AD99 /* macOS */,
@@ -512,7 +542,7 @@
 		4EC3E47626E7DCCA0049AD99 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				4E83F15B2746DA80008F693E /* GoogleService-Info.plist */,
+				4E83F1612747839E008F693E /* GoogleService-Info.plist */,
 				4EC3E47726E7DCCA0049AD99 /* Info.plist */,
 			);
 			path = iOS;
@@ -731,7 +761,7 @@
 				8CB248552742AF1E0063522F /* Launch Screen.storyboard in Resources */,
 				8CB8145B2742851D00E19DEE /* Mulish-Bold.ttf in Resources */,
 				4EC3E48426E7DCCA0049AD99 /* Assets.xcassets in Resources */,
-				4E83F15C2746DA80008F693E /* GoogleService-Info.plist in Resources */,
+				4E83F1622747839E008F693E /* GoogleService-Info.plist in Resources */,
 				8CB8145C2742851D00E19DEE /* Mulish-Regular.ttf in Resources */,
 				8CB8145D2742851D00E19DEE /* Mulish-SemiBold.ttf in Resources */,
 			);
@@ -762,6 +792,7 @@
 				4E7A5CDC2700FBBF0058CAB9 /* KFManager.swift in Sources */,
 				31C1320A271D567000BD5301 /* ScoringSystem.swift in Sources */,
 				31D994632701EBB000E506D9 /* APIClient.swift in Sources */,
+				31D34D7127465F29002CC921 /* ProfileViewHeader.swift in Sources */,
 				318DB98927391790000AB95A /* FullStoryView.swift in Sources */,
 				31C13206271D560F00BD5301 /* Powerups.swift in Sources */,
 				8CEF83E92712F17900E96E2E /* StoryBubble.swift in Sources */,
@@ -771,12 +802,14 @@
 				3104C7C227350F5900B1C155 /* UserModel.swift in Sources */,
 				8CC128B82705D619000483AB /* TimerViewModel.swift in Sources */,
 				3104C7C82735285200B1C155 /* RoomsViewModel.swift in Sources */,
+				31D34D6C2746499A002CC921 /* RoomStatesTorches.swift in Sources */,
 				4E944D3B2743911C00DC14B4 /* Gradient.swift in Sources */,
 				4EC66BA4274502A700CAF970 /* EnigmaLogo.swift in Sources */,
 				319611112702078E0030901E /* Data.swift in Sources */,
 				318BCCA32733FC0600E0B6F3 /* StoryViewModel.swift in Sources */,
 				31C13214271D72CC00BD5301 /* FeedbackQuestionAnswerBlock.swift in Sources */,
 				318DB9852738FCFA000AB95A /* RoomTile.swift in Sources */,
+				31D34D6E27464DCB002CC921 /* LetsPlayIcons.swift in Sources */,
 				3104C7C6273513B500B1C155 /* ProfileViewModel.swift in Sources */,
 				8CB81465274285AB00E19DEE /* Fonts.swift in Sources */,
 				31C13216271D738C00BD5301 /* CustomTextEditor.swift in Sources */,
@@ -792,12 +825,13 @@
 				8CB59C4C2733EBE500DDD725 /* LeaderboardViewModel.swift in Sources */,
 				8CB248522742A5920063522F /* OnboardingPageView.swift in Sources */,
 				4EC3E48226E7DCCA0049AD99 /* ContentView.swift in Sources */,
+				31D34D6A2746482C002CC921 /* RoomStates.swift in Sources */,
 				8C73DACE272E9897009943BE /* NotificationView.swift in Sources */,
-				317DAB3C2742686900F6FD1F /* RoomProgressViewLine1.swift in Sources */,
 				8C73DAC7272E8A04009943BE /* NotificationsView.swift in Sources */,
 				31C13211271D6D6500BD5301 /* FeedbackUI.swift in Sources */,
 				4E944D3327436FCF00DC14B4 /* Constants.swift in Sources */,
 				31C13202271D55F000BD5301 /* GameMechanics.swift in Sources */,
+				31D34D682746303D002CC921 /* InstructionsCommonHeader.swift in Sources */,
 				3104C7C42735102000B1C155 /* ProfileView.swift in Sources */,
 				31A266612718A1C6005B1A17 /* RoomsView.swift in Sources */,
 				8CEEE0172736F9CF00CD06AB /* SafariView.swift in Sources */,
@@ -814,13 +848,13 @@
 				4E944D3527437CF800DC14B4 /* OnboardingBackground.swift in Sources */,
 				4E7A5CD52700FB5C0058CAB9 /* Logger.swift in Sources */,
 				318DB98C27392525000AB95A /* RoomWiseStory.swift in Sources */,
+				317277DA2746A11600207257 /* TabView.swift in Sources */,
 				8CAC2B7027103B39008049D3 /* TimeView.swift in Sources */,
 				31C13208271D561F00BD5301 /* LetsPlay.swift in Sources */,
 				8C1F5E4B273592D2001D8CCE /* PowerupRow.swift in Sources */,
 				4EB111DE2744E5E000632784 /* NotificationBackground.swift in Sources */,
+				4E83F157274685EE008F693E /* NotificationManager.swift in Sources */,
 				4E944D392743845F00DC14B4 /* CustomLabel.swift in Sources */,
-				317DAB3E274272BF00F6FD1F /* RoomProgressViewLine2.swift in Sources */,
-				317DAB402742848D00F6FD1F /* RoomProgressComponents.swift in Sources */,
 				8C73DACB272E8E88009943BE /* NotificationModel.swift in Sources */,
 				8CC128B4270301C1000483AB /* TimerModel.swift in Sources */,
 				4E7A5CD92700FBA10058CAB9 /* PodHelper.swift in Sources */,
@@ -975,6 +1009,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Enigma (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F8CHS6PHQS;
 				ENABLE_PREVIEWS = YES;
@@ -997,6 +1032,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Enigma (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F8CHS6PHQS;
 				ENABLE_PREVIEWS = YES;
@@ -1032,7 +1068,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ak.Enigma;
+				PRODUCT_BUNDLE_IDENTIFIER = ieee.Enigma;
 				PRODUCT_NAME = Enigma;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
@@ -1056,7 +1092,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ak.Enigma;
+				PRODUCT_BUNDLE_IDENTIFIER = ieee.Enigma;
 				PRODUCT_NAME = Enigma;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;

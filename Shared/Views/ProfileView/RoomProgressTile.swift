@@ -14,11 +14,11 @@ struct RoomProgressViewTile: View {
     var body: some View {
         HStack(spacing: 0) {
             if isTop {
-                ProgressLine(width: width, color: room?.journey?.roomStatus.color ?? .roomGrey, isSmooth: room?.journey?.isSmooth ?? false,isTop: isTop)
+                ProgressLine(width: width, color: room?.journey?.roomStatus.color ?? .roomGrey, isSmooth: room?.journey?.isSmooth ?? false,isTop: isTop,showArrow: room?.journey?.showArrow ?? false)
             }
             RoomProgressTile(room: room, width: width)
             if !isTop {
-                ProgressLine(width: width, color: room?.journey?.roomStatus.color ?? .roomGrey, isSmooth: room?.journey?.isSmooth ?? false,isTop: isTop)
+                ProgressLine(width: width, color: room?.journey?.roomStatus.color ?? .roomGrey, isSmooth: room?.journey?.isSmooth ?? false,isTop: isTop,showArrow: room?.journey?.showArrow ?? false)
             }
         }
     }
@@ -30,14 +30,14 @@ struct RoomProgressTile: View {
     var body: some View {
         VStack(spacing:0) {
             HStack {
-                Image("Key")
+                Image(room?.journey?.questionsStatus?[0].progressImage ?? "unsolved_key")
                     .resizable()
                     .scaledToFit()
-                Image("Key")
+                Image(room?.journey?.questionsStatus?[1].progressImage ?? "unsolved_key")
                     .resizable()
                     .scaledToFit()
                     .offset(y: -6)
-                Image("Key")
+                Image(room?.journey?.questionsStatus?[2].progressImage ?? "unsolved_key")
                     .resizable()
                     .scaledToFit()
             }
@@ -89,17 +89,19 @@ struct ProgressLine: View {
     var color: Color
     var isSmooth: Bool
     var isTop: Bool = true
+    var showArrow: Bool = false
     var body: some View {
         ZStack(alignment: .center) {
     
             Line()
                     .stroke(style: isSmooth ? StrokeStyle(lineWidth: width * 0.04) : StrokeStyle(lineWidth: width * 0.04, dash: [3]))
                     .fill(color)
-
+            if showArrow {
             Arrow()
                 .stroke(style: StrokeStyle(lineWidth: width * 0.04, lineCap: .round))
                 .fill(color)
                 .rotationEffect(.degrees(isTop ? 0 : 180))
+            }
         }
         .frame(height: 10)
     }
@@ -109,16 +111,21 @@ struct VerticalProgressLine: View {
     var width: CGFloat
     var color: Color
     var isSmooth: Bool
+    var showArrow: Bool = false
+
     var body: some View {
     ZStack(alignment: .center) {
                 VerticalLine()
                     .stroke(style: isSmooth ? StrokeStyle(lineWidth: width * 0.04) : StrokeStyle(lineWidth: width * 0.04, dash: [3]))
                     .fill(color)
+        if showArrow {
             Arrow()
                 .stroke(style: StrokeStyle(lineWidth: width * 0.04, lineCap: .round))
                 .fill(color)
                 .rotationEffect(.degrees(90))
+                .scaledToFit()
                 .frame(width: width/2, height: width)
+        }
         }
         .frame(width: width)
     }

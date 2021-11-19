@@ -30,7 +30,7 @@ final class SignUpModel {
         }
         
         private enum CodingKeys: String, CodingKey {
-            case code = "id_token"
+            case access_token = "token"
         }
     }
     
