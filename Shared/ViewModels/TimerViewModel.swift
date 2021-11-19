@@ -10,7 +10,7 @@ import SwiftUI
 
 class TimerViewModel: ObservableObject {
     
-    @Published var navigateToRooms: Bool = false
+    @AppStorage(AppStorageConstants.enigmaStarted) var enigmaStarted: Bool = false
     @Published var enigmaDate: Date? = nil
     @Published var enigmaDateComponents: DateComponents = DateComponents()
     @Published var started: Bool = false
@@ -22,7 +22,7 @@ class TimerViewModel: ObservableObject {
     func getLeftTime() {
         APIClient.request(fromRouter: .timer) { (response: TimerResponse?, error) in
             guard let response = response else { return }
-            self.started = response.started
+            self.started = true//response.started
             self.enigmaDate = response.enigmaDate
         }
     }

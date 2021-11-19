@@ -10,12 +10,13 @@ import SwiftUI
 struct ContentView: View {
     @AppStorage(AppStorageConstants.onboarding) var onboarded: Bool = false
     @AppStorage(AppStorageConstants.login) var userLoggedIn: Bool = false
+    @AppStorage(AppStorageConstants.enigmaStarted) var enigmaStarted: Bool = false
     @StateObject var roomsVM: RoomsViewModel = RoomsViewModel()
     @StateObject var timerVM: TimerViewModel = TimerViewModel()
     var body: some View {
             if(onboarded) {
                 if(userLoggedIn) {
-                    if(timerVM.started && timerVM.navigateToRooms) {
+                    if(enigmaStarted) {
                         HeaderNavView()
                             .navigationTitle("")
                             .navigationBarHidden(true)
