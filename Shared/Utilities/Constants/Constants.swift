@@ -20,6 +20,7 @@ struct ImageConstants {
     static let back = "Back"
     static let timer = "timerBanner"
     static let hint = "Hint"
+    static let roomBG = "homeBG"
 }
 
 struct AppStorageConstants {

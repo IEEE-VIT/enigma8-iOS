@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CurrentStoryView: View {
     @StateObject var storyVM: StoryViewModel
+    @EnvironmentObject var gameVM: GameViewModel
     var body: some View {
         VStack {
             ScrollView {
@@ -20,18 +21,19 @@ struct CurrentStoryView: View {
                     .onChange(of: storyVM.storySoFar.count) { _ in
                         Logger.debug("\(storyVM.storySoFar.count)")
                         withAnimation{
-                        sr.scrollTo(storyVM.storySoFar.last?.id)
+                            sr.scrollTo(storyVM.storySoFar.last?.id)
                         }
                     }
                 }
             }
             
             //TODO: EMBED IN NAVLINK. ISACTIVE: storyVM.roomComplete
-            CustomButton(buttonText: storyVM.buttonTitle, action: storyVM.updateCurrentStory,bgroundColor: .eGold)
+            NavigationLink(destination: RoomUI().environmentObject(gameVM), isActive: $storyVM.roomComplete) { EmptyView() }
+                CustomButton(buttonText: storyVM.buttonTitle, action: storyVM.updateCurrentStory,bgroundColor: .eGold)
         }
         .background(Image(ImageConstants.storyBG).resizable()
                         .scaledToFill().edgesIgnoringSafeArea(.all))
-
+        
         .onAppear {
             storyVM.getStory()
         }

@@ -17,7 +17,6 @@ struct RoomsView: View {
     @EnvironmentObject var rooms : RoomsViewModel
     
     var body: some View {
-        NavigationView {
             VStack {
                 NavigationLink(destination: PowerupView(powerupVM: GameViewModel(currentStatus: rooms.toRoom)), isActive: $rooms.navigateToPowerups) {EmptyView() } // TODO
                 RoomsHeader()
@@ -33,7 +32,8 @@ struct RoomsView: View {
                                             rooms.roomUnlocked = true
                                             rooms.powerUpSelected = room.journey?.powerupId == nil ? false : true
                                             rooms.toRoom = room
-                                            rooms.navigateToPowerups = true
+                                            rooms.navigateToPowerups = !rooms.powerUpSelected
+                                            rooms.navigateToRoom = rooms.powerUpSelected
                                         } else {
                                             rooms.roomSolved = true
                                             rooms.presentRoomLocked = true
@@ -44,22 +44,22 @@ struct RoomsView: View {
                                 }
                         }
                     }
+                    .background(Image(ImageConstants.roomBG).resizable().scaledToFit().frame(width: UIScreen.main.bounds.width, alignment: .top))
                 }
             }
-            .padding(20)
+            .padding([.horizontal,.top],8)
+            
             .popup(isPresented: $rooms.presentRoomLocked, animation: Animation.spring()) {
                 EnigmaAlert(text: rooms.roomSolved ? "You have already solved this room!" : "You require \(rooms.starsNeeded) number of keys to unlock this", confirmAction: {rooms.presentRoomLocked.toggle()})
             }
             .fullScreenCover(isPresented: $rooms.navigateToRoom, content: {
-                RoomUI(gameVM: GameViewModel(currentStatus: rooms.toRoom))
+                RoomUI().environmentObject(GameViewModel(currentStatus: rooms.toRoom))
             })
             .onAppear {
                 rooms.fetchAllInfo()
-            }.navigationBarTitle("Enigma", displayMode: .automatic)
+            }
+            .navigationBarTitle("")
                 .navigationBarHidden(true)
-        }
-        .navigationViewStyle(StackNavigationViewStyle())
-        .navigationBarHidden(true)//both hiddens required
     }
 }
 
