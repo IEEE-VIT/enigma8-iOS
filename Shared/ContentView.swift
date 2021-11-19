@@ -11,6 +11,7 @@ struct ContentView: View {
     @AppStorage(AppStorageConstants.onboarding) var onboarded: Bool = false
     @AppStorage(AppStorageConstants.login) var userLoggedIn: Bool = false
     @AppStorage(AppStorageConstants.enigmaStarted) var enigmaStarted: Bool = true /// TODO: false
+    @AppStorage(AppStorageConstants.instructionsShown) var instructionsShown: Bool = false
     @StateObject var roomsVM: RoomsViewModel = RoomsViewModel()
     @StateObject var timerVM: TimerViewModel = TimerViewModel()
     @StateObject var headerVM: HeaderRules = HeaderRules()
@@ -19,11 +20,15 @@ struct ContentView: View {
             if(onboarded) {
                 if(userLoggedIn) {
                     if(enigmaStarted) {
-                        HeaderNavView()
-                            .navigationTitle("")
-                            .navigationBarHidden(true)
-                            .environmentObject(roomsVM)
-                            .environmentObject(headerVM)
+                        if(instructionsShown) {
+                            HeaderNavView()
+                                .navigationTitle("")
+                                .navigationBarHidden(true)
+                                .environmentObject(roomsVM)
+                                .environmentObject(headerVM)
+                        } else {
+                            InstructionsView()
+                        }
                     } else {
                         TimeView()
                             .navigationTitle("")

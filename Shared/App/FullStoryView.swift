@@ -14,14 +14,16 @@ struct FullStoryView: View {
            StoryHeader()
                 .padding()
             ScrollView {
-                    if storyViewModel.fullStoryRoomwise.count > 0 {
-                        ForEach(0..<storyViewModel.fullStoryRoomwise.count) { index in
-                            RoomWiseStory(roomStory: storyViewModel.fullStoryRoomwise["\(index+1)"] ?? [])
+                ScrollViewReader { sr in
+                        if storyViewModel.fullStoryRoomwise.count > 0 {
+                            ForEach(storyViewModel.fullStoryRoomwise) { story in
+                                RoomWiseStory(roomStory: storyViewModel.fullStoryRoomwise["\(index+1)"] ?? []).id(story.id)
+                            }
+                        } else {
+                            Spacer()
+                            Text("Loading Stories!")
+                            Spacer()
                         }
-                    } else {
-                        Spacer()
-                        Text("Loading Stories!")
-                        Spacer()
                     }
                 }
                 .onAppear{

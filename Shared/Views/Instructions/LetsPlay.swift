@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LetsPlay: View {
+    @AppStorage(AppStorageConstants.instructionsShown) var instructionsShown: Bool = false
     var body: some View {
         VStack {
             VStack(alignment: .center, spacing: 20) {
@@ -30,7 +31,7 @@ struct LetsPlay: View {
                 LetsPlayIcons()
                 Spacer()
                 HStack {
-                    CustomButton(buttonText: "Next")
+                    CustomButton(buttonText: "Next", action: {self.instructionsShown = true})
                 }
                 Spacer()
             }
