@@ -41,8 +41,9 @@ struct ProfileView: View {
                 Text("PROGRESS")
                     .font(.Mulish(size:14, weight: .regular))
                     .foregroundColor(Color.eGold)
+               
+                RoomProgressView(width: UIScreen.main.bounds.width * 0.88)
                 Spacer()
-                //TODO: ADD PROGRESSVIEW
                 // TODO: WRAP IN NAVIGATION LINK, DESTINATION LOGINVIEW
                 HStack {
                     CustomButton(buttonText:"LOGOUT", action: {

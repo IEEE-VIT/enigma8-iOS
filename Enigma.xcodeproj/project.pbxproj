@@ -18,6 +18,7 @@
 		317277DA2746A11600207257 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317277D92746A11600207257 /* TabView.swift */; };
 		317277E32746AF5C00207257 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 317277E22746AF5C00207257 /* GoogleService-Info.plist */; };
 		317DAB372742225A00F6FD1F /* HeaderNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317DAB362742225A00F6FD1F /* HeaderNavView.swift */; };
+		317DAB3A274263A700F6FD1F /* RoomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317DAB39274263A700F6FD1F /* RoomProgressView.swift */; };
 		318BCCA32733FC0600E0B6F3 /* StoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BCCA22733FC0600E0B6F3 /* StoryViewModel.swift */; };
 		318BCCA7273422DE00E0B6F3 /* CurrentStoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BCCA6273422DE00E0B6F3 /* CurrentStoryView.swift */; };
 		318DB9852738FCFA000AB95A /* RoomTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318DB9842738FCFA000AB95A /* RoomTile.swift */; };
@@ -62,7 +63,9 @@
 		4E7A5CDA2700FBA10058CAB9 /* PodHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A5CD82700FBA10058CAB9 /* PodHelper.swift */; };
 		4E7A5CDC2700FBBF0058CAB9 /* KFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A5CDB2700FBBF0058CAB9 /* KFManager.swift */; };
 		4E7A5CDD2700FBBF0058CAB9 /* KFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A5CDB2700FBBF0058CAB9 /* KFManager.swift */; };
+		4E83F15427463FAD008F693E /* RoomProgressTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E83F15327463FAD008F693E /* RoomProgressTile.swift */; };
 		4E83F157274685EE008F693E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E83F156274685EE008F693E /* NotificationManager.swift */; };
+		4E83F1622747839E008F693E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E83F1612747839E008F693E /* GoogleService-Info.plist */; };
 		4E944D3327436FCF00DC14B4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E944D3227436FCF00DC14B4 /* Constants.swift */; };
 		4E944D3527437CF800DC14B4 /* OnboardingBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E944D3427437CF800DC14B4 /* OnboardingBackground.swift */; };
 		4E944D392743845F00DC14B4 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E944D382743845F00DC14B4 /* CustomLabel.swift */; };
@@ -116,7 +119,6 @@
 		8CEEE0172736F9CF00CD06AB /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEEE0162736F9CF00CD06AB /* SafariView.swift */; };
 		8CEF83E92712F17900E96E2E /* StoryBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF83E82712F17900E96E2E /* StoryBubble.swift */; };
 		8CEF83EC2712F23500E96E2E /* StoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEF83EB2712F23500E96E2E /* StoryModel.swift */; };
-		8CF937DD27475DD40074C3CC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CF937DC27475DD40074C3CC /* GoogleService-Info.plist */; };
 		A01836D227042C3100A4F896 /* GoogleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01836D127042C3100A4F896 /* GoogleCoordinator.swift */; };
 		A01836D427042CCA00A4F896 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01836D327042CCA00A4F896 /* AppConstants.swift */; };
 /* End PBXBuildFile section */
@@ -132,6 +134,7 @@
 		317277D92746A11600207257 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		317277E22746AF5C00207257 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		317DAB362742225A00F6FD1F /* HeaderNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderNavView.swift; sourceTree = "<group>"; };
+		317DAB39274263A700F6FD1F /* RoomProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomProgressView.swift; sourceTree = "<group>"; };
 		318BCCA22733FC0600E0B6F3 /* StoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewModel.swift; sourceTree = "<group>"; };
 		318BCCA6273422DE00E0B6F3 /* CurrentStoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentStoryView.swift; sourceTree = "<group>"; };
 		318DB9842738FCFA000AB95A /* RoomTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTile.swift; sourceTree = "<group>"; };
@@ -171,8 +174,10 @@
 		4E7A5CD42700FB5C0058CAB9 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		4E7A5CD82700FBA10058CAB9 /* PodHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodHelper.swift; sourceTree = "<group>"; };
 		4E7A5CDB2700FBBF0058CAB9 /* KFManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KFManager.swift; sourceTree = "<group>"; };
+		4E83F15327463FAD008F693E /* RoomProgressTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomProgressTile.swift; sourceTree = "<group>"; };
 		4E83F156274685EE008F693E /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		4E83F15827468675008F693E /* Enigma (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Enigma (iOS).entitlements"; sourceTree = "<group>"; };
+		4E83F1612747839E008F693E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4E944D3227436FCF00DC14B4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4E944D3427437CF800DC14B4 /* OnboardingBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingBackground.swift; sourceTree = "<group>"; };
 		4E944D382743845F00DC14B4 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
@@ -223,7 +228,6 @@
 		8CEEE0162736F9CF00CD06AB /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		8CEF83E82712F17900E96E2E /* StoryBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBubble.swift; sourceTree = "<group>"; };
 		8CEF83EB2712F23500E96E2E /* StoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryModel.swift; sourceTree = "<group>"; };
-		8CF937DC27475DD40074C3CC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A01836D127042C3100A4F896 /* GoogleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleCoordinator.swift; sourceTree = "<group>"; };
 		A01836D327042CCA00A4F896 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -292,6 +296,7 @@
 			children = (
 				31D34D6F27465F15002CC921 /* Profile */,
 				8CB248502742A57A0063522F /* Onboarding */,
+				317DAB382742639600F6FD1F /* ProfileView */,
 				318DB98A27392508000AB95A /* FullStoryView */,
 				318DB9832738FCBF000AB95A /* RoomsView */,
 				8C1F5E4F273596A2001D8CCE /* Game */,
@@ -320,6 +325,15 @@
 				4E944D382743845F00DC14B4 /* CustomLabel.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		317DAB382742639600F6FD1F /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				317DAB39274263A700F6FD1F /* RoomProgressView.swift */,
+				4E83F15327463FAD008F693E /* RoomProgressTile.swift */,
+			);
+			path = ProfileView;
 			sourceTree = "<group>";
 		};
 		318DB9832738FCBF000AB95A /* RoomsView */ = {
@@ -531,7 +545,7 @@
 		4EC3E47626E7DCCA0049AD99 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				8CF937DC27475DD40074C3CC /* GoogleService-Info.plist */,
+				4E83F1612747839E008F693E /* GoogleService-Info.plist */,
 				4EC3E47726E7DCCA0049AD99 /* Info.plist */,
 			);
 			path = iOS;
@@ -746,11 +760,11 @@
 			files = (
 				8CB814622742858F00E19DEE /* CinzelDecorative-Bold.ttf in Resources */,
 				8CB8145F2742856400E19DEE /* Cinzel-Bold.ttf in Resources */,
-				8CF937DD27475DD40074C3CC /* GoogleService-Info.plist in Resources */,
 				8CB814632742858F00E19DEE /* CinzelDecorative-Regular.ttf in Resources */,
 				8CB248552742AF1E0063522F /* Launch Screen.storyboard in Resources */,
 				8CB8145B2742851D00E19DEE /* Mulish-Bold.ttf in Resources */,
 				4EC3E48426E7DCCA0049AD99 /* Assets.xcassets in Resources */,
+				4E83F1622747839E008F693E /* GoogleService-Info.plist in Resources */,
 				8CB8145C2742851D00E19DEE /* Mulish-Regular.ttf in Resources */,
 				8CB8145D2742851D00E19DEE /* Mulish-SemiBold.ttf in Resources */,
 			);
@@ -847,6 +861,7 @@
 				8C73DACB272E8E88009943BE /* NotificationModel.swift in Sources */,
 				8CC128B4270301C1000483AB /* TimerModel.swift in Sources */,
 				4E7A5CD92700FBA10058CAB9 /* PodHelper.swift in Sources */,
+				317DAB3A274263A700F6FD1F /* RoomProgressView.swift in Sources */,
 				A01836D427042CCA00A4F896 /* AppConstants.swift in Sources */,
 				8CEDD1E727404B0200CE4856 /* HintModel.swift in Sources */,
 				8CEDD1E5274012A200CE4856 /* QuestionModel.swift in Sources */,
@@ -857,6 +872,7 @@
 				A01836D227042C3100A4F896 /* GoogleCoordinator.swift in Sources */,
 				318BCCA7273422DE00E0B6F3 /* CurrentStoryView.swift in Sources */,
 				31D55DE1271768D80068A8AF /* SetupProfileModel.swift in Sources */,
+				4E83F15427463FAD008F693E /* RoomProgressTile.swift in Sources */,
 				317DAB372742225A00F6FD1F /* HeaderNavView.swift in Sources */,
 				31CEEDA32715C5A900298399 /* ProfileSetupView.swift in Sources */,
 				314D79BF270C6C29003C2F8A /* CustomButton.swift in Sources */,
