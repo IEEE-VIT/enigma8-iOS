@@ -13,6 +13,7 @@ import PopupView
 struct RoomUI: View {
     @StateObject var gameVM = GameViewModel(currentStatus: RoomsModel())
     @State var showHintConfirmation: Bool = false
+    @EnvironmentObject var gameVM: GameViewModel
     var hintAction: () -> Void = {}
     @State var dismissView: Bool = false
     
@@ -104,7 +105,7 @@ struct RoomUI: View {
             }
         }
         .animation(.default)
-        .background(Color.eBlack)
+        .background(Color.eBlack.edgesIgnoringSafeArea(.bottom))
         .onAppear(perform: gameVM.getQuestion)
         .navigationBarHidden(true)
     }
