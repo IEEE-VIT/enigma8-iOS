@@ -32,7 +32,7 @@ struct HeaderNavView: View {
             case 1:
                 LeaderboardView()
             case 2:
-                FullStoryView(storyViewModel: StoryViewModel(roomId: "61876de9bec3682ed95c2221"))
+                FullStoryView(storyViewModel: StoryViewModel(roomId: self.rooms.user?.currentRoomId ?? ""))
             case 3:
                 ProfileView()
             default:

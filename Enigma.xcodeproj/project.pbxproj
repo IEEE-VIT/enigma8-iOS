@@ -16,7 +16,6 @@
 		314D79B9270C685A003C2F8A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314D79B8270C685A003C2F8A /* LoginView.swift */; };
 		314D79BF270C6C29003C2F8A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314D79BE270C6C29003C2F8A /* CustomButton.swift */; };
 		317277DA2746A11600207257 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317277D92746A11600207257 /* TabView.swift */; };
-		317277E32746AF5C00207257 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 317277E22746AF5C00207257 /* GoogleService-Info.plist */; };
 		317DAB372742225A00F6FD1F /* HeaderNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317DAB362742225A00F6FD1F /* HeaderNavView.swift */; };
 		317DAB3A274263A700F6FD1F /* RoomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317DAB39274263A700F6FD1F /* RoomProgressView.swift */; };
 		318BCCA32733FC0600E0B6F3 /* StoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318BCCA22733FC0600E0B6F3 /* StoryViewModel.swift */; };
@@ -106,11 +105,13 @@
 		8CB814692742928A00E19DEE /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB814682742928A00E19DEE /* Onboarding.swift */; };
 		8CC128B4270301C1000483AB /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC128B3270301C1000483AB /* TimerModel.swift */; };
 		8CC128B82705D619000483AB /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC128B72705D618000483AB /* TimerViewModel.swift */; };
+		8CC830FA2747833E008FD6D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CC830F92747833E008FD6D8 /* GoogleService-Info.plist */; };
 		8CD337F62744AF0800E69F93 /* LeaderboardHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD337F52744AF0800E69F93 /* LeaderboardHeader.swift */; };
 		8CD8CADF26FADE7A00267EAC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CADE26FADE7A00267EAC /* Kingfisher */; };
 		8CD8CAE426FADED300267EAC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CAE326FADED300267EAC /* Alamofire */; };
 		8CD8CAE926FADF1200267EAC /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CAE826FADF1200267EAC /* GoogleSignIn */; };
 		8CD8CAEE26FAECB700267EAC /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CAED26FAECB700267EAC /* FirebaseMessaging */; };
+		8CE83E0E2747AD9200A53855 /* StoryHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE83E0D2747AD9200A53855 /* StoryHeader.swift */; };
 		8CEDD1E5274012A200CE4856 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEDD1E4274012A200CE4856 /* QuestionModel.swift */; };
 		8CEDD1E727404B0200CE4856 /* HintModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEDD1E627404B0200CE4856 /* HintModel.swift */; };
 		8CEDD1E927404BE800CE4856 /* AnswerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEDD1E827404BE800CE4856 /* AnswerModel.swift */; };
@@ -132,7 +133,6 @@
 		314D79B8270C685A003C2F8A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		314D79BE270C6C29003C2F8A /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		317277D92746A11600207257 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
-		317277E22746AF5C00207257 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		317DAB362742225A00F6FD1F /* HeaderNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderNavView.swift; sourceTree = "<group>"; };
 		317DAB39274263A700F6FD1F /* RoomProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomProgressView.swift; sourceTree = "<group>"; };
 		318BCCA22733FC0600E0B6F3 /* StoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewModel.swift; sourceTree = "<group>"; };
@@ -220,7 +220,9 @@
 		8CB814682742928A00E19DEE /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		8CC128B3270301C1000483AB /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		8CC128B72705D618000483AB /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
+		8CC830F92747833E008FD6D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8CD337F52744AF0800E69F93 /* LeaderboardHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardHeader.swift; sourceTree = "<group>"; };
+		8CE83E0D2747AD9200A53855 /* StoryHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryHeader.swift; sourceTree = "<group>"; };
 		8CEDD1E4274012A200CE4856 /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
 		8CEDD1E627404B0200CE4856 /* HintModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintModel.swift; sourceTree = "<group>"; };
 		8CEDD1E827404BE800CE4856 /* AnswerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerModel.swift; sourceTree = "<group>"; };
@@ -506,7 +508,7 @@
 		4EC3E46726E7DCC80049AD99 = {
 			isa = PBXGroup;
 			children = (
-				317277E22746AF5C00207257 /* GoogleService-Info.plist */,
+				8CC830F92747833E008FD6D8 /* GoogleService-Info.plist */,
 				4E83F15827468675008F693E /* Enigma (iOS).entitlements */,
 				4EC3E46C26E7DCC90049AD99 /* Shared */,
 				4EC3E47626E7DCCA0049AD99 /* iOS */,
@@ -651,6 +653,7 @@
 			isa = PBXGroup;
 			children = (
 				8CEF83E82712F17900E96E2E /* StoryBubble.swift */,
+				8CE83E0D2747AD9200A53855 /* StoryHeader.swift */,
 			);
 			path = Story;
 			sourceTree = "<group>";
@@ -760,6 +763,7 @@
 			files = (
 				8CB814622742858F00E19DEE /* CinzelDecorative-Bold.ttf in Resources */,
 				8CB8145F2742856400E19DEE /* Cinzel-Bold.ttf in Resources */,
+				8CC830FA2747833E008FD6D8 /* GoogleService-Info.plist in Resources */,
 				8CB814632742858F00E19DEE /* CinzelDecorative-Regular.ttf in Resources */,
 				8CB248552742AF1E0063522F /* Launch Screen.storyboard in Resources */,
 				8CB8145B2742851D00E19DEE /* Mulish-Bold.ttf in Resources */,
@@ -807,6 +811,7 @@
 				3104C7C82735285200B1C155 /* RoomsViewModel.swift in Sources */,
 				31D34D6C2746499A002CC921 /* RoomStatesTorches.swift in Sources */,
 				4E944D3B2743911C00DC14B4 /* Gradient.swift in Sources */,
+				8CE83E0E2747AD9200A53855 /* StoryHeader.swift in Sources */,
 				4EC66BA4274502A700CAF970 /* EnigmaLogo.swift in Sources */,
 				319611112702078E0030901E /* Data.swift in Sources */,
 				318BCCA32733FC0600E0B6F3 /* StoryViewModel.swift in Sources */,
