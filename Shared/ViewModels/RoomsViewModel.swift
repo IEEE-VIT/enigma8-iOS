@@ -70,9 +70,9 @@ class RoomsViewModel: ObservableObject {
             self.roomUnlocked = response.unlock ?? false
             self.starsNeeded = response.starsNeeded ?? 999
             if(self.roomUnlocked) {
-               // self.toRoom = room
-               // self.navigateToRoom = true
-                self.navigateToPowerups = true
+                self.toRoom = room
+                self.navigateToPowerups = room.journey?.powerupId == nil ? true : false
+                self.navigateToRoom = !self.navigateToPowerups
             } else {
                 self.roomSolved = false
                 self.presentRoomLocked = true

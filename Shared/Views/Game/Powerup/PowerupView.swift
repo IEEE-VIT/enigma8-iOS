@@ -13,7 +13,7 @@ struct PowerupView: View {
     
     var body: some View {
         GeometryReader { gr in
-            NavigationLink(destination: RoomUI(gameVM: powerupVM), isActive: $powerupVM.navigateToRoom) {EmptyView()}
+            NavigationLink(destination: CurrentStoryView(storyVM: StoryViewModel(roomId: powerupVM.currentStatus?.room?._id ?? "")).environmentObject(powerupVM), isActive: $powerupVM.navigateToRoom) {EmptyView()}
             
             VStack(alignment: .center) {
                 CustomLabel(text: "Choose a Powerup",font:.Cinzel(size: 26, weight: .bold))

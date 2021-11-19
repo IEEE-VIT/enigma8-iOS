@@ -11,13 +11,16 @@ struct ContentView: View {
     @AppStorage(AppStorageConstants.onboarding) var onboarded: Bool = false
     @AppStorage(AppStorageConstants.login) var userLoggedIn: Bool = false
     @StateObject var roomsVM: RoomsViewModel = RoomsViewModel()
+    
     var body: some View {
             if(onboarded) {
                 if(userLoggedIn) {
                     HeaderNavView()
+                        .preferredColorScheme(.dark)
                         .navigationTitle("")
                         .navigationBarHidden(true)
                         .environmentObject(roomsVM)
+                        .background(Color.black.edgesIgnoringSafeArea(.all))
                 } else {
                     LoginView(authVM: AuthViewModel())
                             .navigationTitle("")

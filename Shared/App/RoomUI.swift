@@ -11,8 +11,9 @@ import AVKit
 import PopupView
 
 struct RoomUI: View {
-    @StateObject var gameVM = GameViewModel(currentStatus: RoomsModel()) //journey: nil, room: Room(id: "asdfasdf", roomNo: "4", questionId: ["asdf"], media: "adsfadsf", title: "Room 5", starQuota: 34)
+//    @StateObject var gameVM = GameViewModel(currentStatus: RoomsModel()) //journey: nil, room: Room(id: "asdfasdf", roomNo: "4", questionId: ["asdf"], media: "adsfadsf", title: "Room 5", starQuota: 34)
     @State var showHintConfirmation: Bool = false
+    @EnvironmentObject var gameVM: GameViewModel
     var hintAction: () -> Void = {}
     
     var body: some View {
@@ -103,7 +104,7 @@ struct RoomUI: View {
             }
         }
         .animation(.default)
-        .background(Color.eBlack)
+        .background(Color.eBlack.edgesIgnoringSafeArea(.bottom))
         .onAppear(perform: gameVM.getQuestion)
         .navigationBarHidden(true)
     }

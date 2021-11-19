@@ -54,9 +54,7 @@ struct ProfileView: View {
             }
         }
         .padding()
-        .background(Image("UserProfileViewBG").resizable().scaledToFill().edgesIgnoringSafeArea(.all))
-        .background(Color.eBlack)
-        .edgesIgnoringSafeArea(.all)
+        .background(Image("UserProfileViewBG").resizable().scaledToFit())
     }
 }
 
