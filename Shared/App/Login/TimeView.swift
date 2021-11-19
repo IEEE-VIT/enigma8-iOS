@@ -55,7 +55,7 @@ struct TimeView: View {
         timeVM.getLeftTime()
         if(timeVM.started) {
             withAnimation {
-                timeVM.navigateToRooms = true
+                timeVM.enigmaStarted = true
             }
         } else {
             self.showDemoQuestion = true
