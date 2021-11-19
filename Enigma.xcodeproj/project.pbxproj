@@ -111,6 +111,7 @@
 		8CD8CAE426FADED300267EAC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CAE326FADED300267EAC /* Alamofire */; };
 		8CD8CAE926FADF1200267EAC /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CAE826FADF1200267EAC /* GoogleSignIn */; };
 		8CD8CAEE26FAECB700267EAC /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CAED26FAECB700267EAC /* FirebaseMessaging */; };
+		8CE83E0E2747AD9200A53855 /* StoryHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE83E0D2747AD9200A53855 /* StoryHeader.swift */; };
 		8CEDD1E5274012A200CE4856 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEDD1E4274012A200CE4856 /* QuestionModel.swift */; };
 		8CEDD1E727404B0200CE4856 /* HintModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEDD1E627404B0200CE4856 /* HintModel.swift */; };
 		8CEDD1E927404BE800CE4856 /* AnswerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEDD1E827404BE800CE4856 /* AnswerModel.swift */; };
@@ -221,6 +222,7 @@
 		8CC128B72705D618000483AB /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		8CC830F92747833E008FD6D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8CD337F52744AF0800E69F93 /* LeaderboardHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardHeader.swift; sourceTree = "<group>"; };
+		8CE83E0D2747AD9200A53855 /* StoryHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryHeader.swift; sourceTree = "<group>"; };
 		8CEDD1E4274012A200CE4856 /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
 		8CEDD1E627404B0200CE4856 /* HintModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintModel.swift; sourceTree = "<group>"; };
 		8CEDD1E827404BE800CE4856 /* AnswerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerModel.swift; sourceTree = "<group>"; };
@@ -651,6 +653,7 @@
 			isa = PBXGroup;
 			children = (
 				8CEF83E82712F17900E96E2E /* StoryBubble.swift */,
+				8CE83E0D2747AD9200A53855 /* StoryHeader.swift */,
 			);
 			path = Story;
 			sourceTree = "<group>";
@@ -808,6 +811,7 @@
 				3104C7C82735285200B1C155 /* RoomsViewModel.swift in Sources */,
 				31D34D6C2746499A002CC921 /* RoomStatesTorches.swift in Sources */,
 				4E944D3B2743911C00DC14B4 /* Gradient.swift in Sources */,
+				8CE83E0E2747AD9200A53855 /* StoryHeader.swift in Sources */,
 				4EC66BA4274502A700CAF970 /* EnigmaLogo.swift in Sources */,
 				319611112702078E0030901E /* Data.swift in Sources */,
 				318BCCA32733FC0600E0B6F3 /* StoryViewModel.swift in Sources */,
