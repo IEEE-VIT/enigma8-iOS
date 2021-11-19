@@ -8,6 +8,7 @@
 import Foundation
 
 class RoomsViewModel: ObservableObject {
+    
     @Published var allInfo: [RoomsModel] = []
     @Published var roomUnlocked: Bool = false
     @Published var starsNeeded: Int = 999
@@ -50,33 +51,32 @@ class RoomsViewModel: ObservableObject {
         }
     }
     
-    func checkIfRoomSolved(room: RoomsModel?) -> Bool {
-        guard let questions = room?.journey?.questionsStatus else {return false}
-        var roomSolved = true
-        for question in questions {
-            if question != .solved {
-                roomSolved = false
-                break
+    func checkIfRoomUnlocked(room: String?) {
+        
+        guard let room = room else {
+            Logger.error("RoomID nil")
+            return
+        }
+        
+        let request = RoomUnlock.RoomUnlockRequest(roomId: room)
+        APIClient.request(fromRouter: .unlockRoom(request)) { (response: RoomUnlock.RoomUnlockResponse?, error) in
+            guard let status = response?.status else {
+                Logger.error(error)
+                return
+            }
+            
+            self.starsNeeded = response?.starsNeeded ?? 0
+            switch status {
+            case .locked:
+                self.presentRoomLocked = true
+            case .canUnlock:
+                self.navigateToPowerups = true
+            case .unlocked:
+                self.navigateToRoom = true
+            case .complete:
+                self.roomSolved = true
             }
         }
-        return roomSolved
     }
     
-    func checkIfRoomUnlocked(room: RoomsModel?) {
-        guard let room = room else {return}
-        let request = RoomUnlock.RoomUnlockRequest(roomId: room.room?._id)
-        APIClient.request(fromRouter: .unlockRoom(request)) { (response: RoomUnlock.RoomUnlockResponse?, error) in
-            guard let response = response else { return }
-            self.roomUnlocked = response.unlock ?? false
-            self.starsNeeded = response.starsNeeded ?? 999
-            if(self.roomUnlocked) {
-                self.toRoom = room
-                self.navigateToPowerups = room.journey?.powerupId == nil ? true : false
-                self.navigateToRoom = !self.navigateToPowerups
-            } else {
-                self.roomSolved = false
-                self.presentRoomLocked = true
-            }
-        }
-    }
 }
