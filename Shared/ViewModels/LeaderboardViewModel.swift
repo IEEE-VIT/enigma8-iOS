@@ -11,6 +11,7 @@ class LeaderboardViewModel: ObservableObject {
     
     @Published var leaderboard: [LeaderboardItem] = []
     @Published var currentUser: LeaderboardItem?
+    var showNoUser: Bool = false
     var searchQuery: String? = nil
     var totalPages = 1
     var currentPage = 1
@@ -30,9 +31,16 @@ class LeaderboardViewModel: ObservableObject {
             }
         }
         APIClient.request(fromRouter: Router.leaderboard(Leaderboard.Request(page: currentPage, query: searchQuery, perPage: 10))) { (response: Leaderboard.Response?, error) in
+            if(error != nil) {
+                self.leaderboard = []
+                self.showNoUser = true
+            }
             guard let response = response else { return }
             if(self.searchQuery != nil || reload ?? false) {
                 self.leaderboard = response.leaderboard ?? []
+                if(response.leaderboard?.isEmpty ?? false) {
+                    self.showNoUser = true
+                }
             } else {
                 self.leaderboard.append(contentsOf: response.leaderboard ?? [])
             }

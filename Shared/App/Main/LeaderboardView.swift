@@ -46,6 +46,7 @@ struct LeaderboardView: View {
                         Button(action: {
                             self.query = ""
                             self.showClear = false
+                            leaderboardVM.showNoUser = false
                             leaderboardVM.fetchLeaderboard(query:"")
                         }) {
                             Text("Clear")
@@ -56,29 +57,42 @@ struct LeaderboardView: View {
             }
             GeometryReader { geo in
                 ZStack {
-                LeaderboardHeader(geo:geo)
-                ScrollView {
-                    LazyVStack(spacing: 0) {
-                        ForEach(leaderboardVM.leaderboard, id: \.self) { user in
-                            LeaderboardRow(isUser: leaderboardVM.currentUser?.username == user.username,geo:geo, user: user)
-                                .onAppear {
-                                    leaderboardVM.fetchMorePages(currentRow: user)
-                                    if user.username == leaderboardVM.currentUser?.username {
-                                        self.userVisible = true
-                                    }
+                    LeaderboardHeader(showLines: !leaderboardVM.showNoUser, geo:geo)
+                    VStack {
+                        ScrollView {
+                            if(leaderboardVM.showNoUser) {
+                                Image("Booo")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 60)
+                                    .padding(.top, geo.size.height/4)
+                                Text("This username does not exist")
+                                    .font(.Mulish(size: 20))
+                                    .foregroundColor(.eRed)
+                            }
+                            LazyVStack(spacing: 0) {
+                                ForEach(leaderboardVM.leaderboard, id: \.self) { user in
+                                    LeaderboardRow(isUser: leaderboardVM.currentUser?.username == user.username,geo:geo, user: user)
+                                        .onAppear {
+                                            leaderboardVM.fetchMorePages(currentRow: user)
+                                            if user.username == leaderboardVM.currentUser?.username {
+                                                self.userVisible = true
+                                            }
+                                        }
+                                        .onDisappear {
+                                            if user.username == leaderboardVM.currentUser?.username {
+                                                self.userVisible = false
+                                            }
+                                        }
                                 }
-                                .onDisappear {
-                                    if user.username == leaderboardVM.currentUser?.username {
-                                        self.userVisible = false
-                                    }
-                                }
+                            }
+                        }.background(Color(white: 1, opacity:0.1))
+                        .padding(.top, 30)
+                        if !userVisible, leaderboardVM.currentUser != nil {
+                            LeaderboardRow(isUser: true,geo:geo, user: leaderboardVM.currentUser!)
+                                .background(Color(white: 1, opacity:0.1))
                         }
-                    }.background(Color(white: 1, opacity:0.1))
-                }.padding(.top, 30)
-                if !userVisible, leaderboardVM.currentUser != nil {
-                    LeaderboardRow(isUser: true,geo:geo, user: leaderboardVM.currentUser!)
-                        .padding(.top, geo.size.height*0.7)
-                }
+                    }
                 }
             }.frame(width: UIScreen.main.bounds.width*0.95, alignment: .center)
                 

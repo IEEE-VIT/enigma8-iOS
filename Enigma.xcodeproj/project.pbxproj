@@ -548,6 +548,7 @@
 			isa = PBXGroup;
 			children = (
 				317DAB362742225A00F6FD1F /* HeaderNavView.swift */,
+				31969156271D961F00FDBEF6 /* LeaderboardView.swift */,
 				3104C7C32735102000B1C155 /* ProfileView.swift */,
 				318DB98827391790000AB95A /* FullStoryView.swift */,
 				4EFD118127496B18005F1F25 /* Game */,
@@ -580,7 +581,6 @@
 			isa = PBXGroup;
 			children = (
 				8C1F5E4D2735953B001D8CCE /* PowerupModel.swift */,
-				31969156271D961F00FDBEF6 /* LeaderboardView.swift */,
 				8CEDD1E4274012A200CE4856 /* QuestionModel.swift */,
 				8CEDD1E627404B0200CE4856 /* HintModel.swift */,
 				8CEDD1E827404BE800CE4856 /* AnswerModel.swift */,
