@@ -11,7 +11,7 @@ struct HeaderNavView: View {
     @State var tabSelected = 0
     @EnvironmentObject var rooms : RoomsViewModel
     @EnvironmentObject var headerVM : HeaderRules
-
+    @StateObject var timerVM: TimerViewModel = TimerViewModel()
     var body: some View {
         NavigationView {
             
@@ -32,7 +32,7 @@ struct HeaderNavView: View {
             case 0:
                 RoomsView()
             case 1:
-                LeaderboardView()
+                LeaderboardView().environmentObject(timerVM)
             case 2:
                 FullStoryView(storyViewModel: StoryViewModel(roomId: self.rooms.user?.currentRoomId ?? ""))
             case 3:
@@ -45,7 +45,7 @@ struct HeaderNavView: View {
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .navigationBarHidden(true)//both hiddens required
-
+        .onAppear(perform: timerVM.getLeftTime)
         }
     }
 }

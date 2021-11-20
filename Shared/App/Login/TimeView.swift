@@ -66,13 +66,14 @@ struct TimeView: View {
 struct TimerBlockView:View {
     var components: DateComponents
     var width: CGFloat
+    var hideBottom: Bool = false
     var body: some View {
         HStack {
-            TimerBlock(value: components.day ?? 0, width: width * 0.3, title: "Days")
+            TimerBlock(value: components.day ?? 0, width: width * 0.3, title: "Days",hideBottom:hideBottom)
             Spacer()
-            TimerBlock(value: components.hour ?? 0, width: width * 0.3, title: "Hours")
+            TimerBlock(value: components.hour ?? 0, width: width * 0.3, title: "Hours",hideBottom:hideBottom)
             Spacer()
-            TimerBlock(value: components.minute ?? 0, width: width * 0.3, title: "Minutes")
+            TimerBlock(value: components.minute ?? 0, width: width * 0.3, title: "Minutes",hideBottom:hideBottom)
         }
     }
 }
