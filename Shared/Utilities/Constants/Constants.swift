@@ -21,6 +21,7 @@ struct ImageConstants {
     static let timer = "timerBanner"
     static let hint = "Hint"
     static let roomBG = "homeBG"
+    static let charBG = "charBG"
 }
 
 struct AppStorageConstants {
@@ -28,4 +29,5 @@ struct AppStorageConstants {
     static let login = "userLoggedIn"
     static let enigmaStarted = "EnigmaStarted"
     static let instructionsShown = "InstructionsShown"
+    static let charactersShown = "CharactersShown"
 }

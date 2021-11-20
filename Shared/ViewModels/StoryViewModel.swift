@@ -56,6 +56,7 @@ class StoryViewModel: ObservableObject {
                 return
             }
             self.fullStory = fullStory
+            print("Story Completely Fetched")
         }
     }
     

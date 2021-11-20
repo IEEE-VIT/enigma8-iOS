@@ -28,6 +28,7 @@ struct InstructionsView: View {
         }
         .background(Image("InstructionsBG").resizable().scaledToFill().edgesIgnoringSafeArea(.bottom))
         .background(Color.black)
+        .animation(.default)
     }
     
     func back() {

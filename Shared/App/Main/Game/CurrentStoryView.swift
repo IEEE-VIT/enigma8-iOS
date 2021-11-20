@@ -11,6 +11,7 @@ struct CurrentStoryView: View {
     @StateObject var storyVM: StoryViewModel
     @EnvironmentObject var gameVM: GameViewModel
     @EnvironmentObject var rooms : RoomsViewModel
+    @AppStorage(AppStorageConstants.charactersShown) var charsShown: Bool = false
 
     init(roomId: String) {
         self._storyVM = StateObject(wrappedValue: StoryViewModel(roomId: roomId))
@@ -34,16 +35,17 @@ struct CurrentStoryView: View {
                     }
                 }
             }
-            
-            //TODO: EMBED IN NAVLINK. ISACTIVE: storyVM.roomComplete
             NavigationLink(destination: RoomUI().environmentObject(gameVM).environmentObject(rooms), isActive: $storyVM.roomComplete) { EmptyView() }
                 CustomButton(buttonText: storyVM.buttonTitle, action: storyVM.updateCurrentStory,bgroundColor: .eGold)
         }
         .background(Image(ImageConstants.storyBG).resizable()
                         .scaledToFill().edgesIgnoringSafeArea(.bottom))
-        
         .onAppear {
             storyVM.getStory()
+        }
+        .sheet(isPresented: Binding<Bool>(get: {return (storyVM.storySoFar.filter({return $0.roomNo == "0"}).count > 0 && !self.charsShown)},
+                                          set: { p in self.charsShown = p})) {
+            CharDescView(charDescriptions: storyVM.storySoFar.filter({return $0.roomNo == "0"}))
         }
         .navigationTitle("")
         .navigationBarHidden(true)
