@@ -44,6 +44,9 @@ struct RoomsView: View {
             .onAppear {
                 rooms.fetchAllInfo()
             }
+            .onChange(of: rooms.navigateToRoom, perform: { newValue in
+                self.headerVM.showRoom = newValue
+            })
             .navigationBarTitle("")
             .navigationBarHidden(true)
         }
