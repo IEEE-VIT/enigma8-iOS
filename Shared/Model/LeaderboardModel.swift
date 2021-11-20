@@ -23,33 +23,37 @@ struct Leaderboard {
 
 struct LeaderboardItem: Codable, Hashable {
     var username: String?
-    var score: Double?
+    var doubleScore: Double?
     var questionsSolved: Int?
     var rank: Int?
     
-    init(username: String?, score: Double?, questionsSolved: Int?, rank: Int?) {
-        self.username = username
-        self.score = score
-        self.questionsSolved = questionsSolved
-        self.rank = rank
+    private enum CodingKeys: String, CodingKey {
+        case username = "username"
+        case doubleScore = "score"
+        case questionsSolved = "questionsSolved"
+        case rank = "rank"
+    }
+    
+    var score: Int {
+        return Int(doubleScore ?? 0.0)
     }
 }
 
 extension LeaderboardItem {
     static var data: [LeaderboardItem] {
         [
-            LeaderboardItem(username: "ryan", score: 42, questionsSolved: 5, rank: 2),
-            LeaderboardItem(username: "ross", score: 30, questionsSolved: 2, rank: 3),
-            LeaderboardItem(username: "george", score: 55, questionsSolved: 8, rank: 1),
-            LeaderboardItem(username: "jon", score: 42, questionsSolved: 5, rank: 9),
-            LeaderboardItem(username: "jacob", score: 30, questionsSolved: 2, rank: 8),
-            LeaderboardItem(username: "walker", score: 55, questionsSolved: 8, rank: 5),
-            LeaderboardItem(username: "nick", score: 42, questionsSolved: 5, rank: 7),
-            LeaderboardItem(username: "murray", score: 30, questionsSolved: 2, rank: 6),
-            LeaderboardItem(username: "andy", score: 55, questionsSolved: 8, rank: 11),
-            LeaderboardItem(username: "pete", score: 42, questionsSolved: 5, rank: 12),
-            LeaderboardItem(username: "patrick", score: 30, questionsSolved: 2, rank: 30),
-            LeaderboardItem(username: "joe", score: 55, questionsSolved: 8, rank: 14)
+            LeaderboardItem(username: "ryan", doubleScore: 42, questionsSolved: 5, rank: 2),
+            LeaderboardItem(username: "ross", doubleScore: 30, questionsSolved: 2, rank: 3),
+            LeaderboardItem(username: "george", doubleScore: 55, questionsSolved: 8, rank: 1),
+            LeaderboardItem(username: "jon", doubleScore: 42, questionsSolved: 5, rank: 9),
+            LeaderboardItem(username: "jacob", doubleScore: 30, questionsSolved: 2, rank: 8),
+            LeaderboardItem(username: "walker", doubleScore: 55, questionsSolved: 8, rank: 5),
+            LeaderboardItem(username: "nick", doubleScore: 42, questionsSolved: 5, rank: 7),
+            LeaderboardItem(username: "murray", doubleScore: 30, questionsSolved: 2, rank: 6),
+            LeaderboardItem(username: "andy", doubleScore: 55, questionsSolved: 8, rank: 11),
+            LeaderboardItem(username: "pete", doubleScore: 42, questionsSolved: 5, rank: 12),
+            LeaderboardItem(username: "patrick", doubleScore: 30, questionsSolved: 2, rank: 30),
+            LeaderboardItem(username: "joe", doubleScore: 55, questionsSolved: 8, rank: 14)
         ]
     }
 }

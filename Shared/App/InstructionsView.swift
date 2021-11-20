@@ -10,12 +10,11 @@ import SwiftUI
 struct InstructionsView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @AppStorage(AppStorageConstants.instructionsShown) var instructionsShown: Bool = false
-    @EnvironmentObject var headerVM: HeaderRules
     @State var selectedTab = 0
 
     var body: some View {
         VStack(spacing: 0) {
-            EnigmaHeader(showBackButton: instructionsShown, hideHeaderIcons: !instructionsShown, showInstructionsButton: false)
+            EnigmaHeader(showBackButton: instructionsShown, hideHeaderIcons: !instructionsShown, showInstructionsButton: false,backAction: back)
             InstructionsCommonHeader().padding()
             InstructionsHeader(viewName: AppConstants.instructionsScreens[selectedTab], selectedTab: $selectedTab)
             TabView(selection: $selectedTab) {
@@ -29,12 +28,10 @@ struct InstructionsView: View {
         }
         .background(Image("InstructionsBG").resizable().scaledToFill().edgesIgnoringSafeArea(.bottom))
         .background(Color.black)
-        .onChange(of: headerVM.showInstructions) { dismiss in
-            Logger.debug("showInstructions: \(dismiss)")
-            if !dismiss {
-                self.presentationMode.wrappedValue.dismiss()
-            }
-        }
+    }
+    
+    func back() {
+        self.presentationMode.wrappedValue.dismiss()
     }
 }
 

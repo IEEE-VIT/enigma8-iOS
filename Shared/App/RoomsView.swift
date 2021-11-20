@@ -16,49 +16,34 @@ struct RoomsView: View {
     ]
     @EnvironmentObject var rooms : RoomsViewModel
     @EnvironmentObject var headerVM: HeaderRules
+    
     var body: some View {
         ZStack {
-            Image(ImageConstants.roomBG).resizable().scaledToFit().frame(width: UIScreen.main.bounds.width, alignment: .top).edgesIgnoringSafeArea(.all)
             VStack {
-                NavigationLink(destination: PowerupView(powerupVM: GameViewModel(currentStatus: rooms.toRoom)), isActive: $rooms.navigateToPowerups) {EmptyView() } // TODO
+                NavigationLink(destination: PowerupView(powerupVM: GameViewModel(currentStatus: rooms.toRoom)), isActive: $rooms.navigateToPowerups) { EmptyView() }
+                
+                NavigationLink(destination:  RoomUI().environmentObject(GameViewModel(currentStatus: rooms.toRoom)), isActive: $rooms.navigateToRoom) { EmptyView() }
+                
                 RoomsHeader().padding()
+                
                 ScrollView(showsIndicators: false) {
-                    // MARK: GRID
                     LazyVGrid(columns: columns, spacing: 0) {
                         ForEach(rooms.allInfo, id: \.self) { room in
-                            Button {
-                                rooms.checkIfRoomUnlocked(room: room.room?._id)
-                            } label: {
-                                RoomTile(room: room)
-                            }
+                            RoomTile(room: room)
+                                .onTapGesture {
+                                    rooms.checkIfRoomUnlocked(room: room.room?._id)
+                                }
                         }
                     }
+                    .background( Image(ImageConstants.roomBG).resizable().scaledToFill())
                 }
                 .padding([.horizontal,.top],8)
-                
-                .popup(isPresented: $rooms.presentRoomLocked, animation: Animation.spring()) {
-                    EnigmaAlert(text: rooms.roomSolved ? "You have already solved this room!" : "You require \(rooms.starsNeeded) number of keys to unlock this", confirmAction: {rooms.presentRoomLocked.toggle()})
-                }
-                .fullScreenCover(isPresented: $rooms.navigateToRoom, content: {
-                    RoomUI().environmentObject(GameViewModel(currentStatus: rooms.toRoom))
-                })
-                .onAppear {
-                    rooms.fetchAllInfo()
-                }
                 .navigationBarTitle("")
                 .navigationBarHidden(true)
             }
             .padding([.horizontal,.top],8)
-            
-            .popup(isPresented: $rooms.presentRoomLocked, animation: Animation.spring()) {
-                EnigmaAlert(text: rooms.roomSolved ? "You have already solved this room!" : "You require \(rooms.starsNeeded) number of keys to unlock this", confirmAction: {rooms.presentRoomLocked.toggle()})
-            }
-            .fullScreenCover(isPresented: $rooms.navigateToRoom, content: {
-                RoomUI().environmentObject(GameViewModel(currentStatus: rooms.toRoom))
-            })
-            .onAppear {
-                rooms.fetchAllInfo()
-            }
+            .popup(isPresented: $rooms.presentPopup, animation: Animation.easeInOut) { rooms.alert }
+            .onAppear(perform: rooms.fetchAllInfo)
             .onChange(of: rooms.navigateToRoom, perform: { newValue in
                 self.headerVM.showRoom = newValue
             })
@@ -67,10 +52,10 @@ struct RoomsView: View {
         }
     }
 }
-    
-    struct RoomsView_Previews: PreviewProvider {
-        static var previews: some View {
-            RoomsView()
-                .environmentObject(RoomsViewModel())
-        }
+
+struct RoomsView_Previews: PreviewProvider {
+    static var previews: some View {
+        RoomsView()
+            .environmentObject(RoomsViewModel())
     }
+}

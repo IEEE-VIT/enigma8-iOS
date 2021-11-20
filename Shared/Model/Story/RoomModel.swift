@@ -43,7 +43,9 @@ enum RoomStatus: String {
 }
 
 struct AllRoomsResponse: Codable {
+    var stars: Int?
     var data: [RoomsModel?]?
+    var nextRoomsUnlockedIn: Int?
 }
 struct Room: Codable, Hashable {
     var _id: String?

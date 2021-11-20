@@ -20,70 +20,85 @@ struct EnigmaAlert: View {
     var closeAction: () -> Void = {print("Clicked Close")}
     var image: String? //= "Key"
     var imageURL: URL?
-    var widthPercentage = 0.7
-    
+    var widthPercentage = 0.65
+        
     var body: some View {
         GeometryReader { geo in
-            ZStack {
+                
+            VStack(spacing:0) {
+                    if(showCloseButton) {
+                        Button(action: closeAction) {
+                            Image("closeButton")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 50, height: 50)
+                        }.frame(width: geo.size.width * widthPercentage + 44, height: 50, alignment: .topTrailing)
+                            .offset(x: 25, y: 30)
+                            .zIndex(1)
+                    }
+                
                 VStack(spacing: 20) {
+                    
                     if(title != nil) {
                         Text(title ?? "")
-                            .font(.Mulish(weight: .bold))
+                            .font(.Mulish(size: 19, weight: .bold))
                             .foregroundColor(Color.eSecondaryBlue)
                             .multilineTextAlignment(.center)
                     }
+                    
                     if(subtitle != nil) {
                         Text(subtitle ?? "")
                             .font(.Mulish(size: 17, weight: .semibold))
                             .foregroundColor(Color.eBlue)
                             .multilineTextAlignment(.center)
                     }
+                    
                     if(text != nil) {
                         Text(text ?? "")
-                            .font(.Mulish(size: 15, weight: .regular))
+                            .font(.Mulish(size: 19, weight: .regular))
                             .foregroundColor(Color.eBlue)
                             .multilineTextAlignment(.center)
                     }
+                    
                     if(image != nil) {
                         Image(image ?? "")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 40, height: 40)
+                            .frame(width: geo.size.width * 0.1, height: geo.size.width * 0.1)
                     }
+                    
                     if(imageURL != nil) {
                         KFImage(imageURL)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 40, height: 40)
+                            .frame(width: 40, height: 40) //TODO
                     }
+                    
                     if(confirmText != nil) {                        CustomButton(buttonText: confirmText ?? "", action: confirmAction)
                     }
+                    
                     if(cancelText != nil) {
                         CustomButton(buttonText: cancelText ?? "", action: cancelAction)
                     }
+                    
                 }
-                .frame(width: geo.size.width*widthPercentage,alignment: .top)
+                .frame(width: geo.size.width*widthPercentage)
                 .padding()
                 .border(LinearGradient.gold)
                 .padding()
-                .background(RoundedRectangle(cornerRadius: 5)
-                                .fill(Color.eBlack))
-                .frame(height: geo.size.height,alignment: .top)
-                if(showCloseButton) {
-                    Button(action: closeAction) {
-                        Image("closeButton")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 50, height: 50)
-                    }.frame(width: geo.size.width*(widthPercentage+0.2), height: geo.size.height+20, alignment: .topTrailing)
+                .background(RoundedRectangle(cornerRadius: 5).fill(Color.eBlack))
+                
                 }
-            }.frame(width: geo.size.width, alignment: .center)
-        }.frame(minHeight: UIScreen.main.bounds.height/2.5, maxHeight: UIScreen.main.bounds.height/2, alignment: .top)
+                .frame(width:geo.size.width,height: geo.size.height)
+            }
     }
 }
 
 struct EnigmaAlert_Previews: PreviewProvider {
     static var previews: some View {
-        EnigmaAlert()
+        ZStack {
+        Color.egrey .blur(radius: 5).edgesIgnoringSafeArea(.all)
+            EnigmaAlert(title: "THIS IS A TITLE", subtitle: "AND THIS IS SUBTITLE",showCloseButton:true, image: "Hint")
+        }
     }
 }

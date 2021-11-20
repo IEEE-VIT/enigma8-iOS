@@ -9,14 +9,12 @@ import SwiftUI
 
 struct NotificationsView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-
     @ObservedObject var notifsVM: NotificationsViewModel = NotificationsViewModel()
-    @State var dismissView: Bool = false
+    
     var body: some View {
         VStack(alignment: .leading) {
-            EnigmaHeader(showBackButton:true,showInstructionsButton: false)
-            CustomLabel(text: "Notifications",font: .Cinzel())
-                .padding(20)
+            EnigmaHeader(showBackButton:true,showInstructionsButton: false,backAction:back)
+            CustomLabel(text: "Notifications",font: .Cinzel()).padding(20)
             ScrollView {
                 LazyVStack {
                     ForEach(notifsVM.notificationList) { notification in
@@ -27,11 +25,10 @@ struct NotificationsView: View {
         }
         .background(NotificationBackground())
         .onAppear(perform: notifsVM.getNotifications)
-        .onChange(of: dismissView) { dismiss in
-            if dismiss {
-                self.presentationMode.wrappedValue.dismiss()
-            }
-        }
+    }
+    
+    func back() {
+        self.presentationMode.wrappedValue.dismiss()
     }
 }
 

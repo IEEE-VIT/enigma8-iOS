@@ -11,14 +11,15 @@ class RoomsViewModel: ObservableObject {
     
     @Published var allInfo: [RoomsModel] = []
     @Published var roomUnlocked: Bool = false
-    @Published var starsNeeded: Int = 999
-    @Published var presentRoomLocked: Bool = false
     @Published var powerUpSelected: Bool = false
     @Published var navigateToRoom: Bool = false
     @Published var navigateToPowerups: Bool = false
-    @Published var roomSolved: Bool = false
     @Published var toRoom: RoomsModel = RoomsModel(journey: nil, room: nil)
+    
+    
+    @Published var presentPopup: Bool = false
 
+    @Published var alert: EnigmaAlert = EnigmaAlert()
     
     @Published var user: UserModel?
     @Published var starsRequired: Int = 0
@@ -43,11 +44,11 @@ class RoomsViewModel: ObservableObject {
                 Logger.error(error.debugDescription)
                 return
             }
-            Logger.debug("GOT ROOMS: \(rooms.compactMap{ $0 })" )
-            self.allInfo = rooms.compactMap{ $0 }
-            let nextRoomStarQuota = rooms.first(where: { !($0?.journey?.roomUnlocked ?? false) })??.room?.starQuota ?? 0
-            self.starsRequired = nextRoomStarQuota - (self.user?.stars ?? 0)
             
+            self.allInfo = rooms.compactMap{ $0 }
+            self.starsRequired = response?.nextRoomsUnlockedIn ?? 0
+            
+            if let stars = response?.stars { self.user?.stars = stars }
         }
     }
     
@@ -65,10 +66,11 @@ class RoomsViewModel: ObservableObject {
                 return
             }
             
-            self.starsNeeded = response?.starsNeeded ?? 0
             switch status {
             case .locked:
-                self.presentRoomLocked = true
+                self.alert = EnigmaAlert(title: "You require \(response?.starsNeeded ?? 0) more keys to unlock this room!",showCloseButton:true ,closeAction: self.closePopup)
+                self.presentPopup = true
+
             case .canUnlock:
                 self.navigateToPowerups = true
                 self.toRoom = self.allInfo.first(where: {$0.room?._id == room}) ?? RoomsModel(journey: nil, room: nil)
@@ -76,9 +78,13 @@ class RoomsViewModel: ObservableObject {
                 self.navigateToRoom = true
                 self.toRoom = self.allInfo.first(where: {$0.room?._id == room}) ?? RoomsModel(journey: nil, room: nil)
             case .complete:
-                self.roomSolved = true
+                self.alert = EnigmaAlert(title: "You have already solved all the questions in this room!",showCloseButton:true, cancelAction: self.closePopup,widthPercentage: 0.5)
+                self.presentPopup = true
             }
         }
     }
     
+    func closePopup() {
+        self.presentPopup = false
+    }
 }

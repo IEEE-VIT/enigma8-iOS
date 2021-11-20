@@ -11,6 +11,7 @@ struct EnigmaHeader: View {
     var showBackButton: Bool = false
     var hideHeaderIcons: Bool = false
     var showInstructionsButton: Bool = true
+    var backAction: () -> Void = {print("Clicked Bakc")}
 
     @EnvironmentObject var headerVM : HeaderRules
     
@@ -19,7 +20,7 @@ struct EnigmaHeader: View {
             HStack {
                 if(!hideHeaderIcons) {
                     if(showBackButton) {
-                        Button(action: {self.headerVM.showInstructions = false; self.headerVM.showNotifications = false;self.headerVM.showRoom = false}) {
+                        Button(action: backAction) {
                             Image(ImageConstants.back)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
