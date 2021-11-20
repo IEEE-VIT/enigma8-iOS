@@ -30,6 +30,7 @@ struct InstructionsView: View {
         .background(Image("InstructionsBG").resizable().scaledToFill().edgesIgnoringSafeArea(.bottom))
         .background(Color.black)
         .onChange(of: headerVM.showInstructions) { dismiss in
+            Logger.debug("showInstructions: \(dismiss)")
             if !dismiss {
                 self.presentationMode.wrappedValue.dismiss()
             }

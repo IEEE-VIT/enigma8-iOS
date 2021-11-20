@@ -74,6 +74,7 @@ class RoomsViewModel: ObservableObject {
                 self.toRoom = self.allInfo.first(where: {$0.room?._id == room}) ?? RoomsModel(journey: nil, room: nil)
             case .unlocked:
                 self.navigateToRoom = true
+                self.toRoom = self.allInfo.first(where: {$0.room?._id == room}) ?? RoomsModel(journey: nil, room: nil)
             case .complete:
                 self.roomSolved = true
             }

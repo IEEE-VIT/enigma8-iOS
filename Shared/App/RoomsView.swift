@@ -48,6 +48,22 @@ struct RoomsView: View {
                 .navigationBarTitle("")
                 .navigationBarHidden(true)
             }
+            .padding([.horizontal,.top],8)
+            
+            .popup(isPresented: $rooms.presentRoomLocked, animation: Animation.spring()) {
+                EnigmaAlert(text: rooms.roomSolved ? "You have already solved this room!" : "You require \(rooms.starsNeeded) number of keys to unlock this", confirmAction: {rooms.presentRoomLocked.toggle()})
+            }
+            .fullScreenCover(isPresented: $rooms.navigateToRoom, content: {
+                RoomUI().environmentObject(GameViewModel(currentStatus: rooms.toRoom))
+            })
+            .onAppear {
+                rooms.fetchAllInfo()
+            }
+            .onChange(of: rooms.navigateToRoom, perform: { newValue in
+                self.headerVM.showRoom = newValue
+            })
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
         }
     }
 }
