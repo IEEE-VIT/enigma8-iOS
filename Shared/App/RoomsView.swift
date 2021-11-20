@@ -10,10 +10,6 @@ import Kingfisher
 import PopupView
 
 struct RoomsView: View {
-    let columns = [
-        GridItem(.flexible()),
-        GridItem(.flexible())
-    ]
     @EnvironmentObject var rooms : RoomsViewModel
     @EnvironmentObject var headerVM: HeaderRules
     
@@ -27,7 +23,7 @@ struct RoomsView: View {
                 RoomsHeader().padding()
                 
                 ScrollView(showsIndicators: false) {
-                    LazyVGrid(columns: columns, spacing: 0) {
+                    LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 2), spacing: 0) {
                         ForEach(rooms.allInfo, id: \.self) { room in
                             RoomTile(room: room)
                                 .onTapGesture {
@@ -37,18 +33,17 @@ struct RoomsView: View {
                     }
                     .background( Image(ImageConstants.roomBG).resizable().scaledToFill())
                 }
-                .padding([.horizontal,.top],8)
+                .padding(.horizontal,UIScreen.main.bounds.width * 0.036)
                 .navigationBarTitle("")
                 .navigationBarHidden(true)
             }
-            .padding([.horizontal,.top],8)
-            .popup(isPresented: $rooms.presentPopup, animation: Animation.easeInOut) { rooms.alert }
             .onAppear(perform: rooms.fetchAllInfo)
-            .onChange(of: rooms.navigateToRoom, perform: { newValue in
-                self.headerVM.showRoom = newValue
-            })
             .navigationBarTitle("")
             .navigationBarHidden(true)
+            .blur(radius: rooms.presentPopup ? 3 : 0)
+            if rooms.presentPopup {
+                rooms.alert
+            }
         }
     }
 }
