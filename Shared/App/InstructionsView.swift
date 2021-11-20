@@ -15,7 +15,7 @@ struct InstructionsView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            EnigmaHeader(showBackButton: instructionsShown, showInstructionsButton: false)
+            EnigmaHeader(showBackButton: instructionsShown, hideHeaderIcons: !instructionsShown, showInstructionsButton: false)
             InstructionsCommonHeader().padding()
             InstructionsHeader(viewName: AppConstants.instructionsScreens[selectedTab], selectedTab: $selectedTab)
             TabView(selection: $selectedTab) {

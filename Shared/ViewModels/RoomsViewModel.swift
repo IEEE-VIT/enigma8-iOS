@@ -71,6 +71,7 @@ class RoomsViewModel: ObservableObject {
                 self.presentRoomLocked = true
             case .canUnlock:
                 self.navigateToPowerups = true
+                self.toRoom = self.allInfo.first(where: {$0.room?._id == room}) ?? RoomsModel(journey: nil, room: nil)
             case .unlocked:
                 self.navigateToRoom = true
             case .complete:

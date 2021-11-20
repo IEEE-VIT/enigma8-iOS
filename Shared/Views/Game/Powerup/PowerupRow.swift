@@ -20,6 +20,8 @@ struct PowerupRow: View {
                     .frame(width: width * 0.16, height: width * 0.16)
                 VStack(alignment: .leading) {
                     CustomLabel(text: powerup.name ?? "",font: .Cinzel(size: 17, weight: .bold))
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.5)
                     Text(powerup.detail ?? "")
                         .multilineTextAlignment(.leading)
                         .foregroundColor(.eBlue)
@@ -27,6 +29,7 @@ struct PowerupRow: View {
                         .lineLimit(3)
                         .minimumScaleFactor(0.5)
                 }
+                .frame(maxWidth: .infinity)
         }
         .padding(width * 0.05)
         .background(RoundedRectangle(cornerRadius: 9).fill(Color.black).shadow(color: .eBlue.opacity(0.4), radius: 4, x: 0, y: 4))
