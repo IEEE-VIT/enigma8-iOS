@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
 
 class RoomsViewModel: ObservableObject {
     
-    @Published var allInfo: [RoomsModel] = []
+    @Published var allInfo: [RoomsModel] = [RoomsModel.data]
     @Published var roomUnlocked: Bool = false
     @Published var powerUpSelected: Bool = false
     @Published var navigateToRoom: Bool = false
@@ -66,6 +67,7 @@ class RoomsViewModel: ObservableObject {
                 return
             }
             
+            withAnimation{
             switch status {
             case .locked:
                 self.alert = EnigmaAlert(title: "You require \(response?.starsNeeded ?? 0) more keys to unlock this room!",showCloseButton:true ,closeAction: self.closePopup)
@@ -78,8 +80,9 @@ class RoomsViewModel: ObservableObject {
                 self.navigateToRoom = true
                 self.toRoom = self.allInfo.first(where: {$0.room?._id == room}) ?? RoomsModel(journey: nil, room: nil)
             case .complete:
-                self.alert = EnigmaAlert(title: "You have already solved all the questions in this room!",showCloseButton:true, cancelAction: self.closePopup,widthPercentage: 0.5)
+                self.alert = EnigmaAlert(title: "You have already solved all the questions in this room!",showCloseButton:true, closeAction: self.closePopup,widthPercentage: 0.5)
                 self.presentPopup = true
+            }
             }
         }
     }

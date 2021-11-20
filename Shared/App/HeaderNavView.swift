@@ -26,6 +26,8 @@ struct HeaderNavView: View {
             }
             
             EnigmaHeader()
+                    .blur(radius: rooms.presentPopup ? 3 : 0)
+                
             switch(tabSelected){
             case 0:
                 RoomsView()
@@ -39,6 +41,7 @@ struct HeaderNavView: View {
                 Text("") //TODO
             }
                 EnigmaTabView(tabSelected: $tabSelected)
+                    .blur(radius: rooms.presentPopup ? 3 : 0)
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .navigationBarHidden(true)//both hiddens required
