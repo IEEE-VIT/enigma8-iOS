@@ -15,7 +15,7 @@ struct HeaderNavView: View {
     var body: some View {
         NavigationView {
             
-        VStack {
+            VStack(spacing: 0) {
             
             NavigationLink(destination: NotificationsView().navigationTitle("").navigationBarHidden(true),isActive: $headerVM.showNotifications){
                 EmptyView()

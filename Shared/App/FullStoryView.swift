@@ -25,7 +25,7 @@ struct FullStoryView: View {
                     storyViewModel.getFullStory()
                 }
         }
-            .background(Image(ImageConstants.storyBG).resizable().frame(width: UIScreen.main.bounds.width))
+        .background(Image(ImageConstants.storyBG).resizable().frame(width: UIScreen.main.bounds.width))
     }
 }
 

@@ -19,7 +19,7 @@ struct RoomStates: View {
                             .frame(width: 8)
                             .padding(.top, 5)
                         Text(point)
-                            .font(.Mulish(size: 12, weight: .medium))
+                            .font(.Mulish(size: 18, weight: .medium))
                             .foregroundColor(Color.eGold)
                     }
                     .padding(.top)

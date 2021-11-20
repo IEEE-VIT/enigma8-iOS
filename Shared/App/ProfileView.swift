@@ -55,7 +55,7 @@ struct ProfileView: View {
             }
         }
         .padding()
-        .background(Image("UserProfileViewBG").resizable().scaledToFit())
+        .background(Image("UserProfileViewBG").resizable().frame(width: UIScreen.main.bounds.width))
     }
 }
 

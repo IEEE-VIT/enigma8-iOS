@@ -42,6 +42,7 @@ class GameViewModel: ObservableObject {
     }
     
     func selectPowerup(powerup: Powerup.PowerupModel) -> Void {
+        print("Current Status: \(currentStatus)")
         APIClient.request(fromRouter: Router.selectPowerup(Powerup.SelectRequest(roomId: currentStatus?.room?._id, powerupId: powerup.id))) { (response: Powerup.SelectResponse?, error) in
             guard let response = response else {return}
             if(error == nil) {//Success in Selecting Powerup
