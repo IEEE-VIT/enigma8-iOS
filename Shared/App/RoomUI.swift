@@ -13,7 +13,6 @@ import PopupView
 struct RoomUI: View {
     @State var showHintConfirmation: Bool = false
     @EnvironmentObject var gameVM: GameViewModel
-    @EnvironmentObject var headerVM: HeaderRules
     @EnvironmentObject var rooms : RoomsViewModel
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
@@ -22,7 +21,7 @@ struct RoomUI: View {
     var body: some View {
         ZStack {
             VStack(spacing: 0) {
-                EnigmaHeader(showBackButton: true,showInstructionsButton: false)
+                EnigmaHeader(showBackButton: true,showInstructionsButton: false,backAction: back)
                 HStack {
                     VStack(alignment: .leading) {
                         Text(gameVM.currentStatus?.room?.title ?? "")
@@ -109,13 +108,16 @@ struct RoomUI: View {
         .background(Color.eBlack.edgesIgnoringSafeArea(.bottom))
         .onAppear(perform: gameVM.getQuestion)
         .navigationBarHidden(true)
-        .onChange(of: self.headerVM.showRoom) { showRoom in
-            Logger.warning("SHOW ROOM: \(showRoom)")
-            if !showRoom {
-                self.presentationMode.wrappedValue.dismiss()
-                self.rooms.navigateToRoom = false
-            }
+    }
+    
+    func back() {
+        
+        if self.rooms.navigateToPowerups {
+            self.rooms.navigateToPowerups = false
+        } else {
+            self.presentationMode.wrappedValue.dismiss()
         }
+        Logger.info("HMM: \(self.rooms.navigateToPowerups)")
     }
 }
 

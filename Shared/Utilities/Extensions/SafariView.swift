@@ -10,10 +10,10 @@ import SwiftUI
 
 struct SafariView: UIViewControllerRepresentable {
 
-    let url: URL
+    var url: URL?
 
     func makeUIViewController(context: UIViewControllerRepresentableContext<SafariView>) -> SFSafariViewController {
-        return SFSafariViewController(url: url)
+        return SFSafariViewController(url: url ?? URL(string: "https://enigma.ieeevit.org")!)
     }
 
     func updateUIViewController(_ uiViewController: SFSafariViewController, context: UIViewControllerRepresentableContext<SafariView>) {

@@ -10,8 +10,15 @@ import SwiftUI
 struct CurrentStoryView: View {
     @StateObject var storyVM: StoryViewModel
     @EnvironmentObject var gameVM: GameViewModel
+    @EnvironmentObject var rooms : RoomsViewModel
+
+    init(roomId: String) {
+        self._storyVM = StateObject(wrappedValue: StoryViewModel(roomId: roomId))
+    }
+    
     var body: some View {
         VStack {
+            EnigmaHeader(hideHeaderIcons: true, showInstructionsButton: false)
             StoryHeader().padding()
             ScrollView {
                 ScrollViewReader { sr in
@@ -29,20 +36,22 @@ struct CurrentStoryView: View {
             }
             
             //TODO: EMBED IN NAVLINK. ISACTIVE: storyVM.roomComplete
-            NavigationLink(destination: RoomUI().environmentObject(gameVM), isActive: $storyVM.roomComplete) { EmptyView() }
+            NavigationLink(destination: RoomUI().environmentObject(gameVM).environmentObject(rooms), isActive: $storyVM.roomComplete) { EmptyView() }
                 CustomButton(buttonText: storyVM.buttonTitle, action: storyVM.updateCurrentStory,bgroundColor: .eGold)
         }
         .background(Image(ImageConstants.storyBG).resizable()
-                        .scaledToFill().edgesIgnoringSafeArea(.all))
+                        .scaledToFill().edgesIgnoringSafeArea(.bottom))
         
         .onAppear {
             storyVM.getStory()
         }
+        .navigationTitle("")
+        .navigationBarHidden(true)
     }
 }
 
 struct StoryView_Previews: PreviewProvider {
     static var previews: some View {
-        CurrentStoryView(storyVM: StoryViewModel(roomId: "12345"))
+        CurrentStoryView(roomId: "181")
     }
 }

@@ -10,13 +10,15 @@ import PopupView
 
 struct PowerupView: View {
     @StateObject var powerupVM: GameViewModel
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @EnvironmentObject var rooms : RoomsViewModel
     
     var body: some View {
         GeometryReader { gr in
-            NavigationLink(destination: CurrentStoryView(storyVM: StoryViewModel(roomId: powerupVM.currentStatus?.room?._id ?? "")).navigationTitle("").navigationBarHidden(true).environmentObject(powerupVM), isActive: $powerupVM.navigateToRoom) {EmptyView()}
-            
+            NavigationLink(destination: CurrentStoryView(roomId: powerupVM.currentStatus?.room?._id ?? "").environmentObject(powerupVM).environmentObject(rooms), isActive: $powerupVM.navigateToRoom) {EmptyView()}
+                        
             VStack(alignment: .center) {
-                EnigmaHeader(showBackButton: true, showInstructionsButton: false)
+                EnigmaHeader(showBackButton: true, showInstructionsButton: false,backAction: back)
                 CustomLabel(text: "Choose a Powerup",font:.Cinzel(size: 26, weight: .bold))
                 Text("*Chosen powerup can be used in this room only")
                     .font(.Mulish(size: 13, weight: .semibold))
@@ -39,6 +41,15 @@ struct PowerupView: View {
         .background(Color.eBlack.edgesIgnoringSafeArea(.bottom))
         .onAppear(perform: powerupVM.getPowerups)
         .navigationBarHidden(true)
+        .onChange(of: rooms.navigateToPowerups) { value in
+            if !value {
+                self.back()
+            }
+        }
+    }
+    
+    func back() {
+        self.presentationMode.wrappedValue.dismiss()
     }
 }
 
