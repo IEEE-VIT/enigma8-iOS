@@ -11,6 +11,7 @@ struct TimerBlock: View {
     var value: Int
     var width: CGFloat
     var title: String
+    var hideBottom: Bool = false
     var body: some View {
         VStack(alignment: .center,spacing:16) {
             HStack(spacing:width * 0.1) {
@@ -18,9 +19,11 @@ struct TimerBlock: View {
                 TimerCell(value: value%10)
         }
         .frame(width: width)
+            
+            if !hideBottom {
             CustomLabel(text: title,font:.Mulish(size: 18, weight: .regular))
+            }
         }
-        
     }
 }
 
@@ -31,8 +34,11 @@ struct TimerCell: View {
         RoundedRectangle(cornerRadius: 3)
                 .stroke(Color.eBlue, lineWidth: 1)
                 .shadow(color: Color.eBlue, radius: 0.5, x:1, y: 1)
+                .aspectRatio(1, contentMode: .fit)
         Color.eBlack.cornerRadius(3)
+                .aspectRatio(1, contentMode: .fit)
         CustomLabel(text: "\(value)",font:.Cinzel(size: 24, weight: .bold))
+                .minimumScaleFactor(0.5)
         }
         .aspectRatio(1, contentMode: .fit)
     }

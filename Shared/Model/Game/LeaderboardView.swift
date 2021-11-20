@@ -9,19 +9,24 @@ import SwiftUI
 
 struct LeaderboardView: View {
     @StateObject var leaderboardVM: LeaderboardViewModel = LeaderboardViewModel()
+    @EnvironmentObject var timerVM: TimerViewModel
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+
     @State var userVisible: Bool = false
     @State var showClear: Bool = false
     @State var query: String = ""
     var body: some View {
         GeometryReader { wholeGeo in
-        VStack(alignment: .center) {
-            Text("Leaderboard")
-                .font(.Cinzel(size: 25))
-                        .gradientForeground(colors: [.goldGradientStart,.goldGradientEnd])
-                        .padding(.leading)
-                        .padding(.top, 20)
-                        .frame(width: wholeGeo.size.width, alignment: .leading)
+            VStack(alignment: .center,spacing:0) {
+            HStack(alignment:.center) {
+                CustomLabel(text: "Leaderboard",font: .Cinzel(size: 26))
+                        .frame(width: wholeGeo.size.width * 0.55, alignment: .leading)
                 .frame(height: 35)
+                TimerBlockView(components: timerVM.enigmaDateComponents, width: wholeGeo.size.width/2.78,hideBottom:true)
+
+            }
+            .padding(15)
+            .frame(maxWidth: wholeGeo.size.width)
             ZStack {
                 Capsule()
                     .stroke(Color.black)
@@ -79,12 +84,23 @@ struct LeaderboardView: View {
                 
         }
         }.background(Color.eBlack)
+            .onReceive(timer, perform: performCountdown)
+
         .onAppear(perform: { leaderboardVM.fetchLeaderboard(reload: true) })
+    }
+    
+    func performCountdown(_ output: Timer.TimerPublisher.Output) {
+        guard timerVM.performCountdown() else {
+            self.timer.upstream.connect().cancel()
+            timerVM.getLeftTime()
+            return
+        }
     }
 }
 
 struct LeaderboardView_Previews: PreviewProvider {
     static var previews: some View {
         LeaderboardView()
+            .environmentObject(TimerViewModel())
     }
 }

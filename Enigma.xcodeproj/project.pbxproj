@@ -275,18 +275,9 @@
 		314D79B7270C683B003C2F8A /* App */ = {
 			isa = PBXGroup;
 			children = (
+				4EFD118227496B60005F1F25 /* Misc */,
+				4EFD118027496B13005F1F25 /* Main */,
 				8CAC2B6E27103B09008049D3 /* Login */,
-				31A266602718A1C6005B1A17 /* RoomsView.swift */,
-				8C46F76627198F93003132B1 /* RoomUI.swift */,
-				31CEEDA22715C5A900298399 /* ProfileSetupView.swift */,
-				31C13210271D6D6500BD5301 /* FeedbackUI.swift */,
-				31C131F8271D4F7D00BD5301 /* InstructionsView.swift */,
-				318BCCA6273422DE00E0B6F3 /* CurrentStoryView.swift */,
-				318DB98827391790000AB95A /* FullStoryView.swift */,
-				8C73DAC6272E8A04009943BE /* NotificationsView.swift */,
-				3104C7C32735102000B1C155 /* ProfileView.swift */,
-				317DAB362742225A00F6FD1F /* HeaderNavView.swift */,
-				317277D92746A11600207257 /* TabView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -308,7 +299,6 @@
 				8CEF83E72712F16A00E96E2E /* Story */,
 				8CAC2B6B27103ACE008049D3 /* Timer */,
 				314D79BB270C6BC2003C2F8A /* Common */,
-				31969156271D961F00FDBEF6 /* LeaderboardView.swift */,
 				8CB248542742AF1E0063522F /* Launch Screen.storyboard */,
 			);
 			path = Views;
@@ -317,6 +307,7 @@
 		314D79BB270C6BC2003C2F8A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				317277D92746A11600207257 /* TabView.swift */,
 				314D79BE270C6C29003C2F8A /* CustomButton.swift */,
 				8C46F76427195924003132B1 /* EnigmaAlert.swift */,
 				8C46F760271949A2003132B1 /* EnigmaHeader.swift */,
@@ -413,7 +404,6 @@
 		31C13200271D55DE00BD5301 /* Instructions */ = {
 			isa = PBXGroup;
 			children = (
-				31C1320D271D63A400BD5301 /* PowerupInstructions */,
 				31C13201271D55F000BD5301 /* GameMechanics.swift */,
 				31C13209271D566F00BD5301 /* ScoringSystem.swift */,
 				31C13205271D560F00BD5301 /* Powerups.swift */,
@@ -425,14 +415,6 @@
 				31D34D6D27464DCB002CC921 /* LetsPlayIcons.swift */,
 			);
 			path = Instructions;
-			sourceTree = "<group>";
-		};
-		31C1320D271D63A400BD5301 /* PowerupInstructions */ = {
-			isa = PBXGroup;
-			children = (
-				31C1320E271D63B800BD5301 /* Powerupcard.swift */,
-			);
-			path = PowerupInstructions;
 			sourceTree = "<group>";
 		};
 		31C13212271D72AB00BD5301 /* FeedBackUISubviews */ = {
@@ -559,10 +541,43 @@
 			path = macOS;
 			sourceTree = "<group>";
 		};
+		4EFD118027496B13005F1F25 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				317DAB362742225A00F6FD1F /* HeaderNavView.swift */,
+				3104C7C32735102000B1C155 /* ProfileView.swift */,
+				318DB98827391790000AB95A /* FullStoryView.swift */,
+				4EFD118127496B18005F1F25 /* Game */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		4EFD118127496B18005F1F25 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				318BCCA6273422DE00E0B6F3 /* CurrentStoryView.swift */,
+				8C1F5E512735A52F001D8CCE /* PowerupView.swift */,
+				31A266602718A1C6005B1A17 /* RoomsView.swift */,
+				8C46F76627198F93003132B1 /* RoomUI.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		4EFD118227496B60005F1F25 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				31C131F8271D4F7D00BD5301 /* InstructionsView.swift */,
+				31C13210271D6D6500BD5301 /* FeedbackUI.swift */,
+				8C73DAC6272E8A04009943BE /* NotificationsView.swift */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
 		8C1F5E4C2735951C001D8CCE /* Game */ = {
 			isa = PBXGroup;
 			children = (
 				8C1F5E4D2735953B001D8CCE /* PowerupModel.swift */,
+				31969156271D961F00FDBEF6 /* LeaderboardView.swift */,
 				8CEDD1E4274012A200CE4856 /* QuestionModel.swift */,
 				8CEDD1E627404B0200CE4856 /* HintModel.swift */,
 				8CEDD1E827404BE800CE4856 /* AnswerModel.swift */,
@@ -573,18 +588,10 @@
 		8C1F5E4F273596A2001D8CCE /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				8C1F5E50273596B0001D8CCE /* Powerup */,
+				31C1320E271D63B800BD5301 /* Powerupcard.swift */,
+				8C1F5E4A273592D2001D8CCE /* PowerupRow.swift */,
 			);
 			path = Game;
-			sourceTree = "<group>";
-		};
-		8C1F5E50273596B0001D8CCE /* Powerup */ = {
-			isa = PBXGroup;
-			children = (
-				8C1F5E4A273592D2001D8CCE /* PowerupRow.swift */,
-				8C1F5E512735A52F001D8CCE /* PowerupView.swift */,
-			);
-			path = Powerup;
 			sourceTree = "<group>";
 		};
 		8C73DACC272E9875009943BE /* Notifications */ = {
@@ -609,6 +616,7 @@
 			children = (
 				8CB814682742928A00E19DEE /* Onboarding.swift */,
 				314D79B8270C685A003C2F8A /* LoginView.swift */,
+				31CEEDA22715C5A900298399 /* ProfileSetupView.swift */,
 				8CAC2B6F27103B39008049D3 /* TimeView.swift */,
 			);
 			path = Login;
