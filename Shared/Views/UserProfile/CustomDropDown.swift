@@ -46,7 +46,7 @@ struct CustomDropDown: View {
             }.frame(width: width, alignment: .leading)
             .foregroundColor(.white)
             .background(Color.black)
-            .border(showOptions ? LinearGradient.gold : LinearGradient(colors: [Color.eGold, Color.eGold], startPoint: .top, endPoint: .bottom), width: 3)
+            .border(showOptions ? LinearGradient.gold : LinearGradient(colors: [Color.eGold, Color.eGold], startPoint: .top, endPoint: .bottom), width: 2)
             .animation(.default)
         }.frame(width: width, height: height)
     }

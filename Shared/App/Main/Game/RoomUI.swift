@@ -120,7 +120,7 @@ struct RoomUI: View {
             case .powerupUsed:
                 EnigmaAlert(title: "You've already used this powerup!", showCloseButton:true, closeAction: {gameVM.showPopup.toggle()})
             case .powerup:
-                EnigmaAlert(title: gameVM.fetchedPowerup?.text, subtitle: gameVM.fetchedPowerup?.data, showCloseButton: true, closeAction: {gameVM.showPopup.toggle()}, imageURL: gameVM.roomStatus?.powerupDetails?.iconURL)
+                EnigmaAlert(title: gameVM.fetchedPowerup?.text, subtitle: gameVM.fetchedPowerup?.data, showCloseButton: true, powerupIcon: gameVM.roomStatus?.powerupDetails?.iconURL, powerupImage: gameVM.fetchedPowerup?.imgURL, closeAction: {gameVM.showPopup.toggle()})
             default:
                 EmptyView()
             }

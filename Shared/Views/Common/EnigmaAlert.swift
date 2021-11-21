@@ -15,6 +15,8 @@ struct EnigmaAlert: View {
     var confirmText: String? //= "Confirm"
     var cancelText: String? //= "Cancel"
     var showCloseButton: Bool = false
+    var powerupIcon: URL?
+    var powerupImage: String?
     var confirmAction: () -> Void = {print("Clicked Confirm")}
     var cancelAction: () -> Void = {print("Clicked Cancel")}
     var closeAction: () -> Void = {print("Clicked Close")}
@@ -38,11 +40,17 @@ struct EnigmaAlert: View {
                     }
                 
                 VStack(spacing: 20) {
+                    if(powerupIcon != nil) {
+                        KFImage(powerupIcon)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: geo.size.width * 0.13, height: geo.size.width * 0.13)
+                    }
                     
                     if(title != nil) {
                         Text(title ?? "")
                             .font(.Mulish(size: 19, weight: .bold))
-                            .foregroundColor(Color.eSecondaryBlue)
+                            .foregroundColor(Color.eBlue)
                             .multilineTextAlignment(.center)
                     }
                     
@@ -64,7 +72,7 @@ struct EnigmaAlert: View {
                         Image(image ?? "")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: geo.size.width * 0.1, height: geo.size.width * 0.1)
+                            .frame(width: geo.size.width * 0.13, height: geo.size.width * 0.13)
                     }
                     
                     if(imageURL != nil) {
@@ -72,6 +80,16 @@ struct EnigmaAlert: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 40, height: 40) //TODO
+                    }
+                    
+                    if(powerupImage != nil) {
+                        KFImage(URL(string: powerupImage ?? ""))
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: geo.size.width*0.6, height: geo.size.width*0.6)
+                            .onLongPressGesture(perform: {
+                                //TODO: Maybe share the image?
+                            })
                     }
                     
                     if(confirmText != nil) {                        CustomButton(buttonText: confirmText ?? "", action: confirmAction)
