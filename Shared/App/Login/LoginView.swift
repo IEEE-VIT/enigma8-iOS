@@ -26,7 +26,7 @@ struct LoginView: View {
                 SocialButton(action: googleVM.googleSignin, image: .google)
             }
             .padding(.horizontal,40)
-            NavigationLink(destination: ProfileSetupView().navigationBarTitle("").navigationBarHidden(true),isActive: $authVM.isNew) {
+            NavigationLink(destination: ProfileSetupView().navigationBarTitle("").navigationBarHidden(true).edgesIgnoringSafeArea(.bottom),isActive: $authVM.isNew) {
               EmptyView()
             }
             

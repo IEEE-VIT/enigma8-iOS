@@ -27,16 +27,13 @@ struct ProfileSetupView: View {
                                         .frame(alignment: .leading)
                                     CustomTextField(textFieldString: "Enter your username", bindingString: $profileVM.username)
                                         .frame(width: geo.size.width*0.85)
-                                    Group {
-                                        if(profileVM.errorMessage != nil) {
-                                            Text(profileVM.errorMessage ?? "")
-                                                .foregroundColor(.eRed)
-                                                .font(.Mulish(size: 15, weight: .bold))
-                                                .frame(width: geo.size.width*0.7, alignment: .leading)
-                            
-                                    }
-                                    .padding(.bottom, 50)
-                                    .padding(.leading)
+                                    Text(profileVM.errorMessage ?? "")
+                                        .foregroundColor(.eRed)
+                                        .font(.Mulish(size: 15, weight: .bold))
+                                        .frame(width: geo.size.width*0.7, alignment: .leading)
+                                        .padding(.bottom, 50)
+                                        .padding(.leading)
+                                        .opacity(profileVM.errorMessage != nil ? 1 : 0)
                                     CustomLabel(text:"How did you hear about Enigma?")
                                     if(profileVM.selectError && profileVM.outreach == "-Select-") {
                                         Text("*Please select an option")
@@ -54,8 +51,8 @@ struct ProfileSetupView: View {
                             NavigationLink(destination: TimeView(), isActive: $profileVM.profileSuccess) { EmptyView() }
                 }
             }
+                .background(OnboardingBackground().ignoresSafeArea(.keyboard,edges:.all))
         }
-        .background(OnboardingBackground().ignoresSafeArea(.keyboard,edges:.all))
         .navigationBarBackButtonHidden(true)
     }
     
