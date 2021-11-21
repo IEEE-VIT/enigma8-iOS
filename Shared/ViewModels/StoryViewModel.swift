@@ -62,6 +62,7 @@ class StoryViewModel: ObservableObject {
                 return
             }
             self.fullStory = fullStory
+            print("Story Completely Fetched")
             
             if let data = try? JSONEncoder().encode(fullStory) {
                 UserDefaults.standard.set(data, forKey: AppStorageConstants.fullStory)
