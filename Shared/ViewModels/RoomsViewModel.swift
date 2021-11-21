@@ -27,6 +27,13 @@ class RoomsViewModel: ObservableObject {
     
     init() { }
     
+    func resetAll() {
+        self.allInfo = []
+        self.user = nil
+        self.starsRequired = 0
+        // TODO reset remaining
+    }
+    
     func fetchUser() {
         APIClient.request(fromRouter: .getUser) { (response: UserModel?,error) in
             guard let response = response else {

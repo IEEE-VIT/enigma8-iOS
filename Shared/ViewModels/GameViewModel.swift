@@ -25,6 +25,7 @@ class GameViewModel: ObservableObject {
     @Published var navigateToPowerup: Bool = false
     @Published var navigateBackToRooms: Bool = false
     
+    @Published var latestScore: Int = 0
     init(currentStatus: RoomsModel) {
         self.currentStatus = currentStatus
     }
@@ -95,6 +96,7 @@ class GameViewModel: ObservableObject {
             guard let response = response else {return}
             if response.correctAnswer ?? false {
                 self.answerStatus = .correct
+                self.latestScore = response.scoreEarned ?? 0
                 if response.nextRoomUnlocked ?? false {
                     self.answerStatus = .nextRoom
                 }

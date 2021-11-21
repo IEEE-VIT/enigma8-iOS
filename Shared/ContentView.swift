@@ -43,6 +43,7 @@ struct ContentView: View {
                             .navigationTitle("")
                             .navigationBarHidden(true)
                             .ignoresSafeArea()
+                            .environmentObject(headerVM)
                     }
                 }
             } else {

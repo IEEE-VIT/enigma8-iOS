@@ -105,14 +105,16 @@ class NotificationManager: NSObject {
             NotificationManager.fcmToken = token
             self.isFCMTokenUploaded = false
         }
-        self.updateUserDeviceInfo()
+        self.updateUserDeviceInfo(token:token)
     }
 
-    func updateUserDeviceInfo() {
+    func updateUserDeviceInfo(token:String) {
         guard !self.isFCMTokenUploaded, NotificationManager.fcmToken != nil else {
             return
         }
-        
+        APIClient.request(fromRouter: .addFCM(FCMRequest(token: token, os: "ios"))) { (response:FCMRequest?, error) in
+            
+        }
         // TODO send to backend
     }
 
@@ -144,4 +146,9 @@ extension NotificationManager: UNUserNotificationCenterDelegate, MessagingDelega
         }
     }
 
+}
+
+struct FCMRequest: Codable {
+    var token: String
+    var os: String
 }

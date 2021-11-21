@@ -57,9 +57,11 @@ struct NotificationRow: View {
     
     func checkFeedbackFilld() {
         APIClient.request(fromRouter: .checkFeedback) { (response:FeedbackFilled?,error) in
-           // self.showFeedback = !(response?.feedbackFilled ?? true) //TODO
-            self.showFeedback = true
-            Logger.debug(response?.feedbackFilled)
+            self.showFeedback = !(response?.data?.feedbackFilled ?? true) //TODO
+            Logger.debug(response?.data?.feedbackFilled)
+            if let bool = response?.data?.feedbackFilled {
+                self.feedbackFilled = bool
+            }
         }
     }
 }

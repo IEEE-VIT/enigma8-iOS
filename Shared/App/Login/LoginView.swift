@@ -13,7 +13,8 @@ struct LoginView: View {
     @ObservedObject var authVM: AuthViewModel
     @ObservedObject var googleVM : GoogleCoordinator
     @ObservedObject var appleVM : AppleCoordinator
-    
+    @EnvironmentObject var headerVM : HeaderRules
+
     // MARK: - BODY
     var body: some View {
         VStack(spacing:15) {
@@ -29,7 +30,7 @@ struct LoginView: View {
               EmptyView()
             }
             
-            NavigationLink(destination: HeaderNavView().navigationBarTitle("").navigationBarHidden(true), isActive: Binding<Bool>(get: {return !authVM.isNew && authVM.isSignedIn}, set: {p in self.authVM.isNew = p})) { EmptyView() }
+//            NavigationLink(destination: HeaderNavView().navigationBarTitle("").navigationBarHidden(true), isActive: Binding<Bool>(get: {return !authVM.isNew && authVM.isSignedIn}, set: {p in self.authVM.isNew = p})) { EmptyView() }
             .padding(40)
         }
         .background(OnboardingBackground())

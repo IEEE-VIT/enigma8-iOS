@@ -65,6 +65,14 @@ struct ProfileView: View {
                     CustomButton(buttonText:"LOGOUT", action: {
                         userLoggedIn = false
                         enigmaStarted = false
+                        userVM.resetAll()
+                        UserDefaults.standard.set(nil, forKey: AppStorageConstants.fullStory)
+                        UserDefaults.standard.set(nil, forKey: AppStorageConstants.feedbackFilled)
+
+                        UserDefaults.standard.set(nil, forKey: AppStorageConstants.instructionsShown)
+                        UserDefaults.standard.set(nil, forKey: AppStorageConstants.journey)
+                        UserDefaults.standard.set(false, forKey: AppStorageConstants.login)
+
                         // TODO clear remaining defaults
                     })
                 }

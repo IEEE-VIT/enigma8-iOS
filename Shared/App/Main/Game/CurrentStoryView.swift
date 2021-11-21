@@ -36,7 +36,22 @@ struct CurrentStoryView: View {
                 }
             }
             NavigationLink(destination: RoomUI().environmentObject(gameVM).environmentObject(rooms), isActive: $storyVM.roomComplete) { EmptyView() }
-                CustomButton(buttonText: storyVM.buttonTitle, action: storyVM.updateCurrentStory,bgroundColor: .eGold)
+       
+                    HStack(spacing: 0) {
+                        Spacer(minLength: 100)
+                        Button(action: storyVM.updateCurrentStory){
+                            Text(storyVM.buttonTitle)
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 12)
+                                .padding(.horizontal, 5)
+                                .foregroundColor(.black)
+                                .background(Color.eGold)
+                                .font(.Mulish(size: 14, weight: .semibold))
+                                .cornerRadius(4)
+                            Spacer(minLength: 100)
+                        }
+            }
+            
         }
         .background(Image(ImageConstants.storyBG).resizable()
                         .scaledToFill().edgesIgnoringSafeArea(.bottom))

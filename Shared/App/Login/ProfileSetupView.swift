@@ -10,11 +10,12 @@ import SwiftUI
 struct ProfileSetupView: View {
     
     @StateObject var profileVM: ProfileSetupViewModel = ProfileSetupViewModel()
-    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
     var body: some View {
         GeometryReader { geo in
                 VStack(alignment: .leading,spacing:35) {
-                    EnigmaHeader(showBackButton: true, showInstructionsButton: false).environmentObject(HeaderRules()).ignoresSafeArea(.keyboard)
+                    EnigmaHeader(showBackButton: true, showInstructionsButton: false,backAction: back).environmentObject(HeaderRules()).ignoresSafeArea(.keyboard)
                         ScrollView {
                             VStack(alignment: .center) {
                                 Image(ImageConstants.profileHeader)
@@ -32,7 +33,7 @@ struct ProfileSetupView: View {
                                                 .foregroundColor(.eRed)
                                                 .font(.Mulish(size: 15, weight: .bold))
                                                 .frame(width: geo.size.width*0.7, alignment: .leading)
-                                        }
+                            
                                     }
                                     .padding(.bottom, 50)
                                     .padding(.leading)
@@ -56,6 +57,10 @@ struct ProfileSetupView: View {
         }
         .background(OnboardingBackground().ignoresSafeArea(.keyboard,edges:.all))
         .navigationBarBackButtonHidden(true)
+    }
+    
+    func back() {
+        self.presentationMode.wrappedValue.dismiss()
     }
 }
 

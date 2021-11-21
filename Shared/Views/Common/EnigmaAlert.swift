@@ -92,11 +92,11 @@ struct EnigmaAlert: View {
                             })
                     }
                     
-                    if(confirmText != nil) {                        CustomButton(buttonText: confirmText ?? "", action: confirmAction)
+                    if(confirmText != nil) {                        CustomButton(buttonText: confirmText ?? "", action: confirmAction,minLength:30)
                     }
                     
                     if(cancelText != nil) {
-                        CustomButton(buttonText: cancelText ?? "", action: cancelAction)
+                        CustomButton(buttonText: cancelText ?? "", action: cancelAction,minLength:30)
                     }
                     
                 }
@@ -116,7 +116,7 @@ struct EnigmaAlert_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
         Color.egrey .blur(radius: 5).edgesIgnoringSafeArea(.all)
-            EnigmaAlert(title: "THIS IS A TITLE", subtitle: "AND THIS IS SUBTITLE",showCloseButton:true, image: "Hint")
+            EnigmaAlert(title: "Wohoo!\n You got the right answer!",text: "You've earned a key!",confirmText: "Go to another room", cancelText: "Continue in this room", image: "Key")
         }
     }
 }

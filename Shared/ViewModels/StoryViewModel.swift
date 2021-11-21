@@ -19,17 +19,19 @@ class StoryViewModel: ObservableObject {
     
     init(roomId: String) {
         self.roomId = roomId
-        getFullStory()
     }
     
-    func getStory(){
+    func getStory() {
+        
         let request = StoryModel.Request(roomId: self.roomId ?? "")
+        
         APIClient.request(fromRouter: .currentStory(request)) { (response: StoryModel.Response?,error) in
             if let error = error {
                 Logger.error(error.debugDescription)
                 return
             }
-            self.story = response?.story ?? []
+            
+            self.story = (response?.story ?? []).filter{ $0?.roomNo != "0" }
         }
         
     }
@@ -47,6 +49,7 @@ class StoryViewModel: ObservableObject {
                 }
             }
             self.buttonTitle = roomComplete ? "Continue": (nextIndex == 0 ? "Start" : "Next")
+            Logger.debug(buttonTitle)
         }
     }
     

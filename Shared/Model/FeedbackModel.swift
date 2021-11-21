@@ -28,5 +28,9 @@ class FeedbackModel: Codable {
 
 
 struct FeedbackFilled: Codable {
+    var data: FeedbackData?
+}
+
+struct FeedbackData: Codable {
     var feedbackFilled: Bool?
 }
