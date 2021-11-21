@@ -32,8 +32,11 @@ class GameViewModel: ObservableObject {
     
     func getPowerups() {
         APIClient.request(fromRouter: Router.getPowerup) { (response: Powerup.Response?, error) in
-            guard let response = response else {return}
-            self.powerupList = response.powerups!
+            guard let powerups = response?.powerups else {
+                Logger.error(error)
+                return
+            }
+            self.powerupList = powerups.sorted { $0.isAvailable && !$1.isAvailable }
         }
     }
     

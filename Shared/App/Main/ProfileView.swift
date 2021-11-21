@@ -13,9 +13,10 @@ struct ProfileView: View {
     @AppStorage(AppStorageConstants.enigmaStarted) var enigmaStarted: Bool = true
     @AppStorage(AppStorageConstants.instructionsShown) var instructionsShown: Bool = false
     @EnvironmentObject var userVM: RoomsViewModel
+    @Binding var showPrivacyPolicy: Bool
     var body: some View {
         VStack {
-            ProfileViewHeader()
+            ProfileViewHeader(showPrivacyPolicy: $showPrivacyPolicy)
                 .padding(.bottom,30)
             Spacer()
             ScrollView {
@@ -63,6 +64,8 @@ struct ProfileView: View {
                 HStack {
                     CustomButton(buttonText:"LOGOUT", action: {
                         userLoggedIn = false
+                        enigmaStarted = false
+                        // TODO clear remaining defaults
                     })
                 }
                 .padding(.vertical,40)
@@ -76,6 +79,6 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(showPrivacyPolicy: .constant(false))
     }
 }

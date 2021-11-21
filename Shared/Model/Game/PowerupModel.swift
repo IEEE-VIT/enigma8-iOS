@@ -45,6 +45,10 @@ struct Powerup: Codable {
             return URL(string: icon ?? "https://www.shareicon.net/data/2017/03/02/880210_images_512x512.png")
         }
         
+        var isAvailable: Bool {
+            return available ?? false
+        }
+        
         private enum CodingKeys: String, CodingKey {
             case id = "_id"
             case name = "name"

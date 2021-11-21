@@ -24,10 +24,10 @@ class GoogleCoordinator: NSObject, ObservableObject {
         let vc = (UIApplication.shared.windows.last?.rootViewController)!
         GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: vc) { user, error in
             guard error == nil else {
-                print(error?.localizedDescription ?? "")
+                Logger.error(error?.localizedDescription ?? "")
                 return
-                
             }
+            
             user?.authentication.do { authentication, error in
                 
                 guard let idToken = authentication?.idToken else {

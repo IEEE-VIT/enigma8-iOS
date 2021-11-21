@@ -26,8 +26,9 @@ struct LoginView: View {
             }
             .padding(.horizontal,40)
             NavigationLink(destination: ProfileSetupView().navigationBarTitle("").navigationBarHidden(true),isActive: $authVM.isNew) {
-                EmptyView()
+              EmptyView()
             }
+            
             NavigationLink(destination: HeaderNavView().navigationBarTitle("").navigationBarHidden(true), isActive: Binding<Bool>(get: {return !authVM.isNew && authVM.isSignedIn}, set: {p in self.authVM.isNew = p})) { EmptyView() }
             .padding(40)
         }

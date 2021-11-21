@@ -10,8 +10,8 @@ import SwiftUI
 struct Powerupcard: View {
     @State var flipped: Bool = false
     var powerupImage: String = "x.square.fill"
-    var powerupName: String = ""
-    var powerupInfo: String = ""
+    var powerupName: String = "Adom"
+    var powerupInfo: String = "ReciveReciveReciveReciveRecive Recive Recive Recive ReciveRecive"
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
