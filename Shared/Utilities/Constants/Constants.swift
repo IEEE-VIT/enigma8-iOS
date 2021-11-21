@@ -30,4 +30,7 @@ struct AppStorageConstants {
     static let enigmaStarted = "EnigmaStarted"
     static let instructionsShown = "InstructionsShown"
     static let charactersShown = "CharactersShown"
+    static let notifications = "EnigmaNotifications"
+    static let feedbackFilled = "EnigmaFeedbackFilled"
+    static let fullStory = "EnigmaFullStory"
 }

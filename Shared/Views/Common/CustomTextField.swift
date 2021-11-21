@@ -9,10 +9,10 @@ import SwiftUI
 
 struct CustomTextField: View {
     var textFieldString: String
-    var bindingString: Binding<String>
+    @Binding var bindingString: String
     
     var body: some View {
-       TextField(textFieldString, text: bindingString)
+       TextField(textFieldString, text: $bindingString)
             .padding()
             .overlay(RoundedRectangle(cornerRadius: 4).strokeBorder(LinearGradient.gold,style: StrokeStyle(lineWidth: 2.0)))
                         .foregroundColor(.white)

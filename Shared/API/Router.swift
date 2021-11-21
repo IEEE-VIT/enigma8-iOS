@@ -25,13 +25,16 @@ enum Router: URLRequestConvertible {
     case getHint(Hint.Request)
     case usePowerup(Powerup.UseRequest)
     
+    case postFeedback(FeedbackModel)
+    case checkFeedback
+    
     static let baseURL = URL(string: "https://enigma8.herokuapp.com")!
     
     var method: HTTPMethod {
         switch self {
-        case .loginGoogle, .loginApple, .profileSetup, .selectPowerup, .submitAnswer:
+        case .loginGoogle, .loginApple, .profileSetup, .selectPowerup, .submitAnswer,.postFeedback:
             return .post
-        case .timer, .getUser, .allRooms, .unlockRoom, .leaderboard, .notifications, .getPowerup, .getQuestion, .getHint, .currentStory, .fullStory, .usePowerup:
+        case .timer, .getUser, .allRooms, .unlockRoom, .leaderboard, .notifications, .getPowerup, .getQuestion, .getHint, .currentStory, .fullStory,.checkFeedback,.usePowerup:
             return .get
         }
     }
@@ -72,6 +75,10 @@ enum Router: URLRequestConvertible {
             return "transact/useHint"
         case .submitAnswer:
             return "transact/submitAnswer"
+        case .postFeedback:
+            return "/feedback/submitFeedback"
+        case .checkFeedback:
+            return "/feedback/feedbackFilled"
         }
     }
     
@@ -141,6 +148,9 @@ enum Router: URLRequestConvertible {
             return try self.encoder.encode(hintRequest, into: request)
         case .submitAnswer(let answerRequest):
             return try self.encoder.encode(answerRequest, into: request)
+        case .postFeedback(let feedback):
+            return try self.encoder.encode(feedback, into: request)
+
         default:
             return try self.encoding.encode(request, with: self.parameters)
         }

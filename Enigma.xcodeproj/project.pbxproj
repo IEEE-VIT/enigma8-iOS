@@ -62,6 +62,7 @@
 		4E7A5CDA2700FBA10058CAB9 /* PodHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A5CD82700FBA10058CAB9 /* PodHelper.swift */; };
 		4E7A5CDC2700FBBF0058CAB9 /* KFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A5CDB2700FBBF0058CAB9 /* KFManager.swift */; };
 		4E7A5CDD2700FBBF0058CAB9 /* KFManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7A5CDB2700FBBF0058CAB9 /* KFManager.swift */; };
+		4E83E9D5274A1E370072B846 /* FeedbackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E83E9D4274A1E370072B846 /* FeedbackModel.swift */; };
 		4E83F15427463FAD008F693E /* RoomProgressTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E83F15327463FAD008F693E /* RoomProgressTile.swift */; };
 		4E83F157274685EE008F693E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E83F156274685EE008F693E /* NotificationManager.swift */; };
 		4E944D3327436FCF00DC14B4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E944D3227436FCF00DC14B4 /* Constants.swift */; };
@@ -77,6 +78,7 @@
 		4EC3E48426E7DCCA0049AD99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EC3E46F26E7DCCA0049AD99 /* Assets.xcassets */; };
 		4EC3E48526E7DCCA0049AD99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EC3E46F26E7DCCA0049AD99 /* Assets.xcassets */; };
 		4EC66BA4274502A700CAF970 /* EnigmaLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC66BA3274502A700CAF970 /* EnigmaLogo.swift */; };
+		4ED3B1A0274A309E00B3BCAC /* PrivacyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED3B19F274A309E00B3BCAC /* PrivacyPolicy.swift */; };
 		8C1F5E4B273592D2001D8CCE /* PowerupRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F5E4A273592D2001D8CCE /* PowerupRow.swift */; };
 		8C1F5E4E2735953B001D8CCE /* PowerupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F5E4D2735953B001D8CCE /* PowerupModel.swift */; };
 		8C1F5E522735A52F001D8CCE /* PowerupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F5E512735A52F001D8CCE /* PowerupView.swift */; };
@@ -174,6 +176,7 @@
 		4E7A5CD42700FB5C0058CAB9 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		4E7A5CD82700FBA10058CAB9 /* PodHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodHelper.swift; sourceTree = "<group>"; };
 		4E7A5CDB2700FBBF0058CAB9 /* KFManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KFManager.swift; sourceTree = "<group>"; };
+		4E83E9D4274A1E370072B846 /* FeedbackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackModel.swift; sourceTree = "<group>"; };
 		4E83F15327463FAD008F693E /* RoomProgressTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomProgressTile.swift; sourceTree = "<group>"; };
 		4E83F156274685EE008F693E /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		4E83F15827468675008F693E /* Enigma (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Enigma (iOS).entitlements"; sourceTree = "<group>"; };
@@ -192,6 +195,7 @@
 		4EC3E47E26E7DCCA0049AD99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EC3E47F26E7DCCA0049AD99 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		4EC66BA3274502A700CAF970 /* EnigmaLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnigmaLogo.swift; sourceTree = "<group>"; };
+		4ED3B19F274A309E00B3BCAC /* PrivacyPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicy.swift; sourceTree = "<group>"; };
 		8C1F5E4A273592D2001D8CCE /* PowerupRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerupRow.swift; sourceTree = "<group>"; };
 		8C1F5E4D2735953B001D8CCE /* PowerupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerupModel.swift; sourceTree = "<group>"; };
 		8C1F5E512735A52F001D8CCE /* PowerupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerupView.swift; sourceTree = "<group>"; };
@@ -360,6 +364,7 @@
 				31D55DE0271768D80068A8AF /* SetupProfileModel.swift */,
 				8C73DACA272E8E88009943BE /* NotificationModel.swift */,
 				3104C7C127350F5900B1C155 /* UserModel.swift */,
+				4E83E9D4274A1E370072B846 /* FeedbackModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -571,8 +576,9 @@
 			isa = PBXGroup;
 			children = (
 				31C131F8271D4F7D00BD5301 /* InstructionsView.swift */,
-				31C13210271D6D6500BD5301 /* FeedbackUI.swift */,
 				8C73DAC6272E8A04009943BE /* NotificationsView.swift */,
+				31C13210271D6D6500BD5301 /* FeedbackUI.swift */,
+				4ED3B19F274A309E00B3BCAC /* PrivacyPolicy.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -851,6 +857,7 @@
 				3104C7C42735102000B1C155 /* ProfileView.swift in Sources */,
 				31A266612718A1C6005B1A17 /* RoomsView.swift in Sources */,
 				8CEEE0172736F9CF00CD06AB /* SafariView.swift in Sources */,
+				4E83E9D5274A1E370072B846 /* FeedbackModel.swift in Sources */,
 				8CEF83EC2712F23500E96E2E /* StoryModel.swift in Sources */,
 				31CEEDA12715C38900298399 /* DropdownView.swift in Sources */,
 				8CB814692742928A00E19DEE /* Onboarding.swift in Sources */,
@@ -868,6 +875,7 @@
 				8CAC2B7027103B39008049D3 /* TimeView.swift in Sources */,
 				31C13208271D561F00BD5301 /* LetsPlay.swift in Sources */,
 				8C1F5E4B273592D2001D8CCE /* PowerupRow.swift in Sources */,
+				4ED3B1A0274A309E00B3BCAC /* PrivacyPolicy.swift in Sources */,
 				4EB111DE2744E5E000632784 /* NotificationBackground.swift in Sources */,
 				4E83F157274685EE008F693E /* NotificationManager.swift in Sources */,
 				4E944D392743845F00DC14B4 /* CustomLabel.swift in Sources */,

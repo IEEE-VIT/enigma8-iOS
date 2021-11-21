@@ -16,6 +16,7 @@ class StoryViewModel: ObservableObject {
     @Published var nextIndex: Int = 0
     @Published var roomComplete = false
     @Published var buttonTitle: String = "Start"
+    
     init(roomId: String) {
         self.roomId = roomId
         getFullStory()
@@ -50,6 +51,11 @@ class StoryViewModel: ObservableObject {
     }
     
     func getFullStory(){
+        
+        if let storyData = UserDefaults.standard.data(forKey: AppStorageConstants.fullStory), let data = try? JSONDecoder().decode([Story].self, from:storyData) {
+            self.fullStory = data
+        }
+        
         APIClient.request(fromRouter: .fullStory) { (response: StoryModel.Response?, error) in
             guard let fullStory = response?.story as? [Story] else {
                 Logger.error(error.debugDescription)
@@ -57,6 +63,10 @@ class StoryViewModel: ObservableObject {
             }
             self.fullStory = fullStory
             print("Story Completely Fetched")
+            
+            if let data = try? JSONEncoder().encode(fullStory) {
+                UserDefaults.standard.set(data, forKey: AppStorageConstants.fullStory)
+            }
         }
     }
     

@@ -11,8 +11,9 @@ import SafariServices
 struct NotificationRow: View {
     var notif: Notification = Notification(text: "Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet", timestamp: 16341234122,metadata:"")
     @State var showSafari = false
-    @State var showFeedback = false
-    
+    @Binding var showFeedback: Bool
+    @AppStorage(AppStorageConstants.feedbackFilled) var feedbackFilled: Bool = false
+
     var body: some View {
         HStack(alignment:.top, spacing: 12) {
                 Image(ImageConstants.bullet)
@@ -30,9 +31,15 @@ struct NotificationRow: View {
                 }
             Spacer()
                 if(notif.metadata != nil) {
-                    Button(action: view) {
+                    Button(action: {
+                        if notif.type == "feedback" {
+                            self.checkFeedbackFilld()
+                        } else {
+                            self.showSafari = true
+                        }
+                    }) {
                     CustomLabel(text: "VIEW")
-                    }
+                }
                     .padding(2.5)
                     .padding(.horizontal,12.5)
                     .overlay(RoundedRectangle(cornerRadius: 5).stroke(LinearGradient.gold, lineWidth: 1))
@@ -42,19 +49,24 @@ struct NotificationRow: View {
         .sheet(isPresented: $showSafari) {
             SafariView(url: URL(string: notif.metadata ?? "https://google.com")!)
         }
-        .sheet(isPresented: $showFeedback) {
-            FeedbackUI()
-        }
     }
     
     func view() {
         self.showSafari = true
     }
+    
+    func checkFeedbackFilld() {
+        APIClient.request(fromRouter: .checkFeedback) { (response:FeedbackFilled?,error) in
+           // self.showFeedback = !(response?.feedbackFilled ?? true) //TODO
+            self.showFeedback = true
+            Logger.debug(response?.feedbackFilled)
+        }
+    }
 }
 
 struct NotificationRow_Previews: PreviewProvider {
     static var previews: some View {
-        NotificationRow()
+        NotificationRow(showFeedback: .constant(false))
             .previewLayout(.sizeThatFits)
             .background(Color.black)
     }
