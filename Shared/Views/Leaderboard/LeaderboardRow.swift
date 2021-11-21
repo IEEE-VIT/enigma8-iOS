@@ -39,7 +39,6 @@ struct LeaderboardRow: View {
             .shadow(radius: isUser ? 4 : 0)
             .border(isUser ? LinearGradient.gold : noUseGradient, width: 2)
             .background(isUser ? Color.black : Color.clear)
-            .padding(.horizontal)
     }
 }
 

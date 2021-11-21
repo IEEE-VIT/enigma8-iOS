@@ -35,7 +35,7 @@ struct InstructionsHeader: View {
                     })
                 }
                 CustomLabel(text: viewName.uppercased(),font: .Cinzel(size: 21, weight: .bold), gradient: .blue)
-                    .padding()
+                    .padding(.top, 3)
                 if (frontButton) {
                     Button(action : {
                         selectedTab += 1

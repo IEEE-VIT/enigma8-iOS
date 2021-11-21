@@ -16,7 +16,7 @@ struct RoomStatesTorches: View {
                 .scaledToFit()
                 .frame(height: 44)
             Text("Question \(name.capitalized)")
-                .font(.Mulish(size: 10, weight: .regular))
+                .font(.Mulish(size: 14, weight: .semibold))
                 .foregroundColor(Color.eBlue)
         }
     }
