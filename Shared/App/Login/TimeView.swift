@@ -15,6 +15,11 @@ struct TimeView: View {
     var body: some View {
         GeometryReader { gr in
             VStack(spacing:50) {
+                
+                NavigationLink(destination: DemoQuestion(),isActive: $showDemoQuestion) {
+                    EmptyView()
+                }
+
                 TimerBanner()
                 
                 CustomLabel(text: "ENIGMA", font: .Cinzel(size: 49, weight: .black))
@@ -36,11 +41,10 @@ struct TimeView: View {
             .padding(16)
             .background(Color.black)
             .onReceive(timer, perform: performCountdown)
-            .fullScreenCover(isPresented: $showDemoQuestion) {
-               Text("DEMO GAME HERE") // TODO
-            }
         }
         .frame(maxWidth: .infinity)
+        .navigationTitle("")
+        .navigationBarHidden(true)
     }
     
     func performCountdown(_ output: Timer.TimerPublisher.Output) {

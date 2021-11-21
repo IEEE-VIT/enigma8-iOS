@@ -22,7 +22,7 @@ class TimerViewModel: ObservableObject {
     func getLeftTime() {
         APIClient.request(fromRouter: .timer) { (response: TimerResponse?, error) in
             guard let response = response else { return }
-            self.started = true//response.started
+            self.started = !response.started
             self.enigmaDate = response.enigmaDate
         }
     }

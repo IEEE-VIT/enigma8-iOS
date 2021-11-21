@@ -28,6 +28,7 @@ struct PowerupView: View {
                         ForEach(powerupVM.powerupList) { powerup in
                             Button(action: {powerupVM.choosePowerup(powerup: powerup)}) {
                                 PowerupRow(powerup: powerup, width: gr.size.width)
+                                    .opacity(powerup.isAvailable ? 1 : 0.4)
                             }
                         }
                     }

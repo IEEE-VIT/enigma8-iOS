@@ -80,6 +80,7 @@
 		4EC66BA4274502A700CAF970 /* EnigmaLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC66BA3274502A700CAF970 /* EnigmaLogo.swift */; };
 		4ED3B1A0274A309E00B3BCAC /* PrivacyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED3B19F274A309E00B3BCAC /* PrivacyPolicy.swift */; };
 		4ED3B1A2274A36BD00B3BCAC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4ED3B1A1274A36BD00B3BCAC /* GoogleService-Info.plist */; };
+		4ED3B1A4274A810100B3BCAC /* DemoQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED3B1A3274A810100B3BCAC /* DemoQuestion.swift */; };
 		8C1F5E4B273592D2001D8CCE /* PowerupRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F5E4A273592D2001D8CCE /* PowerupRow.swift */; };
 		8C1F5E4E2735953B001D8CCE /* PowerupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F5E4D2735953B001D8CCE /* PowerupModel.swift */; };
 		8C1F5E522735A52F001D8CCE /* PowerupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F5E512735A52F001D8CCE /* PowerupView.swift */; };
@@ -197,6 +198,7 @@
 		4EC66BA3274502A700CAF970 /* EnigmaLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnigmaLogo.swift; sourceTree = "<group>"; };
 		4ED3B19F274A309E00B3BCAC /* PrivacyPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicy.swift; sourceTree = "<group>"; };
 		4ED3B1A1274A36BD00B3BCAC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4ED3B1A3274A810100B3BCAC /* DemoQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoQuestion.swift; sourceTree = "<group>"; };
 		8C1F5E4A273592D2001D8CCE /* PowerupRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerupRow.swift; sourceTree = "<group>"; };
 		8C1F5E4D2735953B001D8CCE /* PowerupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerupModel.swift; sourceTree = "<group>"; };
 		8C1F5E512735A52F001D8CCE /* PowerupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerupView.swift; sourceTree = "<group>"; };
@@ -616,6 +618,7 @@
 			isa = PBXGroup;
 			children = (
 				8CAC2B6C27103AF5008049D3 /* TimerBlock.swift */,
+				4ED3B1A3274A810100B3BCAC /* DemoQuestion.swift */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -876,6 +879,7 @@
 				31C13208271D561F00BD5301 /* LetsPlay.swift in Sources */,
 				8C1F5E4B273592D2001D8CCE /* PowerupRow.swift in Sources */,
 				4ED3B1A0274A309E00B3BCAC /* PrivacyPolicy.swift in Sources */,
+				4ED3B1A4274A810100B3BCAC /* DemoQuestion.swift in Sources */,
 				4EB111DE2744E5E000632784 /* NotificationBackground.swift in Sources */,
 				4E83F157274685EE008F693E /* NotificationManager.swift in Sources */,
 				4E944D392743845F00DC14B4 /* CustomLabel.swift in Sources */,

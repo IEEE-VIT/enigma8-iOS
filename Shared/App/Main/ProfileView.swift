@@ -64,6 +64,8 @@ struct ProfileView: View {
                 HStack {
                     CustomButton(buttonText:"LOGOUT", action: {
                         userLoggedIn = false
+                        enigmaStarted = false
+                        // TODO clear remaining defaults
                     })
                 }
                 .padding(.vertical,40)

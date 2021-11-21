@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HeaderNavView: View {
     @State var tabSelected = 0
-    @EnvironmentObject var rooms : RoomsViewModel
+    @StateObject var rooms: RoomsViewModel = RoomsViewModel()
     @EnvironmentObject var headerVM : HeaderRules
     @StateObject var timerVM: TimerViewModel = TimerViewModel()
     @State var showPrivacyPolicy: Bool = false
@@ -47,9 +47,10 @@ struct HeaderNavView: View {
             }
                 EnigmaTabView(tabSelected: $tabSelected)
                     .blur(radius: rooms.presentPopup ? 3 : 0)
+                    .ignoresSafeArea(.keyboard)
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .navigationBarHidden(true)//both hiddens required
+        .navigationBarHidden(true) //both hiddens required
         .onAppear(perform: timerVM.getLeftTime)
         }
     }

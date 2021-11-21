@@ -29,7 +29,7 @@ struct PowerupRow: View {
                         .lineLimit(3)
                         .minimumScaleFactor(0.5)
                 }
-                .frame(maxWidth: .infinity)
+                .frame(maxWidth: .infinity,alignment: .leading)
         }
         .padding(width * 0.05)
         .background(RoundedRectangle(cornerRadius: 9).fill(Color.black).shadow(color: .eBlue.opacity(0.4), radius: 4, x: 0, y: 4))
