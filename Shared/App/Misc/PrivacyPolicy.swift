@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct PrivacyPolicy: View {
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    func back() { self.presentationMode.wrappedValue.dismiss() }
+    
     var body: some View {
         VStack {
+            EnigmaHeader(showBackButton: true, showInstructionsButton: false, backAction: back)
             VStack {
             Image("PrivacyIcon")
                 .resizable()

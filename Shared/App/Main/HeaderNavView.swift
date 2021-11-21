@@ -12,6 +12,7 @@ struct HeaderNavView: View {
     @EnvironmentObject var rooms : RoomsViewModel
     @EnvironmentObject var headerVM : HeaderRules
     @StateObject var timerVM: TimerViewModel = TimerViewModel()
+    @State var showPrivacyPolicy: Bool = false
     var body: some View {
         NavigationView {
             
@@ -24,6 +25,10 @@ struct HeaderNavView: View {
             NavigationLink(destination: InstructionsView().navigationTitle("").navigationBarHidden(true),isActive: $headerVM.showInstructions){
                 EmptyView()
             }
+                
+            NavigationLink(destination: PrivacyPolicy().navigationTitle("").navigationBarHidden(true),isActive: $showPrivacyPolicy){
+                    EmptyView()
+                }
             
             EnigmaHeader()
                     .blur(radius: rooms.presentPopup ? 3 : 0)
@@ -36,7 +41,7 @@ struct HeaderNavView: View {
             case 2:
                 FullStoryView(storyViewModel: StoryViewModel(roomId: self.rooms.user?.currentRoomId ?? ""))
             case 3:
-                ProfileView()
+                ProfileView(showPrivacyPolicy:$showPrivacyPolicy)
             default:
                 Text("") //TODO
             }
@@ -61,4 +66,5 @@ class HeaderRules: ObservableObject {
     @Published var showNotifications: Bool = false
     @Published var showInstructions: Bool = false
     @Published var showRoom: Bool = false
+    @Published var showPrivacyPolicy: Bool = false
 }

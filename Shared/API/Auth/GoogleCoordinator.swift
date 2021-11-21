@@ -26,8 +26,8 @@ class GoogleCoordinator: NSObject, ObservableObject {
             guard error == nil else {
                 print(error?.localizedDescription ?? "")
                 return
-                
             }
+            
             user?.authentication.do { authentication, error in
                 
                 guard let idToken = authentication?.idToken else {

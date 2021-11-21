@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProfileViewHeader: View {
-    @State var presentPrivacyPolicy: Bool = false
+    @Binding var showPrivacyPolicy: Bool
     var body: some View {
         HStack {
             CustomLabel(text: "MY PROFILE",font: .Cinzel(size: 24, weight: .bold))
@@ -18,17 +18,13 @@ struct ProfileViewHeader: View {
                 .scaledToFit()
                 .frame(width: 23)
                 .onTapGesture {
-                    self.presentPrivacyPolicy = true
+                    self.showPrivacyPolicy = true
                 }
-        }
-        .sheet(isPresented: $presentPrivacyPolicy) {
-            PrivacyPolicy()
-        }
-    }
+        }    }
 }
 
 struct ProfileViewHeader_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileViewHeader()
+        ProfileViewHeader(showPrivacyPolicy: .constant(false))
     }
 }
