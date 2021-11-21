@@ -13,7 +13,8 @@ class GameViewModel: ObservableObject {
     @Published var powerupList: [Powerup.PowerupModel] = []
     @Published var showAlert: Bool = false
     @Published var chosenPowerup: Powerup.PowerupModel?
-
+    @Published var powerupFetched: Bool = false
+    @Published var fetchedPowerup: Powerup.UseResponse?
     @Published var currentQuestion: Question.Response?
     @Published var roomStatus: Question.Response?
     @Published var navigateToRoom: Bool = false
@@ -42,7 +43,6 @@ class GameViewModel: ObservableObject {
     }
     
     func selectPowerup(powerup: Powerup.PowerupModel) -> Void {
-        print("Current Status: \(currentStatus)")
         APIClient.request(fromRouter: Router.selectPowerup(Powerup.SelectRequest(roomId: currentStatus?.room?._id, powerupId: powerup.id))) { (response: Powerup.SelectResponse?, error) in
             guard let response = response else {return}
             if(error == nil) {//Success in Selecting Powerup
@@ -50,6 +50,16 @@ class GameViewModel: ObservableObject {
                 self.navigateToRoom = true
                 print("Navigating to Room")
             }
+        }
+    }
+    
+    func usePowerup() {
+        APIClient.request(fromRouter: Router.usePowerup(Powerup.UseRequest(roomId: currentStatus?.room?._id))) { (response: Powerup.UseResponse?, error) in
+            guard let response = response else {return}
+            self.powerupFetched = true
+            self.showPopup = true
+            self.answerStatus = .powerup
+            self.fetchedPowerup = response
         }
     }
     
@@ -100,5 +110,5 @@ class GameViewModel: ObservableObject {
 }
 
 enum AnswerStatus {
-    case correct, close, wrong, none, nextRoom, hintQuery
+    case correct, close, wrong, none, nextRoom, hintQuery, powerupQuery, powerup, powerupUsed
 }

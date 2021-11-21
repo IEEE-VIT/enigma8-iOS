@@ -40,6 +40,21 @@ struct RoomUI: View {
                             .font(.Mulish(size: 16))
                             .foregroundColor(.eBlue)
                     }.padding(10)
+                        .onTapGesture(perform: {
+                            if(gameVM.powerupFetched) {
+                                gameVM.answerStatus = .powerup
+                            } else {
+                                if(gameVM.roomStatus?.powerupUsed == .yes) {
+                                    gameVM.showPopup = true
+                                    gameVM.answerStatus = .powerupUsed
+                                } else if(gameVM.roomStatus?.powerupUsed == .active) {
+                                    gameVM.usePowerup()
+                                } else if(gameVM.roomStatus?.powerupUsed == .no) {
+                                    gameVM.answerStatus = .powerupQuery
+                                    gameVM.showPopup = true
+                                }
+                            }
+                        })
                         .background(Color(white: 1, opacity: 0.05))
                 }
                 Group {
@@ -100,6 +115,12 @@ struct RoomUI: View {
                 EnigmaAlert(title: "Wohoo!\n You got the right answer!",text: "You've earned a key!",confirmText: "Go to another room", cancelText: "Continue in this room", confirmAction: {gameVM.navigateBackToRooms = true}, cancelAction: {gameVM.showPopup.toggle(); gameVM.getQuestion()}, image: "Key")
             case .hintQuery:
                 EnigmaAlert(title: "Using hint will deduct points from your score", subtitle: "Are you sure to use a hint?",confirmText: "Confirm", showCloseButton:true, confirmAction: {gameVM.getHint();gameVM.showPopup.toggle()}, closeAction: {gameVM.showPopup.toggle()}, image: "Hint")
+            case .powerupQuery:
+                EnigmaAlert(title: "This powerup can be used only once in this room. Are you sure you want to use it for this question?",confirmText: "Confirm", showCloseButton:true, confirmAction: {gameVM.usePowerup();gameVM.showPopup.toggle()}, closeAction: {gameVM.showPopup.toggle()}, imageURL: gameVM.roomStatus?.powerupDetails?.iconURL)
+            case .powerupUsed:
+                EnigmaAlert(title: "You've already used this powerup!", showCloseButton:true, closeAction: {gameVM.showPopup.toggle()})
+            case .powerup:
+                EnigmaAlert(title: gameVM.fetchedPowerup?.text, subtitle: gameVM.fetchedPowerup?.data, showCloseButton: true, closeAction: {gameVM.showPopup.toggle()}, imageURL: gameVM.roomStatus?.powerupDetails?.iconURL)
             default:
                 EmptyView()
             }

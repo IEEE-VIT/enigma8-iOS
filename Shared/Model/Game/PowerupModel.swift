@@ -19,6 +19,17 @@ struct Powerup: Codable {
         var room: Room?
     }
     
+    struct UseRequest: Codable {
+        var roomId: String?
+    }
+    
+    struct UseResponse: Codable {
+        var powerUp: PowerupModel?//might need change
+        var text: String?
+        var data: String?
+        var imgURL: String?
+    }
+    
     struct Response: Codable {
         var powerups: [PowerupModel]?
     }

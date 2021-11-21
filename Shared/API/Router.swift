@@ -23,6 +23,7 @@ enum Router: URLRequestConvertible {
     case submitAnswer(Answer.Request)
     case notifications
     case getHint(Hint.Request)
+    case usePowerup(Powerup.UseRequest)
     
     static let baseURL = URL(string: "https://enigma8.herokuapp.com")!
     
@@ -30,7 +31,7 @@ enum Router: URLRequestConvertible {
         switch self {
         case .loginGoogle, .loginApple, .profileSetup, .selectPowerup, .submitAnswer:
             return .post
-        case .timer, .getUser, .allRooms, .unlockRoom, .leaderboard, .notifications, .getPowerup, .getQuestion, .getHint, .currentStory, .fullStory:
+        case .timer, .getUser, .allRooms, .unlockRoom, .leaderboard, .notifications, .getPowerup, .getQuestion, .getHint, .currentStory, .fullStory, .usePowerup:
             return .get
         }
     }
@@ -57,6 +58,8 @@ enum Router: URLRequestConvertible {
             return "user/getPowerups/"
         case .selectPowerup:
             return "user/selectPowerup/"
+        case .usePowerup:
+            return "transact/usePowerup"
         case .leaderboard:
             return "game/leaderboards"
         case .notifications:
@@ -128,6 +131,8 @@ enum Router: URLRequestConvertible {
             return try self.encoder.encode(roomId, into: request)
         case .selectPowerup(let powerupSelect):
             return try self.encoder.encode(powerupSelect, into:request)
+        case .usePowerup(let powerup):
+            return try self.encoder.encode(powerup, into: request)
         case .leaderboard(let leaderboardRequest):
             return try self.encoder.encode(leaderboardRequest, into: request)
         case .getQuestion(let questionRequest):
