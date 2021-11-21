@@ -33,8 +33,8 @@ struct Question: Codable {
     }
     
     enum MediaType: String, Codable {
-        case img = "img"
-        case vid = "vid"
+        case img = "image/png"
+        case vid = "video/mp4"
     }
     
 }
