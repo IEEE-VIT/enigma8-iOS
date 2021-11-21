@@ -79,6 +79,7 @@
 		4EC3E48426E7DCCA0049AD99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EC3E46F26E7DCCA0049AD99 /* Assets.xcassets */; };
 		4EC3E48526E7DCCA0049AD99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EC3E46F26E7DCCA0049AD99 /* Assets.xcassets */; };
 		4EC66BA4274502A700CAF970 /* EnigmaLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC66BA3274502A700CAF970 /* EnigmaLogo.swift */; };
+		4ED3B1A0274A309E00B3BCAC /* PrivacyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED3B19F274A309E00B3BCAC /* PrivacyPolicy.swift */; };
 		8C1F5E4B273592D2001D8CCE /* PowerupRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F5E4A273592D2001D8CCE /* PowerupRow.swift */; };
 		8C1F5E4E2735953B001D8CCE /* PowerupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F5E4D2735953B001D8CCE /* PowerupModel.swift */; };
 		8C1F5E522735A52F001D8CCE /* PowerupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1F5E512735A52F001D8CCE /* PowerupView.swift */; };
@@ -194,6 +195,7 @@
 		4EC3E47E26E7DCCA0049AD99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EC3E47F26E7DCCA0049AD99 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		4EC66BA3274502A700CAF970 /* EnigmaLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnigmaLogo.swift; sourceTree = "<group>"; };
+		4ED3B19F274A309E00B3BCAC /* PrivacyPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicy.swift; sourceTree = "<group>"; };
 		8C1F5E4A273592D2001D8CCE /* PowerupRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerupRow.swift; sourceTree = "<group>"; };
 		8C1F5E4D2735953B001D8CCE /* PowerupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerupModel.swift; sourceTree = "<group>"; };
 		8C1F5E512735A52F001D8CCE /* PowerupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerupView.swift; sourceTree = "<group>"; };
@@ -572,6 +574,7 @@
 				31C131F8271D4F7D00BD5301 /* InstructionsView.swift */,
 				8C73DAC6272E8A04009943BE /* NotificationsView.swift */,
 				31C13210271D6D6500BD5301 /* FeedbackUI.swift */,
+				4ED3B19F274A309E00B3BCAC /* PrivacyPolicy.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -868,6 +871,7 @@
 				8CAC2B7027103B39008049D3 /* TimeView.swift in Sources */,
 				31C13208271D561F00BD5301 /* LetsPlay.swift in Sources */,
 				8C1F5E4B273592D2001D8CCE /* PowerupRow.swift in Sources */,
+				4ED3B1A0274A309E00B3BCAC /* PrivacyPolicy.swift in Sources */,
 				4EB111DE2744E5E000632784 /* NotificationBackground.swift in Sources */,
 				4E83F157274685EE008F693E /* NotificationManager.swift in Sources */,
 				4E944D392743845F00DC14B4 /* CustomLabel.swift in Sources */,

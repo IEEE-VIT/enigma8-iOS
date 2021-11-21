@@ -13,24 +13,36 @@ struct ProfileView: View {
     var body: some View {
         VStack {
             ProfileViewHeader()
+                .padding(.bottom,30)
             Spacer()
             ScrollView {
                 VStack(alignment: .leading) {
                     HStack {
                         VStack(alignment: .leading, spacing: 10) {
+                            Group {
                             Text("Username: ")
                             Text("Score: ")
                             Text("Leaderboard Ranking: ")
                             Text("Stars Earned: ")
                             Text("Email: ")
+                            }
+                            .font(.Mulish(size: 18, weight: .semibold))
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.5)
                         }
                         .foregroundColor(Color.eGold)
+
                         VStack(alignment: .leading, spacing: 10) {
+                            Group {
                             Text(self.userVM.user?.username ?? "username")
                             Text("\(self.userVM.user?.score ?? 0)")
                             Text("\(self.userVM.user?.rank ?? 0)")
                             Text("\(self.userVM.user?.stars ?? 0)")
                             Text(self.userVM.user?.email ?? "email@email.com")
+                        }
+                        .font(.Mulish(size: 18, weight: .semibold))
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.5)
                         }
                         .foregroundColor(Color.eBlue)
                         Spacer()
@@ -39,8 +51,9 @@ struct ProfileView: View {
                 }
                 .padding()
                 Text("PROGRESS")
-                    .font(.Mulish(size:14, weight: .regular))
+                    .font(.Mulish(size:22, weight: .regular))
                     .foregroundColor(Color.eGold)
+                    .padding(20)
                
                 RoomProgressView(width: UIScreen.main.bounds.width * 0.66)
                 Spacer()
@@ -50,7 +63,7 @@ struct ProfileView: View {
                         isLoggedIn = false
                     })
                 }
-                .padding()
+                .padding(.vertical,40)
                 
             }
         }
