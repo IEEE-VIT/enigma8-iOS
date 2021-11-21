@@ -13,8 +13,8 @@ class ProfileSetupViewModel: ObservableObject {
     @AppStorage(AppStorageConstants.login) var userSetUp: Bool = false
     @Published var username: String = ""
     var surveyOptions: [String] = ["Instagram", "Facebook", "Reddit", "LinkedIn", "Discord", "Word of mouth", "Other"]
-    @Published var isCollegeStudent: Int = 1
-    var errorMessage: String? = nil
+    @Published var errorMessage: String? = nil
+    @Published var selectError: Bool = false
     static let countRule = "minimum 8 characters"
     static let alphanumericsRule = "no special characters"
     var displayCountRules: Bool {
@@ -30,20 +30,21 @@ class ProfileSetupViewModel: ObservableObject {
     var displayBoth: Bool {
         displayCountRules && displayAlphanumericsRule
     }
-
-    private var boolIsCollege: Bool {
-        isCollegeStudent == 0 ? true : false
-    }
-    @Published var outreach: String = "Social Media"
+    
+    @Published var outreach: String = "-Select-"
     var profileSuccess: Bool = false
     
-    
-    // CHECK
     func setupProfile() {
+        if(outreach == "-Select-") {
+            self.selectError = true
+            return
+        } else {
+            self.selectError = false
+        }
         let request = ProfileSetupModel.Request(username: username, outreach: outreach)
         APIClient.request(fromRouter: .profileSetup(request)) { (response: ProfileSetupModel.Response?,error) in
             if let error = error {
-                self.errorMessage = error.debugDescription
+                self.errorMessage = "*\(error)"
                 return
             }
             print(response ?? "Error parsing response from Backend")

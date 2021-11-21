@@ -14,6 +14,8 @@ struct CustomTextField: View {
     var body: some View {
        TextField(textFieldString, text: $bindingString)
             .padding()
+            .accentColor(.eGold)
+            .autocapitalization(.none)
             .overlay(RoundedRectangle(cornerRadius: 4).strokeBorder(LinearGradient.gold,style: StrokeStyle(lineWidth: 2.0)))
                         .foregroundColor(.white)
     }
