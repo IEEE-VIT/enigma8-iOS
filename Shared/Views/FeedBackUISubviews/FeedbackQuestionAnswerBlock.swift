@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct FeedbackQuestionAnswerBlock: View {
-    var questionText: String = "Lorem ipsum dolor sit amet, consectetur adipiscing elit?"
-    var textFieldString: String = "Answer Field"
-    var textfieldEntry: Binding<String>
+    var questionText: String
+    var textFieldString: String = ""
+    @Binding var textfieldEntry: String
     var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
         Text(questionText)
-        CustomTextField(textFieldString: textFieldString, bindingString: textfieldEntry)
-            .padding(.horizontal, 20)
+            .font(.Mulish(size: 16, weight: .regular))
+            .foregroundColor(.eGold)
+            CustomTextField(textFieldString: "", bindingString: $textfieldEntry)
+    }
     }
 }
 

@@ -10,15 +10,20 @@ import SwiftUI
 struct NotificationsView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @ObservedObject var notifsVM: NotificationsViewModel = NotificationsViewModel()
-    
+    @State var showFeedback: Bool = false
     var body: some View {
         VStack(alignment: .leading) {
+
+            NavigationLink(destination: FeedbackUI(),isActive:$showFeedback) {
+                EmptyView()
+            }
+            
             EnigmaHeader(showBackButton:true,showInstructionsButton: false,backAction:back)
             CustomLabel(text: "Notifications",font: .Cinzel()).padding(20)
             ScrollView {
                 LazyVStack {
                     ForEach(notifsVM.notificationList) { notification in
-                        NotificationRow(notif: notification)
+                        NotificationRow(notif: notification, showFeedback: $showFeedback)
                     }
                 }
             }

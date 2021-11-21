@@ -15,6 +15,7 @@ struct CustomButton: View {
     var bgroundColor: Color = Color.eBlue
     var font: Font = .Mulish(size: 14, weight: .semibold)
     var cornerRad: CGFloat = 4
+    
     var body: some View {
         HStack(spacing: 0) {
             Spacer(minLength: 100)
