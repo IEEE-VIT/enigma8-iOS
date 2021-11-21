@@ -42,7 +42,7 @@ struct Story:Codable, Hashable, Identifiable {
 
 enum StorySender: String {
     case sender1 = "Ali"
-    case sender2 = "MJ"
+    case sender2 = "Jones"
     case voice = "voice"
     case narrator = "narrator"
     

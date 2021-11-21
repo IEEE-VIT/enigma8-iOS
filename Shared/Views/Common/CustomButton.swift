@@ -15,10 +15,10 @@ struct CustomButton: View {
     var bgroundColor: Color = Color.eBlue
     var font: Font = .Mulish(size: 14, weight: .semibold)
     var cornerRad: CGFloat = 4
-    
+    var minLength: CGFloat = 100
     var body: some View {
         HStack(spacing: 0) {
-            Spacer(minLength: 100)
+            Spacer(minLength: minLength)
             Button(action: action){
                 Text(buttonText)
                     .lineLimit(1)
@@ -31,7 +31,7 @@ struct CustomButton: View {
                     .border(borderColor, width: 2.0)
                     .font(font)
                     .cornerRadius(cornerRad)
-                Spacer(minLength: 100)
+                Spacer(minLength: minLength)
             }
         }
     }

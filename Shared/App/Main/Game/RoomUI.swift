@@ -112,7 +112,14 @@ struct RoomUI: View {
             case .close:
                 EnigmaAlert(title: "You are close to the answer!",text:" Keep Trying!", showCloseButton: true, closeAction: {gameVM.showPopup.toggle()})
             case .correct:
-                EnigmaAlert(title: "Wohoo!\n You got the right answer!",text: "You've earned a key!", showCloseButton: true, closeAction: {gameVM.showPopup.toggle(); gameVM.getQuestion()}, image: "Key")
+                EnigmaAlert(title: "Wohoo!\n You got the right answer!",text: "You've earned a key and \(gameVM.latestScore) points!", showCloseButton: true, closeAction: {
+                    gameVM.showPopup.toggle()
+                    if gameVM.roomStatus?.question?.questionNo == 3 {
+                        self.back()
+                    } else {
+                    gameVM.getQuestion()
+                    }
+                }, image: "Key")
             case .nextRoom:
                 EnigmaAlert(title: "Wohoo!\n You got the right answer!",text: "You've earned a key!",confirmText: "Go to another room", cancelText: "Continue in this room", confirmAction: {gameVM.navigateBackToRooms = true}, cancelAction: {gameVM.showPopup.toggle(); gameVM.getQuestion()}, image: "Key")
             case .hintQuery:
