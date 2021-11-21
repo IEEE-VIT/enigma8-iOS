@@ -26,7 +26,7 @@ struct ProfileView: View {
                             Text("Username: ")
                             Text("Score: ")
                             Text("Rank: ")
-                            Text("Stars: ")
+                            Text("Keys: ")
                             Text("Email: ")
                             }
                             .font(.Mulish(size: 18, weight: .semibold))

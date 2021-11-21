@@ -36,9 +36,7 @@ struct RoomUI: View {
                         KFImage(gameVM.roomStatus?.powerupDetails?.iconURL)
                             .resizable()
                             .frame(width: 30, height: 30)
-                        Text(gameVM.roomStatus?.powerupDetails?.name?.uppercased() ?? "Powerup")
-                            .font(.Cinzel(size: 16))
-                            .foregroundColor(.eBlue)
+                        CustomLabel(text: gameVM.roomStatus?.powerupDetails?.name?.uppercased() ?? "Powerup", font: .Cinzel(size: 16))
                     }.padding(10)
                         .onTapGesture(perform: {
                             if(gameVM.powerupFetched) {
