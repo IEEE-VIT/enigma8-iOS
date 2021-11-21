@@ -35,6 +35,8 @@ enum Router: URLRequestConvertible {
     
     static let baseURL = URL(string: "https://enigma-api.ieeevit.org")!
     
+  //  static let baseURL = URL(string: "https://enigma-api.ieeevit.org")!
+    
     var method: HTTPMethod {
         switch self {
         case .loginGoogle, .loginApple, .profileSetup, .selectPowerup, .submitAnswer,.postFeedback,.addFCM:
@@ -52,6 +54,7 @@ enum Router: URLRequestConvertible {
             return "auth/app/apple/"
         case .timer:
             return "static/timer/"
+        // return "static/app/timer/"
         case .profileSetup:
             return "user/create/"
         case .currentStory:
