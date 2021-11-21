@@ -58,7 +58,7 @@ struct LeaderboardView: View {
             GeometryReader { geo in
                 ZStack {
                     LeaderboardHeader(showLines: !leaderboardVM.showNoUser, geo:geo)
-                    VStack {
+                    VStack(spacing: 0) {
                         ScrollView {
                             if(leaderboardVM.showNoUser) {
                                 Image("Booo")
