@@ -29,6 +29,7 @@ struct ScoringSystem: View {
                 Spacer()
             }
         }
+        .padding()
     }
 }
 

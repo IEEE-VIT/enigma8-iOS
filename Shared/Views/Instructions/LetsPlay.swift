@@ -37,6 +37,7 @@ struct LetsPlay: View {
                 Spacer()
             }
         }
+        .padding()
     }
 }
 

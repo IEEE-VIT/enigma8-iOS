@@ -12,39 +12,54 @@ struct ProfileSetupView: View {
     @StateObject var profileVM: ProfileSetupViewModel = ProfileSetupViewModel()
     
     var body: some View {
-        ZStack {
-            OnboardingBackground()
         GeometryReader { geo in
-            VStack(alignment: .leading,spacing:35) {
-                EnigmaHeader(showBackButton: true,  showInstructionsButton: false).frame(height:60).environmentObject(HeaderRules()).ignoresSafeArea(.keyboard)
-                    VStack(alignment: .leading) {
-                        Image(ImageConstants.profileHeader)
-                            .resizable()
-                            .scaledToFit()
-                            .padding(.horizontal,75)
-                            .padding(.bottom)
-                        CustomLabel(text:"Enter your username")
-                        CustomTextField(textFieldString: "Enter your username", bindingString: $profileVM.username)
-                            .padding(.bottom,100)
-                        Spacer()
-                        CustomLabel(text:"How did you hear about Enigma?")
-                    }.padding(.horizontal, 32)
-                    .frame(height: geo.size.height*0.3)
-                    DropdownView(selectedOption: profileVM.outreach, dropdownOptions: profileVM.surveyOptions)
-                        .frame(width: geo.size.width * 0.8)
-                        .padding(.horizontal, 32)
-                Spacer()
-                HStack {
-                    
-                    NavigationLink(destination: TimeView(), isActive: $profileVM.profileSuccess) {
-                        
-                        CustomButton(buttonText: "Submit", action: profileVM.setupProfile)
-                    }
+                VStack(alignment: .leading,spacing:35) {
+                    EnigmaHeader(showBackButton: true, showInstructionsButton: false).environmentObject(HeaderRules()).ignoresSafeArea(.keyboard)
+                        ScrollView {
+                            VStack(alignment: .center) {
+                                Image(ImageConstants.profileHeader)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: geo.size.width*0.6, alignment: .center)
+                                VStack (alignment: .leading) {
+                                    CustomLabel(text:"Enter your username")
+                                        .frame(alignment: .leading)
+                                    CustomTextField(textFieldString: "Enter your username", bindingString: $profileVM.username)
+                                        .frame(width: geo.size.width*0.85)
+                                    Group {
+                                        if(profileVM.errorMessage != nil) {
+                                            Text(profileVM.errorMessage ?? "")
+                                                .foregroundColor(.eRed)
+                                                .font(.Mulish(size: 15, weight: .bold))
+                                                .frame(width: geo.size.width*0.7, alignment: .leading)
+                                        } else {
+                                            Text("*Minimum 8 characters\n*No special character\n*Cannot be changed later")
+                                                .font(.Mulish(size: 15, weight: .bold))
+                                                .foregroundColor(.eBlue)
+                                        }
+                                    }
+                                    .padding(.bottom, 50)
+                                    .padding(.leading)
+                                    CustomLabel(text:"How did you hear about Enigma?")
+                                    if(profileVM.selectError && profileVM.outreach == "-Select-") {
+                                        Text("*Please select an option")
+                                            .foregroundColor(.eRed)
+                                            .font(.Mulish(size: 15, weight: .bold))
+                                            .frame(width: geo.size.width*0.7, alignment: .leading)
+                                            .padding(.vertical, 5)
+                                    }
+                                    CustomDropDown(width: geo.size.width*0.85, selectedOption: $profileVM.outreach, options: profileVM.surveyOptions)
+                                        .padding(.bottom, 100)
+                                }.padding(.vertical)
+                            }
+                            CustomButton(buttonText: "Submit", action: profileVM.setupProfile)
+                                    .padding(.vertical, 70)
+                            NavigationLink(destination: TimeView(), isActive: $profileVM.profileSuccess) { EmptyView() }
                 }
             }
         }
+        .background(OnboardingBackground())
         .navigationBarBackButtonHidden(true)
-        }
     }
 }
 

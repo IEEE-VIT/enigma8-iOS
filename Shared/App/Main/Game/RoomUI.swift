@@ -27,7 +27,7 @@ struct RoomUI: View {
                         Text(gameVM.currentStatus?.room?.title ?? "")
                             .gradientForeground(colors: [.goldGradientStart, .goldGradientEnd])
                         Text("Q \(gameVM.roomStatus?.question?.questionNo ?? 1)")
-                            .gradientForeground(colors: [.blueGradientStart, .blueGradientEnd])
+                            .foregroundColor(Color.eBlue)
                     }
                     .font(.Cinzel(size: 20, weight: .regular))
                     .padding()
@@ -36,8 +36,8 @@ struct RoomUI: View {
                         KFImage(gameVM.roomStatus?.powerupDetails?.iconURL)
                             .resizable()
                             .frame(width: 30, height: 30)
-                        Text(gameVM.roomStatus?.powerupDetails?.name ?? "Powerup")
-                            .font(.Mulish(size: 16))
+                        Text(gameVM.roomStatus?.powerupDetails?.name?.uppercased() ?? "Powerup")
+                            .font(.Cinzel(size: 16))
                             .foregroundColor(.eBlue)
                     }.padding(10)
                         .onTapGesture(perform: {
@@ -71,7 +71,7 @@ struct RoomUI: View {
                             VideoPlayer(player: AVPlayer(url: gameVM.roomStatus?.question?.mediaURL ?? URL(string:"https://google.com")!)).aspectRatio(contentMode: .fit)
                         }
                         HStack {
-                            TextField("Your Answer", text: $gameVM.answerText, onCommit: gameVM.submitAnswer)
+                            TextField("Your Answer", text: $gameVM.answerText)
                                 .autocapitalization(.none)
                                 .accentColor(.eGold)
                                 .padding()
@@ -110,7 +110,7 @@ struct RoomUI: View {
             case .close:
                 EnigmaAlert(title: "You are close to the answer!",text:" Keep Trying!", showCloseButton: true, closeAction: {gameVM.showPopup.toggle()})
             case .correct:
-                EnigmaAlert(title: "Wohoo!\n You got the right answer!",text: "You've earned a key!", showCloseButton: true, closeAction: {gameVM.showPopup.toggle(); gameVM.getQuestion()})
+                EnigmaAlert(title: "Wohoo!\n You got the right answer!",text: "You've earned a key!", showCloseButton: true, closeAction: {gameVM.showPopup.toggle(); gameVM.getQuestion()}, image: "Key")
             case .nextRoom:
                 EnigmaAlert(title: "Wohoo!\n You got the right answer!",text: "You've earned a key!",confirmText: "Go to another room", cancelText: "Continue in this room", confirmAction: {gameVM.navigateBackToRooms = true}, cancelAction: {gameVM.showPopup.toggle(); gameVM.getQuestion()}, image: "Key")
             case .hintQuery:
@@ -120,7 +120,7 @@ struct RoomUI: View {
             case .powerupUsed:
                 EnigmaAlert(title: "You've already used this powerup!", showCloseButton:true, closeAction: {gameVM.showPopup.toggle()})
             case .powerup:
-                EnigmaAlert(title: gameVM.fetchedPowerup?.text, subtitle: gameVM.fetchedPowerup?.data, showCloseButton: true, closeAction: {gameVM.showPopup.toggle()}, imageURL: gameVM.roomStatus?.powerupDetails?.iconURL)
+                EnigmaAlert(title: gameVM.fetchedPowerup?.text, subtitle: gameVM.fetchedPowerup?.data, showCloseButton: true, powerupIcon: gameVM.roomStatus?.powerupDetails?.iconURL, powerupImage: gameVM.fetchedPowerup?.imgURL, closeAction: {gameVM.showPopup.toggle()})
             default:
                 EmptyView()
             }

@@ -17,26 +17,19 @@ struct LoginView: View {
     // MARK: - BODY
     var body: some View {
         VStack(spacing:15) {
-            
             Spacer()
-            
             EnigmaLogo()
-            
             Spacer()
-            
             Group {
                 SocialButton(action: appleVM.signInWithApple, image: .apple)
                 SocialButton(action: googleVM.googleSignin, image: .google)
             }
             .padding(.horizontal,40)
-            
-            Spacer()
-            
             NavigationLink(destination: ProfileSetupView().navigationBarTitle("").navigationBarHidden(true),isActive: $authVM.isNew) {
                 EmptyView()
             }
             NavigationLink(destination: HeaderNavView().navigationBarTitle("").navigationBarHidden(true), isActive: Binding<Bool>(get: {return !authVM.isNew && authVM.isSignedIn}, set: {p in self.authVM.isNew = p})) { EmptyView() }
-            .padding(100)
+            .padding(40)
         }
         .background(OnboardingBackground())
     }
