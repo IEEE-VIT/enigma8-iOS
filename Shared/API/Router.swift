@@ -31,9 +31,9 @@ enum Router: URLRequestConvertible {
     case postFeedback(FeedbackModel)
     case checkFeedback
     
-   // static let baseURL = URL(string: "https://enigma8.herokuapp.com")!
+    static let baseURL = URL(string: "https://enigma8.herokuapp.com")!
     
-    static let baseURL = URL(string: "https://enigma-api.ieeevit.org")!
+  //  static let baseURL = URL(string: "https://enigma-api.ieeevit.org")!
     
     var method: HTTPMethod {
         switch self {
@@ -52,6 +52,7 @@ enum Router: URLRequestConvertible {
             return "auth/app/apple/"
         case .timer:
             return "static/timer/"
+        // return "static/app/timer/"
         case .profileSetup:
             return "user/create/"
         case .currentStory:

@@ -121,7 +121,7 @@ struct RoomUI: View {
                     }
                 }, image: "Key")
             case .nextRoom:
-                EnigmaAlert(title: "Wohoo!\n You got the right answer!",text: "You've earned a key!",confirmText: "Go to another room", cancelText: "Continue in this room", confirmAction: {gameVM.navigateBackToRooms = true}, cancelAction: {gameVM.showPopup.toggle(); gameVM.getQuestion()}, image: "Key")
+                EnigmaAlert(title: "Wohoo!\n You got the right answer!",text: "You've earned a key!",confirmText: "Go to another room", cancelText: "Continue in this room", confirmAction: {gameVM.navigateBackToRooms = true;back()}, cancelAction: {gameVM.showPopup.toggle(); gameVM.getQuestion()}, image: "Key")
             case .hintQuery:
                 EnigmaAlert(title: "Using hint will deduct points from your score", subtitle: "Are you sure to use a hint?",confirmText: "Confirm", showCloseButton:true, confirmAction: {gameVM.getHint();gameVM.showPopup.toggle()}, closeAction: {gameVM.showPopup.toggle()}, image: "Hint")
             case .powerupQuery:

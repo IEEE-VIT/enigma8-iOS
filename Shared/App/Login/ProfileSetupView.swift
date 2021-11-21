@@ -33,7 +33,7 @@ struct ProfileSetupView: View {
                                                 .foregroundColor(.eRed)
                                                 .font(.Mulish(size: 15, weight: .bold))
                                                 .frame(width: geo.size.width*0.7, alignment: .leading)
-                            
+                                        }
                                     }
                                     .padding(.bottom, 50)
                                     .padding(.leading)
