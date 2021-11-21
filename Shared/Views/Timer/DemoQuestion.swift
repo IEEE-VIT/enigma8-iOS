@@ -88,7 +88,11 @@ struct DemoQuestion: View {
     }
     
     func submitAnswer() {
-        
+        if ["norway","denmark","sweden"].contains(self.answerText) {
+            back()
+        } else {
+            self.answerStatus = .wrong
+        }
     }
     
     func showHint() {
