@@ -39,7 +39,7 @@ struct ProfileView: View {
                         VStack(alignment: .leading, spacing: 10) {
                             Group {
                             Text(self.userVM.user?.username ?? "username")
-                            Text(String(format: "%.2f", self.userVM.user?.score ?? 0))
+                            Text("\(self.userVM.user?.score ?? 0)")
                             Text("\(self.userVM.user?.rank ?? 0)")
                             Text("\(self.userVM.user?.stars ?? 0)")
                             Text(self.userVM.user?.email ?? "email@email.com")

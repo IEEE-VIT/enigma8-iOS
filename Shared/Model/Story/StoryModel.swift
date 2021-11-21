@@ -21,7 +21,11 @@ struct Story:Codable, Hashable, Identifiable {
     }
     
     var senderEnum: StorySender {
-        StorySender(rawValue: self.sender ?? "Ali") ?? .sender1
+        StorySender(rawValue: self.sender ?? "Ali") ?? .voice
+    }
+    
+    var notMainCharacter: Bool {
+        return senderEnum != .sender1 && senderEnum != .sender2
     }
     
     init(roomNo: String?, sender: String?, message: String?) {
@@ -39,11 +43,15 @@ struct Story:Codable, Hashable, Identifiable {
 enum StorySender: String {
     case sender1 = "Ali"
     case sender2 = "MJ"
+    case voice = "voice"
+    case narrator = "narrator"
     
     var color: Color {
         switch self{
         case .sender1: return .eGold
         case .sender2: return .eBlue
+        case .narrator: return .white
+        default: return .black
         }
     }
     
@@ -51,6 +59,7 @@ enum StorySender: String {
         switch self{
         case .sender1: return .leading
         case .sender2: return .trailing
+        default: return .center
         }
     }
     
@@ -58,6 +67,7 @@ enum StorySender: String {
         switch self{
         case .sender1: return .trailing
         case .sender2: return .leading
+        default: return .center
         }
     }
     
@@ -65,6 +75,8 @@ enum StorySender: String {
         switch self{
         case .sender1: return 0.25
         case .sender2: return 0.05
+        case .narrator: return 0.06
+        default: return 0.13
         }
     }
     
@@ -72,8 +84,47 @@ enum StorySender: String {
         switch self{
         case .sender1: return 0.05
         case .sender2: return 0.25
+        case .narrator: return 0.06
+        default: return 0.13
         }
     }
+    
+    var backgroundColor: LinearGradient {
+        switch self{
+        case .sender1: return LinearGradient(colors: [Color.storyGrey], startPoint: .top, endPoint: .bottom)
+        case .sender2: return LinearGradient(colors: [Color.storyGrey], startPoint: .top, endPoint: .bottom)
+        case .narrator: return LinearGradient(colors: [Color.clear], startPoint: .top, endPoint: .bottom)
+        default: return LinearGradient.voice
+        }
+    }
+    
+    var titleGradient: LinearGradient {
+        switch self{
+        case .sender1: return .gold
+        case .sender2: return .gold
+        case .narrator: return LinearGradient(colors: [Color.clear], startPoint: .top, endPoint: .bottom)
+        default: return .voice
+        }
+    }
+    
+    var font: Font {
+        switch self{
+        case .sender1: return .Mulish(size: 15, weight: .semibold)
+        case .sender2: return .Mulish(size: 15, weight: .semibold)
+        case .narrator: return .system(size: 13, weight: .light)
+        default: return .Mulish(size: 15, weight: .semibold)
+        }
+    }
+    
+    var backgroundOpacity: Double {
+        switch self{
+        case .sender1: return 1
+        case .sender2: return 1
+        case .narrator: return 1
+        default: return 0.75
+        }
+    }
+    
 }
 
 class StoryModel {

@@ -10,7 +10,6 @@ import Firebase
 
 @main
 struct EnigmaApp: App {
-    @StateObject var roomsVM = RoomsViewModel()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     var body: some Scene {

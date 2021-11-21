@@ -26,7 +26,9 @@ struct InstructionsHeader: View {
             HStack {
                 if (backButton) {
                     Button(action : {
+                        if selectedTab > 1 {
                         selectedTab -= 1
+                        }
                     }, label: {
                         Image("BackButton")
                             .resizable()
@@ -35,10 +37,15 @@ struct InstructionsHeader: View {
                     })
                 }
                 CustomLabel(text: viewName.uppercased(),font: .Cinzel(size: 21, weight: .bold), gradient: .blue)
+                    .frame(width: 270)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.5)
                     .padding(.top, 3)
                 if (frontButton) {
                     Button(action : {
+                        if selectedTab < 4 {
                         selectedTab += 1
+                    }
                     }, label: {
                         Image("ForwardButton")
                             .resizable()

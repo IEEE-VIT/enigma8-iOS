@@ -10,7 +10,7 @@ import SwiftUI
 
 class RoomsViewModel: ObservableObject {
     
-    @Published var allInfo: [RoomsModel] = [RoomsModel.data]
+    @Published var allInfo: [RoomsModel] = []
     @Published var roomUnlocked: Bool = false
     @Published var powerUpSelected: Bool = false
     @Published var navigateToRoom: Bool = false
@@ -25,12 +25,9 @@ class RoomsViewModel: ObservableObject {
     @Published var user: UserModel?
     @Published var starsRequired: Int = 0
     
-    init() {
-        fetchUser()
-        fetchAllInfo()
-    }
+    init() { }
     
-    func fetchUser(){
+    func fetchUser() {
         APIClient.request(fromRouter: .getUser) { (response: UserModel?,error) in
             guard let response = response else {
                 return
@@ -40,6 +37,11 @@ class RoomsViewModel: ObservableObject {
     }
     
     func fetchAllInfo(){
+        
+        if let storyData = UserDefaults.standard.data(forKey: AppStorageConstants.journey), let data = try? JSONDecoder().decode([RoomsModel].self, from:storyData) {
+            self.allInfo = data
+        }
+        
         APIClient.request(fromRouter: .allRooms) { (response: AllRoomsResponse?, error) in
             guard let rooms = response?.data else {
                 Logger.error(error.debugDescription)
@@ -50,6 +52,10 @@ class RoomsViewModel: ObservableObject {
             self.starsRequired = response?.nextRoomsUnlockedIn ?? 0
             
             if let stars = response?.stars { self.user?.stars = stars }
+            
+            if let data = try? JSONEncoder().encode(self.allInfo) {
+                UserDefaults.standard.set(data, forKey: AppStorageConstants.journey)
+            }
         }
     }
     

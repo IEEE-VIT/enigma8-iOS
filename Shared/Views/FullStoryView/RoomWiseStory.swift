@@ -13,12 +13,16 @@ struct RoomWiseStory: View {
         VStack {
                 ForEach(roomStory, id: \.self) { message in
                     HStack{
+                        if message?.senderEnum == .sender1 || message?.senderEnum == .sender2 {
                         if message?.senderEnum == .sender2 {
                             Spacer()
                         }
                         StoryBubble(story: message ?? Story(roomNo: nil, sender: nil, message: nil), width: 360) //TODO
                         if message?.senderEnum == .sender1 {
                             Spacer()
+                        }
+                        } else {
+                            
                         }
                     }
                 }

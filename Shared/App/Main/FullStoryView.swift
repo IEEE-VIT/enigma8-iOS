@@ -11,9 +11,9 @@ struct FullStoryView: View {
     @StateObject var storyViewModel: StoryViewModel
     var body: some View {
         VStack(spacing: 0) {
-           StoryHeader()
+            StoryHeaderStack()
                 .padding()
-            ScrollView {
+            ScrollView(showsIndicators:false) {
                 ScrollViewReader { sr in
                     ForEach(storyViewModel.fullStory) { message in
                         StoryBubble(story: message, width: UIScreen.main.bounds.width)

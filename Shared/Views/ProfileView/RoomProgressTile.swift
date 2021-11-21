@@ -29,7 +29,7 @@ struct RoomProgressTile: View {
     var width: CGFloat
     var body: some View {
         VStack(spacing:0) {
-            HStack {
+            HStack(spacing:3) {
                 Image(room?.journey?.questionsStatus?[0].progressImage ?? "unsolved_key")
                     .resizable()
                     .scaledToFit()
@@ -41,10 +41,11 @@ struct RoomProgressTile: View {
                     .resizable()
                     .scaledToFit()
             }
+            .scaleEffect(1.3)
             ZStack {
                 Circle().fill(room?.journey?.roomStatus.color ?? .roomGrey)
                 Text("\(room?.room?.roomNo ?? "")")
-                    .font(.Mulish(size: 22, weight: .bold))
+                    .font(.Mulish(size: 17, weight: .bold))
                     .minimumScaleFactor(0.1)
                     .foregroundColor(.black)
             }
@@ -54,6 +55,7 @@ struct RoomProgressTile: View {
                 .lineLimit(1)
                 .minimumScaleFactor(0.1)
                 .foregroundColor(.white)
+                .padding(.top,3)
         }
         .frame(width: width)
     }

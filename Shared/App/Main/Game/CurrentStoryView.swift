@@ -11,8 +11,6 @@ struct CurrentStoryView: View {
     @StateObject var storyVM: StoryViewModel
     @EnvironmentObject var gameVM: GameViewModel
     @EnvironmentObject var rooms : RoomsViewModel
-    @AppStorage(AppStorageConstants.charactersShown) var charsShown: Bool = false
-
     init(roomId: String) {
         self._storyVM = StateObject(wrappedValue: StoryViewModel(roomId: roomId))
     }
@@ -20,7 +18,9 @@ struct CurrentStoryView: View {
     var body: some View {
         VStack {
             EnigmaHeader(hideHeaderIcons: true, showInstructionsButton: false)
-            StoryHeader().padding()
+            
+            StoryHeaderStack()
+            .padding()
             ScrollView {
                 ScrollViewReader { sr in
                     ForEach(storyVM.storySoFar) { message in
@@ -43,10 +43,6 @@ struct CurrentStoryView: View {
         .onAppear {
             storyVM.getStory()
         }
-        .sheet(isPresented: Binding<Bool>(get: {return !self.charsShown},
-                                          set: { p in self.charsShown = p})) {
-            CharDescView()
-        }
         .navigationTitle("")
         .navigationBarHidden(true)
     }
@@ -55,5 +51,30 @@ struct CurrentStoryView: View {
 struct StoryView_Previews: PreviewProvider {
     static var previews: some View {
         CurrentStoryView(roomId: "181")
+    }
+}
+
+struct StoryHeaderStack: View {
+    
+    @State var showCharDesc: Bool = false
+    @State var character: Story = Story(roomNo: nil, sender: nil, message: nil)
+
+    var body: some View {
+        HStack {
+            NavigationLink(destination: CharDescView(charDescriptions: character).navigationBarTitle("").navigationBarHidden(true), isActive: $showCharDesc) {EmptyView()}
+
+            
+        StoryHeader(sender: "Jones")
+                .onTapGesture {
+                    self.character = Story.chars[0]
+                    self.showCharDesc = true
+                }
+            Spacer()
+            StoryHeader(sender: "Ali")
+                .onTapGesture {
+                    self.character = Story.chars[0]
+                    self.showCharDesc = true
+                }
+        }
     }
 }

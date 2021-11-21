@@ -32,10 +32,6 @@ struct ProfileSetupView: View {
                                                 .foregroundColor(.eRed)
                                                 .font(.Mulish(size: 15, weight: .bold))
                                                 .frame(width: geo.size.width*0.7, alignment: .leading)
-                                        } else {
-                                            Text("*Minimum 8 characters\n*No special character\n*Cannot be changed later")
-                                                .font(.Mulish(size: 15, weight: .bold))
-                                                .foregroundColor(.eBlue)
                                         }
                                     }
                                     .padding(.bottom, 50)
@@ -58,7 +54,7 @@ struct ProfileSetupView: View {
                 }
             }
         }
-        .background(OnboardingBackground())
+        .background(OnboardingBackground().ignoresSafeArea(.keyboard,edges:.all))
         .navigationBarBackButtonHidden(true)
     }
 }

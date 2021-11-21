@@ -12,6 +12,8 @@ extension LinearGradient {
     static let gold = LinearGradient(gradient: Gradient(colors: [.goldGradientStart, .goldGradientEnd]), startPoint: .top, endPoint: .bottom)
     
     static let blue = LinearGradient(gradient: Gradient(colors: [.blueGradientStart, .blueGradientEnd]), startPoint: .top, endPoint: .bottom)
+    
+    static let voice = LinearGradient(colors: [Color(hex: "#C9C2C2"),Color(hex: "#7C7A7A")], startPoint: .top, endPoint: .bottom)
 
 }
 

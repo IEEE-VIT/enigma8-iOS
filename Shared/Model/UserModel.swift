@@ -10,7 +10,7 @@ import Foundation
 struct UserModel: Codable {
     var username: String?
     var email: String?
-    var score: Double?
+    var doubleScore: Double?
     var stars: Int?
     var rank: Int?
     var currentRoomId: String?
@@ -18,9 +18,13 @@ struct UserModel: Codable {
     private enum CodingKeys: String, CodingKey {
         case username = "username"
         case email = "email"
-        case score = "score"
+        case doubleScore = "score"
         case stars = "starts"
         case rank = "rank"
         case currentRoomId = "currentRoomId"
+    }
+    
+    var score: Int {
+        return Int(doubleScore ?? 0.0)
     }
 }

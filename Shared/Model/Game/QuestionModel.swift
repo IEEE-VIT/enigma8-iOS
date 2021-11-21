@@ -14,8 +14,19 @@ struct Question: Codable {
     struct Response: Codable {
         var question: Model?
         var powerupDetails: Powerup.PowerupModel?
-        var powerupUsed: PowerupUsed?
+        var powerupStatus: String?
         var hint: String?
+        
+        private enum CodingKeys: String, CodingKey {
+            case question
+            case powerupDetails
+            case powerupStatus = "powerupUsed"
+            case hint
+        }
+        
+        var powerupUsed: PowerupUsed {
+            return PowerupUsed(rawValue: powerupStatus ?? "null") ?? .null
+        }
     }
     
     struct Model: Codable {
