@@ -27,7 +27,7 @@ struct RoomUI: View {
                         Text(gameVM.currentStatus?.room?.title ?? "")
                             .gradientForeground(colors: [.goldGradientStart, .goldGradientEnd])
                         Text("Q \(gameVM.roomStatus?.question?.questionNo ?? 1)")
-                            .gradientForeground(colors: [.blueGradientStart, .blueGradientEnd])
+                            .foregroundColor(Color.eBlue)
                     }
                     .font(.Cinzel(size: 20, weight: .regular))
                     .padding()
@@ -36,8 +36,8 @@ struct RoomUI: View {
                         KFImage(gameVM.roomStatus?.powerupDetails?.iconURL)
                             .resizable()
                             .frame(width: 30, height: 30)
-                        Text(gameVM.roomStatus?.powerupDetails?.name ?? "Powerup")
-                            .font(.Mulish(size: 16))
+                        Text(gameVM.roomStatus?.powerupDetails?.name?.uppercased() ?? "Powerup")
+                            .font(.Cinzel(size: 16))
                             .foregroundColor(.eBlue)
                     }.padding(10)
                         .onTapGesture(perform: {
