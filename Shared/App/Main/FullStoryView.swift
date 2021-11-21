@@ -21,9 +21,7 @@ struct FullStoryView: View {
                     }.onAppear(perform: {sr.scrollTo(storyViewModel.fullStory.last?.id)})
                 }
             }
-                .onAppear{
-                    storyViewModel.getFullStory()
-                }
+            .onAppear(perform: storyViewModel.getFullStory)
         }
         .background(Image(ImageConstants.storyBG).resizable().frame(width: UIScreen.main.bounds.width))
     }
