@@ -15,6 +15,8 @@ struct ContentView: View {
     @StateObject var timerVM: TimerViewModel = TimerViewModel()
     @StateObject var headerVM: HeaderRules = HeaderRules()
     @StateObject var authVM: AuthViewModel = AuthViewModel()
+    @StateObject var roomsVM: RoomsViewModel = RoomsViewModel()
+
     var body: some View {
             if(onboarded) {
                 if(userLoggedIn) {
@@ -23,6 +25,7 @@ struct ContentView: View {
                             HeaderNavView()
                                 .navigationTitle("")
                                 .navigationBarHidden(true)
+                                .environmentObject(roomsVM)
                                 .environmentObject(headerVM)
                         } else {
                             InstructionsView()

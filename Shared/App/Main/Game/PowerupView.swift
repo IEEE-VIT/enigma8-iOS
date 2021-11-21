@@ -16,7 +16,7 @@ struct PowerupView: View {
     var body: some View {
         GeometryReader { gr in
             NavigationLink(destination: CurrentStoryView(roomId: powerupVM.currentStatus?.room?._id ?? "").environmentObject(powerupVM).environmentObject(rooms), isActive: $powerupVM.navigateToRoom) {EmptyView()}
-                        
+                                    
             VStack(alignment: .center) {
                 EnigmaHeader(showBackButton: true, showInstructionsButton: false,backAction: back)
                 CustomLabel(text: "Choose a Powerup",font:.Cinzel(size: 26, weight: .bold))
@@ -30,6 +30,7 @@ struct PowerupView: View {
                                 PowerupRow(powerup: powerup, width: gr.size.width)
                                     .opacity(powerup.isAvailable ? 1 : 0.4)
                             }
+                            .disabled(!powerup.isAvailable)
                         }
                     }
                 }

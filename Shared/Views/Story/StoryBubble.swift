@@ -9,20 +9,29 @@ import SwiftUI
 import Kingfisher
 
 struct StoryBubble: View {
-    
+
     var story: Story
     var width: CGFloat
     var body: some View {
         VStack (alignment:story.senderEnum.titleAlignment,spacing: 0) {
             
-            CustomLabel(text:story.sender ?? "Name",font:.Cinzel(size: 14, weight: .bold))
+            if story.senderEnum != .narrator {
+            CustomLabel(text:story.sender ?? "Name",font:.Cinzel(size: 14, weight: .bold),gradient: story.senderEnum.titleGradient)
                 .padding(5)
+            }
             
-            Text(story.message ?? "Message")
+            Group {
+                if story.senderEnum == .narrator {
+                    Text(story.message ?? "Message")
+                        .italic()
+                } else {
+                    Text(story.message ?? "Message")
+                }
+            }
                 .foregroundColor(story.senderEnum.color)
-                .font(.Mulish(size: 15, weight: .semibold))
+                .font(story.senderEnum.font)
                 .padding(8)
-                .background(Color.storyGrey)
+                .background(story.senderEnum.backgroundColor.opacity(story.senderEnum.backgroundOpacity))
                 .cornerRadius(6)
         }
         .frame(maxWidth: .infinity,alignment: story.senderEnum.bubbleAlignment)

@@ -61,10 +61,10 @@ class StoryViewModel: ObservableObject {
                 Logger.error(error.debugDescription)
                 return
             }
-            self.fullStory = fullStory
+            self.fullStory = fullStory.filter{ $0.roomNo != "0"}
             print("Story Completely Fetched")
             
-            if let data = try? JSONEncoder().encode(fullStory) {
+            if let data = try? JSONEncoder().encode(self.fullStory) {
                 UserDefaults.standard.set(data, forKey: AppStorageConstants.fullStory)
             }
         }

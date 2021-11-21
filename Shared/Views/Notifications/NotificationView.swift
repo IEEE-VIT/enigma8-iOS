@@ -47,7 +47,7 @@ struct NotificationRow: View {
         }
         .padding(16)
         .sheet(isPresented: $showSafari) {
-            SafariView(url: URL(string: notif.metadata ?? "https://google.com")!)
+            SafariView(url: URL(string: notif.metadata ?? ""))
         }
     }
     

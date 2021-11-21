@@ -38,6 +38,7 @@ struct RoomsView: View {
                 .navigationBarHidden(true)
             }
             .onAppear(perform: rooms.fetchAllInfo)
+            .onAppear(perform: rooms.fetchUser)
             .navigationBarTitle("")
             .navigationBarHidden(true)
             .blur(radius: rooms.presentPopup ? 3 : 0)

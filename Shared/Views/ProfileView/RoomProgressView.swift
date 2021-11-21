@@ -12,7 +12,7 @@ struct RoomProgressView: View {
     @State var width: CGFloat
     var body: some View {
             if roomsVM.allInfo.count >= 8 {
-                VStack(spacing:0) {
+                VStack(spacing:2) {
                     HStack(spacing: 0){
                         RoomProgressTile(room:roomsVM.allInfo[0],width: width * 0.125)
                         RoomProgressViewTile(room: roomsVM.allInfo[1], width: width * 0.125, isTop: true)

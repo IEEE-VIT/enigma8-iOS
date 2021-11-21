@@ -15,7 +15,6 @@ class GameViewModel: ObservableObject {
     @Published var chosenPowerup: Powerup.PowerupModel?
     @Published var powerupFetched: Bool = false
     @Published var fetchedPowerup: Powerup.UseResponse?
-    @Published var currentQuestion: Question.Response?
     @Published var roomStatus: Question.Response?
     @Published var navigateToRoom: Bool = false
     @Published var fetchedHint: String = "This is a hint"

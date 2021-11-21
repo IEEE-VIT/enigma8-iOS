@@ -32,6 +32,7 @@ struct RoomUI: View {
                     .font(.Cinzel(size: 20, weight: .regular))
                     .padding()
                     Spacer()
+                    if !(gameVM.roomStatus?.powerupUsed == .yes) {
                     HStack {
                         KFImage(gameVM.roomStatus?.powerupDetails?.iconURL)
                             .resizable()
@@ -56,6 +57,7 @@ struct RoomUI: View {
                             }
                         })
                         .background(Color(white: 1, opacity: 0.05))
+                    }
                 }
                 Group {
                     ScrollView {

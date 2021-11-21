@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HeaderNavView: View {
     @State var tabSelected = 0
-    @StateObject var rooms: RoomsViewModel = RoomsViewModel()
+    @EnvironmentObject var rooms : RoomsViewModel
     @EnvironmentObject var headerVM : HeaderRules
     @StateObject var timerVM: TimerViewModel = TimerViewModel()
     @State var showPrivacyPolicy: Bool = false
@@ -52,6 +52,7 @@ struct HeaderNavView: View {
         .navigationViewStyle(StackNavigationViewStyle())
         .navigationBarHidden(true) //both hiddens required
         .onAppear(perform: timerVM.getLeftTime)
+        .onAppear(perform: rooms.fetchUser)
         }
     }
 }
