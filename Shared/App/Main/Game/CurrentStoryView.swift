@@ -43,9 +43,9 @@ struct CurrentStoryView: View {
         .onAppear {
             storyVM.getStory()
         }
-        .sheet(isPresented: Binding<Bool>(get: {return (storyVM.storySoFar.filter({return $0.roomNo == "0"}).count > 0 && !self.charsShown)},
+        .sheet(isPresented: Binding<Bool>(get: {return !self.charsShown},
                                           set: { p in self.charsShown = p})) {
-            CharDescView(charDescriptions: storyVM.storySoFar.filter({return $0.roomNo == "0"}))
+            CharDescView()
         }
         .navigationTitle("")
         .navigationBarHidden(true)

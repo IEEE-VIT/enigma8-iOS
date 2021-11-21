@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CharDescView: View {
     @AppStorage(AppStorageConstants.charactersShown) var charsShown: Bool = false
-    var charDescriptions: [Story]
+    var charDescriptions: [Story] = Story.chars
     @State var index: Int = 0
     var imageName: String = "unlocked"
     var body: some View {
