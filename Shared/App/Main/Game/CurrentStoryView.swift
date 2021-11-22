@@ -50,7 +50,7 @@ struct CurrentStoryView: View {
                                 .cornerRadius(4)
                             Spacer(minLength: 100)
                         }
-            }
+                    }.padding(.bottom)
             
         }
         .background(Image(ImageConstants.storyBG).resizable()

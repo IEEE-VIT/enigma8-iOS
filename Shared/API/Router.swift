@@ -50,8 +50,8 @@ enum Router: URLRequestConvertible {
         case .loginApple:
             return "auth/app/apple/"
         case .timer:
-           return "static/apptimer/"
-         //return "static/app/timer/"
+        //  return "static/timer/"
+            return "static/apptimer/"
         case .instructions:
             return "static/rules"
         case .profileSetup:

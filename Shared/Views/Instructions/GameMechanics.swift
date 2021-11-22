@@ -26,6 +26,18 @@ struct GameMechanics: View {
                             .foregroundColor(Color.eGold)
                     }
                 }
+                Spacer()
+                HStack {
+                    Image("Key")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 35)
+                    Text(": Key")
+                        .font(.Mulish(size: 14, weight: .regular))
+                        .foregroundColor(Color.eBlue)
+                }
+                .padding()
+                Spacer()
             }
             }
             Spacer()

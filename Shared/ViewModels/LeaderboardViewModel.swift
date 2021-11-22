@@ -40,6 +40,8 @@ class LeaderboardViewModel: ObservableObject {
                 self.leaderboard = response.leaderboard ?? []
                 if(response.leaderboard?.isEmpty ?? false) {
                     self.showNoUser = true
+                } else {
+                    self.showNoUser = false
                 }
             } else {
                 self.leaderboard.append(contentsOf: response.leaderboard ?? [])

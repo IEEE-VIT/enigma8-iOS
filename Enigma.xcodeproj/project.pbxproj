@@ -110,6 +110,7 @@
 		8CC128B4270301C1000483AB /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC128B3270301C1000483AB /* TimerModel.swift */; };
 		8CC128B82705D619000483AB /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC128B72705D618000483AB /* TimerViewModel.swift */; };
 		8CD337F62744AF0800E69F93 /* LeaderboardHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD337F52744AF0800E69F93 /* LeaderboardHeader.swift */; };
+		8CD73584274B421000034D30 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8CD73583274B421000034D30 /* GoogleService-Info.plist */; };
 		8CD8CADF26FADE7A00267EAC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CADE26FADE7A00267EAC /* Kingfisher */; };
 		8CD8CAE426FADED300267EAC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CAE326FADED300267EAC /* Alamofire */; };
 		8CD8CAE926FADF1200267EAC /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 8CD8CAE826FADF1200267EAC /* GoogleSignIn */; };
@@ -230,6 +231,7 @@
 		8CC128B3270301C1000483AB /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		8CC128B72705D618000483AB /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		8CD337F52744AF0800E69F93 /* LeaderboardHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardHeader.swift; sourceTree = "<group>"; };
+		8CD73583274B421000034D30 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8CE83E0D2747AD9200A53855 /* StoryHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryHeader.swift; sourceTree = "<group>"; };
 		8CEB323827496DE9000F3032 /* CharDescView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharDescView.swift; sourceTree = "<group>"; };
 		8CEB323A274A4F1B000F3032 /* CustomDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDropDown.swift; sourceTree = "<group>"; };
@@ -542,7 +544,7 @@
 		4EC3E47626E7DCCA0049AD99 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				4E932F03274C0A8000837757 /* GoogleService-Info.plist */,
+				8CD73583274B421000034D30 /* GoogleService-Info.plist */,
 				4EC3E47726E7DCCA0049AD99 /* Info.plist */,
 			);
 			path = iOS;
@@ -790,7 +792,7 @@
 				8CB248552742AF1E0063522F /* Launch Screen.storyboard in Resources */,
 				8CB8145B2742851D00E19DEE /* Mulish-Bold.ttf in Resources */,
 				4EC3E48426E7DCCA0049AD99 /* Assets.xcassets in Resources */,
-				4E932F04274C0A8000837757 /* GoogleService-Info.plist in Resources */,
+				8CD73584274B421000034D30 /* GoogleService-Info.plist in Resources */,
 				8CB8145C2742851D00E19DEE /* Mulish-Regular.ttf in Resources */,
 				8CB8145D2742851D00E19DEE /* Mulish-SemiBold.ttf in Resources */,
 			);
