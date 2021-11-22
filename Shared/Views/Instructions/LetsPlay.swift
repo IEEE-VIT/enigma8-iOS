@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct LetsPlay: View {
+    var data : [String] = AppConstants.instructionsLetsPlay
     @AppStorage(AppStorageConstants.instructionsShown) var instructionsShown: Bool = false
     var body: some View {
         VStack {
-            ScrollView {
+            ScrollView(showsIndicators:false) {
                 VStack(alignment: .center, spacing: 20) {
                     VStack(alignment: .leading) {
-                        ForEach(AppConstants.instructionsLetsPlay, id: \.self) { point in
+                        ForEach(data, id: \.self) { point in
                             HStack(alignment: .top) {
                                 Image("BulletPoint")
                                     .resizable()
