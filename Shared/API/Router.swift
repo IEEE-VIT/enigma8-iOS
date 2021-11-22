@@ -38,6 +38,7 @@ enum Router: URLRequestConvertible {
         switch self {
         case .loginGoogle, .loginApple, .profileSetup, .selectPowerup, .submitAnswer,.postFeedback,.addFCM:
             return .post
+
         case .timer, .getUser, .allRooms, .unlockRoom, .leaderboard, .notifications, .getPowerup, .getQuestion, .getHint, .currentStory, .fullStory, .checkFeedback, .usePowerup, .instructions:
             return .get
         }

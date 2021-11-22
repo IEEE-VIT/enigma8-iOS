@@ -25,8 +25,9 @@ struct ScoringSystem: View {
                                 .font(.Mulish(size: 18, weight: .medium))
                                 .foregroundColor(Color.eGold)
                         }
-                        .padding(.vertical)
                     }
+                    Spacer()
+                }
                 }
                 }
                 Spacer()

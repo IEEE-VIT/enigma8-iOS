@@ -41,12 +41,15 @@ struct LeaderboardView: View {
                         leaderboardVM.fetchLeaderboard(query: query)
                         self.showClear = true
                     }).font(.Mulish(weight:.semibold))
+                        .accentColor(.eGold)
+                        .autocapitalization(.none)
                         .foregroundColor(.eGold)
                     if(showClear) {
                         Button(action: {
                             self.query = ""
                             self.showClear = false
                             leaderboardVM.showNoUser = false
+                            leaderboardVM.leaderboard = []
                             leaderboardVM.fetchLeaderboard(query:"")
                         }) {
                             Text("Clear")

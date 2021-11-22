@@ -13,7 +13,6 @@ struct CustomLabel: View {
     var gradient: LinearGradient = LinearGradient.gold
     
     var body: some View {
-        
         Text(text)
                 .font(font)
                 .foregroundColor(Color.clear)

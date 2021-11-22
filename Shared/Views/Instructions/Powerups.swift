@@ -23,8 +23,6 @@ struct Powerups: View {
                             .font(.Mulish(size: 18, weight: .medium))
                             .foregroundColor(Color.eGold)
                     }
-                    .padding(.top)
-                }
             }
             Image("Powerups_onboarding")
                 .resizable()
