@@ -30,7 +30,7 @@ enum Router: URLRequestConvertible {
     case postFeedback(FeedbackModel)
     case checkFeedback
     
-   // static let baseURL = URL(string: "https://enigma8.herokuapp.com/app")!
+//   static let baseURL = URL(string: "https://enigma8.herokuapp.com/app")!
         
     static let baseURL = URL(string: "https://enigma-api.ieeevit.org/app")!
     
@@ -38,7 +38,7 @@ enum Router: URLRequestConvertible {
         switch self {
         case .loginGoogle, .loginApple, .profileSetup, .selectPowerup, .submitAnswer,.postFeedback,.addFCM:
             return .post
-        case .timer, .getUser, .allRooms, .unlockRoom, .leaderboard, .notifications, .getPowerup, .getQuestion, .getHint, .currentStory, .fullStory,.checkFeedback,.usePowerup,.instructions:
+        case .timer, .getUser, .allRooms, .unlockRoom, .leaderboard, .notifications, .getPowerup, .getQuestion, .getHint, .currentStory, .fullStory, .checkFeedback, .usePowerup, .instructions:
             return .get
         }
     }
@@ -51,7 +51,7 @@ enum Router: URLRequestConvertible {
             return "auth/app/apple/"
         case .timer:
            return "static/apptimer/"
-         //return "static/app/timer/"
+       //  return "static/app/timer/"
         case .instructions:
             return "static/rules"
         case .profileSetup:

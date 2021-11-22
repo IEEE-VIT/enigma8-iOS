@@ -63,6 +63,8 @@ class GameViewModel: ObservableObject {
             self.showPopup = true
             self.answerStatus = .powerup
             self.fetchedPowerup = response
+            
+            Logger.debug(response.imgUrl)
         }
     }
     
