@@ -11,19 +11,19 @@ struct Powerups: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                ForEach(AppConstants.instructionsPowerups, id: \.self) { point in
-                    HStack(alignment: .top) {
-                        Image("BulletPoint")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 8)
-                            .padding(.top, 5)
-                        Text(point)
-                            .font(.Mulish(size: 18, weight: .medium))
-                            .foregroundColor(Color.eGold)
+                    ForEach(AppConstants.instructionsPowerups, id: \.self) { point in
+                        HStack(alignment: .top) {
+                            Image("BulletPoint")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 8)
+                                .padding(.top, 5)
+                            Text(point)
+                                .font(.Mulish(size: 18, weight: .medium))
+                                .foregroundColor(Color.eGold)
+                        }
+                        .padding(.top)
                     }
-                    .padding(.top)
-                }
             }
             Image("Powerups_onboarding")
                 .resizable()

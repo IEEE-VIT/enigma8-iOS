@@ -33,9 +33,9 @@ enum Router: URLRequestConvertible {
     
    // static let baseURL = URL(string: "https://enigma8.herokuapp.com")!
     
-  //  static let baseURL = URL(string: "https://enigma-api.ieeevit.org")!
+    static let baseURL = URL(string: "https://enigma-api.ieeevit.org/app")!
     
-    static let baseURL = URL(string: "https://enigma-api.ieeevit.org")!
+//    static let baseURL = URL(string: "https://enigma8.herokuapp.com/app")!
     
     var method: HTTPMethod {
         switch self {
@@ -54,7 +54,7 @@ enum Router: URLRequestConvertible {
             return "auth/app/apple/"
         case .timer:
         //    return "static/timer/"
-         return "static/app/timer/"
+         return "static/apptimer/"
         case .profileSetup:
             return "user/create/"
         case .currentStory:
