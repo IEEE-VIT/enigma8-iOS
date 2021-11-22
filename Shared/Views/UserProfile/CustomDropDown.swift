@@ -33,6 +33,7 @@ struct CustomDropDown: View {
                             Text(option)
                                 .padding()
                                 .frame(width: width, height: height, alignment: .leading)
+                                .font(.Mulish(size: 20))
                                 .background(self.selectedOption == option ? Color(hex: "#242424") : Color.clear)
                                 .contentShape(Rectangle())
                                 .onTapGesture(perform: {
