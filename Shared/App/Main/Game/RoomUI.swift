@@ -63,14 +63,18 @@ struct RoomUI: View {
                         Text(gameVM.roomStatus?.question?.text ?? "")
                             .font(.Mulish(size: 17))
                             .foregroundColor(Color.eGold)
-                        switch(gameVM.roomStatus?.question?.mediaType ?? .img) {
+                        switch(gameVM.roomStatus?.question?.type ?? .img) {
                         case .img:
                             KFImage(gameVM.roomStatus?.question?.mediaURL)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                         case .vid:
-                            VideoPlayer(player: AVPlayer(url: gameVM.roomStatus?.question?.mediaURL ?? URL(string:"https://google.com")!)).aspectRatio(contentMode: .fit)
+                            CustomPlayer(src: gameVM.roomStatus?.question?.mediaURL?.absoluteString ?? "")
+                                .aspectRatio(contentMode: .fit)
+                                .navigationBarTitle("")
+                                .navigationBarHidden(true)
                         }
+                        
                         HStack {
                             TextField("Your Answer", text: $gameVM.answerText)
                                 .autocapitalization(.none)
@@ -105,6 +109,8 @@ struct RoomUI: View {
                             .padding(.vertical)
                     }
                 }.padding()
+                .navigationBarTitle("")
+                .navigationBarHidden(true)
             }
             
         }
@@ -130,7 +136,7 @@ struct RoomUI: View {
             case .powerupUsed:
                 EnigmaAlert(title: "You've already used this powerup!", showCloseButton:true, closeAction: {gameVM.showPopup.toggle()})
             case .powerup:
-                EnigmaAlert(title: gameVM.fetchedPowerup?.text, subtitle: gameVM.fetchedPowerup?.data, showCloseButton: true, powerupIcon: gameVM.roomStatus?.powerupDetails?.iconURL, powerupImage: gameVM.fetchedPowerup?.imgURL, closeAction: {gameVM.showPopup.toggle()})
+                EnigmaAlert(title: gameVM.fetchedPowerup?.text, subtitle: gameVM.fetchedPowerup?.data, showCloseButton: true, powerupIcon: gameVM.roomStatus?.powerupDetails?.iconURL, powerupImage: gameVM.fetchedPowerup?.imgUrl, closeAction: {gameVM.showPopup.toggle()})
             default:
                 EmptyView()
             }
@@ -156,4 +162,18 @@ struct RoomUI_Previews: PreviewProvider {
     static var previews: some View {
         RoomUI()
     }
+}
+
+struct CustomPlayer: UIViewControllerRepresentable {
+let src: String
+
+func makeUIViewController(context: UIViewControllerRepresentableContext<CustomPlayer>) -> AVPlayerViewController {
+  let controller = AVPlayerViewController()
+  let player = AVPlayer(url: URL(string: src) ?? URL(string: "https://enigma.ieeevit.org")!)
+  controller.player = player
+  player.play()
+  return controller
+}
+
+func updateUIViewController(_ uiViewController: AVPlayerViewController, context: UIViewControllerRepresentableContext<CustomPlayer>) { }
 }

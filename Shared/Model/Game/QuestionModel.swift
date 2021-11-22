@@ -32,13 +32,17 @@ struct Question: Codable {
     struct Model: Codable {
         var id, text, media: String?
         var questionNo: Int?
-        var mediaType: MediaType?
+        var mediaType: String?
         var mediaURL: URL? {
             return URL(string: media ?? "https://google.com")
         }
         
+        var type: MediaType {
+            return MediaType(rawValue: mediaType ?? "") ?? .img
+        }
+        
         private enum CodingKeys: String, CodingKey {
-            case id = "_id", questionNo, text, media
+            case id = "_id", questionNo, text, media, mediaType
         }
         
     }

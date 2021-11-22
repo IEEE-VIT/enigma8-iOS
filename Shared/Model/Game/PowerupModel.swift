@@ -27,7 +27,7 @@ struct Powerup: Codable {
         var powerUp: PowerupModel?//might need change
         var text: String?
         var data: String?
-        var imgURL: String?
+        var imgUrl: String?
     }
     
     struct Response: Codable {
