@@ -8,21 +8,20 @@
 import SwiftUI
 
 struct Powerups: View {
+    var data: [String] = AppConstants.instructionsPowerups
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators:false) {
             VStack(alignment: .leading) {
-                    ForEach(AppConstants.instructionsPowerups, id: \.self) { point in
-                        HStack(alignment: .top) {
-                            Image("BulletPoint")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 8)
-                                .padding(.top, 5)
-                            Text(point)
-                                .font(.Mulish(size: 18, weight: .medium))
-                                .foregroundColor(Color.eGold)
-                        }
-                        .padding(.top)
+                ForEach(data, id: \.self) { point in
+                    HStack(alignment: .top) {
+                        Image("BulletPoint")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 8)
+                            .padding(.top, 5)
+                        Text(point)
+                            .font(.Mulish(size: 18, weight: .medium))
+                            .foregroundColor(Color.eGold)
                     }
             }
             Image("Powerups_onboarding")

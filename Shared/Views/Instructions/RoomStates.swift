@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct RoomStates: View {
+    var data: [String] = AppConstants.instructionsRoomStates
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators:false) {
             VStack(alignment: .leading) {
-                ForEach(AppConstants.instructionsRoomStates, id: \.self) { point in
+                ForEach(data, id: \.self) { point in
                     HStack(alignment: .top) {
                         Image("BulletPoint")
                             .resizable()

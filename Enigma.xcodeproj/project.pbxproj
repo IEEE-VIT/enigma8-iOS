@@ -65,6 +65,8 @@
 		4E83E9D5274A1E370072B846 /* FeedbackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E83E9D4274A1E370072B846 /* FeedbackModel.swift */; };
 		4E83F15427463FAD008F693E /* RoomProgressTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E83F15327463FAD008F693E /* RoomProgressTile.swift */; };
 		4E83F157274685EE008F693E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E83F156274685EE008F693E /* NotificationManager.swift */; };
+		4E932F04274C0A8000837757 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E932F03274C0A8000837757 /* GoogleService-Info.plist */; };
+		4E932F06274C101300837757 /* InstructionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E932F05274C101300837757 /* InstructionsModel.swift */; };
 		4E944D3327436FCF00DC14B4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E944D3227436FCF00DC14B4 /* Constants.swift */; };
 		4E944D3527437CF800DC14B4 /* OnboardingBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E944D3427437CF800DC14B4 /* OnboardingBackground.swift */; };
 		4E944D392743845F00DC14B4 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E944D382743845F00DC14B4 /* CustomLabel.swift */; };
@@ -182,6 +184,8 @@
 		4E83F15327463FAD008F693E /* RoomProgressTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomProgressTile.swift; sourceTree = "<group>"; };
 		4E83F156274685EE008F693E /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		4E83F15827468675008F693E /* Enigma (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Enigma (iOS).entitlements"; sourceTree = "<group>"; };
+		4E932F03274C0A8000837757 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4E932F05274C101300837757 /* InstructionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsModel.swift; sourceTree = "<group>"; };
 		4E944D3227436FCF00DC14B4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4E944D3427437CF800DC14B4 /* OnboardingBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingBackground.swift; sourceTree = "<group>"; };
 		4E944D382743845F00DC14B4 /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
@@ -369,6 +373,7 @@
 				8C73DACA272E8E88009943BE /* NotificationModel.swift */,
 				3104C7C127350F5900B1C155 /* UserModel.swift */,
 				4E83E9D4274A1E370072B846 /* FeedbackModel.swift */,
+				4E932F05274C101300837757 /* InstructionsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -874,6 +879,7 @@
 				8CAC2B6D27103AF5008049D3 /* TimerBlock.swift in Sources */,
 				31A2665D2718996D005B1A17 /* LeaderboardRow.swift in Sources */,
 				314D79B9270C685A003C2F8A /* LoginView.swift in Sources */,
+				4E932F06274C101300837757 /* InstructionsModel.swift in Sources */,
 				4E944D3527437CF800DC14B4 /* OnboardingBackground.swift in Sources */,
 				4E7A5CD52700FB5C0058CAB9 /* Logger.swift in Sources */,
 				318DB98C27392525000AB95A /* RoomWiseStory.swift in Sources */,
