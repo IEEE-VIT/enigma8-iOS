@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct GameMechanics: View {
+    var data: [String] = AppConstants.instructionsGameMechanics
     var body: some View {
+        
         VStack(alignment: .center, spacing: 20) {
+            ScrollView(showsIndicators:false) {
             VStack(alignment: .leading) {
-                ForEach(AppConstants.instructionsGameMechanics, id: \.self) { point in
+                ForEach(data, id: \.self) { point in
                     HStack(alignment: .top) {
                         Image("BulletPoint")
                             .resizable()
@@ -23,6 +26,7 @@ struct GameMechanics: View {
                             .foregroundColor(Color.eGold)
                     }
                 }
+            }
             }
             Spacer()
             HStack {

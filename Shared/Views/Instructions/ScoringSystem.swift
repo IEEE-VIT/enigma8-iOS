@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct ScoringSystem: View {
+    var data: [String] = AppConstants.instructionsScoringSystem
     var body: some View {
         VStack {
             VStack(alignment: .center, spacing: 20) {
+                ScrollView(showsIndicators:false) {
                 VStack(alignment: .leading) {
-                    ForEach(AppConstants.instructionsScoringSystem, id: \.self) { point in
+                    ForEach(data, id: \.self) { point in
                         HStack(alignment: .top) {
                             Image("BulletPoint")
                                 .resizable()
@@ -25,6 +27,7 @@ struct ScoringSystem: View {
                         }
                         .padding(.vertical)
                     }
+                }
                 }
                 Spacer()
             }

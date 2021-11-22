@@ -26,7 +26,7 @@ struct InstructionsHeader: View {
             HStack {
                 if (backButton) {
                     Button(action : {
-                        if selectedTab > 1 {
+                        if selectedTab > 0 {
                         selectedTab -= 1
                         }
                     }, label: {

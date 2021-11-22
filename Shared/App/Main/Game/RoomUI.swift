@@ -44,6 +44,7 @@ struct RoomUI: View {
                         .onTapGesture(perform: {
                             if(gameVM.powerupFetched) {
                                 gameVM.answerStatus = .powerup
+                                self.gameVM.showPopup = true
                             } else {
                                 if(gameVM.roomStatus?.powerupUsed == .yes) {
                                     gameVM.showPopup = true
@@ -79,12 +80,14 @@ struct RoomUI: View {
                                 .padding()
                                 .foregroundColor(.eGold)
                                 .background(Color(white: 1, opacity: 0.05))
+                            if (gameVM.fetchedHint == "") {
                             Button(action: {gameVM.answerStatus = .hintQuery;gameVM.showPopup = !gameVM.hintFetched ? true : false}) {
                                 Image(ImageConstants.hint)
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                         .frame(width: 50, height: 50)
                             }.foregroundColor(.black)
+                            }
                         }.padding(.vertical)
                         if(gameVM.answerStatus == .wrong) {
                                 Text("*Oops! Wrong answer. Try again")
@@ -112,7 +115,7 @@ struct RoomUI: View {
             case .close:
                 EnigmaAlert(title: "You are close to the answer!",text:" Keep Trying!", showCloseButton: true, closeAction: {gameVM.showPopup.toggle()})
             case .correct:
-                EnigmaAlert(title: "Wohoo!\n You got the right answer!",text: "You've earned a key and \(gameVM.latestScore) points!", showCloseButton: true, closeAction: {
+                EnigmaAlert(title: "Wohoo!\n You got the right answer!",text: "You've earned a key and \(gameVM.latestScore) points!", confirmText: "Continue", confirmAction: {
                     gameVM.showPopup.toggle()
                     if gameVM.roomStatus?.question?.questionNo == 3 {
                         self.back()

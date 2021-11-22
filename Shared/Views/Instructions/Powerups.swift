@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct Powerups: View {
+    var data: [String] = AppConstants.instructionsPowerups
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators:false) {
             VStack(alignment: .leading) {
-                ForEach(AppConstants.instructionsPowerups, id: \.self) { point in
+                ForEach(data, id: \.self) { point in
                     HStack(alignment: .top) {
                         Image("BulletPoint")
                             .resizable()
