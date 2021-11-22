@@ -1056,7 +1056,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = ieee.enigma;
 				PRODUCT_NAME = Enigma;
 				SDKROOT = iphoneos;
@@ -1081,7 +1081,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = ieee.enigma;
 				PRODUCT_NAME = Enigma;
 				SDKROOT = iphoneos;

@@ -40,7 +40,6 @@ struct GameMechanics: View {
                 Spacer()
             }
             }
-            }
             Spacer()
             HStack {
                 Image("Key")

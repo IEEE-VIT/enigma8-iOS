@@ -33,6 +33,7 @@ struct Powerups: View {
         .padding(.horizontal)
     }
 }
+}
 
 struct Powerups_Previews: PreviewProvider {
     static var previews: some View {

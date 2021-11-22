@@ -31,11 +31,10 @@ struct ScoringSystem: View {
                 }
                 }
                 Spacer()
-            }
+            }.padding()
         }
-        .padding()
+        
     }
-}
 
 struct ScoringSystem_Previews: PreviewProvider {
     static var previews: some View {
