@@ -11,30 +11,32 @@ struct LetsPlay: View {
     @AppStorage(AppStorageConstants.instructionsShown) var instructionsShown: Bool = false
     var body: some View {
         VStack {
-            VStack(alignment: .center, spacing: 20) {
-                VStack(alignment: .leading) {
-                    ForEach(AppConstants.instructionsLetsPlay, id: \.self) { point in
-                        HStack(alignment: .top) {
-                            Image("BulletPoint")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 8)
-                                .padding(.top, 5)
-                            Text(point)
-                                .font(.Mulish(size: 18, weight: .medium))
-                                .foregroundColor(Color.eGold)
+            ScrollView {
+                VStack(alignment: .center, spacing: 20) {
+                    VStack(alignment: .leading) {
+                        ForEach(AppConstants.instructionsLetsPlay, id: \.self) { point in
+                            HStack(alignment: .top) {
+                                Image("BulletPoint")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 8)
+                                    .padding(.top, 5)
+                                Text(point)
+                                    .font(.Mulish(size: 18, weight: .medium))
+                                    .foregroundColor(Color.eGold)
+                            }
+                            .padding(.vertical)
                         }
-                        .padding(.vertical)
                     }
+                    Spacer()
+                    LetsPlayIcons()
+                    Spacer()
+                    HStack {
+                        CustomButton(buttonText: "Next", action: {self.instructionsShown = true})
+                            .opacity(instructionsShown ? 0 : 1)
+                    }
+                    Spacer()
                 }
-                Spacer()
-                LetsPlayIcons()
-                Spacer()
-                HStack {
-                    CustomButton(buttonText: "Next", action: {self.instructionsShown = true})
-                        .opacity(instructionsShown ? 0 : 1)
-                }
-                Spacer()
             }
         }
         .padding()

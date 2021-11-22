@@ -87,7 +87,7 @@ struct StoryHeaderStack: View {
             Spacer()
             StoryHeader(sender: "Ali")
                 .onTapGesture {
-                    self.character = Story.chars[0]
+                    self.character = Story.chars[1]
                     self.showCharDesc = true
                 }
         }

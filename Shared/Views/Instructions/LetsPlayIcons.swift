@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LetsPlayIcons: View {
     var instructionsIcons: [String] = ["Notifications","Info"]
-    var instructionsNames: [String] = ["Notifications"," Instructions"]
+    var instructionsNames: [String] = ["Notifications","Instructions"]
     var body: some View {
         VStack(alignment: .leading) {
             ForEach(0..<2) { index in
