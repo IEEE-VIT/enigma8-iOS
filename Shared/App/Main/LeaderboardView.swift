@@ -38,6 +38,7 @@ struct LeaderboardView: View {
                         .gradientForeground(colors: [.goldGradientStart,.goldGradientEnd])
                         .padding(.trailing)
                     TextField("Search", text: $query, onCommit: {
+                        leaderboardVM.leaderboard = []
                         leaderboardVM.fetchLeaderboard(query: query)
                         self.showClear = true
                     }).font(.Mulish(weight:.semibold))
