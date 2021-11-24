@@ -36,23 +36,19 @@ class LeaderboardViewModel: ObservableObject {
                 self.showNoUser = true
             }
             guard let response = response else { return }
-            if(self.searchQuery != nil || reload ?? false) {
-                self.leaderboard = response.leaderboard ?? []
-                if(response.leaderboard?.isEmpty ?? false) {
-                    self.showNoUser = true
-                } else {
-                    self.showNoUser = false
-                }
+            if(response.leaderboard?.isEmpty ?? false) {
+                self.showNoUser = true
             } else {
-                self.leaderboard.append(contentsOf: response.leaderboard ?? [])
+                self.showNoUser = false
             }
+            self.leaderboard.append(contentsOf: response.leaderboard ?? [])
             self.totalPages = response.totalPage ?? 1
             self.currentUser = response.userRank
         }
     }
     
     func fetchMorePages(currentRow item: LeaderboardItem) {
-        let thresholdIndex = self.leaderboard.index(self.leaderboard.endIndex, offsetBy: -1)
+        let thresholdIndex = self.leaderboard.index(self.leaderboard.endIndex, offsetBy: -3)
         if leaderboard[thresholdIndex].rank == item.rank, currentPage < totalPages {
             currentPage += 1
             fetchLeaderboard(query: self.searchQuery, morePages: true)
