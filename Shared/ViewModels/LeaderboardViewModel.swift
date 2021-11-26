@@ -48,7 +48,7 @@ class LeaderboardViewModel: ObservableObject {
     }
     
     func fetchMorePages(currentRow item: LeaderboardItem) {
-        let thresholdIndex = self.leaderboard.index(self.leaderboard.endIndex, offsetBy: -3)
+        let thresholdIndex = self.leaderboard.index(self.leaderboard.endIndex, offsetBy: -1)
         if leaderboard[thresholdIndex].rank == item.rank, currentPage < totalPages {
             currentPage += 1
             fetchLeaderboard(query: self.searchQuery, morePages: true)
