@@ -22,7 +22,7 @@ You can check out the website at https://enigma.ieeevit.org, and the iOS Applica
 To get started:
 
 - Clone the repo.
-  `git clone https://github.com/IEEE-VIT/enigma8-frontend.git`
+  `git clone https://github.com/IEEE-VIT/enigma8-iOS.git`
 - Checkout to a new branch.
   `git checkout -b my-amazing-feature`
 - Make some amazing changes.
@@ -31,10 +31,10 @@ To get started:
 - `git push origin my-amazing-feature`
 - Open a pull request :)
 
-To start contributing, check out [`CONTRIBUTING.md`](https://github.com/IEEE-VIT/enigma8-frontend/tree/master/CONTRIBUTING.md). New contributors are always welcome to support this project.
+To start contributing, check out [`CONTRIBUTING.md`](https://github.com/IEEE-VIT/enigma8-iOS/blob/main/CONTRIBUTING.md). New contributors are always welcome to support this project.
 
 ## License
 
-This project is licensed under [MIT](https://github.com/IEEE-VIT/enigma8-frontend/blob/master/LICENSE).
+This project is licensed under [MIT](https://github.com/IEEE-VIT/enigma8-iOS/blob/main/LICENSE).
 
 <p align="center">Made with ❤ by IEEE-VIT</p>
